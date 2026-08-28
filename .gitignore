@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+tmp/
+reports/hw01/raw/*.partial.json
