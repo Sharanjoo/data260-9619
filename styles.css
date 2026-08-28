@@ -1,0 +1,257 @@
+:root {
+  color-scheme: light;
+  --ink: #17251f;
+  --muted: #5e6d66;
+  --paper: #fffdf8;
+  --canvas: #edf2ec;
+  --accent: #1d6a47;
+  --accent-dark: #12472f;
+  --accent-soft: #dceee4;
+  --border: #cbd6cf;
+  --danger: #a22b2b;
+  --shadow: 0 20px 60px rgba(22, 55, 39, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(76, 142, 105, 0.18), transparent 34rem),
+    var(--canvas);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.5;
+}
+
+.page-shell {
+  width: min(960px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 72px 0 36px;
+}
+
+.hero {
+  max-width: 760px;
+  margin-bottom: 32px;
+}
+
+.eyebrow,
+.step-label {
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 720px;
+  margin-bottom: 14px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2.7rem, 7vw, 5.4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.hero-copy {
+  max-width: 660px;
+  margin-bottom: 0;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.form-card {
+  padding: clamp(24px, 5vw, 48px);
+  background: var(--paper);
+  border: 1px solid rgba(23, 37, 31, 0.08);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+}
+
+.section-heading {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 30px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.required-note {
+  flex: 0 0 auto;
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.required-note span,
+label span {
+  color: var(--danger);
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.field-group {
+  margin-bottom: 22px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 7px;
+  font-weight: 720;
+}
+
+input,
+select,
+textarea,
+button {
+  font: inherit;
+}
+
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+  width: 100%;
+  padding: 13px 14px;
+  color: var(--ink);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(29, 106, 71, 0.12);
+}
+
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border-color: var(--danger);
+}
+
+.field-hint {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 0.84rem;
+  text-align: right;
+}
+
+.terms-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 2px 0 24px;
+  padding: 15px;
+  background: var(--accent-soft);
+  border-radius: 9px;
+}
+
+.terms-row input {
+  width: 18px;
+  height: 18px;
+  margin: 3px 0 0;
+  accent-color: var(--accent);
+}
+
+.terms-row label {
+  margin: 0;
+  font-weight: 600;
+}
+
+button {
+  width: 100%;
+  padding: 14px 22px;
+  color: #ffffff;
+  background: var(--accent);
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font-weight: 800;
+  transition: background 150ms ease, transform 150ms ease;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.success-message {
+  margin-top: 22px;
+  padding: 16px;
+  color: var(--accent-dark);
+  background: var(--accent-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 7px;
+}
+
+.success-message strong,
+.success-message span {
+  display: block;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 6px 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 660px) {
+  .page-shell {
+    padding-top: 42px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .section-heading,
+  footer {
+    display: block;
+  }
+
+  .required-note {
+    display: inline-block;
+    margin-top: 12px;
+  }
+
+  footer span {
+    display: block;
+  }
+}

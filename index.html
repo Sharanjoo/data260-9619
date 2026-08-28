@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Submit grocery supply and product recall notices.">
+  <title>HW1-Sharan Lourduraj</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="hero">
+      <p class="eyebrow">DATA 260 · Homework 1</p>
+      <h1>Grocery Supply and Recall Notices</h1>
+      <p class="hero-copy">
+        Report a product recall, allergen concern, quality withdrawal, or supply shortage.
+      </p>
+    </header>
+
+    <section class="form-card" aria-labelledby="form-title">
+      <div class="section-heading">
+        <div>
+          <p class="step-label">New notice</p>
+          <h2 id="form-title">Publish a grocery notice</h2>
+        </div>
+        <span class="required-note"><span aria-hidden="true">*</span> Required</span>
+      </div>
+
+      <form id="noticeForm" novalidate>
+        <div class="field-grid">
+          <div class="field-group">
+            <label for="productName">Product name <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="productName"
+              name="productName"
+              placeholder="e.g., Sunrise Chocolate Cookies"
+              autocomplete="off"
+              autofocus
+              required
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="brandName">Brand or supplier <span aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="brandName"
+              name="brandName"
+              placeholder="e.g., Sunrise Bakery"
+              autocomplete="organization"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="field-grid">
+          <div class="field-group">
+            <label for="submitterEmail">Submitter email <span aria-hidden="true">*</span></label>
+            <input
+              type="email"
+              id="submitterEmail"
+              name="submitterEmail"
+              placeholder="name@sjsu.edu"
+              autocomplete="email"
+              required
+            >
+          </div>
+
+          <div class="field-group">
+            <label for="category">Notice category <span aria-hidden="true">*</span></label>
+            <select id="category" name="category" required>
+              <option value="" selected disabled>Select a category</option>
+              <option value="food-safety-recall">Food Safety Recall</option>
+              <option value="allergen-alert">Allergen Alert</option>
+              <option value="quality-withdrawal">Quality Withdrawal</option>
+              <option value="supply-shortage">Supply Shortage</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="description">Notice description <span aria-hidden="true">*</span></label>
+          <textarea
+            id="description"
+            name="description"
+            rows="6"
+            minlength="26"
+            placeholder="Describe the affected product, issue, dates, and recommended customer action."
+            required
+          ></textarea>
+          <p class="field-hint"><span id="characterCount">0</span> characters · minimum 26</p>
+        </div>
+
+        <div class="terms-row">
+          <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
+          <label for="termsAccepted">I agree to the terms and conditions.</label>
+        </div>
+
+        <button type="submit">Publish Recall Notice</button>
+      </form>
+
+      <div id="successMessage" class="success-message" role="status" aria-live="polite" hidden>
+        <strong>Notice recorded.</strong>
+        <span>Open the browser console to review the JSON and submission count.</span>
+      </div>
+    </section>
+
+    <footer>
+      <span>Student configuration: s9619</span>
+      <span>Local port: 8619</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
