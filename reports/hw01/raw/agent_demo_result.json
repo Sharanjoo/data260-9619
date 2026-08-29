@@ -1,0 +1,49 @@
+{
+  "input": {
+    "title": "Milano Cookies Allergen Alert",
+    "content": "Milano is recalling packages of Cookies because undeclared peanuts may affect customers with severe allergies. Customers should not consume the product and should return it to the store for a refund."
+  },
+  "temperature": 0.0,
+  "model": "qwen3:8b",
+  "transcript": {
+    "planner": {
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",
+      "latency_ms": 31464.819,
+      "usage": {
+        "input_tokens": 164,
+        "output_tokens": 44,
+        "total_tokens": 208
+      }
+    },
+    "reviewer": {
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",
+      "changed": false,
+      "explanation": "Tags and summary match the Planner's proposal. All tags are distinct, specific, and supported by the content. Summary is concise and within the word limit.",
+      "latency_ms": 36165.849,
+      "usage": {
+        "input_tokens": 240,
+        "output_tokens": 87,
+        "total_tokens": 327
+      }
+    }
+  },
+  "final": {
+    "tags": [
+      "food recall",
+      "allergen warning",
+      "product safety"
+    ],
+    "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+  },
+  "latency_ms": 67632.033
+}

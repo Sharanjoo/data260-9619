@@ -1,0 +1,657 @@
+{
+  "metadata": {
+    "started_at": "2026-08-29T00:10:41Z",
+    "model": "qwen3:8b",
+    "base_url": "http://localhost:11434",
+    "input_file": "reports\\hw01\\cases\\nondeterminism_input.json",
+    "input_sha256": "e8a047e5f08fb54440debe3223dbc242e7f666d5245e5f1e91a210cf0798359f",
+    "runs_per_temperature": 20,
+    "temperatures": [
+      0.7,
+      0.0
+    ],
+    "completed_at": "2026-08-29T00:27:59Z"
+  },
+  "runs": [
+    {
+      "run_id": 1,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",
+      "latency_ms": 68808.784,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 75
+    },
+    {
+      "run_id": 2,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen safety",
+        "product return"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",
+      "latency_ms": 32212.697,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 3,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergy warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",
+      "latency_ms": 30575.28,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 43,
+      "reviewer_input_tokens": 239,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 4,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",
+      "latency_ms": 33773.592,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 88
+    },
+    {
+      "run_id": 5,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen safety",
+        "product return"
+      ],
+      "summary": "Milano recalls cookies with undeclared peanuts, instructing customers to return for a refund.",
+      "latency_ms": 29609.815,
+      "reviewer_changed": true,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 68
+    },
+    {
+      "run_id": 6,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 34075.179,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 90
+    },
+    {
+      "run_id": 7,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen safety",
+        "product return"
+      ],
+      "summary": "Milano recalls cookies with undeclared peanuts, instructing customers to return for refund.",
+      "latency_ms": 27750.474,
+      "reviewer_changed": true,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 67
+    },
+    {
+      "run_id": 8,
+      "temperature": 0.7,
+      "tags": [
+        "food safety",
+        "product recall",
+        "allergen warning"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers.",
+      "latency_ms": 25714.397,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 44,
+      "reviewer_input_tokens": 240,
+      "reviewer_output_tokens": 82
+    },
+    {
+      "run_id": 9,
+      "temperature": 0.7,
+      "tags": [
+        "food safety",
+        "product recall",
+        "allergy warning"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",
+      "latency_ms": 23997.9,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 43,
+      "reviewer_input_tokens": 239,
+      "reviewer_output_tokens": 72
+    },
+    {
+      "run_id": 10,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",
+      "latency_ms": 25791.445,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 11,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",
+      "latency_ms": 22960.303,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 12,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen safety",
+        "product return"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund.",
+      "latency_ms": 25182.716,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 45,
+      "reviewer_input_tokens": 241,
+      "reviewer_output_tokens": 76
+    },
+    {
+      "run_id": 13,
+      "temperature": 0.7,
+      "tags": [
+        "food safety",
+        "allergen recall",
+        "product recall"
+      ],
+      "summary": "Milano is recalling cookies with undeclared peanuts, risking allergic reactions and offering refunds.",
+      "latency_ms": 23901.451,
+      "reviewer_changed": true,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 44,
+      "reviewer_input_tokens": 240,
+      "reviewer_output_tokens": 69
+    },
+    {
+      "run_id": 14,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",
+      "latency_ms": 25571.28,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 75
+    },
+    {
+      "run_id": 15,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergy warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and advising returns for refunds.",
+      "latency_ms": 25719.189,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 45,
+      "reviewer_input_tokens": 241,
+      "reviewer_output_tokens": 80
+    },
+    {
+      "run_id": 16,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 25535.034,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 17,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano recalls cookies with undeclared peanuts, posing allergy risks and offering refunds.",
+      "latency_ms": 22135.471,
+      "reviewer_changed": true,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 44,
+      "reviewer_input_tokens": 240,
+      "reviewer_output_tokens": 66
+    },
+    {
+      "run_id": 18,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergen safety",
+        "product return"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 25826.043,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 79
+    },
+    {
+      "run_id": 19,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergy warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",
+      "latency_ms": 24654.838,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 43,
+      "reviewer_input_tokens": 239,
+      "reviewer_output_tokens": 68
+    },
+    {
+      "run_id": 20,
+      "temperature": 0.7,
+      "tags": [
+        "food recall",
+        "allergy warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",
+      "latency_ms": 23927.22,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 43,
+      "reviewer_input_tokens": 239,
+      "reviewer_output_tokens": 86
+    },
+    {
+      "run_id": 1,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 25128.169,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 2,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 23222.395,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 3,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22853.474,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 4,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22831.652,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 5,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22921.063,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 6,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 23037.002,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 7,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22770.136,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 8,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 23068.115,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 9,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22800.544,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 10,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22960.627,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 11,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 23258.206,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 12,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 23194.989,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 13,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22927.966,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 14,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22711.064,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 15,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22725.813,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 16,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22831.228,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 17,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22598.312,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 18,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22511.162,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 19,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 22806.988,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    },
+    {
+      "run_id": 20,
+      "temperature": 0.0,
+      "tags": [
+        "food recall",
+        "allergen warning",
+        "product safety"
+      ],
+      "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",
+      "latency_ms": 23056.728,
+      "reviewer_changed": false,
+      "planner_input_tokens": 164,
+      "planner_output_tokens": 46,
+      "reviewer_input_tokens": 242,
+      "reviewer_output_tokens": 77
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+run_id,temperature,tags,summary,latency_ms,reviewer_changed,planner_input_tokens,planner_output_tokens,reviewer_input_tokens,reviewer_output_tokens
+1,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",68808.784,False,164,46,242,75
+2,0.7,"[""food recall"", ""allergen safety"", ""product return""]","Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",32212.697,False,164,46,242,77
+3,0.7,"[""food recall"", ""allergy warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",30575.28,False,164,43,239,77
+4,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",33773.592,False,164,46,242,88
+5,0.7,"[""food recall"", ""allergen safety"", ""product return""]","Milano recalls cookies with undeclared peanuts, instructing customers to return for a refund.",29609.815,True,164,46,242,68
+6,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",34075.179,False,164,46,242,90
+7,0.7,"[""food recall"", ""allergen safety"", ""product return""]","Milano recalls cookies with undeclared peanuts, instructing customers to return for refund.",27750.474,True,164,46,242,67
+8,0.7,"[""food safety"", ""product recall"", ""allergen warning""]","Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers.",25714.397,False,164,44,240,82
+9,0.7,"[""food safety"", ""product recall"", ""allergy warning""]","Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",23997.9,False,164,43,239,72
+10,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",25791.445,False,164,46,242,77
+11,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",22960.303,False,164,46,242,77
+12,0.7,"[""food recall"", ""allergen safety"", ""product return""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund.",25182.716,False,164,45,241,76
+13,0.7,"[""food safety"", ""allergen recall"", ""product recall""]","Milano is recalling cookies with undeclared peanuts, risking allergic reactions and offering refunds.",23901.451,True,164,44,240,69
+14,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund.",25571.28,False,164,46,242,75
+15,0.7,"[""food recall"", ""allergy warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and advising returns for refunds.",25719.189,False,164,45,241,80
+16,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",25535.034,False,164,46,242,77
+17,0.7,"[""food recall"", ""allergen warning"", ""product safety""]","Milano recalls cookies with undeclared peanuts, posing allergy risks and offering refunds.",22135.471,True,164,44,240,66
+18,0.7,"[""food recall"", ""allergen safety"", ""product return""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",25826.043,False,164,46,242,79
+19,0.7,"[""food recall"", ""allergy warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",24654.838,False,164,43,239,68
+20,0.7,"[""food recall"", ""allergy warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds.",23927.22,False,164,43,239,86
+1,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",25128.169,False,164,46,242,77
+2,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",23222.395,False,164,46,242,77
+3,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22853.474,False,164,46,242,77
+4,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22831.652,False,164,46,242,77
+5,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22921.063,False,164,46,242,77
+6,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",23037.002,False,164,46,242,77
+7,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22770.136,False,164,46,242,77
+8,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",23068.115,False,164,46,242,77
+9,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22800.544,False,164,46,242,77
+10,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22960.627,False,164,46,242,77
+11,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",23258.206,False,164,46,242,77
+12,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",23194.989,False,164,46,242,77
+13,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22927.966,False,164,46,242,77
+14,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22711.064,False,164,46,242,77
+15,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22725.813,False,164,46,242,77
+16,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22831.228,False,164,46,242,77
+17,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22598.312,False,164,46,242,77
+18,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22511.162,False,164,46,242,77
+19,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",22806.988,False,164,46,242,77
+20,0.0,"[""food recall"", ""allergen warning"", ""product safety""]","Milano is recalling cookies due to undeclared peanuts, advising customers to return them for a refund.",23056.728,False,164,46,242,77

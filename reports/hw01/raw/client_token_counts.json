@@ -1,0 +1,79 @@
+{
+  "mode": "demo",
+  "turns": [
+    {
+      "prompt": "Review this Python function: def total(values): return sum(values)",
+      "response": "- Division by zero can occur if values is empty; add a check for empty input and handle it appropriately.",
+      "input_tokens": 198,
+      "output_tokens": 23,
+      "total_tokens": 221,
+      "bullet_only": true,
+      "serialized_history_length": 1069,
+      "turn": 1
+    },
+    {
+      "prompt": "Review this JavaScript: const email = document.querySelector('#email').value;",
+      "response": "- Accessing `document.querySelector('#email')` may return null; add a null check before accessing `.value`.",
+      "input_tokens": 244,
+      "output_tokens": 24,
+      "total_tokens": 268,
+      "bullet_only": true,
+      "serialized_history_length": 1316,
+      "turn": 2
+    },
+    {
+      "prompt": "Review this Python: def first(items): return items[0]",
+      "response": "- Accessing `items[0]` may raise IndexError if the list is empty; add a check for empty input and handle it appropriately.",
+      "input_tokens": 290,
+      "output_tokens": 30,
+      "total_tokens": 320,
+      "bullet_only": true,
+      "serialized_history_length": 1554,
+      "turn": 3
+    },
+    {
+      "prompt": "Review this JavaScript: localStorage.setItem('notice', JSON.stringify(data));",
+      "response": "- `localStorage.setItem` may fail if the browser does not support it; add a check for `window.localStorage` existence before using it.",
+      "input_tokens": 342,
+      "output_tokens": 29,
+      "total_tokens": 371,
+      "bullet_only": true,
+      "serialized_history_length": 1828,
+      "turn": 4
+    },
+    {
+      "prompt": "Review this Python: data = json.loads(open('input.json').read())",
+      "response": "- `open('input.json')` may raise FileNotFoundError; use a try-except block or check file existence before reading.",
+      "input_tokens": 395,
+      "output_tokens": 26,
+      "total_tokens": 421,
+      "bullet_only": true,
+      "serialized_history_length": 2069,
+      "turn": 5
+    }
+  ],
+  "stats_snapshots": {
+    "3": {
+      "turn_count": 3,
+      "input_tokens": 732,
+      "output_tokens": 77,
+      "total_tokens": 809,
+      "serialized_history_length": 1554
+    },
+    "5": {
+      "turn_count": 5,
+      "input_tokens": 1469,
+      "output_tokens": 132,
+      "total_tokens": 1601,
+      "serialized_history_length": 2069
+    }
+  },
+  "model": "qwen3:8b",
+  "agent_file": "AGENT.md",
+  "cumulative": {
+    "turn_count": 5,
+    "input_tokens": 1469,
+    "output_tokens": 132,
+    "total_tokens": 1601
+  }
+}
