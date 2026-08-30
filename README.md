@@ -13,7 +13,7 @@ Homework 1 implementation for the **Grocery supply and recall notices** domain.
 | VERIFY_SEED | `269619` |
 | DOMAIN_ID | `3` |
 | Hardware | HP Pavilion laptop, 32 GB RAM, 512 GB storage |
-| Local model | `qwen3:8b` (confirm after the real run) |
+| Local model | `qwen3:8b` |
 
 The configuration is calculated as follows:
 
