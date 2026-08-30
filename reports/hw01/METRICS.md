@@ -23,6 +23,5 @@
 
 ## Interpretation
 
-Replace this paragraph with your interpretation of the measured values. Explain what two users
-sending the fixed input might see, then give one acceptable and one unacceptable example of
-run-to-run variation.
+The fixed input produced 6 distinct tag sets at temperature 0.7 and 1 distinct tag set at temperature 0.0. Therefore, two users submitting identical input may receive different but topically related tags when temperature 0.7 is used, while temperature 0.0 produces more consistent results. Variation is acceptable for optional discovery tags, such as “product safety” versus “allergen recall,” but it is not acceptable if a safety-critical warning about undeclared peanuts is omitted or changed.
+
