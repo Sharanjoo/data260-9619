@@ -103,9 +103,11 @@ def make_markdown(metrics: dict[str, Any], model: str, generated_at: str) -> str
 
 ## Interpretation
 
-Replace this paragraph with your interpretation of the measured values. Explain what two users
-sending the fixed input might see, then give one acceptable and one unacceptable example of
-run-to-run variation.
+The fixed input produced {temp07['distinct_tag_sets']} distinct tag set(s) at temperature 0.7 and
+{temp00['distinct_tag_sets']} distinct tag set(s) at temperature 0.0. Therefore, two users sending
+identical input may receive different but topically valid tags when sampling is enabled, while the
+lower temperature should be more repeatable. Variation is acceptable for optional discovery tags,
+but it is not acceptable if a safety-critical allergen warning is omitted or changed.
 """
 
 
