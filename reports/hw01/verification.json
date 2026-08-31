@@ -1,0 +1,64 @@
+{
+  "generated_at_utc": "2026-08-31T01:14:09Z",
+  "sid4": 9619,
+  "configuration": {
+    "port_base": 8619,
+    "prefix": "s9619",
+    "seed": 9619,
+    "verify_seed": 269619,
+    "domain_id": 3
+  },
+  "git_commit": "3f32f56492ce29987d9a27927ba2c96e2024f518",
+  "checks": {
+    "required_files": {
+      "passed": true,
+      "missing": []
+    },
+    "python_compile": {
+      "passed": true
+    },
+    "unit_tests": {
+      "passed": true,
+      "tests_run": 11,
+      "failures_and_errors": 0
+    },
+    "local_http_assets": {
+      "passed": true,
+      "statuses": {
+        "index.html": 200,
+        "styles.css": 200,
+        "app.js": 200
+      }
+    },
+    "shared_code_layout": {
+      "passed": true,
+      "legacy_root_files_present": [],
+      "application_code_under_reports": []
+    }
+  },
+  "external_evidence": {
+    "screenshots_present": [
+      "01_web_form.png",
+      "02_js_console.png",
+      "03_docker_localhost.png",
+      "04_agents_console.png",
+      "05_client_stats_turn3.png",
+      "06_client_stats_turn5.png",
+      "07_nondeterminism_complete.png",
+      "08_aws_ecs_service.png",
+      "09_aws_public_ip.png"
+    ],
+    "screenshots_missing": [],
+    "raw_results_present": [
+      "agent_demo_result.json",
+      "client_token_counts.json",
+      "nondeterminism_results.json",
+      "nondeterminism_results.csv"
+    ],
+    "raw_results_missing": [],
+    "complete": true
+  },
+  "basic_checks_passed": true,
+  "submission_ready": true,
+  "note": "Basic checks do not replace the required real Docker, Ollama, 40-run, and AWS evidence."
+}
