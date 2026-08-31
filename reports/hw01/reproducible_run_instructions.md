@@ -50,14 +50,13 @@ python scripts/recorded_run.py -- python code/hw1_client.py `
 python scripts/run_nondeterminism.py --model qwen3:8b --resume
 ```
 
-## Verification and report
+## Verification
 
 ```powershell
-python -m pip install -r requirements-report.txt
 python scripts/verify_hw01.py
-python scripts/build_report.py --fail-on-missing-evidence
-```
 
 Repository: <https://github.com/Sharanjoo/data260-9619>
 
 Required collaborators: `Sbnikitha`, `supriyaselvanganesan`
+
+

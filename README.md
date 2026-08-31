@@ -30,7 +30,6 @@ The configuration is calculated as follows:
 - `code/hw1_client.py` - interactive client and required five-turn demo.
 - `scripts/run_nondeterminism.py` - resumable 20 + 20 run experiment.
 - `scripts/verify_hw01.py` - writes `reports/hw01/verification.json`.
-- `scripts/build_report.py` - builds the report from real screenshots and results.
 - `reports/hw01/` - report evidence, raw outputs, metrics, and AI-use disclosure.
 
 Application code remains in the shared root-level `code/` and `src/` folders so later homework
@@ -145,14 +144,12 @@ model in README and the report. Never mix measurements from two models.
 Install the report-only dependency, run the self-check, and build the draft:
 
 ```powershell
-python -m pip install -r requirements-report.txt
 python scripts/verify_hw01.py
-python scripts/build_report.py
 ```
 
-The builder intentionally leaves visible `EVIDENCE NEEDED` boxes until the corresponding real
-screenshot/result exists. Do not submit while any box remains. Review `REPORT_CHECKLIST.md`, open
-`reports/hw01/report.pdf`, and confirm that code and its output screenshot appear together.
+The final report was created in Microsoft Word and exported as
+reports/hw01/report.pdf. The PDF was reviewed to confirm that all required
+code, answers, and evidence screenshots are present and readable.
 
 ## 5. Why conversation input tokens grow
 

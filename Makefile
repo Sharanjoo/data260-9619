@@ -1,4 +1,4 @@
-.PHONY: serve verify report agents client experiment docker-up docker-down
+.PHONY: serve verify agents client experiment docker-up docker-down
 
 serve:
 	python3 -m http.server 8619 --directory code/web_application
