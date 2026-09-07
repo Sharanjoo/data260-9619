@@ -13,10 +13,8 @@
       <h1>Grocery Supply and Recall Notices</h1>
       <p>Use this form to submit a grocery supply or product recall notice.</p>
     </header>
-
     <form id="noticeForm" novalidate>
       <h2>Submit a Notice</h2>
-
       <label for="productName">Product name *</label>
       <input
         type="text"
@@ -27,7 +25,6 @@
         autofocus
         required
       >
-
       <label for="brandName">Brand or supplier *</label>
       <input
         type="text"
@@ -37,7 +34,6 @@
         autocomplete="organization"
         required
       >
-
       <label for="submitterEmail">Submitter email *</label>
       <input
         type="email"
@@ -47,7 +43,6 @@
         autocomplete="email"
         required
       >
-
       <label for="category">Notice category *</label>
       <select id="category" name="category" required>
         <option value="" selected disabled>Select a category</option>
@@ -56,7 +51,6 @@
         <option value="quality-withdrawal">Quality Withdrawal</option>
         <option value="supply-shortage">Supply Shortage</option>
       </select>
-
       <label for="description">Notice description *</label>
       <textarea
         id="description"
@@ -67,25 +61,75 @@
         required
       ></textarea>
       <p class="hint"><span id="characterCount">0</span> characters (minimum 26)</p>
-
       <div class="terms-row">
         <input type="checkbox" id="termsAccepted" name="termsAccepted" required>
         <label for="termsAccepted">I agree to the terms and conditions.</label>
       </div>
-
       <button type="submit">Submit Notice</button>
     </form>
-
     <div id="successMessage" class="success-message" role="status" aria-live="polite" hidden>
       <strong>Notice submitted successfully.</strong>
       <span>Open the browser console to view the output.</span>
     </div>
 
+    <section class="notices-section" aria-labelledby="noticesHeading">
+      <h2 id="noticesHeading">Recall Notices List</h2>
+
+      <div id="noticesLoading" class="state-message loading-message" role="status" aria-live="polite" hidden>
+        Loading notices&hellip;
+      </div>
+      <div id="noticesEmpty" class="state-message empty-message" role="status" hidden>
+        No recall notices yet. Use the form above to submit one.
+      </div>
+      <div id="noticesError" class="state-message error-message" role="alert" hidden>
+        <span>Unable to load notices.</span>
+        <button type="button" id="retryNotices">Retry</button>
+      </div>
+
+      <div class="table-scroll">
+        <table id="noticesTable" class="notices-table" hidden>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Product</th>
+              <th>Brand/Supplier</th>
+              <th>Category</th>
+            </tr>
+          </thead>
+          <tbody id="noticesTableBody"></tbody>
+        </table>
+      </div>
+
+      <div class="actions-grid">
+        <div class="actions-panel">
+          <h3>Update Notice (ID 1)</h3>
+          <label for="updateProductName">Product name</label>
+          <input type="text" id="updateProductName" placeholder="New product name">
+          <label for="updateBrandName">Brand or supplier</label>
+          <input type="text" id="updateBrandName" placeholder="New brand or supplier">
+          <button type="button" id="updateNoticeBtn">Update Notice</button>
+        </div>
+
+        <div class="actions-panel">
+          <h3>Delete Highest-ID Notice</h3>
+          <p class="hint-static">Removes the notice with the largest ID.</p>
+          <button type="button" id="deleteNoticeBtn" class="danger">Delete Highest-ID Notice</button>
+        </div>
+
+        <div class="actions-panel">
+          <h3>Search Notices</h3>
+          <label for="searchQuery">Product or brand</label>
+          <input type="search" id="searchQuery" placeholder="Search notices">
+          <button type="button" id="searchNoticeBtn">Search</button>
+          <button type="button" id="clearSearchBtn" class="secondary">Clear</button>
+        </div>
+      </div>
+    </section>
+
     <footer>
       <p>Student configuration: s9619 | Local port: 8619</p>
     </footer>
   </main>
-
   <script src="app.js"></script>
 </body>
 </html>
