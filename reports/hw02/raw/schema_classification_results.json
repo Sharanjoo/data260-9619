@@ -1,0 +1,576 @@
+{
+  "turn_ceiling": 10,
+  "model": "qwen3:8b",
+  "runs": [
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 30499.579,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 22604.5,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 23201.15,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 24446.178,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27144.826,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return for refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 29870.876,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27686.856,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 28478.382,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and urging returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 26225.937,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergy sufferers and advising returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 24250.0,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27993.406,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return them for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 28048.151,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergy warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and advising returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 28108.126,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, affecting allergy sufferers and urging returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 25252.914,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 23566.789,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 26908.466,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergy sufferers and advising returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 24585.271,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and advising returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 26510.972,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27485.06,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return for refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 25713.602,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, warning allergic customers to return for refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 30626.282,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers and urging returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 24167.035,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 29030.732,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers and urging returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27186.575,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergy warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and offering refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 30075.95,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergen warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers and urging returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27431.844,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 24767.274,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano recalls cookies due to undeclared peanuts, advising consumers to return for refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 27121.453,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergy warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and advising returns for refunds."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 28282.542,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "peanut allergy",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, posing a risk to allergic customers."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": false,
+      "latency_ms": 26534.803,
+      "final_planner_proposal": {
+        "tags": [
+          "food recall",
+          "allergy warning",
+          "product safety"
+        ],
+        "summary": "Milano is recalling cookies due to undeclared peanuts, advising customers to return for a refund."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": false,
+        "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+      },
+      "classification": "valid_first_attempt"
+    }
+  ]
+}
