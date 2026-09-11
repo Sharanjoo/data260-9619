@@ -1,7 +1,7 @@
 .PHONY: serve verify agents client experiment docker-up docker-down
 
 serve:
-	python3 -m http.server 8619 --directory code/web_application
+	python3 code/main.py
 
 verify:
 	python3 scripts/verify_hw01.py

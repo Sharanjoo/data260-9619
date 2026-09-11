@@ -257,6 +257,9 @@ button.secondary:hover {
   border: 1.5px solid var(--color-error-border);
   background: var(--color-error-bg);
   color: var(--color-error-text);
+}
+
+.error-message:not([hidden]) {
   display: flex;
   align-items: center;
   justify-content: space-between;

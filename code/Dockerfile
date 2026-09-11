@@ -1,12 +1,10 @@
-FROM nginx:1.27-alpine
-
-RUN rm -rf /usr/share/nginx/html/*
-
-COPY web_application/index.html web_application/styles.css web_application/app.js /usr/share/nginx/html/
-
-EXPOSE 80
-
+FROM python:3.11-slim
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY main.py .
+COPY web_application ./web_application
+EXPOSE 8619
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
-  CMD wget --quiet --tries=1 --spider http://127.0.0.1/ || exit 1
-
-CMD ["nginx", "-g", "daemon off;"]
+  CMD python -c "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8619/api/health', timeout=2)" || exit 1
+CMD ["python", "main.py"]
