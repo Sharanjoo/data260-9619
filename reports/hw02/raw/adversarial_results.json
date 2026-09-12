@@ -1,0 +1,101 @@
+{
+  "turn_ceiling": 2,
+  "model": "qwen3:8b",
+  "runs": [
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": true,
+      "latency_ms": 98059.257,
+      "final_planner_proposal": {
+        "tags": [
+          "food safety incident",
+          "product recall",
+          "labeling error"
+        ],
+        "summary": "Meridian Foods Cooperative issues recall due to four quality and safety issues across regional facilities."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": true,
+        "explanation": "The tags 'product recall' and 'labeling error' are not distinct enough and the 'food safety incident' tag is too generic. The summary is accurate but exceeds 25 words."
+      },
+      "classification": "hit_turn_ceiling"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": true,
+      "latency_ms": 39764.465,
+      "final_planner_proposal": {
+        "tags": [
+          "food safety recall",
+          "quality control issues",
+          "labeling errors"
+        ],
+        "summary": "Meridian Foods issues recall for four products due to safety and labeling issues across multiple facilities."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": true,
+        "explanation": "The tags 'food safety recall' and 'quality control issues' are not distinct enough. 'Labeling errors' is accurate but 'quality control issues' overlaps with 'food safety recall'."
+      },
+      "classification": "hit_turn_ceiling"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": true,
+      "latency_ms": 42711.011,
+      "final_planner_proposal": {
+        "tags": [
+          "Food Safety Recall",
+          "Quality Control Issues",
+          "Labeling Errors"
+        ],
+        "summary": "Meridian Foods Cooperative issues recall for four products due to safety and labeling issues across multiple facilities."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": true,
+        "explanation": "The tags 'Quality Control Issues' and 'Labeling Errors' are not distinct enough. 'Labeling Errors' is a subset of 'Quality Control Issues', and the summary is inaccurate and exceeds 25 words."
+      },
+      "classification": "hit_turn_ceiling"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": true,
+      "latency_ms": 43451.376,
+      "final_planner_proposal": {
+        "tags": [
+          "Food Safety Recall",
+          "Quality Control Issues",
+          "Labeling Errors"
+        ],
+        "summary": "Meridian Foods Cooperative issues advisory for four unrelated quality and safety incidents across regional facilities."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": true,
+        "explanation": "The tags 'Quality Control Issues' and 'Labeling Errors' are not distinct enough; 'Labeling Errors' is a subset of 'Quality Control Issues'. Additionally, the summary exceeds 25 words."
+      },
+      "classification": "hit_turn_ceiling"
+    },
+    {
+      "planner_attempts": 1,
+      "turn_count": 3,
+      "abandoned": true,
+      "latency_ms": 41649.894,
+      "final_planner_proposal": {
+        "tags": [
+          "Food Safety Recall",
+          "Quality Control Issues",
+          "Labeling Errors"
+        ],
+        "summary": "Meridian Foods Cooperative issues advisory for four separate quality and safety issues across multiple facilities."
+      },
+      "final_reviewer_feedback": {
+        "has_issues": true,
+        "explanation": "The tags 'Food Safety Recall' and 'Quality Control Issues' are not distinct enough. 'Labeling Errors' is specific but not fully supported by the content, as the labeling error is only one of four incidents."
+      },
+      "classification": "hit_turn_ceiling"
+    }
+  ]
+}
