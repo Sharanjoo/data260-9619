@@ -23,3 +23,7 @@ docker-up:
 
 docker-down:
 	docker compose down
+
+verify-hw02:
+	python3 scripts/verify_hw02.py
+
