@@ -1,0 +1,53 @@
+HOMEWORK 2 — RUN LOG (SID4 9619)
+
+[2026-09-10] Part 3 — Stateful LangGraph agent, normal run
+Command: python code\agent_graph_demo.py --title "Milano Cookies Allergen Alert" --content "Milano is recalling packages of Cookies because undeclared peanuts may affect customers with severe allergies. Customers should not consume the product and should return it to the store for a refund." --output-json reports\hw02\raw\agent_graph_demo_result.json
+Completed: 2026-09-10 18:30:03
+Result: turn_count=3, planner_proposal={"tags": ["food recall","peanut allergy","product safety"], "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return for a refund."}, reviewer_feedback.has_issues=false
+
+[2026-09-10] Part 3 — Self-correction loop test (forced Reviewer rejection)
+Command: python code\agent_graph_demo.py --title "Milano Cookies Allergen Alert" --content "..." --force-reviewer-issue --turn-ceiling 6
+Console transcript (no output file saved): graph looped Planner -> Reviewer (forced issue) -> Planner -> Reviewer (forced issue) across two full cycles, then stopped at turn_count=6 (turn ceiling reached), reviewer_feedback.has_issues=true in the final state.
+
+[2026-09-10] Part 4 #1/#2 — Schema-validation retry test (forced Planner corruption)
+Command: python code\agent_graph_demo.py --title "Milano Cookies Allergen Alert" --content "..." --force-planner-invalid-once
+Console transcript (no output file saved): first Planner attempt corrupted to 2 tags -> real Pydantic ValidationError raised and fed back to the Planner -> second Planner attempt succeeded with a valid 3-tag proposal -> Reviewer approved -> graph ended.
+
+[2026-09-10 18:57:58] Fixed input saved for Part 4 experiments
+File: reports\hw02\cases\schema_input.json
+
+[2026-09-10 19:43:46] Part 4 #3 — Schema classification experiment (30 runs, turn ceiling = 10)
+Command: python scripts\run_schema_experiment.py --runs 30 --turn-ceiling 10
+Output: reports\hw02\raw\schema_classification_results.json
+Summary:
+  valid_first_attempt: count=30, mean_latency_ms=26793.518
+  valid_after_1_retry: count=0
+  valid_after_2plus_retries: count=0
+  hit_turn_ceiling: count=0
+Note: an earlier version of this script used a turn_count-based heuristic that misclassified all 30 runs as "1 retry." The script was corrected to directly count Planner invocations before this run was recorded — see AI_USE.md for details.
+
+[2026-09-10 20:12:58 to 20:21:46] Part 4 #4 — Turn-ceiling comparison (2 vs 10, 20 runs each)
+Command: python scripts\run_ceiling_comparison.py
+Output: reports\hw02\raw\ceiling_comparison_ceiling2.json, reports\hw02\raw\ceiling_comparison_ceiling10.json, reports\hw02\raw\ceiling_comparison_summary.json
+Summary:
+  ceiling=2:  completion_rate=1.0, mean_latency_ms=28626.236, n=20
+  ceiling=10: completion_rate=1.0, mean_latency_ms=26373.833, n=20
+
+[2026-09-12 14:59:25] Adversarial input finalized (multi-incident, four unrelated issues)
+File: reports\hw02\cases\adversarial_input.json
+Note: an initial, less aggressive single-narrative adversarial input was tried first and only hit the turn ceiling in 1/5 runs; it was replaced with this stronger multi-incident version.
+
+[2026-09-12 15:04:04] Part 4 #5 — Adversarial input experiment (5 runs, turn ceiling = 2)
+Command: python scripts\run_adversarial_experiment.py
+Output: reports\hw02\raw\adversarial_results.json
+Summary: 5/5 runs hit the turn ceiling. Reviewer rejection reasons cited tag redundancy ("Quality Control Issues" subsuming "Labeling Errors"), summaries exceeding 25 words, and tags not fully grounded across all four incidents.
+
+[2026-09-12 15:20:57] Final verification / smoke test
+Command: python scripts\verify_hw02.py
+Output: reports\hw02\verification.json
+Result: all_checks_passed = true
+  fastapi_backend_responds_on_port_base: true
+  notices_list_returns_array: true
+  create_then_search_round_trip: true
+  langgraph_finishes_without_hanging: true
+  langgraph_returns_exactly_three_tags: true
