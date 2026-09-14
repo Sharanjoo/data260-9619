@@ -13,10 +13,10 @@
       "peanut allergy",
       "product safety"
     ],
-    "summary": "Milano is recalling cookies due to undeclared peanuts, advising consumers to return for a refund."
+    "summary": "Milano is recalling cookies due to undeclared peanuts, risking allergic reactions and advising returns for refunds."
   },
   "reviewer_feedback": {
     "has_issues": false,
-    "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the word limit."
+    "explanation": "Tags are distinct, specific, and supported by the content. Summary is accurate and within the 25-word limit."
   }
 }

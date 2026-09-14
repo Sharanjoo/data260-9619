@@ -33,6 +33,38 @@ def _safe(value: Any) -> Any:
     return value
 
 
+class _CorruptFirstCallClient:
+    """Test hook: wraps the real client and corrupts only its first .complete()
+    response (truncates the Planner's tags to 2 items), so the graph hits a
+    real Pydantic ValidationError and has to retry. Every call after the first
+    behaves normally."""
+
+    def __init__(self, real_client):
+        self._real_client = real_client
+        self._corrupted_once = False
+
+    def complete(self, *args, **kwargs):
+        response = self._real_client.complete(*args, **kwargs)
+
+        if self._corrupted_once:
+            return response
+
+        self._corrupted_once = True
+        try:
+            payload = json.loads(response) if isinstance(response, str) else response
+            if isinstance(payload, dict) and isinstance(payload.get("tags"), list):
+                payload["tags"] = payload["tags"][:2]
+                print("---TEST HOOK: corrupted first Planner response (tags truncated to 2)---")
+                return json.dumps(payload) if isinstance(response, str) else payload
+        except (json.JSONDecodeError, TypeError):
+            pass
+        return response
+
+    def __getattr__(self, name):
+        # Forward anything else (e.g. stats/attributes) to the real client.
+        return getattr(self._real_client, name)
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-file", type=Path)
@@ -48,6 +80,11 @@ def main() -> int:
         action="store_true",
         help="test hook: make the Reviewer always report an issue, to watch the correction loop",
     )
+    parser.add_argument(
+        "--force-planner-invalid-once",
+        action="store_true",
+        help="test hook: corrupt the first Planner response so it fails real schema validation, to prove the retry path works",
+    )
     parser.add_argument("--output-json", type=Path)
     args = parser.parse_args()
 
@@ -59,6 +96,9 @@ def main() -> int:
         parser.error("provide --input-file or both --title and --content")
 
     client = OllamaModelClient(model=args.model, base_url=args.base_url)
+
+    if args.force_planner_invalid_once:
+        client = _CorruptFirstCallClient(client)
 
     reviewer_override = None
     if args.force_reviewer_issue:

@@ -37,10 +37,11 @@ Summary:
 File: reports\hw02\cases\adversarial_input.json
 Note: an initial, less aggressive single-narrative adversarial input was tried first and only hit the turn ceiling in 1/5 runs; it was replaced with this stronger multi-incident version.
 
-[2026-09-12 15:04:04] Part 4 #5 — Adversarial input experiment (5 runs, turn ceiling = 2)
+[2026-09-13 19:27:58] Part 4 #5 — Adversarial input experiment (5 runs, turn ceiling = 2)
 Command: python scripts\run_adversarial_experiment.py
 Output: reports\hw02\raw\adversarial_results.json
-Summary: 5/5 runs hit the turn ceiling. Reviewer rejection reasons cited tag redundancy ("Quality Control Issues" subsuming "Labeling Errors"), summaries exceeding 25 words, and tags not fully grounded across all four incidents.
+Summary: 5/5 runs hit the turn ceiling, reproducing the same result on a second run of this experiment. Reviewer rejection reasons cited tag redundancy ("Quality Control Issues" subsuming "Labeling Errors"), summaries exceeding 25 words, and tags not fully grounded across all four incidents.
+
 
 [2026-09-12 15:20:57] Final verification / smoke test
 Command: python scripts\verify_hw02.py

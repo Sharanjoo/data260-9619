@@ -80,6 +80,7 @@ function renderNotices(list) {
 
 async function loadNotices(query = "") {
   showNoticesState("loading");
+  await new Promise(resolve => setTimeout(resolve, 3000)); 
   try {
     const url = query
       ? `${NOTICES_API}?q=${encodeURIComponent(query)}`
