@@ -1,0 +1,134 @@
+Investigation Update: Salmonella  Outbreak, September 2026 | Salmonella Infection | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Investigation Update:
+Salmonella
+Outbreak, September 2026
+For Everyone
+Sept. 11, 2026
+Key points
+CDC and public health officials in several states are investigating a multistate outbreak of
+Salmonella
+infections linked to broccoli sprouts produced by Evergreen Fresh Sprouts. If you have recalled broccoli sprouts in your home, throw them out or return them.
+Latest update
+September 9, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) are collecting
+different types of data
+to investigate a multistate outbreak of
+Salmonella
+Bovismorbificans.
+Epidemiologic, laboratory, and traceback data show that broccoli sprouts produced by Evergreen Fresh Sprouts, LLC are contaminated with
+Salmonella
+and are making people sick.
+Epidemiologic data
+Cases
+Total cases
+22
+States
+4
+Hospitalizations
+2 (9%) of 22 people with information available
+Deaths
+0
+Illnesses started on dates ranging from July 7, 2026, to August 26, 2026. The true number of sick people in this outbreak is likely much higher than the number reported, and this outbreak may not be limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella.
+In addition, recent illnesses may not yet be reported as it usually takes
+3 to 4 weeks
+to determine if a sick person is part of an outbreak.
+Demographics
+Public health officials collect many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provides clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Age
+(n=22)
+Range from 2 to 87 years
+Median age of 48 years
+Sex
+(n=22)
+45% female
+55% male
+Race
+(n=11)
+91% White
+9% Asian
+Ethnicity
+(n=17)
+94% non-Hispanic
+6% Hispanic
+Food exposure
+State and local public health officials are interviewing people about the foods they ate in the week before they got sick. Of the 19 people interviewed, all 19 (100%) reported eating sprouts and 17 (89%) reported specifically eating broccoli sprouts.
+This percentage is significantly higher than the 8.7% of respondents who reported eating any sprouts (including alfalfa, bean, or clover) in the
+FoodNet Population Survey
+—
+a survey that helps estimate how often people eat various foods linked to diarrheal illness. This difference suggests that people in this outbreak got sick from eating broccoli sprouts.
+Laboratory and traceback data
+Public health investigators are using the
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+. WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak got sick from the same food.
+Based on
+WGS analysis
+, bacteria from 18 people's samples had no predicted antimicrobial resistance. Bacteria from one person's sample were predicted to be resistant to streptomycin, sulfisoxazole, and tetracycline. Most people with
+Salmonella
+illness recover without antibiotics. However, if antibiotics are needed, this resistance is unlikely to affect the choice of antibiotic used to treat most people. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+Officials in Montana collected an unopened package of broccoli sprouts from a sick person's home and WGS showed that it is the same
+Salmonella
+Bovismorbificans strain that made people sick in this outbreak.
+FDA and state's traceback information identified broccoli sprouts produced by Evergreen Fresh Sprouts, LLC as a source of illness in this outbreak. FDA’s investigation is ongoing to determine the source of contamination in this outbreak and if additional products are affected.
+Public health actions
+On September 10, 2026, Evergreen Fresh Sprouts LLC, recalled 215 cases of broccoli sprouts. CDC is advising people not eat, sell, or serve recalled broccoli sprouts produced by Evergreen Fresh Sprouts LLC.
+Sept. 11, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Emerging and Zoonotic Infectious Diseases (NCEZID)
+About This Page
+Published:
+September 9, 2026
+Updated:
+September 11, 2026
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed:
+September 11, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.
+Salmonella
+Infection
+Salmonella
+bacteria (germs) are a leading cause of foodborne illness in the United States. Learn about symptoms, treatment, and prevention of infection.
+View All
+For Everyone
+About
+Symptoms
+Outbreaks
+How It Spreads
+Prevention
+Treatment
+Health Care Providers
+Clinical Overview
+Public Health
+Salmonella
+Surveillance
+Specimen Submission
+Training
+View All
+Sign up for Email Updates

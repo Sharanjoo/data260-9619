@@ -1,0 +1,176 @@
+Investigation Update: Salmonella Outbreak, May 2026 | Salmonella Infection | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Investigation Update:
+Salmonella
+Outbreak, May 2026
+For Everyone
+July 17, 2026
+Key points
+This outbreak is over. CDC and public health officials in several states investigated a multistate outbreak of
+Salmonella
+infections linked to Mogo brand moringa capsules. Although this outbreak is over, moringa capsules have a long shelf-life. If you still have any of the recalled capsules in your home, throw them out or return them.
+Latest update
+July 17, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) investigated a multistate outbreak of
+Salmonella
+Typhimurium infections
+.
+Epidemiologic data showed that Mogo brand moringa capsules may have been contaminated with
+Salmonella
+Typhimurium and made people sick.
+As of July 16, 2026, this outbreak is over.
+Epidemiologic data
+A total of 34 people infected with the outbreak strain of
+Salmonella
+were reported from 14 states. Illnesses started on dates ranging from August 27, 2025, to June 21, 2026. Of 25 people with information available, 11 have been hospitalized. No deaths have been reported.
+The true number of sick people in this outbreak was likely much higher than the number reported, and this outbreak may not have been limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+.
+Public health officials collected many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provided clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Age
+(n=34)
+Range from 1 to 93 years
+Median age of 63
+Sex
+(n=34)
+53% female
+47% male
+Race
+(n=24)
+96% White
+4% African American/Black
+Ethnicity
+(n=23)
+100% non-Hispanic
+0% Hispanic
+State and local public health officials interviewed people about the foods they ate in the week before they got sick. Of the 17 people interviewed, 14 (82%) reported eating moringa powder capsules, including 11 who reported Mogo brand moringa capsules. One additional person reported eating the moringa capsules while breastfeeding. This woman's infant was sick with the outbreak strain.
+Laboratory and traceback data
+Public health investigators used CDC's
+PulseNet
+system to identify illnesses that were part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+.
+WGS showed that bacteria from sick people's samples were closely related genetically. This suggests that people in this outbreak got sick from the same food.
+State officials in Florida, Tennessee, and Washington collected opened containers of Mogo brand moringa capsules from ill people's homes for testing. Samples tested positive for
+Salmonella
+, and WGS showed that the
+Salmonella
+in these samples was closely related to bacteria from sick people. Additionally, Florida's sample was positive for one other strain of
+Salmonella
+.
+WGS analysis
+of bacteria from 33 people's samples did not predict resistance to any antibiotics; analysis of one person's sample predicted resistance to tetracycline. Most people with
+Salmonella
+infection recover without antibiotics. However, if antibiotics are needed, this resistance is unlikely to affect the choice of antibiotic used to treat most people. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+FDA conducted a traceback investigation of products sick people consumed before getting sick to determine the source of the contamination and worked with state partners to collect samples for testing.
+Public health actions
+This outbreak is over. However, moringa capsules have a long shelf-life. If you still have any of the recalled capsules in your home, throw them out or return them.
+Learn
+what you can do to protect yourself from getting sick from
+Salmonella
+.
+Previous updates
+May 27, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) are collecting
+different types of data
+to investigate a multistate outbreak of
+Salmonella
+Typhimurium infections
+.
+Epidemiologic data show that Mogo brand moringa capsules may be contaminated with
+Salmonella
+Typhimurium and may be making people sick.
+Epidemiologic data
+As of May 26, 2026, 18 people infected with the outbreak strain of
+Salmonella
+have been reported from 14 states. Illnesses started on dates ranging from February 3, 2026, to April 7, 2026. Of 13 people with information available, 7 have been hospitalized. No deaths have been reported.
+The true number of sick people in this outbreak is likely much higher than the number reported, and this outbreak may not have be limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+. In addition, recent illnesses may not yet be reported as it usually takes
+3 to 4 weeks
+to determine if a sick person is part of an outbreak.
+Public health officials collect many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provides clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Age
+(n=18)
+Range from 1 to 93 years
+Median age of 67
+Sex
+(n=18)
+50% female
+50% male
+Race
+(n=12)
+92% White
+8% African American/Black
+Ethnicity
+(n=11)
+100% non-Hispanic
+0% Hispanic
+State and local public health officials are interviewing people about the foods they ate in the week before they got sick. Of the 8 people interviewed, 6 (75%) reported eating moringa powder capsules, including 4 who reported Mogo brand moringa capsules
+.
+Laboratory and traceback data
+Public health investigators are using the CDC
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+.
+WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak got sick from the same food.
+WGS analysis
+of bacteria from 18 people's samples did not predict resistance to any antibiotics. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+FDA is conducting a traceback investigation of products sick people consumed before getting sick to determine the source of the contamination and is working with state partners to collect samples for testing.
+Public health actions
+On May 25, Mogo Moringa LLC conducted a voluntary recall of two lots of Moringa Oleifera Capsules. CDC is advising people not to eat, sell, or serve recalled Mogo brand moringa capsules.
+On This Page
+Latest update
+Previous updates
+July 17, 2026
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Emerging and Zoonotic Infectious Diseases (NCEZID)
+Salmonella
+Infection
+Salmonella
+bacteria (germs) are a leading cause of foodborne illness in the United States. Learn about symptoms, treatment, and prevention of infection.
+View All
+For Everyone
+About
+Symptoms
+Outbreaks
+How It Spreads
+Prevention
+Treatment
+Health Care Providers
+Clinical Overview
+Public Health
+Salmonella
+Surveillance
+Specimen Submission
+Training
+View All
+Sign up for Email Updates

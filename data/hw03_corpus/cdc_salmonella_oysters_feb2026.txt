@@ -1,0 +1,187 @@
+Investigation Update: Salmonella Outbreak, February 2026 | Salmonella Infection | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Investigation Update: Salmonella Outbreak, February 2026
+Feb. 24, 2026
+Key points
+This outbreak is over. Learn what you can do to protect yourself from getting sick from
+Salmonella
+.
+Final update - February 24, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA), investigated a multistate outbreak of
+Salmonella
+Telekebir infections.
+Epidemiologic data showed that oysters may have been contaminated with
+Salmonella
+and made people sick in this outbreak.
+As of February 24, 2026, this outbreak is over.
+Epidemiologic Data
+A total of 80 people infected with the outbreak strain of
+Salmonella
+were reported from 23 states. Illnesses started on dates ranging from June 21, 2025, to December 22, 2025. Of 68 people with information available, 34 (50%) were hospitalized. No deaths were reported.
+The true number of sick people in this outbreak was likely much higher than the number reported, and the outbreak may not have been limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+.
+Public health officials collected many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provided clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Demographics
+Information
+Age
+(n=71)
+Range from 1 to 76 years
+Median age of 55
+Sex
+(n=
+80
+)
+39% female
+61% male
+Race
+(n=
+57
+)
+86% White
+12% African American/Black
+2% Native Hawaiian or
+other Pacific Islander
+Ethnicity
+(n=59)
+95% non-Hispanic
+5% Hispanic
+State and local public health officials interviewed people about the foods they ate in the week before they got sick. Of the 43 people interviewed, 26 (60%) reported eating raw oysters. This percentage was significantly higher than the 1.6% of respondents who reported eating raw oysters in the
+FoodNet Population Survey
+—a survey that helps estimate how often people eat various foods linked to diarrheal illness. This difference suggested that people in this outbreak got sick from eating raw oysters.
+Traceback Data
+Oyster traceback information was collected by state and local authorities for 19 sick people who reported eating raw oysters. The information was provided to the CDC who shared it with FDA and state shellfish authorities.
+FDA worked with states to conduct traceback to identify sources of oysters consumed by sick people. No single common source of oysters was determined from the available information.
+Laboratory Data
+Public health investigators used the
+PulseNet
+system to identify illnesses that were part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+.
+WGS showed that bacteria from sick people's samples were closely related genetically. This suggests that people in this outbreak got sick from the same food.
+Based on
+WGS analysis
+, bacteria from 80 people's samples did not predict resistance to any antibiotics. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+Public Health Actions
+This outbreak is over. Consuming raw or undercooked shellfish can increase your risk of foodborne illness. Eating cooked shellfish can reduce this risk.
+Notice
+CDC investigated a separate outbreak of
+Salmonella
+Paratyphi B variant L(+) tartrate(+) infections during the same period as the
+Salmonella
+Telelkebir outbreak. One sick person in the
+Salmonella
+Paratyphi B outbreak ate raw oysters at a restaurant with a sick person from the
+Salmonella
+Telelkebir outbreak.
+A total of 18 people in 10 states were infected with the outbreak strain of
+Salmonella
+Paratyphi B variant L(+) tartrate(+). Illness onset dates ranged from November 13, 2025, to December 4, 2025. Of 15 people with information available, 4 were hospitalized
+.
+No deaths were reported.
+Among 12 people with information about foods eaten in the week before they became sick, all 12 (100%) reported eating oysters. Eleven specifically reported eating raw oysters.
+Previous updates
+December 23, 2025
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) are collecting
+different types of data
+to identify the food source of a multistate outbreak of
+Salmonella
+Telelkebir infections.
+Epidemiologic data show that oysters may be contaminated with
+Salmonella
+and may be making people sick in this outbreak. CDC and FDA are working to determine the source of these oysters.
+Epidemiologic Data
+As of December 23, 2025, 64 people infected with the outbreak strain of
+Salmonella
+have been reported from 22 states. Illnesses started on dates ranging from June 21, 2025, to November 28, 2025. Of 44 people with information available, 20 have been hospitalized
+.
+No deaths have been reported.
+The true number of sick people in this outbreak is likely much higher than the number reported, and the outbreak may not be limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+. In addition, recent illnesses may not yet be reported as it usually takes
+3 to 4 weeks
+to determine if a sick person is part of an outbreak.
+Public health officials collect many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provides clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Demographics
+Information
+Age
+(n=55)
+Range from 10 to 76 yearsMedian age of 52
+Sex
+(n=64)
+36% female65% male
+Race
+(n=41)
+85% White12% African American/Black2% Native Hawaiian or other Pacific Islander
+Ethnicity
+(n=41)
+95% non-Hispanic5% Hispanic
+State and local public health officials are interviewing people about the foods they ate in the week before they got sick. Of the 27 people interviewed, 20 (74%) reported eating raw oysters. This percentage was significantly higher than the 1.6% of respondents who reported eating raw oysters in the
+FoodNet Population Survey
+—a survey that helps estimate how often people eat various foods linked to diarrheal illness. This difference suggests that people in this outbreak got sick from eating raw oysters.
+Laboratory Data
+Public health investigators are using the
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+.
+WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak may have gotten sick from the same food.
+Based on
+WGS analysis
+, bacteria from 59 people's samples did not predict resistance to any antibiotics. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+Public Health Actions
+Raw oysters can be contaminated with germs at any time of year. Cook oysters before eating to reduce your risk of food poisoning.
+On This Page
+Final update - February 24, 2026
+Previous updates
+Feb. 24, 2026
+Sources
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source:
+National Center for Emerging and Zoonotic Infectious Diseases (NCEZID)
+Salmonella
+Infection
+Salmonella
+bacteria (germs) are a leading cause of foodborne illness in the United States. Learn about symptoms, treatment, and prevention of infection.
+View All
+For Everyone
+About
+Symptoms
+Outbreaks
+How It Spreads
+Prevention
+Treatment
+Health Care Providers
+Clinical Overview
+Public Health
+Salmonella
+Surveillance
+Specimen Submission
+Training
+View All
+Sign up for Email Updates

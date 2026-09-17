@@ -1,0 +1,228 @@
+Frequently Asked Questions: Food Allergen Labeling Guidance for Industry | FDA
+Skip to main content
+Skip to FDA Search
+Skip to in this section menu
+Skip to footer links
+Home
+Food
+Guidance & Regulation (Food and Dietary Supplements)
+Guidance Documents & Regulatory Information by Topic (Food and Dietary Supplements)
+Food Allergens/Gluten-Free Guidance Documents & Regulatory Information
+Frequently Asked Questions: Food Allergen Labeling Guidance for Industry
+Food Allergens/Gluten-Free Guidance Documents & Regulatory Information
+In this section
+Food Allergies
+On January 6, 2025, FDA published a revised 5th edition of FDA’s Guidance for Industry titled:
+Questions and Answers Regarding Food Allergens, Including the Food Allergen Labeling Requirements of the Federal Food, Drug, and Cosmetic Act
+(referred to as the Food Allergen Q&A Guidance). The guidance is intended to help the food industry meet the requirements for listing major food allergens (milk, egg, fish, Crustacean shellfish, tree nuts, wheat, peanuts, soybeans, and sesame) on the labels of FDA-regulated foods. Food labels are an important tool that help protect consumers with food allergies. Consumers can avoid ingredients they may be allergic to in a food by looking for specific allergen labeling and reading the ingredient list.
+The revised final guidance consolidates both the draft and final Food Allergen Q&A Guidance that issued on November 30, 2022. It has been updated to reflect FDA’s current thinking and contains new and revised questions and answers about various food allergen labeling topics. Some of the updates include information related to sesame as a major food allergen and our expanded interpretations of milk and eggs as major food allergens to include milk from ruminant animals other than cows and eggs from birds other than chickens. Also, several tree nuts, including coconut, are no longer considered major food allergens and do not appear on the list of major food allergens in the revised 5th edition of the
+Food Allergen Q&A Guidance
+.
+With the updates in the 5th edition of the
+Food Allergen Q&A Guidance
+, a firm’s existing product label and manufacturing practices may no longer be in compliance with FDA’s major food allergen requirements. FDA encourages firms to consider the food safety risk of their products and their practices in accordance with applicable requirements. FDA’s compliance approach is generally risk-based, and it evaluates each situation on a case-by-case basis. The updates to the 5th edition of the
+Food Allergen Q&A Guidance
+only impact the applicability of FDA’s requirements concerning major food allergens.
+These are frequently asked questions and answers regarding the updates to the latest edition of the guidance.
+If you have additional questions, please contact FDA’s Human Foods Program
+Food and Cosmetics Information Center
+(FCIC).
+Filter
+Topic
+Milk and Eggs
+Tree Nuts
+Consumer Questions
+General Questions
+Compliance Questions
+Clear Filters
+Topic
+Question
+Answer
+Last Updated
+(YYYY-MM-DD)
+Tree Nuts
+Did FDA’s interpretation of the major food allergen “tree nuts” change?
+Direct Link
+Yes. In response to several requests made by stakeholders and comments received, we evaluated all the tree nuts in the Tree Nut List in the 4th edition of the Food Allergen Q&A Guidance. Based on FDA’s review, including review of scientific information submitted in public comments to the docket, we concluded that only the tree nuts listed in Table 1 of the 5th edition are tree nuts for which a robust body of scientific evidence supports their inclusion in the list of tree nuts that FDA considers to be major food allergens (“Tree Nut List”).
+For more information, please see Questions C.7 and C.8 in the 5th edition of the
+Food Allergen Q&A guidance
+.
+2025/03/26
+Tree Nuts
+Does FDA still consider coconut a major food allergen?
+Direct Link
+No, coconut is no longer listed in the Tree Nut List (Table 1) in the 5th edition of the
+Food Allergen Q&A Guidance
+.
+For more information, please see Questions C.7 and C.8 in the 5th edition of the
+Food Allergen Q&A guidance
+.
+2025/03/26
+Tree Nuts
+In addition to coconut, what other tree nuts are no longer considered major food allergens? Do these tree nuts need to be labeled on food products?
+Direct Link
+In addition to coconut, other tree nuts that are no longer on the list of those considered major food allergens are beech nut, butternut, chestnut, chinquapin, cola/kola nut, ginkgo nut, hickory nut, palm nut, pili nut, shea nut, and lichee nut. Tree nuts not listed in the Tree Nut List (Table 1) in the 5th edition of the
+Food Allergen Q&A Guidance
+should not be included in the “Contains” statement, even if they are used as ingredients, because the “Contains” statement is reserved for major food allergens. However, these nuts must still be listed in the ingredients list by common or usual name when added as ingredients, unless an exemption applies (e.g., if a firm labels a natural coconut flavor ingredient simply as “natural flavor”) (21 CFR 101.4).
+For more information, please see Questions C.7 and C.8 in the 5th edition of the
+Food Allergen Q&A Guidance
+.
+2025/03/26
+Consumer Questions
+I have a coconut allergy. Will I still see coconut listed in a product’s “Contains” statement?
+Direct Link
+Coconut is no longer one of the tree nuts considered a major food allergen and, therefore, does not need to be declared as a major food allergen on the label. Therefore, if a product uses the “Contains” statement to declare major food allergens, you should not see coconut declared in the “Contains” statement. However, if coconut is an ingredient in a food, it is still required to be listed in the ingredient list (21 CFR 101.4), unless an exemption applies (e.g., if a firm labels a natural coconut flavor ingredient simply as “natural flavor”).
+There will be a transitional period before firms remove coconut from the “Contains” statement. In addition, some packaged foods can have a long shelf life, and you may continue to see products declaring coconut in the “Contains” statement for a few years.
+Also keep in mind that a food product’s ingredients can be changed at any time, so it’s a good idea to check the label every time you buy the food product.
+For more information, please see Questions C.7 and C.8 in the 5th edition of the
+Food Allergen Q&A guidance
+.
+2025/03/26
+Milk and Eggs
+Has FDA expanded the interpretation of “milk” and “eggs” as “major food allergens”?
+Direct Link
+Yes. For purposes of the definition of a “major food allergen” under section 201(qq) of the FD&C Act and for purposes of complying with the food allergen labeling requirements of the FD&C Act, FDA considers “milk” as milk from domesticated cows, goats, sheep, or other ruminants and “eggs” as eggs from domesticated chickens, ducks, geese, quail, and other fowl.
+FDA’s expanded interpretation of milk and eggs as major food allergens are based on its internal evaluation and comments received. When FDA issued the draft guidance in 2022, we asked stakeholders in that
+Notice of Availability
+(87 FR 73561) to comment on our longstanding interpretation of milk and eggs as major food allergens. Specifically, we asked about expanding our interpretation that “milk” was only from cows to include milk from other ruminant animals, and that “eggs” were only from chickens to include eggs from other birds. We received comments that provided information to support such revisions.
+For more information, please see Questions C.1, C.2, C.3, and C.4 in the 5th edition of the
+Food Allergen Q&A Guidance
+.
+2025/03/26
+Milk and Eggs
+My cheese product is made with both milk (from cows) and goat milk, which are labeled as “milk” and “goat milk” in the ingredient statement.
+If I don’t use the “Contains” statement, how do I declare milk and goat milk as major food allergens in the ingredient list?
+Direct Link
+Under section 403(i)(2) of the FD&C Act, ingredients must be declared by common or usual name. For food allergen labeling purposes, milk and milk ingredients from animals other than cows should also include the name of the animal source. In this case, the ingredient list for the cheese product would declare both “milk” and “goat milk” as the common or usual names of these ingredients. This declaration would also meet the food allergen labeling requirements because the name of the food source from which the major food allergen is derived would be in the list of ingredients.
+2025/03/26
+Milk and Eggs
+My cheese product is made with both milk (from cows) and goat milk, which are labeled as “milk” and “goat milk” in the ingredient statement.
+If I also choose to use a “Contains” statement, how do I declare milk and goat milk as major food allergens in the “Contains” statement?
+Direct Link
+If you also want to use the “Contains” statement, the statement would say, “Contains milk, goat milk,” and any other major food allergens used as ingredients in the product.
+For more information, please see Questions C1 and C2 in the 5th edition of the
+Food Allergen Q&A Guidance
+.
+2025/03/26
+Milk and Eggs
+My product is made with eggs (from chickens) and duck eggs, which are labeled as “eggs” and “duck eggs” in the ingredient statement. If I also choose to use a “Contains” statement, how do I declare eggs and duck eggs as major food allergens in the “Contains” statement?
+Direct Link
+For food allergen labeling purposes, eggs and egg ingredients from birds other than chickens also should include the name of the bird source. If you choose to use the “Contains” statement, the statement would say, “Contains eggs, duck eggs,” and any other major food allergens used as ingredients in the product.
+For more information, please see Questions C3 and C4 in the 5th edition of the
+Food Allergen Q&A Guidance
+.
+2025/03/26
+General Questions
+Can a firm use an allergen-free claim along with an allergen advisory statement for the same allergen? For example, can a food be labeled with a “wheat-free” claim along with a “may contain wheat” statement on the same label?
+Direct Link
+It is not appropriate to use an allergen-free (e.g., “wheat-free) claim along with an advisory statement (e.g., “may contain wheat”) for the same allergen. Allergen-free claims must be truthful and not misleading (section 403(a)(1) of the FD&C Act), and FDA reviews the labels on a case-by-case basis to determine potential violations.
+For more information, please see Question D.13 in the 5th edition of the
+Food Allergen Q&A guidance
+.
+2025/03/26
+General Questions
+Can a firm use a “Contains” statement along with an allergen advisory statement for the same allergen? For example, can a food be labeled with a “Contains peanuts” statement along with a “may contain peanut” statement?
+Direct Link
+It is not appropriate to use the “Contains” statement (e.g., “Contains peanuts”) along with an allergen advisory statement (e.g. “may contain peanuts”) for the same allergen because such practice could be misleading to consumers. Labels must be truthful and not misleading (section 403(a)(1) of the FD&C Act), and FDA reviews the labels on a case-by-case basis to determine potential violations.
+For more information, please see Question D.14 in the 5th edition of the
+Food Allergen Q&A guidance
+.
+2025/03/26
+General Questions
+Is FDA planning to update the Food Labeling Guide posted on your website to reflect changes in the final guidance?
+Direct Link
+Yes, we are working on updating our current
+Food Labeling Guide
+to incorporate our thinking set forth in the 5th edition of the
+Food Allergen Q&A Guidance
+. While the Allergen Labeling section of Food Labeling Guide is being updated, please reference the 5th edition of the
+Food Allergen Q&A Guidance
+for FDA’s current thinking on major food allergen labeling requirements.
+2025/03/26
+Compliance Questions
+For tree nuts that are no longer considered major food allergens (e.g., coconut), what are the implications on manufacturing requirements?
+Direct Link
+A food establishment handling a product using a tree nut that has been removed from the Tree Nut List as an ingredient (e.g., coconut), no longer needs to consider that tree nut as a major food allergen for the purpose of its manufacturing controls. Applicable manufacturing controls that address the major food allergen hazards include current good manufacturing controls, preventive controls, and/or hazard analysis and critical control point controls. For additional information related to manufacturing controls that address the major food allergen hazards,
+see Q&A “What are applicable manufacturing controls that address the major food allergen hazards?”
+2025/03/26
+Compliance Questions
+Now that FDA has updated their interpretation of milk and eggs as major food allergens, what are the implications on manufacturing requirements?
+Direct Link
+A firm manufacturing a food product with milk from ruminant animals other than cows (e.g., goat milk), a product with eggs from birds other than chickens (e.g., duck eggs), or an ingredient derived from such milk or eggs (e.g., whey from goat milk) needs to consider such milk or egg as a major food allergen for the purpose of its manufacturing practices. Applicable manufacturing controls that address the major food allergen hazards include current good manufacturing controls, preventive controls, and/or hazard analysis and critical control point controls. For additional information related to manufacturing controls that address the major food allergen hazards,
+see Q&A “What are applicable manufacturing controls that address the major food allergen hazards?”
+2025/03/26
+Compliance Questions
+What are applicable manufacturing controls that address the major food allergen hazards?
+Direct Link
+Applicable manufacturing controls that address the major food allergen hazards and allergen cross-contact include
+21 CFR part 117
+, which establishes requirements applicable to establishments that manufacture, process, pack, or hold human food. Allergen cross-contact means the unintentional incorporation of a food allergen into a food.
+Part 117
+includes current good manufacturing practice (CGMP) requirements (primarily in subpart B, with associated requirements in subparts A and F).
+Part 117
+also establishes specific requirements (commonly called “preventive controls requirements;” primarily in subparts C and G, with associated requirements in subparts A, D, E, and F) for domestic and foreign facilities that are required to register under section 415 of the FD&C Act (21 U.S.C. 350d) to establish and implement hazard analysis and risk-based preventive controls for human food as mandated by section 418 of the FD&C Act (21 U.S.C. 350g). The requirements to protect against allergen cross-contact are in both the CGMP and the preventive controls sections of part 117.
+FDA’s revised final guidance with an updated interpretation of tree nuts, milk, and eggs provides new information about the potential allergen hazards associated with some foods. Under
+21 CFR 117.170
+, facilities are required to conduct a reanalysis of their food safety plan as a whole, or the applicable portion of their food safety plan whenever they become aware of new information about potential hazards associated with the food that they manufacture, process, pack, or hold (
+21 CFR 117.170
+(b)(2)).
+The preventive controls requirements in
+Part 117
+do not apply with respect to activities that are subject to hazard analysis and critical control point (HACCP) requirements in
+21 CFR part 120
+(for juice) or
+21 CFR part 123
+(for seafood) if a facility is required to comply with, and is in compliance with,
+21 CFR part 120
+or
+21 CFR part 123
+, respectively, with respect to such activities (see the exemptions in
+21 CFR 117.5
+(b) and (c)). However, juice and seafood processors should also consider allergen cross-contact under the sanitation standard operating procedures or in the HACCP plan under 21 CFR parts
+120
+and
+123
+, respectively.
+For additional information related to manufacturing controls that address the major food allergen hazards, see:
+-    Guidance for Industry:
+Fish and Fishery Products Hazards and Controls, Fourth Edition
+(June 2022)
+-    Guidance for Industry:
+Juice HACCP and the FDA Food Safety Modernization Act
+(December 2021)
+-    Guidance for Industry:
+Seafood HACCP and the FDA Food Safety Modernization Act
+(December 2021)
+-    Guidance for Industry:
+Juice Hazard Analysis Critical Control Point Hazards and Controls Guidance, First Edition
+(March 2004)
+2025/03/26
+Compliance Questions
+A uniform compliance date of January 1, 2028, for Food Labeling Regulations was recently published. Is this compliance date applicable to the Tree Nut List and other changes in this guidance? What about milk and eggs?
+Direct Link
+On December 30, 2024, FDA announced
+a uniform compliance date
+of January 1, 2028, for food labeling regulations. This uniform compliance date is only relevant to final FDA food labeling regulations published on or after January 1, 2025, and on or before December 31, 2026. Therefore, this uniform compliance date is not applicable to major food allergen labeling requirements in the FD&C Act and discussed in the Food Allergen Q&A Guidance. See Q&As below regarding labeling updates based on the updated Tree Nut List and updated interpretations of milk and eggs for allergen labeling purposes.
+2025/03/26
+Compliance Questions
+If I use duck eggs and goat milk as ingredients in my packaged food, but I do not label them as major food allergens in the “Contains” statement adjacent to my ingredient statement, can I continue to use these labels?
+Direct Link
+In this case, if the duck eggs and goat milk ingredients are labeled in the ingredient statement and a “Contains” statement is also used, firms must make necessary labeling updates by adding duck eggs and goat milk in the “Contains” statement. While firms must be in compliance with major food allergen requirements of the FD&C Act, we understand the implications of making label changes and that firms have been relying on previous guidance. However, these are significant public health concerns for those consumers who are allergic to these products and therefore we recommend label changes as soon as practicable. Alternatively, the firm may choose to use a sticker to cover the outdated labeling. FDA’s compliance approach is generally risk-based and FDA evaluates compliance actions on a case-by-case basis. If a firm has questions, we encourage the firm to contact FDA’s
+Food and Cosmetic Information Center
+.
+For more information on how to label these products, please see Questions C1-C4 in the 5th edition of the
+Food Allergen Q&A Guidance
+.
+2025/03/26
+Compliance Questions
+How long will companies have to update labels if the labels list coconut (or other tree nuts that have been removed from the Tree Nut List) in the Contains statement?
+Direct Link
+While firms must be in compliance with major food allergen requirements of the FD&C Act, we understand the implications of making label changes and that firms have been relying on previous guidance. Given those circumstances, FDA recognizes that product labels might be corrected the next time they are printed. Alternatively, the firm may choose to use a sticker to cover the outdated labeling.
+2025/03/26
+Content current as of:
+03/26/2025
+Regulated Product(s)
+Food & Beverages
+Feedback
+Back to
+Top

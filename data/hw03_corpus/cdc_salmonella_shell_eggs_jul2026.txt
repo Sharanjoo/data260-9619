@@ -1,0 +1,220 @@
+Investigation Update: Salmonella Outbreak, July 2026 | Salmonella Infection | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Investigation Update:
+Salmonella
+Outbreak, July 2026
+For Everyone
+Sept. 3, 2026
+Key points
+This outbreak is over. CDC, FDA, and public health officials in several states investigated a multistate outbreak of
+Salmonella
+infections linked to shell eggs. Recalled eggs are past their expiration. Learn what you can do to protect yourself from getting sick from
+Salmonella
+.
+Final update – September 3, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) investigated a multistate outbreak of
+Salmonella
+Enteritidis infections.
+Epidemiologic, laboratory, and traceback data showed that shell eggs produced and distributed by Midwest Poultry Services, L.P. were contaminated with
+Salmonella
+Enteritidis and made people sick in this outbreak.
+As of September 3, 2026, this outbreak is over.
+Epidemiologic data
+Cases
+Total cases
+134
+States
+18
+Hospitalizations
+34 (35%)
+Deaths
+0
+Illnesses started on dates ranging from November 21, 2025, to August 12, 2026. The true number of sick people in this outbreak was likely much higher than the number reported, and this outbreak may not have been limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+.
+Demographics
+Public health officials collected many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provided clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak (“n” is the number of people with information available for each demographic).
+Age
+(n=134)
+Range from less than one to 86 years
+Median age of 42
+Sex
+(n=132)
+53% female
+47% male
+Race
+(n=104)
+85% White
+11% African American/Black
+4% Asian
+Ethnicity
+(n=99)
+65% non-Hispanic
+35% Hispanic
+State and local public health officials interviewed people about the foods they ate in the week before they got sick. Of the 54 people interviewed, 46 (85%) reported eating shell eggs.
+Laboratory and traceback data
+Public health investigators used the
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+.
+WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak got sick from the same food.
+Based on
+WGS analysis
+, bacteria from 134 people's samples predicted nonsusceptibility to ciprofloxacin and resistance to nalidixic acid; this strain is related to
+a strain of
+Salmonella
+Enteritidis isolated from chicken, eggs, and backyard poultry
+.
+Most people with
+Salmonella
+illness recover without antibiotics. However, if antibiotics were needed, some illnesses in this outbreak may not have been treatable with some commonly recommended antibiotics and may have required a different antibiotic choice. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+As part of this investigation, FDA conducted a traceback investigation based on where sick people reported purchasing or eating eggs during the timeframe of interest. FDA identified Midwest Poultry Services, L.P as a common egg source for some cases.
+Midwest Poultry Services, L.P. collected samples at farms in Texas. Samples collected by the firm tested positive for
+Salmonella
+, and whole genome sequencing performed by the firm's third-party lab revealed that samples match the strain of
+Salmonella
+in this outbreak.
+As part of the investigation, FDA conducted an inspection at Midwest Poultry Services, L.P. in Texas and collected environmental samples. Three samples were positive for the outbreak strain of
+Salmonella
+by whole genome sequencing.
+Public health actions
+On July 22, 2026, Midwest Poultry Services, L.P.
+recalled
+more than 1.5 million dozen shell eggs due to possible
+Salmonella
+contamination. These eggs are no longer available for sale.
+Previous updates
+July 24, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA)are collecting
+different types of data
+to investigate a multistate outbreak of
+Salmonella
+Enteritidis infections
+.
+Epidemiologic, laboratory, and traceback data show that shell eggs produced and distributed by Midwest Poultry Services, L.P. may be contaminated with
+Salmonella
+Enteritidis and may be making people sick.
+Epidemiologic data
+Cases
+Illnesses started on dates ranging from November 21, 2025, to June 30, 2026. The true number of sick people in this outbreak is likely much higher than the number reported, and this outbreak may not be limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+. In addition, recent illnesses may not yet be reported as it usually takes
+3 to 4 weeks
+to determine if a sick person is part of an outbreak.
+Total cases
+98 (as of July 24, 2026)
+States
+17
+Hospitalizations
+26 (36%) of 72 people with information available
+Deaths
+0
+Demographics
+Public health officials collect many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provides clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Age
+(n=98)
+Range from less than one to 81 years
+Median age of 48
+Sex
+(n=96)
+54% female
+46% male
+Race
+(n=82)
+84% White
+12% African American/Black
+4% Asian
+Ethnicity
+(n=80)
+65% non-Hispanic
+35% Hispanic
+State and local public health officials are interviewing people about the foods they ate in the week before they got sick. Of the 44 people interviewed, 40 (91%) reported eating shell eggs.
+Laboratory and traceback data
+Public health investigators are using the
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+.
+WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak got sick from the same food.
+Based on
+WGS analysis
+, bacteria from 98 people's samples predicted nonsusceptibility to ciprofloxacin and resistance to nalidixic acid; this strain is related to
+a strain of
+Salmonella
+Enteritidis isolated from chicken, eggs, and backyard poultry
+.
+Most people with
+Salmonella
+illness recover without antibiotics. However, if antibiotics were needed, some illnesses in this outbreak may not be treatable with some commonly recommended antibiotics and may require a different antibiotic choice. More information is available at the
+National Antimicrobial Resistance Monitoring System (NARMS)
+site.
+As part of this investigation, FDA conducted a traceback investigation based on where sick people reported purchasing or eating eggs during the timeframe of interest, and Midwest Poultry Services, L.P was identified as a common egg source for some cases. Additional investigation is ongoing to determine if there are other sources of illness.
+Additionally, Midwest Poultry Services, L.P. collected samples at farms in Texas. Samples collected by the firm tested positive for
+Salmonella
+, and WGS performed by the firm's third-party lab revealed that samples match the strain of Salmonella in this outbreak.
+Public health actions
+On July 22, 2026, Midwest Poultry Services, L.P. recalled more than 1.5 million dozen shell eggs due to possible
+Salmonella
+contamination. CDC advises people and businesses to not eat, sell, or serve recalled shell eggs.
+On This Page
+Final update – September 3, 2026
+Previous updates
+Sept. 3, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Emerging and Zoonotic Infectious Diseases (NCEZID)
+About This Page
+Published:
+July 24, 2026
+Updated:
+September 3, 2026
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed:
+September 3, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.
+Salmonella
+Infection
+Salmonella
+bacteria (germs) are a leading cause of foodborne illness in the United States. Learn about symptoms, treatment, and prevention of infection.
+View All
+For Everyone
+About
+Symptoms
+Outbreaks
+How It Spreads
+Prevention
+Treatment
+Health Care Providers
+Clinical Overview
+Public Health
+Salmonella
+Surveillance
+Specimen Submission
+Training
+View All
+Sign up for Email Updates

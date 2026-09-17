@@ -1,0 +1,231 @@
+Investigation Update: Salmonella  Outbreak, August 2026 | Salmonella Infection | CDC
+Skip directly to site content
+Skip directly to search
+An official website of the United States government
+Here's how you know
+Official websites use .gov
+A
+.gov
+website belongs to an official government organization in the United States.
+Secure .gov websites use HTTPS
+A
+lock
+(
+) or
+https://
+means you've safely connected to the .gov website. Share sensitive information only on official, secure websites.
+Investigation Update:
+Salmonella
+Outbreak, August 2026
+For Everyone
+Aug. 19, 2026
+Key points
+CDC and public health officials in several states are investigating a multistate outbreak of
+Salmonella
+infections linked to jalapeño peppers. Check for recalled jalapeño peppers and do not eat, sell, or serve them.
+August 19, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) are collecting
+different types of data
+to investigate a multistate outbreak of
+Salmonella
+Javiana infections
+.
+Epidemiologic and traceback data show that jalapeño peppers from Sinaloa, Mexico and distributed by Coast Citrus Distributors may be contaminated with
+Salmonella
+Javiana and are making people sick.
+Epidemiologic data
+Total cases
+431 (as
+of August 19, 2026)
+States
+32
+Hospitalizations
+57 (15%)
+of 376 people with information available
+Deaths
+0
+Illnesses started on dates ranging from June 19, 2026 to August 2, 2026. The true number of sick people in this outbreak is likely much higher than the number reported, and this outbreak may not be limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+. In addition, recent illnesses may not yet be reported as it usually takes
+3 to 4 weeks
+to determine if a sick person is part of an outbreak.
+Demographics
+Public health officials collect many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provides clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Age
+(n=431)
+Range
+from <1 to 85 years
+Median
+age of 30
+Sex
+(n=417)
+62%
+female
+38%
+male
+Race
+(n=250)
+83%
+White
+15%
+African American/Black
+1% Native American or Alaska Native
+<1% Native Hawaiian or other Pacific Islander
+<1% reported more than one race
+Ethnicity
+(n=250)
+94%
+non-Hispanic
+6%
+Hispanic
+Food exposure
+State and local public health officials are interviewing people about the foods they ate in the week before they got sick. Of the 224 people interviewed, 203 (91%) reported eating at a Mexican-style restaurant before their illness, including Chipotle Mexican Grill and QDOBA, with meal dates ranging from June 14, 2026, to July 16, 2026.
+Many sick people were identified as part of illness clusters. An illness cluster is defined as two or more people who do not live in the same household who report eating at the same restaurant location, attending a common event, or shopping at the same location of a grocery store in the week before becoming sick. Investigating illness clusters can provide critical clues about the source of an outbreak. If several unrelated sick people ate or shopped at the same location of a restaurant or store within several days of each other, it suggests that the contaminated food item was served or sold there.
+A total of 28 illness clusters have been identified at Chipotle Mexican Grill and QDOBA locations in 8 states. Commonly reported ingredient items included jalapeño pepper, red onion, cilantro, and avocado.
+Laboratory and traceback data
+Public health investigators are using the
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+. WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak got sick from the same food.
+Based on
+WGS analysis
+, bacteria from 428 people's samples had no predicted antimicrobial resistance. Bacteria from 3 people's samples were predicted to be resistant to one or more of the following antibiotics: amoxicillin-clavulanic acid, ampicillin, azithromycin, ceftriaxone, cefoxitin, ceftiofur, streptomycin, sulfisoxazole, and trimethoprim-sulfamethoxazole. Bacteria from 1 of these samples also had predicted nonsusceptibility to ciprofloxacin.
+Most people with
+Salmonella
+illness recover without antibiotics. However, if antibiotics are needed,
+Salmonella
+illness with this predicted resistance may not be treatable with commonly recommended antibiotics and may require a different antibiotic choice. More information is available at
+National Antimicrobial Resistance Monitoring System (NARMS)
+.
+As part of this investigation, FDA conducted a traceback investigation based on where ill people reported eating during the timeframe of interest. A common grower in Sinaloa, Mexico, that supplies to Coast Citrus Distributors was identified as the likely source in this outbreak.
+Public health actions
+After being notified about the outbreak, Chipotle Mexican Grill and QDOBA stopped serving affected jalapeño peppers. Given their actions to remove product from their stores, CDC and FDA do not consider there to be a current ongoing risk from these establishments to consumers in this outbreak. Coast Citrus Distributors recalled jalapeño peppers linked to this outbreak.The firm is no longer importing from the common grower.
+Additional recalls of products containing recalled jalapeno peppers have been announced since the initial recall. See FDA's
+notice
+and FSIS's
+recall
+for more information.
+Previous updates
+August 13, 2026
+Public health actions
+On August 12, 2026, Whole Foods Market recalled products that contain jalapeño peppers. Do not eat, sell, or serve recalled jalapeño peppers.
+August 10, 2026
+Public Health Actions
+On August 8, 2026, Taylor Fresh Foods recalled jalapeño peppers. Do not eat, sell, or serve recalled jalapeño peppers.
+August 5, 2026
+CDC, public health and regulatory officials in several states, and the U.S. Food and Drug Administration (FDA) are collecting
+different types of data
+to investigate a multistate outbreak of
+Salmonella
+Javiana infections
+.
+Epidemiologic and traceback data show that jalapeño peppers from Sinaloa, Mexico and distributed by Coast Citrus Distributors may be contaminated with
+Salmonella
+Javiana and are making people sick.
+Epidemiologic Data
+Cases
+Total Cases
+345 (as of August 4, 2026)
+States
+27
+Hospitalizations
+36 (12%) of 291 people with information available
+Deaths
+0
+Illnesses started on dates ranging from June 19, 2026 to July 20, 2026. The true number of sick people in this outbreak is likely much higher than the number reported, and this outbreak may not be limited to the states with known illnesses. This is because many people recover without medical care and are not tested for
+Salmonella
+. In addition, recent illnesses may not yet be reported as it usually takes
+3 to 4 weeks
+to determine if a sick person is part of an outbreak.
+Demographics
+Public health officials collect many different types of information from sick people, including their age, race, ethnicity, other demographics, and the foods they ate in the week before they got sick. This information provides clues to help investigators identify the source of the outbreak.
+The table below has information about sick people in this outbreak ("n" is the number of people with information available for each demographic).
+Age
+(n=345)
+Range from <1 to 85 years
+Median age of 30
+Sex
+(n=342)
+63% female
+37% male
+Race
+(n=181)
+90% White
+9% African American/Black
+<1% Native American or Alaska Native
+<1% Native Hawaiian or other Pacific Islander
+<1% reported more than one race
+Ethnicity
+(n=184)
+93% non-Hispanic
+7% Hispanic
+Food exposure
+State and local public health officials are interviewing people about the foods they ate in the week  before they got sick. Of the 191 people interviewed, 177 (93%) reported eating at a Mexican-style restaurant before their illness, including Chipotle Mexican Grill and QDOBA, with meal dates ranging from June 14, 2026, to July 14, 2026.
+Many sick people were identified as part of illness clusters. An illness cluster is defined as two or more people who do not live in the same household who report eating at the same restaurant location, attending a common event, or shopping at the same location of a grocery store in the week before becoming sick. Investigating illness clusters can provide critical clues about the source of an outbreak. If several unrelated sick people ate or shopped at the same location of a restaurant or store within several days of each other, it suggests that the contaminated food item was served or sold there.
+Twenty-seven illness clusters have been identified at Chipotle Mexican Grill and QDOBA locations in 7 states. Commonly reported ingredient items included jalapeño peppers, red onion, cilantro, and avocado.
+Laboratory and Traceback Data
+Public health investigators are using the
+PulseNet
+system to identify illnesses that may be part of this outbreak. CDC PulseNet manages a national database of DNA fingerprints of bacteria that cause foodborne illnesses. DNA fingerprinting is performed on bacteria using a method called
+whole genome sequencing (WGS)
+. WGS showed that bacteria from sick people's samples are closely related genetically. This suggests that people in this outbreak got sick from the same food.
+Based on
+WGS analysis
+, bacteria from 343 people samples had no predicted
+antimicrobial resistance
+. Bacteria from one person's sample were predicted to be resistant to ampicillin, ceftiofur, ceftriaxone, streptomycin, sulfisoxazole, trimethoprim-sulfamethoxazole, and to be nonsusceptible to ciprofloxacin. Bacteria from another person's sample were predicted to be resistant to azithromycin.
+Most people with
+Salmonella
+illness recover without antibiotics. However, if antibiotics are needed,
+Salmonella
+illness with this predicted resistance may not be treatable with commonly recommended antibiotics and may require a different antibiotic choice. More information is available at
+National Antimicrobial Resistance Monitoring System (NARMS)
+.
+As part of this investigation, FDA conducted a traceback investigation based on where ill people reported eating during the timeframe of interest, and a common grower of jalapeños in Sinaloa, Mexico that supplies to Coast Citrus Distributors was identified as the likely source in this outbreak.
+Public Health Actions
+CDC is advising businesses to check for and not serve recalled jalapeño peppers while the investigation is ongoing. After being notified about the outbreak, Chipotle Mexican Grill and QDOBA stopped serving affected jalapeño peppers. Given their actions to remove product from their stores, CDC and FDA do not consider there to be a current ongoing risk from these establishments to consumers in this outbreak.
+On This Page
+August 19, 2026
+Previous updates
+Aug. 19, 2026
+Sources and Page Info
+Print
+Share
+Facebook
+LinkedIn
+Twitter
+Syndicate
+Content Source
+National Center for Emerging and Zoonotic Infectious Diseases (NCEZID)
+About This Page
+Published:
+August 5, 2026
+Updated:
+August 19, 2026
+This page was last updated on this date. Updates may include minor edits, image changes, or other modifications to page content.
+Reviewed:
+August 19, 2026
+The information on this page was last reviewed by subject matter experts to ensure accuracy.
+Salmonella
+Infection
+Salmonella
+bacteria (germs) are a leading cause of foodborne illness in the United States. Learn about symptoms, treatment, and prevention of infection.
+View All
+For Everyone
+About
+Symptoms
+Outbreaks
+How It Spreads
+Prevention
+Treatment
+Health Care Providers
+Clinical Overview
+Public Health
+Salmonella
+Surveillance
+Specimen Submission
+Training
+View All
+Sign up for Email Updates
