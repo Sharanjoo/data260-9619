@@ -1,0 +1,207 @@
+{
+  "corpus_domain": "Grocery / food-safety recalls and foodborne-illness outbreaks (FDA, USDA FSIS scope excluded due to bot-blocking, CDC)",
+  "total_documents": 25,
+  "total_bytes": 218194,
+  "documents": [
+    {
+      "filename": "cdc_cyclospora_iceberg_lettuce_july2026.txt",
+      "title": "CDC \u2014 Cyclospora Outbreak Linked to Iceberg Lettuce, July 2026",
+      "source_url": "https://www.cdc.gov/cyclosporiasis/outbreaks/07-26/index.html",
+      "bytes": 4611,
+      "sha256": "5ada10e357938ea336d19ee941b7e16fa710353c35de9900394550ffb34c9b3b",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_ecoli_salmonella_alfalfa_sprouts_aug2026.txt",
+      "title": "CDC \u2014 E. coli & Salmonella Outbreak Investigation, August 2026 (alfalfa sprouts)",
+      "source_url": "https://www.cdc.gov/ecoli/outbreaks/alfalfa-sprouts-08-26/investigation.html",
+      "bytes": 7088,
+      "sha256": "0a24f02f94c0e09613eae444cf16d04f98dc409734270736442aa7a85b110b03",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_food_poisoning_facts.txt",
+      "title": "CDC \u2014 Facts About Food Poisoning",
+      "source_url": "https://www.cdc.gov/food-safety/data-research/facts-stats/index.html",
+      "bytes": 2116,
+      "sha256": "858e7b08e2276f77a7876d4fe9f857fb9d8e3ebc86c1f7a37da259292663b476",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_food_safety_basics.txt",
+      "title": "CDC \u2014 Food Safety Basics",
+      "source_url": "https://www.cdc.gov/food-safety/about/index.html",
+      "bytes": 4154,
+      "sha256": "798666f631d3b037048361bc1fb456d2da320a737570e9c77f3abe15163149da",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_listeria_soft_cheese_june2026.txt",
+      "title": "CDC \u2014 Listeria Outbreak Investigation Update, June 2026 (soft cheese)",
+      "source_url": "https://www.cdc.gov/listeria/outbreaks/soft-cheese-06-26/investigation.html",
+      "bytes": 18822,
+      "sha256": "48a015dd7d138dce4098920f6e51b9a8cecef07c1d25a9e9374cd16c1c634315",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_listeria_delimeats_2024.txt",
+      "title": "CDC \u2014 Listeria Outbreak Linked to Meats Sliced at Delis, 2024",
+      "source_url": "https://www.cdc.gov/listeria/outbreaks/delimeats-7-24/index.html",
+      "bytes": 4838,
+      "sha256": "bc46bd2897ed6204739e0adf018497986030b5777a214d0751c9c92a60a705ba",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_listeria_outbreaks_index.txt",
+      "title": "CDC \u2014 Listeria Outbreaks (index of past outbreaks)",
+      "source_url": "https://www.cdc.gov/Listeria/outbreaks/index.html",
+      "bytes": 1825,
+      "sha256": "27d43998dc8d7f973cb76dd91ac8e697e08a74c75c66af4e28d4d07baa7d006c",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_norovirus_outbreak_basics.txt",
+      "title": "CDC \u2014 Norovirus Outbreaks (basics)",
+      "source_url": "https://www.cdc.gov/norovirus/outbreak-basics/index.html",
+      "bytes": 7504,
+      "sha256": "25c4309786abdbb223b9dc6e9c19ae5da66c782a90dc917389f5144a6aabbdae",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_listeria_prevention.txt",
+      "title": "CDC \u2014 Preventing Listeria Infection",
+      "source_url": "https://www.cdc.gov/listeria/prevention/index.html",
+      "bytes": 5223,
+      "sha256": "92d74fc6daeb0c71bcbdc96e31d638ad1adbebd799a3b553fae64214abfc68ef",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_salmonella_javiana_aug2026.txt",
+      "title": "CDC \u2014 Salmonella Outbreak Investigation Update, August 2026 (Javiana)",
+      "source_url": "https://www.cdc.gov/salmonella/outbreaks/javiana-08-26/investigation.html",
+      "bytes": 12457,
+      "sha256": "e25430cde8c5a32628d867b5f6622ee058ac8e2a2bdeefcf06e9c3127bf9b2a6",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_salmonella_oysters_feb2026.txt",
+      "title": "CDC \u2014 Salmonella Outbreak Investigation, February 2026 (oysters)",
+      "source_url": "https://www.cdc.gov/salmonella/outbreaks/oysters-12-25/investigation.html",
+      "bytes": 8916,
+      "sha256": "323baa2e6ce674cbfebb91d9547bb87ca9df992a6584320e44e05c625c4e8f89",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_salmonella_shell_eggs_jul2026.txt",
+      "title": "CDC \u2014 Salmonella Outbreak Investigation, July 2026 (shell eggs)",
+      "source_url": "https://www.cdc.gov/salmonella/outbreaks/shell-eggs-07-26/investigation.html",
+      "bytes": 9743,
+      "sha256": "82907b6815595e375591e128c439f4d1a2ae11797932bbbde0393746f79e4c69",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_salmonella_moringa_may2026.txt",
+      "title": "CDC \u2014 Salmonella Outbreak Investigation, May 2026 (moringa)",
+      "source_url": "https://www.cdc.gov/salmonella/outbreaks/moringa-05-26/investigation.html",
+      "bytes": 8557,
+      "sha256": "3c5bd95d02966579d3ad8f474fd1110767b65c66b2ed5edc1875d52311e2c08c",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "cdc_salmonella_broccoli_sprouts_sep2026.txt",
+      "title": "CDC \u2014 Salmonella Outbreak Investigation, September 2026 (broccoli sprouts)",
+      "source_url": "https://www.cdc.gov/salmonella/outbreaks/broccoli-sprouts-09-26/investigation.html",
+      "bytes": 5876,
+      "sha256": "9c5373671a188b8ec91a029ddff8a4cb3c6872bfd6420adfe0b8d543ce618cc4",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_fsma_background.txt",
+      "title": "FDA \u2014 Background on the FDA Food Safety Modernization Act (FSMA)",
+      "source_url": "https://www.fda.gov/food/food-safety-modernization-act-fsma/background-fda-food-safety-modernization-act-fsma",
+      "bytes": 10509,
+      "sha256": "0993a09e00bead2563fb934f6426db9a52df2018ab667bb688aa001c36d32a91",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_allergen_labeling_faq.txt",
+      "title": "FDA \u2014 FAQ: Food Allergen Labeling Guidance for Industry",
+      "source_url": "https://www.fda.gov/food/food-allergensgluten-free-guidance-documents-regulatory-information/frequently-asked-questions-food-allergen-labeling-guidance-industry",
+      "bytes": 19842,
+      "sha256": "ae65d60c5804b811ac58bba14cd35b4d8bcee014e8dd2be1368c20b34ddb43e0",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_food_allergies.txt",
+      "title": "FDA \u2014 Food Allergies",
+      "source_url": "https://www.fda.gov/food/nutrition-food-labeling-and-critical-foods/food-allergies",
+      "bytes": 21065,
+      "sha256": "23ca25330da43cfc0ec949c90b96addf0016fc9ba136f4a72ef374037567666e",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_fsma_overview.txt",
+      "title": "FDA \u2014 Food Safety Modernization Act (FSMA), main overview",
+      "source_url": "https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/food-safety-modernization-act-fsma",
+      "bytes": 5293,
+      "sha256": "4f79826d3c4b6394b56250628261a489f47119250ea085cbb89a001f2dff2804",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_mandatory_food_recalls_qa.txt",
+      "title": "FDA \u2014 Guidance for Industry and FDA Staff: Q&A Regarding Mandatory Food Recalls",
+      "source_url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-and-fda-staff-questions-and-answers-regarding-mandatory-food-recalls",
+      "bytes": 2265,
+      "sha256": "bec6063db874fafc0ac0c4f457bb322217e1e695abd96ba560470b0d33afeb59",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_allergen_labeling_qa_edition5.txt",
+      "title": "FDA \u2014 Guidance for Industry: Q&A Regarding Food Allergen Labeling, Edition 5",
+      "source_url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/guidance-industry-questions-and-answers-regarding-food-allergen-labeling-edition-5",
+      "bytes": 3911,
+      "sha256": "f079f42921f83bc07a669b85c639d01c46b6ae73326cfa3df7d264372ed81495",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_investigations_foodborne_outbreaks.txt",
+      "title": "FDA \u2014 Investigations of Foodborne Illness Outbreaks",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/investigations-foodborne-illness-outbreaks",
+      "bytes": 30073,
+      "sha256": "ca64b32fec2d628978e47288c6cf3fa5c99d5aab4c8ec527c4caf815d28bf245",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_major_product_recalls_index.txt",
+      "title": "FDA \u2014 Major Product Recalls (index)",
+      "source_url": "https://www.fda.gov/safety/recalls-market-withdrawals-safety-alerts/major-product-recalls",
+      "bytes": 2787,
+      "sha256": "19939aff5538350aec9c7f3d6a2db168bd5e1377b062fff3420e35b318492efd",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_outbreak_ecoli_salmonella_sprouts_aug2026.txt",
+      "title": "FDA \u2014 Outbreak Investigation: E. coli & Salmonella, Sprouts, August 2026",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/outbreak-investigation-shiga-toxin-producing-e-coli-salmonella-sprouts-august-2026",
+      "bytes": 11411,
+      "sha256": "5908fa6f3fdd4796708d445d2fe4a7eeb942faee2cebe02fb491892dc84c9e5d",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_public_health_advisories_outbreaks.txt",
+      "title": "FDA \u2014 Public Health Advisories from Investigations of Foodborne Illness Outbreaks",
+      "source_url": "https://www.fda.gov/food/outbreaks-foodborne-illness/public-health-advisories-investigations-foodborne-illness-outbreaks",
+      "bytes": 7580,
+      "sha256": "05fd6d8ad3e5844f52c8bb75338aed90c9c3ca5b0424d9843936cad48f1a23ea",
+      "access_date": "2026-09-17"
+    },
+    {
+      "filename": "fda_recalls_background_definitions.txt",
+      "title": "FDA \u2014 Recalls Background and Definitions",
+      "source_url": "https://www.fda.gov/safety/industry-guidance-recalls/recalls-background-and-definitions",
+      "bytes": 1728,
+      "sha256": "0eab861671d3376ac03ab441bca2b5dd34ae2e7f9e8c443055d7efcdf6f13626",
+      "access_date": "2026-09-17"
+    }
+  ]
+}

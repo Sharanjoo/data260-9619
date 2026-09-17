@@ -1,0 +1,59 @@
+# HW3 Part 2 — five domain questions, committed BEFORE the graded retrieval comparison.
+# DOMAIN_ID = 9619 mod 8 = 3 (grocery / food-safety recalls and foodborne-illness outbreaks)
+domain_id: 3
+domain: "Grocery recalls and foodborne-illness outbreaks (FDA, CDC primary sources)"
+
+questions:
+  - id: 1
+    question: >
+      In CDC's investigation of the Salmonella Enteritidis outbreak linked to shell eggs
+      (July 2026 update), how many illnesses, states, and hospitalizations were reported,
+      and what company supplied the eggs?
+    expected_answer: >
+      134 illnesses across 18 states, including 34 hospitalizations and 0 deaths, linked to
+      Salmonella Enteritidis in shell eggs from Midwest Poultry Services, L.P.
+    expected_source_file: cdc_salmonella_shell_eggs_jul2026.txt
+    single_source_dependent: true
+
+  - id: 2
+    question: >
+      What pathogen and product were linked to the Salmonella outbreak CDC investigated
+      in September 2026, and what were the final case counts?
+    expected_answer: >
+      Salmonella Bovismorbificans linked to broccoli sprouts produced by Evergreen Fresh
+      Sprouts, LLC; 22 illnesses across 4 states, including 2 hospitalizations and 0 deaths.
+    expected_source_file: cdc_salmonella_broccoli_sprouts_sep2026.txt
+    single_source_dependent: true
+
+  - id: 3
+    question: >
+      What is the difference between an FDA Class I, Class II, and Class III recall?
+    expected_answer: >
+      Class I: a reasonable probability that use of or exposure to the violative product
+      will cause serious adverse health consequences or death. Class II: use of or exposure
+      may cause temporary or medically reversible adverse health consequences, or the
+      probability of serious adverse health consequences is remote. Class III: use of or
+      exposure is not likely to cause adverse health consequences.
+    expected_source_file: fda_recalls_background_definitions.txt
+    single_source_dependent: false
+
+  - id: 4
+    question: >
+      What are the nine major food allergens that must be declared on U.S. food labels,
+      and when was the ninth one added?
+    expected_answer: >
+      Milk, eggs, fish, Crustacean shellfish, tree nuts, peanuts, wheat, soybeans, and
+      sesame. The 2004 FALCPA law named the first eight; sesame was added as the ninth
+      major allergen under the 2021 FASTER Act, effective January 1, 2023.
+    expected_source_file: fda_food_allergies.txt
+    single_source_dependent: false
+
+  - id: 5
+    question: >
+      What pathogen and contaminated product were linked in CDC's June 2026 investigation
+      of the Listeria outbreak, and what were the final case counts, including deaths?
+    expected_answer: >
+      Listeria monocytogenes linked to Requesón cheese supplied by Clover Hill Dairy; 15
+      total illnesses across 4 states, 14 hospitalizations, and 1 death (in Maryland).
+    expected_source_file: cdc_listeria_soft_cheese_june2026.txt
+    single_source_dependent: true
