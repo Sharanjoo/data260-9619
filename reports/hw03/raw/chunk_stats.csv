@@ -1,0 +1,4 @@
+technique,num_chunks,avg_chunk_length_chars,min_chunk_length_chars,max_chunk_length_chars
+token,243,936.8,114,1456
+semantic,99,2128.6,50,18258
+sentence_window,1288,163.6,5,9951
