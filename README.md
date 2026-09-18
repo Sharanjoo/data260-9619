@@ -31,6 +31,15 @@ The configuration is calculated as follows:
 - `scripts/run_nondeterminism.py` - resumable 20 + 20 run experiment.
 - `scripts/verify_hw01.py` - writes `reports/hw01/verification.json`.
 - `reports/hw01/` - report evidence, raw outputs, metrics, and AI-use disclosure.
+- `code/main.py` - FastAPI backend: HW2 notices API, extended in HW3 with session auth.
+- `code/auth.py` - HW3 Part 1 authentication routes (login/logout, session, idle timeout).
+- `code/templates/` - HW3 Bootstrap-styled Jinja2 templates (home/login/dashboard).
+- `code/agent_graph/`, `code/agent_graph_demo.py` - HW2 LangGraph Planner/Reviewer pipeline.
+- `data/hw03_corpus/` - HW3 domain corpus: 25 real FDA/CDC recall and outbreak documents.
+- `scripts/fetch_corpus*.py`, `scripts/build_manifest.py` - HW3 corpus sourcing + provenance.
+- `scripts/build_chunk_stats.py`, `scripts/run_retrieval_comparison.py`, `scripts/build_metrics.py` - HW3 chunking/retrieval pipeline.
+- `scripts/verify_hw03.py` - HW3 self-check.
+- `reports/hw02/`, `reports/hw03/` - homework-specific evidence, same pattern as `reports/hw01/`.
 
 Application code remains in the shared root-level `code/` and `src/` folders so later homework
 can extend it. Homework-specific evidence belongs only under `reports/hwXX/`.
@@ -222,5 +231,69 @@ git push origin hw1
 git rev-parse hw1^{}
 ```
 
-Submit the GitHub URL ending in `/tree/hw1` and the exact `reports/hw01/report.pdf` stored at that
-tag.
+
+## 8. Homework 3
+
+Homework 3 extends the same repository: Part 1 adds a FastAPI session-based auth system for
+the grocery recall domain, and Part 2 compares three LlamaIndex chunking techniques for
+retrieval-only RAG over a real domain corpus.
+
+### 8.1 Setup
+
+```powershell
+pip install -r requirements.txt
+```
+
+### 8.2 Part 1: authentication system
+
+```powershell
+cd code
+python main.py
+```
+
+Open <http://localhost:8619>. Log in with username `inspector`, password `recall2026`.
+The original HW1/HW2 grocery notices application is unchanged and now served at
+<http://localhost:8619/recalls-app> (moved off `/` to make room for the HW3 home page).
+
+### 8.3 Part 2: domain corpus and chunking comparison
+
+The domain corpus (`data/hw03_corpus/`, 25 real FDA/CDC documents, 218 KB) and
+`reports/hw03/questions.yaml` are already committed. To rebuild from scratch:
+
+```powershell
+python scripts\fetch_corpus.py
+python scripts\fetch_corpus_part2.py
+python scripts\fetch_corpus_part3.py
+python scripts\fetch_corpus_part4.py
+python scripts\fetch_corpus_part5.py
+python scripts\build_manifest.py
+```
+
+To re-run the chunking comparison and regenerate `reports/hw03/METRICS.md` from raw data:
+
+```powershell
+python scripts\build_chunk_stats.py
+python scripts\run_retrieval_comparison.py
+python scripts\build_metrics.py
+```
+
+### 8.4 Self-check
+
+With the app running (`python code\main.py` in a separate terminal):
+
+```powershell
+python scripts\verify_hw03.py
+```
+
+Writes `reports/hw03/verification.json`.
+
+### 8.5 Git history and submission
+
+```powershell
+git add reports/hw03
+git commit -m "hw3: add final evidence and report"
+git tag -a hw3 -m "DATA 260 Homework 3"
+git push origin main
+git push origin hw3
+git rev-parse hw3^{}
+```

@@ -1,2 +1,15 @@
-langgraph
-pydantic==2.12.5
+fastapi
+uvicorn
+pydantic
+jinja2
+python-multipart
+itsdangerous
+requests
+beautifulsoup4
+pyyaml
+llama-index
+llama-index-embeddings-huggingface
+sentence-transformers
+faiss-cpu
+numpy
+pandas
