@@ -1,9 +1,9 @@
 services:
   web:
     build:
-      context: ./code
-      dockerfile: Dockerfile
-    image: data260-hw2-s9619:latest
-    container_name: data260-hw2-s9619
+      context: .
+      dockerfile: code/Dockerfile
+    image: data260-hw3-s9619:latest
+    container_name: data260-hw3-s9619
     ports:
       - "8619:8619"
