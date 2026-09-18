@@ -1,0 +1,100 @@
+{
+  "generated_at": "2026-09-18T05:42:57.092187+00:00",
+  "domain_id": 3,
+  "sid4": 9619,
+  "checks_passed": 18,
+  "checks_total": 18,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "corpus_manifest_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "corpus_files_match_manifest",
+      "passed": true,
+      "detail": "25 documents checked, 0 mismatches"
+    },
+    {
+      "check": "corpus_meets_200kb_minimum",
+      "passed": true,
+      "detail": "218,194 bytes"
+    },
+    {
+      "check": "questions_yaml_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "questions_yaml_has_five_questions",
+      "passed": true,
+      "detail": "found 5"
+    },
+    {
+      "check": "questions_have_required_fields",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "at_least_two_single_source_questions",
+      "passed": true,
+      "detail": "3 marked single-source"
+    },
+    {
+      "check": "retrieval_results_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "retrieval_results_row_count",
+      "passed": true,
+      "detail": "found 75 rows (expected 75 = 5 questions x 3 techniques x top-5)"
+    },
+    {
+      "check": "chunk_stats_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "metrics_md_exists",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "home_page_reachable",
+      "passed": true,
+      "detail": "status 200"
+    },
+    {
+      "check": "invalid_login_rejected",
+      "passed": true,
+      "detail": "status 401"
+    },
+    {
+      "check": "dashboard_blocked_without_session",
+      "passed": true,
+      "detail": "status 303, location=/login"
+    },
+    {
+      "check": "valid_login_redirects_to_dashboard",
+      "passed": true,
+      "detail": "status 303"
+    },
+    {
+      "check": "set_cookie_has_required_attributes",
+      "passed": true,
+      "detail": "hw3_session=eyJ1c2VyIjogImluc3BlY3RvciIsICJsYXN0X2FjdGl2aXR5IjogMTc4OTcxMDE3MC45MDIwODd9.aqzPWg.3O4YlwWObdn-7txr98I6lO6e..."
+    },
+    {
+      "check": "authenticated_dashboard_reachable",
+      "passed": true,
+      "detail": "status 200"
+    },
+    {
+      "check": "dashboard_blocked_after_logout",
+      "passed": true,
+      "detail": "status 303"
+    }
+  ]
+}
