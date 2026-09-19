@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — Grocery Recall Portal{% endblock %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h1 class="card-title">Welcome, {{ user }}!</h1>
+    <p class="card-text">This is your protected dashboard for the Grocery Recall Portal.</p>
+    <a href="/logout" class="btn btn-outline-danger">Logout</a>
+  </div>
+</div>
+{% endblock %}

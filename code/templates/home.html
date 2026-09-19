@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Home — Grocery Recall Portal{% endblock %}
+{% block content %}
+<div class="card shadow-sm">
+  <div class="card-body">
+    <h1 class="card-title">Welcome to the Grocery Recall Portal</h1>
+    <p class="card-text">
+      Track and manage grocery product recall notices (DOMAIN_ID 3 — grocery recalls
+      and foodborne-illness outbreaks).
+    </p>
+    {% if user %}
+      <p>You're signed in as <strong>{{ user }}</strong>.</p>
+      <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+      <a href="/logout" class="btn btn-outline-secondary">Logout</a>
+    {% else %}
+      <a href="/login" class="btn btn-primary">Login</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

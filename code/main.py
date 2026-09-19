@@ -1,4 +1,4 @@
-"""FastAPI backend for the Grocery Recall Notice app (Homework 2, Part 2)."""
+"""FastAPI backend for the Grocery Recall Notice app (Homework 2 & 3)."""
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -9,11 +9,30 @@ from fastapi import FastAPI, HTTPException, Query, Response
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
 import uvicorn
+import os
+from starlette.middleware.sessions import SessionMiddleware
+from auth import router as auth_router
 
 PORT_BASE = 8619
 WEB_DIR = Path(__file__).resolve().parent / "web_application"
 
-app = FastAPI(title="Grocery Recall Notice API", version="2.0.0")
+app = FastAPI(title="Grocery Recall Notice API", version="3.0.0")
+
+# HW3 Part 1: session middleware for the auth system.
+# SESSION_SECRET_KEY should come from an environment variable in a real deployment;
+# the fallback here is only for local homework demo use.
+SESSION_SECRET_KEY = os.environ.get("SESSION_SECRET_KEY", "hw3-dev-secret-9619-change-me")
+
+app.add_middleware(
+    SessionMiddleware,
+    secret_key=SESSION_SECRET_KEY,
+    session_cookie="hw3_session",
+    max_age=86400,       # 24h absolute ceiling
+    same_site="lax",
+    https_only=True,      # sets the Secure flag — works on http://localhost
+)
+
+app.include_router(auth_router)
 
 
 class RecallNotice(BaseModel):
@@ -131,7 +150,8 @@ async def delete_highest_notice():
     print(f"Deleted highest-ID notice: {highest}")
     return highest
 
-app.mount("/", StaticFiles(directory=str(WEB_DIR), html=True), name="static")
+# Old HW1/HW2 static SPA moved off "/" to make room for the HW3 home page.
+app.mount("/recalls-app", StaticFiles(directory=str(WEB_DIR), html=True), name="static")
 
 
 if __name__ == "__main__":
