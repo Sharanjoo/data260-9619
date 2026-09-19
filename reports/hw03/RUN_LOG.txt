@@ -1,0 +1,99 @@
+HW3 RUN LOG — Sharan Lourduraj (SID4 9619)
+Repo: https://github.com/Sharanjoo/data260-9619
+
+--- Corpus ---
+python scripts\fetch_corpus.py            -> 105,747 bytes
+python scripts\fetch_corpus_part2.py      -> 170.4 KB total
+python scripts\fetch_corpus_part3.py      -> 191.9 KB total
+python scripts\fetch_corpus_part4.py      -> 201.47 KB total
+python scripts\fetch_corpus_part5.py      -> 213.08 KB total
+python scripts\build_manifest.py          -> 25 docs, 218,194 bytes, CORPUS_MANIFEST.json + SOURCES.md
+Move-Item ... reports\hw03\               -> moved manifest/sources to correct folder
+
+git add data/ reports/hw03/CORPUS_MANIFEST.json reports/hw03/SOURCES.md scripts/fetch_corpus*.py scripts/build_manifest.py
+git commit -m "hw3: source and document domain corpus for chunking comparison"
+[main 1895faa]
+
+--- Questions (committed before retrieval code) ---
+wrote reports/hw03/questions.yaml (5 questions, 3 single-source)
+
+git add reports/hw03/questions.yaml
+git commit -m "hw3: commit domain questions before retrieval comparison"
+[main 1df7425]
+
+--- Part 2: chunking + retrieval ---
+python scripts\sanity_check_embeddings.py   -> 384-dim embeddings OK
+python scripts\build_chunkers.py            -> Token 243 / Semantic 99 / Sentence-window 1288 chunks
+python scripts\run_retrieval_comparison.py  -> 75 rows -> retrieval_results.jsonl
+python scripts\build_chunk_stats.py         -> chunk_stats.csv
+python scripts\build_metrics.py             -> METRICS.md
+
+  Token             243   936.8   0.7291   0.6694   0.80    39.23
+  Semantic           99  2128.6   0.7169   0.6431   1.00    27.53
+  Sentence window  1288   163.6   0.6319   0.6448   0.80   105.27
+
+  Flagged wrong retrieval: Q5, Token, rank1, score 0.7691 -> wrong file
+
+git add reports/hw03/raw/ reports/hw03/METRICS.md scripts/sanity_check_embeddings.py scripts/build_chunkers.py scripts/run_retrieval_comparison.py scripts/build_chunk_stats.py scripts/build_metrics.py
+git commit -m "hw3: running retrieval comparison across three chunking techniques, computing metrics"
+[main 7ed9f5e]
+
+--- Part 1: auth system ---
+wrote code/auth.py, code/templates/*.html
+edited code/main.py -> SessionMiddleware + auth_router, moved old home to /recalls-app
+
+Manual tests @ localhost:8619:
+  GET /            -> logged-out home
+  GET /login       -> empty form
+  POST /login (bad pw)   -> 401, red alert
+  POST /login (correct)  -> 303 -> /dashboard
+  GET /dashboard (session)    -> 200
+  GET /dashboard (no session) -> 303 -> /login
+  DevTools Set-Cookie -> HttpOnly, Secure, SameSite=Lax confirmed
+  logout -> /dashboard -> 303 -> /login
+  idle timeout (15s test) -> /dashboard -> 303 -> /login
+
+--- README ---
+appended HW3 section to README.md, requirements.txt already complete
+
+git add README.md requirements.txt
+git commit -m "hw3: add requirements.txt and reproducible run instructions to README"
+[main f2514a4]
+
+--- Self-check ---
+wrote scripts/verify_hw03.py
+first run: 16/18 (2 cookie bugs) -> fixed ->
+
+python scripts\verify_hw03.py -> 18/18 passed, wrote verification.json
+
+git add scripts/verify_hw03.py
+git commit -m "hw3: adding self-checking script verifying corpus, questions, and live auth system"
+[main 2745899]
+
+--- Docker ---
+fixed Dockerfile (missing auth.py/templates copy) + compose.yaml (wrong build context)
+docker compose up --build -d   -> ~51 min build (torch download), then 500 error
+docker compose logs web        -> TypeError: unhashable type 'dict' (Starlette TemplateResponse signature)
+fixed all 4 TemplateResponse calls in auth.py
+docker compose up --build -d   -> healthy, GET / -> 200
+
+git add code/Dockerfile compose.yaml code/auth.py
+git commit -m "hw3: fixing Dockerfile to include auth.py/templates, fixed Starlette TemplateResponse signature"
+[main 06e1767]
+
+--- Final cleanup ---
+git status -> main.py modified, templates/ + 3 scripts untracked
+
+git add code/main.py code/templates/
+git commit -m "hw3: wire session auth into main.py and commit Jinja2 templates for login/dashboard"
+
+git add scripts/sanity_check_embeddings.py scripts/run_retrieval_comparison.py scripts/build_chunkers.py
+git commit -m "hw3: add embedding sanity-check and retrieval-comparison scripts used to produce Part 2 raw data"
+
+git add reports/hw03/AI_USE.md reports/hw03/RUN_LOG.txt
+git commit -m "hw3: add AI_USE and RUN_LOG"
+
+git tag hw3
+git push origin main --tags
+
+END OF LOG
