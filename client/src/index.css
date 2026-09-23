@@ -1,0 +1,168 @@
+:root {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f7f7f5;
+  color: #1f2328;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: #1f2328;
+  color: #fff;
+}
+
+.nav .brand {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+.nav-links button {
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.3rem 0.75rem;
+  cursor: pointer;
+}
+
+.nav-user {
+  opacity: 0.85;
+}
+
+main {
+  flex: 1;
+  padding: 1.5rem;
+}
+
+.page {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.button-link {
+  background: #1f6feb;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  max-width: 420px;
+}
+
+.form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-weight: 500;
+}
+
+.form input {
+  padding: 0.5rem;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form button {
+  align-self: flex-start;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: 4px;
+  background: #1f6feb;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.form button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.form button.danger,
+button.danger {
+  background: #c62828;
+}
+
+.notice {
+  background: #fff3cd;
+  border: 1px solid #ffe08a;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+}
+
+.error {
+  color: #c62828;
+  font-weight: 500;
+}
+
+.records-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.records-table th,
+.records-table td {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid #d0d7de;
+}
+
+.row-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.row-actions button {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+
+.row-actions button.danger {
+  border-color: #c62828;
+  color: #c62828;
+  background: #fff;
+}
