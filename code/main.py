@@ -12,6 +12,10 @@ import uvicorn
 import os
 from starlette.middleware.sessions import SessionMiddleware
 from auth import router as auth_router
+from fastapi.middleware.cors import CORSMiddleware
+import time
+from db import get_query_count, init_db, reset_query_counter
+from db_routes import router as db_router
 
 PORT_BASE = 8619
 WEB_DIR = Path(__file__).resolve().parent / "web_application"
@@ -33,6 +37,48 @@ app.add_middleware(
 )
 
 app.include_router(auth_router)
+
+# HW4 Part 1/2: allow the Vite React client (different port = cross-origin)
+# to send/receive the HttpOnly session cookie.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
+@app.middleware("http")
+async def sql_query_count_and_timing(request, call_next):
+    """HW4 Part 3: counts SQL statements per request (X-SQL-Query-Count) and
+    server-side processing time (X-Process-Time-Ms), for the N+1 measurement script."""
+    reset_query_counter()
+    start = time.perf_counter()
+    response = await call_next(request)
+    elapsed_ms = (time.perf_counter() - start) * 1000.0
+    response.headers["X-SQL-Query-Count"] = str(get_query_count())
+    response.headers["X-Process-Time-Ms"] = f"{elapsed_ms:.3f}"
+    return response
+
+
+app.include_router(db_router)
+
+
+@app.on_event("startup")
+def _init_mysql_with_retry():
+    """MySQL's container can take a few seconds longer than the app to accept
+    connections; retry briefly instead of crashing the app on a cold compose up."""
+    last_err = None
+    for attempt in range(10):
+        try:
+            init_db()
+            print("HW4 Part 2: MySQL schema ready (s9619_rel).")
+            return
+        except Exception as exc:  # noqa: BLE001 - genuinely want to catch+retry any DB error here
+            last_err = exc
+            time.sleep(2)
+    print(f"HW4 Part 2 WARNING: could not initialize MySQL after retries: {last_err}")
 
 
 class RecallNotice(BaseModel):

@@ -1,4 +1,26 @@
 services:
+  mysql:
+    image: mysql:8.0
+    container_name: data260-hw4-mysql-s9619
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: hw4_root_pass_9619
+      MYSQL_DATABASE: s9619_rel
+      MYSQL_USER: hw4_user
+      MYSQL_PASSWORD: hw4_pass_9619
+    ports:
+      - "43306:3306"  # 3306/3307/3308 are all already used by other projects on
+                       # this machine; app still uses the internal Docker network
+                       # (mysql:3306) regardless of this host-side mapping.
+    volumes:
+      - mysql_data_s9619:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-u", "root", "-phw4_root_pass_9619"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 15s
+
   web:
     build:
       context: .
@@ -7,3 +29,15 @@ services:
     container_name: data260-hw3-s9619
     ports:
       - "8619:8619"
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: hw4_user
+      MYSQL_PASSWORD: hw4_pass_9619
+      MYSQL_DB: s9619_rel
+    depends_on:
+      mysql:
+        condition: service_healthy
+
+volumes:
+  mysql_data_s9619:
