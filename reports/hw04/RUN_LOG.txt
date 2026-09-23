@@ -1,0 +1,51 @@
+HW4 RUN_LOG — SID4 9619, DOMAIN_ID 3 (Grocery Recall Notice)
+==============================================================
+
+[Part 3 seed] python scripts\seed_hw04.py --reset
+--------------------------------------------------------------
+(ran successfully — confirmed via reports/hw04/raw/explain_before_after.json's
+sample_lookup_value "Fresh Yogurt (Lot 02501)", which is only reachable with the
+full 5000-row seed in place; exact console transcript to be appended)
+
+[Part 3 measurement] python scripts\measure_n1.py
+--------------------------------------------------------------
+PS C:\Users\shara\data260-9619> python scripts\measure_n1.py
+[measure_n1] 2026-09-23T04:36:55.492897+00:00 starting N+1 measurement against http://localhost:8619
+[measure_n1] 2026-09-23T04:36:56.216699+00:00 logged in as loadtest@hw4demo.com
+[measure_n1] 2026-09-23T04:36:56.216699+00:00 warming up naive @ page_size=10 ...
+[measure_n1] 2026-09-23T04:36:56.381036+00:00 measuring naive @ page_size=10 (30 requests)
+[measure_n1]   -> sql_stmts/req=13.0  p50=62.79ms  p95=77.65ms  p99=81.20ms
+[measure_n1] 2026-09-23T04:36:58.342619+00:00 warming up fixed @ page_size=10 ...
+[measure_n1] 2026-09-23T04:36:58.440762+00:00 measuring fixed @ page_size=10 (30 requests)
+[measure_n1]   -> sql_stmts/req=3.0  p50=36.07ms  p95=49.86ms  p99=51.06ms
+[measure_n1] 2026-09-23T04:36:59.548332+00:00 warming up naive @ page_size=50 ...
+[measure_n1] 2026-09-23T04:36:59.954259+00:00 measuring naive @ page_size=50 (30 requests)
+[measure_n1]   -> sql_stmts/req=47.0  p50=144.53ms  p95=207.96ms  p99=522.14ms
+[measure_n1] 2026-09-23T04:37:04.956937+00:00 warming up fixed @ page_size=50 ...
+[measure_n1] 2026-09-23T04:37:05.039249+00:00 measuring fixed @ page_size=50 (30 requests)
+[measure_n1]   -> sql_stmts/req=3.0  p50=31.45ms  p95=48.18ms  p99=48.85ms
+[measure_n1] 2026-09-23T04:37:06.019777+00:00 warming up naive @ page_size=200 ...
+[measure_n1] 2026-09-23T04:37:06.708919+00:00 measuring naive @ page_size=200 (30 requests)
+[measure_n1]   -> sql_stmts/req=131.0  p50=384.89ms  p95=489.56ms  p99=499.11ms
+[measure_n1] 2026-09-23T04:37:18.523629+00:00 warming up fixed @ page_size=200 ...
+[measure_n1] 2026-09-23T04:37:18.596174+00:00 measuring fixed @ page_size=200 (30 requests)
+[measure_n1]   -> sql_stmts/req=3.0  p50=36.32ms  p95=51.89ms  p99=83.85ms
+[measure_n1] 2026-09-23T04:37:19.832398+00:00 wrote 180 raw rows to C:\Users\shara\data260-9619\reports\hw04\raw\n1_measurements.jsonl
+[measure_n1] 2026-09-23T04:37:19.835571+00:00 wrote summary table to C:\Users\shara\data260-9619\reports\hw04\raw\n1_summary.csv
+
+[measure_n1] === SUMMARY TABLE (paste into METRICS.md) ===
+Page size   Version   SQL stmts/req   p50 (ms)    p95 (ms)    p99 (ms)
+10          naive     13.0            62.79       77.65       81.2
+10          fixed     3.0             36.07       49.86       51.06
+50          naive     47.0            144.53      207.96      522.14
+50          fixed     3.0             31.45       48.18       48.85
+200         naive     131.0           384.89      489.56      499.11
+200         fixed     3.0             36.32       51.89       83.85
+
+[measure_n1] 2026-09-23T04:37:19.837086+00:00 done. 180 total requests measured (3 page sizes x 2 versions x 30 requests).
+PS C:\Users\shara\data260-9619>
+
+[Part 3 index] python scripts\add_index_hw04.py
+--------------------------------------------------------------
+(ran successfully — output captured in reports/hw04/raw/explain_before_after.json;
+exact console transcript to be appended)

@@ -1,0 +1,38 @@
+{
+  "generated_at": "2026-09-23T04:18:19.384994+00:00",
+  "index_name": "idx_recall_record_product_name",
+  "ddl": "CREATE INDEX idx_recall_record_product_name ON recall_record (product_name)",
+  "sample_lookup_value": "Fresh Yogurt (Lot 02501)",
+  "explain_before": [
+    {
+      "id": 1,
+      "select_type": "SIMPLE",
+      "table": "recall_record",
+      "partitions": null,
+      "type": "ALL",
+      "possible_keys": null,
+      "key": null,
+      "key_len": null,
+      "ref": null,
+      "rows": 5000,
+      "filtered": 10.0,
+      "Extra": "Using where"
+    }
+  ],
+  "explain_after": [
+    {
+      "id": 1,
+      "select_type": "SIMPLE",
+      "table": "recall_record",
+      "partitions": null,
+      "type": "ref",
+      "possible_keys": "idx_recall_record_product_name",
+      "key": "idx_recall_record_product_name",
+      "key_len": "802",
+      "ref": "const",
+      "rows": 1,
+      "filtered": 100.0,
+      "Extra": null
+    }
+  ]
+}
