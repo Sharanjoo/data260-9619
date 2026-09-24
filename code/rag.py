@@ -132,10 +132,7 @@ class Chunk:
     source: str
     text: str
 
-
-# ---------------------------------------------------------------------------
 # Corpus / index
-# ---------------------------------------------------------------------------
 def load_and_chunk_corpus() -> list[Chunk]:
     paths = sorted(CORPUS_DIR.glob("*.txt"))
     if len(paths) < 5:
@@ -197,9 +194,7 @@ def print_retrieved(question_id: str, label: str, results: list[dict]) -> None:
         print(f"  {r['chunk_id']:<12} source={r['source']:<45} score={r['score']:.4f}  \"{preview}...\"")
 
 
-# ---------------------------------------------------------------------------
 # Config C: drop irrelevant + duplicate chunks, order + label survivors
-# ---------------------------------------------------------------------------
 def select_context_engineered(pool: list[dict], vectors: np.ndarray, final_k: int = TOP_K_DEFAULT) -> list[dict]:
     if not pool:
         return []
@@ -220,9 +215,7 @@ def select_context_engineered(pool: list[dict], vectors: np.ndarray, final_k: in
     return kept
 
 
-# ---------------------------------------------------------------------------
 # Prompt builders for the three configurations
-# ---------------------------------------------------------------------------
 def prompt_no_rag(question: str) -> list[dict]:
     return [
         {"role": "system", "content": "Answer the user's question directly and concisely, using your own knowledge."},
@@ -267,9 +260,7 @@ def call_llm(client: OllamaModelClient, messages: list[dict]) -> str:
     return response.content.strip()
 
 
-# ---------------------------------------------------------------------------
 # Main experiment
-# ---------------------------------------------------------------------------
 def run_all_questions(chunks, index, vectors, embed_model, client) -> list[dict]:
     all_results = []
     for q in QUESTIONS:

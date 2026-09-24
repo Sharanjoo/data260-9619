@@ -25,6 +25,7 @@ import requests
 RAW_DIR = Path(__file__).resolve().parent.parent / "reports" / "hw04" / "raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
+SESSION_COOKIE_NAME = "hw4_session"  # must match db_routes.py's SESSION_COOKIE_NAME
 TEST_EMAIL = "loadtest@hw4demo.com"
 TEST_PASSWORD = "loadtest2026"
 TEST_NAME = "Load Tester"
@@ -39,7 +40,18 @@ def ts() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
-def get_session(base_url: str) -> requests.Session:
+def get_auth_header(base_url: str) -> dict:
+    """Log in and return a {"Cookie": "hw4_session=<token>"} header dict.
+
+    db_routes.py sets the login cookie with Secure=True (needed so it works
+    over http://localhost in a *browser*, which treats localhost as a secure
+    context). Python's requests/http.cookiejar has no such exception and will
+    silently refuse to resend a Secure cookie over plain http://, which makes
+    every later request in a requests.Session come back 401 with no obvious
+    cause. Rather than fight cookiejar's domain/secure matching rules, just
+    read the token once and send it back as an explicit header on every
+    request -- simple, and impossible to get wrong silently.
+    """
     session = requests.Session()
     # Register (ignore 409 already-registered), then log in.
     session.post(
@@ -53,8 +65,15 @@ def get_session(base_url: str) -> requests.Session:
         timeout=10,
     )
     resp.raise_for_status()
+
+    token = resp.cookies.get(SESSION_COOKIE_NAME)
+    if not token:
+        raise RuntimeError(
+            f"Login succeeded (status {resp.status_code}) but no '{SESSION_COOKIE_NAME}' "
+            f"cookie was found in the response -- check the cookie name in db_routes.py."
+        )
     print(f"[measure_n1] {ts()} logged in as {TEST_EMAIL}")
-    return session
+    return {"Cookie": f"{SESSION_COOKIE_NAME}={token}"}
 
 
 def percentile(values: list[float], p: float) -> float:
@@ -68,10 +87,16 @@ def percentile(values: list[float], p: float) -> float:
     return sorted_vals[f] + (sorted_vals[c] - sorted_vals[f]) * (k - f)
 
 
-def run_one(session: requests.Session, base_url: str, path: str, page_size: int) -> dict:
+def run_one(base_url: str, path: str, page_size: int, headers: dict) -> dict:
     t0 = time.perf_counter()
-    resp = session.get(f"{base_url}{path}", params={"limit": page_size}, timeout=30)
+    resp = requests.get(f"{base_url}{path}", params={"limit": page_size}, headers=headers, timeout=30)
     latency_ms = (time.perf_counter() - t0) * 1000.0
+    if resp.status_code == 401:
+        raise RuntimeError(
+            f"401 Unauthorized on {path} even with an explicit Cookie header "
+            f"({headers.get('Cookie', '')[:40]}...). The session token itself is "
+            f"likely invalid/expired server-side -- try logging in fresh and re-running."
+        )
     resp.raise_for_status()
     sql_count = int(resp.headers.get("X-SQL-Query-Count", "-1"))
     server_ms = float(resp.headers.get("X-Process-Time-Ms", "-1"))
@@ -92,7 +117,7 @@ def main() -> None:
     base_url = args.base_url.rstrip("/")
 
     print(f"[measure_n1] {ts()} starting N+1 measurement against {base_url}")
-    session = get_session(base_url)
+    headers = get_auth_header(base_url)
 
     all_rows = []
     summary_rows = []
@@ -101,12 +126,12 @@ def main() -> None:
         for version, path in VERSIONS:
             print(f"[measure_n1] {ts()} warming up {version} @ page_size={page_size} ...")
             for _ in range(N_WARMUP):
-                run_one(session, base_url, path, page_size)
+                run_one(base_url, path, page_size, headers)
 
             print(f"[measure_n1] {ts()} measuring {version} @ page_size={page_size} ({N_REQUESTS} requests)")
             measurements = []
             for i in range(N_REQUESTS):
-                result = run_one(session, base_url, path, page_size)
+                result = run_one(base_url, path, page_size, headers)
                 measurements.append(result)
                 all_rows.append({
                     "timestamp": ts(),

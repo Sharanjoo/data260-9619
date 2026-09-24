@@ -13,3 +13,7 @@ sentence-transformers
 faiss-cpu
 numpy
 pandas
+sqlalchemy
+pymysql
+bcrypt
+email-validator

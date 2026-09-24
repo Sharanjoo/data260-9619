@@ -4,6 +4,8 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY code/main.py .
 COPY code/auth.py .
+COPY code/db.py .
+COPY code/db_routes.py .
 COPY code/templates ./templates
 COPY code/web_application ./web_application
 EXPOSE 8619
