@@ -1,0 +1,32 @@
+[
+  {
+    "k": 1,
+    "retrieved_sources": [
+      "fda_investigations_foodborne_outbreaks.txt"
+    ],
+    "both_expected_sources_present": false,
+    "irrelevant_chunk_present": false,
+    "answer": "I cannot answer this question from the provided documents."
+  },
+  {
+    "k": 3,
+    "retrieved_sources": [
+      "cdc_listeria_soft_cheese_june2026.txt",
+      "fda_investigations_foodborne_outbreaks.txt"
+    ],
+    "both_expected_sources_present": false,
+    "irrelevant_chunk_present": false,
+    "answer": "I cannot answer this question from the provided documents."
+  },
+  {
+    "k": 5,
+    "retrieved_sources": [
+      "cdc_listeria_soft_cheese_june2026.txt",
+      "fda_investigations_foodborne_outbreaks.txt",
+      "fda_public_health_advisories_outbreaks.txt"
+    ],
+    "both_expected_sources_present": false,
+    "irrelevant_chunk_present": false,
+    "answer": "The provided documents do not contain information about CDC's Listeria monocytogenes investigations into deli meats in 2024. However, for the Listeria monocytogenes outbreak linked to reques\u00f3n soft cheese in June 2026, the total number of reported illnesses was 15, with 14 hospitalizations and 1 death (Source 3)."
+  }
+]

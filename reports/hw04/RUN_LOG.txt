@@ -49,3 +49,61 @@ PS C:\Users\shara\data260-9619>
 --------------------------------------------------------------
 (ran successfully — output captured in reports/hw04/raw/explain_before_after.json;
 exact console transcript to be appended)
+
+[Part 4 RAG] python code\rag.py
+--------------------------------------------------------------
+PS C:\Users\shara\data260-9619> python code\rag.py
+[rag] 2026-09-24T04:47:08.482377+00:00 Ollama reachable, using model=qwen3:8b
+[rag] 2026-09-24T04:47:10.161656+00:00 loaded 25 documents -> 128 chunks (chunk_size=500, chunk_overlap=50)
+[rag] 2026-09-24T04:47:14.505949+00:00 embedding 128 chunks with sentence-transformers/all-MiniLM-L6-v2 ...
+[rag] 2026-09-24T04:47:26.638176+00:00 FAISS index built: 128 vectors, dim=384
+
+Q1 (single_chunk): What is the difference between an FDA Class I, Class II, and Class III recall?
+retrieved top-1: chunk_0127 source=fda_recalls_background_definitions.txt score=0.6696
+Config C kept 1/5 chunks after relevance/dedup filtering: ['chunk_0127']
+(A) No-RAG [54.99s], (B) Basic-RAG [187.75s], (C) Context-eng. [81.23s] -- see reports/hw04/raw/rag_question_results.jsonl for full answer text
+
+Q2 (two_chunks): Compare CDC's Listeria monocytogenes investigations into deli meats (2024) and Requeson soft cheese (June 2026) ...
+retrieved top-5: chunk_0088 (fda_investigations_foodborne_outbreaks.txt, 0.6872), chunk_0020 (cdc_listeria_soft_cheese_june2026.txt, 0.6803), chunk_0018 (cdc_listeria_soft_cheese_june2026.txt, 0.6693), chunk_0105 (fda_investigations_foodborne_outbreaks.txt, 0.6605), chunk_0123 (fda_public_health_advisories_outbreaks.txt, 0.6491)
+Config C kept 3/5 chunks: ['chunk_0088', 'chunk_0020', 'chunk_0018']
+(A) [28.42s] claims neither outbreak is documented (wrong)
+(B) [199.88s] soft-cheese numbers hallucinated: 12/10/1 (actual: 15 illnesses/14 hospitalizations/1 death); deli-meats omitted
+(C) [167.52s] "I cannot answer this question from the provided documents." (deli-meats source never retrieved)
+
+Q3 (similar_across_docs): What law added sesame as the ninth major food allergen, and when did the labeling requirement take effect?
+retrieved top-5: chunk_0068 (fda_allergen_labeling_qa_edition5.txt, 0.6940), chunk_0071 (fda_food_allergies.txt, 0.6911), chunk_0078 (fda_food_allergies.txt, 0.6329), chunk_0069 (fda_food_allergies.txt, 0.6287), chunk_0067 (fda_allergen_labeling_qa_edition5.txt, 0.6286)
+Config C kept 3/5 chunks: ['chunk_0068', 'chunk_0071', 'chunk_0078']
+(A) [24.83s] wrong: "FALCPA... January 1, 2006"
+(B) [142.18s] correct: FASTER Act, January 2023
+(C) [149.25s] correct: FASTER Act, January 2023, cited (Source 2)
+
+Q4 (ambiguous): How serious is Salmonella food poisoning?
+retrieved top-5: chunk_0116 (fda_outbreak_ecoli_salmonella_sprouts_aug2026.txt, 0.6435), chunk_0049 (cdc_salmonella_oysters_feb2026.txt, 0.6202), chunk_0041 (cdc_salmonella_javiana_aug2026.txt, 0.6180), chunk_0007 (cdc_food_poisoning_facts.txt, 0.6119), chunk_0044 (cdc_salmonella_moringa_may2026.txt, 0.6033)
+Config C kept 3/5 chunks: ['chunk_0116', 'chunk_0049', 'chunk_0041']
+(A) [32.16s], (B) [156.51s], (C) [182.65s] -- all reasonable; (C) cites Source 1 + Source 2
+
+Q5 (not_in_corpus, must refuse): E. coli O157:H7 / ground beef 2026 outbreak
+retrieved top-5 (all fda_investigations_foodborne_outbreaks.txt, scores 0.62-0.64 -- topically close, not actually about ground beef)
+Config C kept 3/5 chunks: ['chunk_0101', 'chunk_0105', 'chunk_0088']
+(A) [29.25s] hedges but not a grounded refusal
+(B) [158.51s] explains context lacks it, no strict refusal format
+(C) [129.74s] "I cannot answer this question from the provided documents." -- exact required phrase
+
+Q6 (unrelated, must refuse): What is the capital of Australia?
+retrieved top-5: all scores 0.06-0.10 (cdc_salmonella_moringa_may2026.txt, fda_public_health_advisories_outbreaks.txt x2, cdc_listeria_outbreaks_index.txt, cdc_salmonella_oysters_feb2026.txt)
+Config C kept 0/5 chunks after relevance/dedup filtering: [] -> auto-refused without calling the LLM
+(A) [7.46s] "Canberra" (outside knowledge, wrong behavior for this exercise)
+(B) [92.53s] inconsistent: says it can't answer from context, then answers "Canberra" anyway
+(C) [0.00s] "I cannot answer this question from the provided documents."
+
+K-SWEEP on Q2 (k=1, 3, 5):
+k=1: retrieved chunk_0088 only; refused
+k=3: retrieved chunk_0088, chunk_0020, chunk_0018; refused
+k=5: retrieved chunk_0088, chunk_0020, chunk_0018, chunk_0105, chunk_0123; answered soft-cheese correctly (15/14/1, cited Source 3), still correctly silent on deli-meats
+
+[rag] 2026-09-24T05:22:14.305586+00:00 wrote reports/hw04/raw/rag_question_results.jsonl
+[rag] 2026-09-24T05:22:14.308969+00:00 wrote reports/hw04/raw/rag_k_sweep.json
+[rag] 2026-09-24T05:22:14.310163+00:00 wrote reports/hw04/raw/rag_eval_table.csv
+[rag] 2026-09-24T05:22:14.311359+00:00 usage: {'turn_count': 20, 'input_tokens': 19580, 'output_tokens': 1586, 'total_tokens': 21166}
+[rag] 2026-09-24T05:22:14.311359+00:00 done. 6 questions x 3 configs, k-sweep over [1, 3, 5] on Q2.
+PS C:\Users\shara\data260-9619>

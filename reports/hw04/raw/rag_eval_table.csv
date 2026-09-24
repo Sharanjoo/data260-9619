@@ -1,0 +1,19 @@
+question_id,type,config,correct_retrieval,correct_answer,grounded,refused_when_needed,format_compliance_citation
+Q1,single_chunk,A_no_rag,True,True,N/A (no context),,
+Q1,single_chunk,B_basic_rag,True,True,True,,
+Q1,single_chunk,C_context_engineered,True,True,True,True,True
+Q2,two_chunks,A_no_rag,False,False (claims outbreaks undocumented),N/A (no context),,
+Q2,two_chunks,B_basic_rag,False,False (soft cheese numbers wrong: 12/10/1 vs actual 15/14/1; deli meats missing entirely),False (hallucinated numbers),,
+Q2,two_chunks,C_context_engineered,False,N/A (refused),True (refusal itself is grounded -- avoided fabricating),False,N/A
+Q3,similar_across_docs,A_no_rag,True,False (wrong law: FALCPA; wrong date: Jan 2006),N/A (no context),,
+Q3,similar_across_docs,B_basic_rag,True,True (FASTER Act; Jan 2023),True,,
+Q3,similar_across_docs,C_context_engineered,True,True (FASTER Act; Jan 2023),True,True,True
+Q4,ambiguous,A_no_rag,N/A (ambiguous),True (reasonable general answer),N/A (no context),,
+Q4,ambiguous,B_basic_rag,N/A (ambiguous),True (reasonable + cites a real oyster-outbreak stat),True,,
+Q4,ambiguous,C_context_engineered,N/A (ambiguous),True (synthesizes 2 valid sources correctly),True,True,True
+Q5,not_in_corpus,A_no_rag,N/A,True (avoids false specifics, but not a grounded refusal -- reasoning from absence of training data not from context),N/A (no context),False (no exact refusal phrase; not required for A),
+Q5,not_in_corpus,B_basic_rag,N/A,True (notes context lacks the info),True,False (explains but no exact phrase; not required for B),
+Q5,not_in_corpus,C_context_engineered,N/A,True,True,True,N/A (refusal, no citation needed)
+Q6,unrelated,A_no_rag,N/A,False (answers "Canberra" from outside knowledge -- wrong behavior for a grounded system even though factually true),N/A (no context),False,
+Q6,unrelated,B_basic_rag,N/A,False (inconsistent: says it cannot answer from context, then states the answer anyway),False,False,
+Q6,unrelated,C_context_engineered,N/A,True,True,True,N/A (refusal, no citation needed)
