@@ -1,0 +1,99 @@
+{
+  "homework_number": 4,
+  "sid4": 9619,
+  "commit_hash": "b28d8c65b4533db7865d02d4d5fac4005a465905",
+  "model_configuration": "qwen3:8b via Ollama (Part 4); sentence-transformers/all-MiniLM-L6-v2 (embeddings, Part 4)",
+  "seed": 9619,
+  "verify_seed": 269619,
+  "generated_at": "2026-09-24T05:42:54.134547+00:00",
+  "checks_passed": 17,
+  "checks_total": 17,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "part1_five_required_components_exist",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "check": "backend_responds_on_port_base",
+      "passed": true,
+      "detail": "status=200, body={\"status\":\"ok\",\"port\":8619}"
+    },
+    {
+      "check": "login_issues_session_cookie",
+      "passed": true,
+      "detail": "cookie name=hw4_session"
+    },
+    {
+      "check": "unauthenticated_records_request_blocked",
+      "passed": true,
+      "detail": "status=401"
+    },
+    {
+      "check": "naive_list_endpoint_returns_data",
+      "passed": true,
+      "detail": "status=200, rows=5"
+    },
+    {
+      "check": "fixed_list_endpoint_returns_data",
+      "passed": true,
+      "detail": "status=200, rows=5"
+    },
+    {
+      "check": "fixed_endpoint_uses_fewer_or_equal_sql_statements_than_naive",
+      "passed": true,
+      "detail": "naive=8 queries, fixed=3 queries"
+    },
+    {
+      "check": "part3_seed_5000_recall_records",
+      "passed": true,
+      "detail": "found 5001 rows"
+    },
+    {
+      "check": "part3_seed_200_recall_sources",
+      "passed": true,
+      "detail": "found 200 rows"
+    },
+    {
+      "check": "part3_index_created",
+      "passed": true,
+      "detail": "idx_recall_record_product_name on recall_record.product_name"
+    },
+    {
+      "check": "part3_n1_raw_data_180_rows",
+      "passed": true,
+      "detail": "found 180 rows (expected 180 = 3 page sizes x 2 versions x 30 requests)"
+    },
+    {
+      "check": "part3_explain_before_after_exists",
+      "passed": true,
+      "detail": "C:\\Users\\shara\\data260-9619\\reports\\hw04\\raw\\explain_before_after.json"
+    },
+    {
+      "check": "ollama_reachable",
+      "passed": true,
+      "detail": "status=200"
+    },
+    {
+      "check": "part4_six_questions_answered",
+      "passed": true,
+      "detail": "found 6 question results (expected 6)"
+    },
+    {
+      "check": "part4_q5_q6_refused_under_context_engineered_config",
+      "passed": true,
+      "detail": "checked answer_context_engineered for Q5/Q6"
+    },
+    {
+      "check": "part4_k_sweep_three_values",
+      "passed": true,
+      "detail": "found 3 k values (expected 3: k=1,3,5)"
+    },
+    {
+      "check": "part4_eval_table_exists",
+      "passed": true,
+      "detail": "C:\\Users\\shara\\data260-9619\\reports\\hw04\\raw\\rag_eval_table.csv"
+    }
+  ]
+}
