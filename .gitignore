@@ -5,3 +5,6 @@ __pycache__/
 tmp/
 reports/hw01/raw/*.partial.json
 cookies.txt
+
+# HW4 report deliverables kept local, not committed
+reports/hw04/*.docx

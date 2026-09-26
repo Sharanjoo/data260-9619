@@ -1,11 +1,11 @@
 {
   "homework_number": 4,
   "sid4": 9619,
-  "commit_hash": "b28d8c65b4533db7865d02d4d5fac4005a465905",
+  "commit_hash": "3c43ffdc5043a7af4cccb64cca0d83a97f0787f7",
   "model_configuration": "qwen3:8b via Ollama (Part 4); sentence-transformers/all-MiniLM-L6-v2 (embeddings, Part 4)",
   "seed": 9619,
   "verify_seed": 269619,
-  "generated_at": "2026-09-24T05:42:54.134547+00:00",
+  "generated_at": "2026-09-26T01:36:23.517080+00:00",
   "checks_passed": 17,
   "checks_total": 17,
   "all_passed": true,
@@ -48,7 +48,7 @@
     {
       "check": "part3_seed_5000_recall_records",
       "passed": true,
-      "detail": "found 5001 rows"
+      "detail": "found 5000 rows"
     },
     {
       "check": "part3_seed_200_recall_sources",

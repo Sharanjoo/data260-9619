@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T04:18:19.384994+00:00",
+  "generated_at": "2026-09-26T00:44:33.737250+00:00",
   "index_name": "idx_recall_record_product_name",
   "ddl": "CREATE INDEX idx_recall_record_product_name ON recall_record (product_name)",
   "sample_lookup_value": "Fresh Yogurt (Lot 02501)",
@@ -14,7 +14,7 @@
       "key": null,
       "key_len": null,
       "ref": null,
-      "rows": 5000,
+      "rows": 4923,
       "filtered": 10.0,
       "Extra": "Using where"
     }
