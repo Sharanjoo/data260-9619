@@ -23,7 +23,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "code"))
 
-from db import RecallRecord, RecallSource, db_session_basede26, init_db  # noqa: E402
+from db import RecallRecord, RecallSource, SessionLocal, init_db  # noqa: E402
 
 SEED = 9619
 N_SOURCES = 200
@@ -95,7 +95,7 @@ def main() -> None:
     print(f"[seed_hw04] SEED={SEED}  target: {N_SOURCES} recall_source rows, {N_RECORDS} recall_record rows")
 
     init_db()
-    db = db_session_basede26()
+    db = SessionLocal()
     try:
         if args.reset:
             deleted_records = db.query(RecallRecord).delete()

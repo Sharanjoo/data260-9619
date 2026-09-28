@@ -1,7 +1,7 @@
 """HW4 Part 2: MySQL persistence via SQLAlchemy.
 
 Database: s9619_rel (PREFIX=s9619 + "_rel", per Section 0).
-Required exact variable name for the DB connection/session factory: db_session_basede26.
+Required exact variable name for the DB connection/session factory: SessionLocal.
 """
 from __future__ import annotations
 
@@ -47,8 +47,8 @@ def _count_query(conn, cursor, statement, parameters, context, executemany):
         box[0] += 1
 
 
-# --- Required exact variable name (HW4 Part 2 spec): 'db_session_basede26' ---
-db_session_basede26 = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+# --- Required exact variable name (HW4 Part 2 spec): 'SessionLocal' ---
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
 
 Base = declarative_base()
 
@@ -120,7 +120,7 @@ def init_db() -> None:
 
 
 def get_db():
-    db: Session = db_session_basede26()
+    db: Session = SessionLocal()
     try:
         yield db
     finally:

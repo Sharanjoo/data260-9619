@@ -131,9 +131,9 @@ def check_naive_and_fixed_both_return_data(headers: dict) -> None:
 
 def check_seed_data_present() -> None:
     try:
-        from db import RecallRecord, RecallSource, db_session_basede26  # noqa: E402
+        from db import RecallRecord, RecallSource, SessionLocal  # noqa: E402
 
-        db = db_session_basede26()
+        db = SessionLocal()
         try:
             record_count = db.query(RecallRecord).count()
             source_count = db.query(RecallSource).count()
