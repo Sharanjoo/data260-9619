@@ -100,8 +100,8 @@ def migrate_recall_source(conn) -> None:
     print(f"[migrate_hw05]   backfilled source_code/timestamps for {len(missing)} existing row(s)")
 
     _finalize_column(conn, "recall_source", "source_code", "VARCHAR(40) NOT NULL")
-    _finalize_column(conn, "recall_source", "created_at", "DATETIME NOT NULL")
-    _finalize_column(conn, "recall_source", "updated_at", "DATETIME NOT NULL")
+    _finalize_column(conn, "recall_source", "created_at", "DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP")
+    _finalize_column(conn, "recall_source", "updated_at", "DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     _add_unique_index_if_missing(conn, "recall_source", "source_code", "uq_recall_source_code")
 
 
@@ -124,8 +124,8 @@ def migrate_recall_record(conn) -> None:
     print(f"[migrate_hw05]   backfilled record_code/timestamps for {len(missing)} existing row(s)")
 
     _finalize_column(conn, "recall_record", "record_code", "VARCHAR(40) NOT NULL")
-    _finalize_column(conn, "recall_record", "created_at", "DATETIME NOT NULL")
-    _finalize_column(conn, "recall_record", "updated_at", "DATETIME NOT NULL")
+    _finalize_column(conn, "recall_record", "created_at", "DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP")
+    _finalize_column(conn, "recall_record", "updated_at", "DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     _add_unique_index_if_missing(conn, "recall_record", "record_code", "uq_recall_record_code")
 
 
