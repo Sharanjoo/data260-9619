@@ -1,14 +1,23 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { api } from "../api";
+import { useDispatch } from "react-redux";
+import { createRecord } from "../recordsSlice";
 
-// HW4 Part 1.II: rendered on "/create". Adds a new recall record (auto-
-// incremented id comes from MySQL) and redirects to Home on success.
+// HW4 Part 1.II / HW5 Part 1.III: rendered on "/create". Adds a new recall
+// record (auto-incremented id, and now an auto-generated record_code, come
+// from the backend) and redirects to Home on success.
+//
+// Dispatches the createRecord thunk instead of calling api.createRecord()
+// directly. .unwrap() rethrows the thunk's rejectWithValue payload (a
+// string, built in recordsSlice.js from the axios error) so the existing
+// try/catch here still works the same way it did against api.js.
 export default function CreateRecord({ user }) {
   const [productName, setProductName] = useState("");
   const [brandName, setBrandName] = useState("");
+  const [unitsAffected, setUnitsAffected] = useState("0");
   const [error, setError] = useState(null);
   const [submitting, setSubmitting] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   if (!user) {
@@ -24,10 +33,16 @@ export default function CreateRecord({ user }) {
     setError(null);
     setSubmitting(true);
     try {
-      await api.createRecord(productName, brandName);
+      await dispatch(
+        createRecord({
+          productName,
+          brandName,
+          unitsAffected: Number(unitsAffected) || 0,
+        })
+      ).unwrap();
       navigate("/");
     } catch (err) {
-      setError(err.message);
+      setError(typeof err === "string" ? err : "Failed to add record");
     } finally {
       setSubmitting(false);
     }
@@ -53,6 +68,15 @@ export default function CreateRecord({ user }) {
             value={brandName}
             onChange={(e) => setBrandName(e.target.value)}
             required
+          />
+        </label>
+        <label>
+          Units affected
+          <input
+            type="number"
+            min="0"
+            value={unitsAffected}
+            onChange={(e) => setUnitsAffected(e.target.value)}
           />
         </label>
         {error && <p className="error">{error}</p>}

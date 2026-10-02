@@ -1,38 +1,26 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { api } from "../api";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRecords } from "../recordsSlice";
 
-// HW4 Part 1.I: Home page. Rendered on "/". Lists all recall records when
-// logged in; shows "Login required" and hides the Add-Record action when not.
+// HW4 Part 1.I / HW5 Part 1.III: Home page. Rendered on "/". Lists all
+// recall records when logged in; shows "Login required" and hides the
+// Add-Record action when not.
+//
+// Data now comes from the Redux `records` slice (recordsSlice.js) instead
+// of local useState + api.listRecords() -- fetchRecords() dispatches the
+// axios call to /api/hw4/records-fixed and the slice's extraReducers store
+// the result. Auth (`user`) stays a local prop from App.jsx, unmigrated.
 export default function Home({ user }) {
-  const [records, setRecords] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { items: records, status, error } = useSelector((state) => state.records);
+  const loading = status === "loading";
 
   useEffect(() => {
-    if (!user) {
-      setRecords([]);
-      return;
-    }
-    let cancelled = false;
-    setLoading(true);
-    setError(null);
-    api
-      .listRecords()
-      .then((data) => {
-        if (!cancelled) setRecords(data);
-      })
-      .catch((err) => {
-        if (!cancelled) setError(err.message);
-      })
-      .finally(() => {
-        if (!cancelled) setLoading(false);
-      });
-    return () => {
-      cancelled = true;
-    };
-  }, [user]);
+    if (!user) return;
+    dispatch(fetchRecords());
+  }, [user, dispatch]);
 
   if (!user) {
     return (
@@ -67,8 +55,10 @@ export default function Home({ user }) {
           <thead>
             <tr>
               <th>ID</th>
+              <th>Code</th>
               <th>Product name</th>
               <th>Brand name</th>
+              <th>Units Affected</th>
               <th>Source</th>
               <th>Region</th>
               <th></th>
@@ -78,8 +68,10 @@ export default function Home({ user }) {
             {records.map((record) => (
               <tr key={record.id}>
                 <td>{record.id}</td>
+                <td>{record.record_code ?? "-"}</td>
                 <td>{record.product_name}</td>
                 <td>{record.brand_name}</td>
+                <td>{record.units_affected ?? 0}</td>
                 <td>{record.source_name ?? "-"}</td>
                 <td>{record.source_region ?? "-"}</td>
                 <td className="row-actions">

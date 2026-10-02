@@ -1,13 +1,20 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { api } from "../api";
+import { useDispatch } from "react-redux";
+import { deleteRecord } from "../recordsSlice";
 
-// HW4 Part 1.IV: rendered on "/delete". Same state-passing approach as
-// UpdateRecord -- the record comes from location.state, set by Home's
-// "Delete" button; redirect to Home if that state is missing.
+// HW4 Part 1.IV / HW5 Part 1.III: rendered on "/delete". Same state-passing
+// approach as UpdateRecord -- the record comes from location.state, set by
+// Home's "Delete" button; redirect to Home if that state is missing.
+//
+// Dispatches the deleteRecord thunk instead of calling api.deleteRecord()
+// directly. If the backend returns 409 (record still referenced, or any
+// other delete-protection conflict), .unwrap() rethrows that detail string
+// and it's shown inline instead of silently failing.
 export default function DeleteRecord({ user }) {
   const location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const record = location.state?.record ?? null;
 
   const [error, setError] = useState(null);
@@ -35,10 +42,10 @@ export default function DeleteRecord({ user }) {
     setError(null);
     setSubmitting(true);
     try {
-      await api.deleteRecord(record.id);
+      await dispatch(deleteRecord(record.id)).unwrap();
       navigate("/");
     } catch (err) {
-      setError(err.message);
+      setError(typeof err === "string" ? err : "Failed to delete record");
       setSubmitting(false);
     }
   }
