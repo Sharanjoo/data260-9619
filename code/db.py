@@ -82,10 +82,12 @@ class UserSession(Base):
 
 
 class RecallSource(Base):
-    """Part 3's '200 related rows': the reporting/inspection source for a recall.
+    """HW5 Part 1.I required related entity: the reporting/inspection source
+    for a recall (the "author"-equivalent side of the relationship).
 
-    Just test data for now per the spec ("you'll build a proper related
-    entity with full CRUD in a later homework") — read-only here.
+    source_name = primary text field, source_region = secondary text field,
+    source_code = required unique field, created_at/updated_at = timestamps.
+    Full CRUD lives in db_routes.py as of HW5 (read-only in HW4).
     """
 
     __tablename__ = "recall_source"
@@ -93,14 +95,22 @@ class RecallSource(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     source_name = Column(String(150), nullable=False)
     source_region = Column(String(100), nullable=False)
+    source_code = Column(String(40), unique=True, nullable=False, index=True)
+    created_at = Column(DateTime, server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
+
+    records = relationship("RecallRecord", back_populates="source")
 
 
 class RecallRecord(Base):
-    """Part 2's required 3-column primary entity table.
+    """HW5 Part 1.I required primary entity table.
 
-    product_name = primary field, brand_name = secondary field.
-    source_id is the Part-3 FK to the 200 related rows (nullable so Part 2
-    works standalone before Part 3's seed script runs).
+    product_name = primary field, brand_name = secondary field,
+    record_code = required unique field, units_affected = numeric field with
+    a sensible default (0), source_id = FK to the related entity (left
+    nullable -- unchanged from HW4 -- so existing rows created through the
+    HW4 API, which never set it, stay valid; see scripts/migrate_hw05.py),
+    plus created_at/updated_at timestamps.
     """
 
     __tablename__ = "recall_record"
@@ -108,14 +118,23 @@ class RecallRecord(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     product_name = Column(String(200), nullable=False)
     brand_name = Column(String(150), nullable=False)
+    record_code = Column(String(40), unique=True, nullable=False, index=True)
+    units_affected = Column(Integer, nullable=False, default=0, server_default="0")
     source_id = Column(Integer, ForeignKey("recall_source.id"), nullable=True)
+    created_at = Column(DateTime, server_default=func.now(), nullable=False)
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 
-    source = relationship("RecallSource")
+    source = relationship("RecallSource", back_populates="records")
 
 
 def init_db() -> None:
-    """Idempotent schema bootstrap; the literal migration also lives in
-    scripts/schema_hw04.sql for the Part 3 'commit your schema/migration' requirement."""
+    """Idempotent schema bootstrap for brand-new tables; the literal migrations
+    also live in scripts/schema_hw04.sql (Part 3) and scripts/schema_hw05.sql
+    (Part 1.I) for the 'commit your schema/migration' requirement. NOTE:
+    create_all() only creates tables that don't exist yet -- it does NOT add
+    new columns to an already-existing table, so the HW5 recall_source /
+    recall_record column additions are applied separately by
+    scripts/migrate_hw05.py, not by this function."""
     Base.metadata.create_all(bind=engine)
 
 
