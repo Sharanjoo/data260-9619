@@ -1,0 +1,13 @@
+# HW5 Part 2: dependencies for running the MCP servers locally (on the
+# host, not inside Docker -- `mcp dev` needs a real terminal/browser for
+# the Inspector, which the web container doesn't have).
+#
+# Pinned to mcp<2: this assignment's servers use the FastMCP API
+# (`from mcp.server.fastmcp import FastMCP`), which was renamed/replaced
+# by MCPServer in mcp 2.x. Installing the unpinned package currently
+# resolves to mcp 2.x and `from mcp.server.fastmcp import FastMCP` will
+# fail with ModuleNotFoundError -- use this pin to avoid that.
+mcp[cli]<2
+requests
+sqlalchemy
+pymysql
