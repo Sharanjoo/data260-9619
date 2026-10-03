@@ -54,6 +54,38 @@ DEFAULT_TOOLS: Dict[str, Callable[..., dict]] = {
     "source_recall_summary": source_recall_summary,
 }
 
+# --- Part 5.I: one domain-specific safety rule ------------------------------
+# A business-policy guardrail, not a data-validation rule: domain_tools'
+# own search_recalls already structurally allows limit up to 100 (Part
+# 1/2 validation). execute_tool additionally refuses any search_recalls
+# call requesting more than SAFETY_MAX_SEARCH_LIMIT rows in one call, as a
+# safeguard against the agent (or anything driving it) being used to
+# bulk-exfiltrate the recall database through a single large tool call --
+# a concern specific to this being an AGENT-facing entry point, not a
+# concern domain_tools.py itself needs to care about. Checked before the
+# tool is ever invoked (no DB hit, nothing to retry), and violating it
+# returns {ok: false, data: null, error: "..."} without raising, exactly
+# like any other execute_tool rejection.
+SAFETY_MAX_SEARCH_LIMIT = 25
+
+
+def _safety_violation(name: str, inputs: Dict[str, Any]) -> Optional[str]:
+    """Returns a human-readable reason if `inputs` would violate the one
+    domain-specific safety rule for tool `name`, else None (allowed)."""
+    if name == "search_recalls":
+        limit = inputs.get("limit", 10)
+        try:
+            limit = int(limit)
+        except (TypeError, ValueError):
+            return None  # not a safety concern -- the tool's own validation handles this
+        if limit > SAFETY_MAX_SEARCH_LIMIT:
+            return (
+                f"safety rule violated: search_recalls limit={limit} exceeds "
+                f"the maximum of {SAFETY_MAX_SEARCH_LIMIT} allowed per call "
+                "(prevents bulk data exfiltration via the agent)"
+            )
+    return None
+
 
 def execute_tool(
     name: str,
@@ -85,6 +117,10 @@ def execute_tool(
                 "error": f"unknown tool: {name!r} (available: {sorted(registry)})",
             }
         )
+
+    violation = _safety_violation(name, inputs)
+    if violation is not None:
+        return json.dumps({"ok": False, "data": None, "error": violation})
 
     outcome = with_retry(
         lambda: tool_fn(**inputs), max_retries=max_retries, timeout_s=timeout_s

@@ -11,3 +11,4 @@ mcp[cli]<2
 requests
 sqlalchemy
 pymysql
+ollama

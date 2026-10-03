@@ -24,6 +24,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "mcp_servers"))
 
 from execute_tool import execute_tool  # noqa: E402
+from agent import MockModel, run_agent  # noqa: E402
 
 # --- Fake tool registry: dependency injection, no DB involved at all ---
 
@@ -151,6 +152,39 @@ def run_tests() -> None:
         "execute_tool: unknown tool name returns ok=false instead of raising",
         result["ok"] is False and "unknown tool" in result["error"],
         repr(result),
+    )
+
+    # 8. Part 5.III test #1: execute_tool blocks a call that violates the
+    # safety rule (search_recalls limit over SAFETY_MAX_SEARCH_LIMIT=25).
+    # Pure execute_tool-level test -- no agent loop involved.
+    raw = execute_tool("search_recalls", {"query": "a", "limit": 50}, tools=FAKE_TOOLS)
+    result = json.loads(raw)
+    check(
+        "execute_tool: safety rule blocks search_recalls limit=50 with ok=false",
+        result["ok"] is False and "safety rule violated" in result["error"],
+        repr(result),
+    )
+
+    # 9. Part 5.III test #2: run_agent, using MockModel, stops after
+    # reaching max_steps. MockModel always replies with a call_tool action
+    # and never a final_answer, so the loop can only stop by exhausting
+    # its step budget. Fully offline: MockModel (no live model, no
+    # network) + FAKE_TOOLS (no database) + log_path=False (no filesystem
+    # write into the real report folder).
+    always_calls_tool = MockModel(
+        [json.dumps({"action": "call_tool", "tool": "search_recalls", "inputs": {"query": "a", "limit": 5}})]
+    )
+    run = run_agent(
+        "keep searching forever",
+        model=always_calls_tool,
+        tools=FAKE_TOOLS,
+        max_steps=3,
+        log_path=False,
+    )
+    check(
+        "run_agent: MockModel that never finishes stops at max_steps",
+        run["stop_reason"] == "max_steps" and run["step_count"] == 3,
+        repr({"stop_reason": run["stop_reason"], "step_count": run["step_count"]}),
     )
 
     passed = sum(1 for _, ok, _ in _results if ok)
