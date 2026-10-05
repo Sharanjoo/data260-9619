@@ -67,12 +67,12 @@ database.
 
 **Rejected JSON input**
 ```json
-{ "source_id": 999999999 }
+{ "source_id": 999999 }
 ```
 
 **Returned error output**
 ```json
-{ "ok": false, "data": null, "error": "no recall source with id 999999999" }
+{ "ok": false, "data": null, "error": "no recall source with id 999999" }
 ```
 
 **Why rejected**: same shape as `recall_detail` -- `source_id` is a valid

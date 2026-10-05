@@ -101,3 +101,23 @@ METRICS.md table (paste this in):
 
 Full step-by-step logs appended to reports/hw05/raw/agent_runs.jsonl (4 new run(s)).
 [2026-10-05T03:56:51Z] END exit_code=0
+
+[2026-10-05T06:19:04Z] Sharan Lourduraj | START command: python scripts\fault_injection_hw05.py
+Running 50 calls at injected_failure_rate=0% (seed=269619) ...
+  -> success_rate=100.00%  mean_latency_ms=37.82  p99_latency_ms=102.59
+Running 50 calls at injected_failure_rate=20% (seed=269619) ...
+  -> success_rate=100.00%  mean_latency_ms=139.36  p99_latency_ms=949.71
+Running 50 calls at injected_failure_rate=50% (seed=269619) ...
+  -> success_rate=90.00%  mean_latency_ms=450.94  p99_latency_ms=1414.16
+
+Wrote 150 raw call records -> C:\Users\shara\data260-9619\reports\hw05\raw\fault_injection_raw.csv
+Wrote summary -> C:\Users\shara\data260-9619\reports\hw05\raw\fault_injection_summary.json
+
+METRICS.md table (paste this in):
+
+| Injected failure rate | Success rate | Mean latency (ms) | p99 latency (ms) |
+|---|---|---|---|
+| 0% | 100.00% | 37.82 | 102.59 |
+| 20% | 100.00% | 139.36 | 949.71 |
+| 50% | 90.00% | 450.94 | 1414.16 |
+[2026-10-05T06:19:39Z] END exit_code=0

@@ -10,22 +10,22 @@
       "injected_failure_rate": 0.0,
       "calls": 50,
       "success_rate": 1.0,
-      "mean_latency_ms": 35.62,
-      "p99_latency_ms": 78.62
+      "mean_latency_ms": 37.82,
+      "p99_latency_ms": 102.59
     },
     {
       "injected_failure_rate": 0.2,
       "calls": 50,
       "success_rate": 1.0,
-      "mean_latency_ms": 138.12,
-      "p99_latency_ms": 949.22
+      "mean_latency_ms": 139.36,
+      "p99_latency_ms": 949.71
     },
     {
       "injected_failure_rate": 0.5,
       "calls": 50,
       "success_rate": 0.9,
-      "mean_latency_ms": 453.76,
-      "p99_latency_ms": 1391.0
+      "mean_latency_ms": 450.94,
+      "p99_latency_ms": 1414.16
     }
   ]
 }

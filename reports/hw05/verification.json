@@ -1,0 +1,84 @@
+{
+  "homework_number": 5,
+  "sid4": 9619,
+  "commit_hash": "e2f5487cc38c890facd504bb21727b38e7a6d2f2",
+  "model_configuration": "qwen3:8b via Ollama (agent loop, think=False, temperature=0, max_steps=5); MCP over STDIO (mcp[cli]<2)",
+  "seed": 9619,
+  "verify_seed": 269619,
+  "generated_at": "2026-10-05T06:54:51.531343+00:00",
+  "checks_passed": 14,
+  "checks_total": 14,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "backend_responds_on_port_base",
+      "passed": true,
+      "detail": "GET /api/health -> 200 {\"status\":\"ok\",\"port\":8619}"
+    },
+    {
+      "check": "backend_protects_hw5_routes_without_login",
+      "passed": true,
+      "detail": "GET /api/hw4/sources without a session -> 401 (expected 401)"
+    },
+    {
+      "check": "meals_server_starts_and_lists_tools",
+      "passed": true,
+      "detail": "tools=['meal_details', 'meals_by_ingredient', 'random_meal', 'search_meals_by_name']"
+    },
+    {
+      "check": "meals_server_search_meals_by_name_answers",
+      "passed": true,
+      "detail": "returned 1 meal(s) for {'query': 'chicken', 'limit': 1}"
+    },
+    {
+      "check": "domain_server_starts_and_lists_tools",
+      "passed": true,
+      "detail": "tools=['recall_detail', 'search_recalls', 'source_recall_summary']"
+    },
+    {
+      "check": "domain_server_search_recalls_answers",
+      "passed": true,
+      "detail": "ok=True error=None"
+    },
+    {
+      "check": "domain_server_recall_detail_answers",
+      "passed": true,
+      "detail": "ok=False error=no recall record with id 999999999"
+    },
+    {
+      "check": "execute_tool_blocks_search_recalls_limit_over_25",
+      "passed": true,
+      "detail": "safety rule violated: search_recalls limit=50 exceeds the maximum of 25 allowed per call (prevents bulk data e"
+    },
+    {
+      "check": "part4_offline_test_suite_passes",
+      "passed": true,
+      "detail": "9/9 tests passed"
+    },
+    {
+      "check": "part3_fault_injection_summary_present",
+      "passed": true,
+      "detail": "rates=[0.0, 0.2, 0.5], seed_used=269619"
+    },
+    {
+      "check": "part5_agent_runs_logged_with_stop_reasons",
+      "passed": true,
+      "detail": "8 run(s), stop reasons=['normal_completion', 'safety_rule_block']"
+    },
+    {
+      "check": "writeups_present_and_non_empty",
+      "passed": true,
+      "detail": "all present"
+    },
+    {
+      "check": "ai_use_has_no_leftover_draft_note",
+      "passed": true,
+      "detail": "draft note removed"
+    },
+    {
+      "check": "ollama_reachable_with_qwen3_8b",
+      "passed": true,
+      "detail": "models=['qwen3:8b']"
+    }
+  ]
+}

@@ -14,23 +14,23 @@ per-call records: `reports/hw05/raw/fault_injection_raw.csv`. Produced by
 
 | Injected failure rate | Success rate | Mean latency (ms) | p99 latency (ms) |
 |---|---|---|---|
-| 0% | 100.00% | 35.62 | 78.62 |
-| 20% | 100.00% | 138.12 | 949.22 |
-| 50% | 90.00% | 453.76 | 1391.0 |
+| 0% | 100.00% | 37.82 | 102.59 |
+| 20% | 100.00% | 139.36 | 949.71 |
+| 50% | 90.00% | 450.94 | 1414.16 |
 
 ### Part 3.21 - Is this retry policy suitable for an interactive assistant?
 
-At 0% injected failure the policy adds essentially no overhead (35.6ms
+At 0% injected failure the policy adds essentially no overhead (37.8ms
 mean, in line with a single fast indexed query). At 20%, every one of the
 50 calls still eventually succeeded -- with 4 attempts available, the
 chance of 4 consecutive failures at a true 20% per-attempt rate is only
 0.2^4 = 0.16%, so near-100% success is expected, but the cost is real:
-mean latency almost quadruples (35.6ms -> 138.1ms) and p99 balloons to
-949ms, because a meaningful fraction of calls now pay for one retry's
+mean latency almost quadruples (37.8ms -> 139.4ms) and p99 balloons to
+950ms, because a meaningful fraction of calls now pay for one retry's
 backoff delay plus a second attempt. At 50%, the policy is no longer
 hiding the underlying unreliability from the user: 10% of calls still
 surface as a failure to the caller even after using the full retry budget,
-mean latency is up 12x over the 0% baseline (453.8ms), and the worst calls
+mean latency is up 12x over the 0% baseline (450.9ms), and the worst calls
 take 1.4 seconds (p99).
 
 For an interactive assistant -- where a person is waiting on the other end
