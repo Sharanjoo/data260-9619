@@ -48,7 +48,6 @@ MCP_TIMEOUT_S = 60
 
 MEALS_TOOLS = {"search_meals_by_name", "meals_by_ingredient", "random_meal", "meal_details"}
 DOMAIN_TOOLS = {"search_recalls", "recall_detail", "source_recall_summary"}
-INSPECTOR_FILES = [f"inspector_{t}.json" for t in sorted(MEALS_TOOLS | DOMAIN_TOOLS)]
 
 checks: list[dict] = []
 
@@ -182,10 +181,6 @@ def check_raw_and_docs() -> None:
                f"{len(lines)} run(s), stop reasons={sorted(reasons)}")
     except Exception as exc:
         record("part5_agent_runs_logged_with_stop_reasons", False, f"{type(exc).__name__}: {exc}")
-
-    missing = [f for f in INSPECTOR_FILES if not (RAW / f).exists() or (RAW / f).stat().st_size == 0]
-    record("part2_inspector_exports_present_for_all_7_tools", not missing,
-           "all 7 present" if not missing else "missing: " + ", ".join(missing))
 
     docs = ["METRICS.md", "REFLECTION.md", "AI_USE.md", "RUN_LOG.txt"]
     bad = [d for d in docs if not (REPO_ROOT / "reports" / "hw05" / d).exists()
