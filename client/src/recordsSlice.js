@@ -88,6 +88,24 @@ export const deleteRecord = createAsyncThunk(
   }
 );
 
+// HW5 Part 1.III Update screen "select by ID": looks up one record by its id
+// (GET /records/{id}) so the Update form can load it without relying on the
+// Home page having it in state. Read-only: no reducer needed, the caller just
+// uses the returned record to fill the form.
+export const fetchRecordById = createAsyncThunk(
+  "records/fetchRecordById",
+  async (id, { rejectWithValue }) => {
+    try {
+      const res = await axios.get(`${API_BASE}/api/hw4/records/${id}`, {
+        withCredentials: true,
+      });
+      return res.data;
+    } catch (err) {
+      return rejectWithValue(errorDetail(err));
+    }
+  }
+);
+
 const recordsSlice = createSlice({
   name: "records",
   initialState: {

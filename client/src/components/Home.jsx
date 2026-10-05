@@ -38,9 +38,14 @@ export default function Home({ user }) {
     <div className="page">
       <div className="page-header">
         <h1>Grocery Recall Notices</h1>
-        <Link to="/create" className="button-link">
-          Add Record
-        </Link>
+        <div>
+          <Link to="/create" className="button-link">
+            Add Record
+          </Link>{" "}
+          <Link to="/update" className="button-link">
+            Update by ID
+          </Link>
+        </div>
       </div>
 
       {loading && <p>Loading...</p>}
