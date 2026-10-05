@@ -76,3 +76,34 @@ cap, optimized for a bounded worst case the user will tolerate. Batch =
 more retries, longer timeout, longer backoff cap, optimized for eventual
 success over raw latency, since nothing downstream is blocked waiting on
 any one call.
+
+## Part 5.IV - Agent Scenarios (local Ollama model)
+
+Model: `qwen3:8b` via Ollama (thinking mode disabled with `think=False`;
+`temperature=0`). `max_steps=5`. Tools: the real database-backed registry
+through `execute_tool()`, with the Part 5.I safety rule active
+(`search_recalls` limit > 25 is blocked). Tool results are compacted to the
+first 3 records before being fed back to the model; the full results are
+what is logged. Produced by `scripts/run_agent_scenarios_hw05.py`; the
+step-by-step log is `reports/hw05/raw/agent_runs.jsonl`. That file holds two complete passes of
+the four scenarios (2026-10-05 02:41 and 03:53, with identical step counts, stop reasons and tool-call
+counts); the table below is the later pass (run ids `a4691446`, `fe5d1664`, `36e27e9a`, `cec69f1c`).
+
+| Scenario | Step count | Stop reason | Tool-call count |
+|---|---|---|---|
+| search ("juice") | 2 | normal_completion | 1 |
+| detail (record 15007) | 2 | normal_completion | 1 |
+| multi-step (record 15007, then its source) | 3 | normal_completion | 2 |
+| safety-rule trigger (limit 50) | 1 | safety_rule_block | 1 |
+
+Notes:
+
+- A first pass used IDs that don't exist in the seeded data (record 1,
+  source 1, the word "milk"). All three of those runs ended
+  `normal_completion` with a correct "not found" answer, so the loop worked,
+  but they never exercised real tool results. That pass is kept as
+  `reports/hw05/raw/agent_runs_first_pass_nonexistent_ids.jsonl`, and the
+  table above comes from the second pass.
+- The `max_steps` stop reason is not reached by any live run; it is covered
+  by the offline `MockModel` test (a model that never finishes is stopped at
+  exactly `max_steps`) in `scripts/test_execute_tool_hw05.py`.

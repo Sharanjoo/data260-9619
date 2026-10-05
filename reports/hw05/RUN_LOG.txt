@@ -1,0 +1,103 @@
+HW5 RUN_LOG - Sharan Lourduraj, SID4 9619, DOMAIN_ID 3 (Grocery Recall Notice)
+======================================================================
+
+[2026-10-05T03:48:21Z] Sharan Lourduraj | START command: python scripts\test_execute_tool_hw05.py
+[PASS] search_recalls: valid input returns ok=true with data
+[PASS] search_recalls: empty query is rejected with ok=false
+[PASS] recall_detail: valid id returns ok=true with matching data
+[PASS] recall_detail: non-existent id is rejected with ok=false
+[PASS] source_recall_summary: valid id returns ok=true with aggregate data
+[PASS] source_recall_summary: non-existent id is rejected with ok=false
+[PASS] execute_tool: unknown tool name returns ok=false instead of raising
+[PASS] execute_tool: safety rule blocks search_recalls limit=50 with ok=false
+[PASS] run_agent: MockModel that never finishes stops at max_steps
+
+9/9 tests passed
+[2026-10-05T03:48:23Z] END exit_code=0
+
+[2026-10-05T03:49:10Z] Sharan Lourduraj | START command: python scripts\demo_retry_scenarios_hw05.py
+=== Scenario 1: success on the first attempt ===
+ok=True  attempts=1  total_latency_ms=0.0
+data='fetched on first try'
+PASS
+
+=== Scenario 2: fail on attempt 1, succeed on attempt 2 ===
+ok=True  attempts=2  total_latency_ms=62.0
+data='fetched on attempt 2'
+PASS
+
+=== Scenario 3: fail on every attempt -> clean error, no crash ===
+ok=False  attempts=4  total_latency_ms=281.0
+error='attempt 4 failed: simulated permanent failure'
+PASS
+
+All three required Part 3.19 scenarios demonstrated successfully.
+[2026-10-05T03:49:10Z] END exit_code=0
+
+[2026-10-05T03:50:22Z] Sharan Lourduraj | START command: python scripts\demo_safety_rule_hw05.py
+Safety rule: search_recalls limit must be <= 25 per call
+
+=== Allowed call: search_recalls(query='a', limit=10) ===
+{
+  "ok": true,
+  "data": [
+    {
+      "id": 15007,
+      "product_name": "Value Brand Leafy Greens (Lot 00001)",
+      "brand_name": "Farmer's Market",
+      "record_code": "REC-015007",
+      "units_affected": 0,
+      "source_id": 725,
+      "source_name": "Local Public Health Unit #125",
+      "source_region": "Southern California",
+      "created_at": "2026-10-02T05:20:49",
+      "updated_at": "2026-10-05T03:32:54"
+    },
+    {
+      "id": 15009,
+      "product_name": "Deluxe Bottled Juice (Lot 00003)",
+      "brand_name": "Evergreen Market",
+      "record_code": "REC-015009",
+      "uni
+ALLOWED as expected
+
+=== Blocked call: search_recalls(query='a', limit=50)  (> 25) ===
+{
+  "ok": false,
+  "data": null,
+  "error": "safety rule violated: search_recalls limit=50 exceeds the maximum of 25 allowed per call (prevents bulk data exfiltration via the agent)"
+}
+BLOCKED as expected (ok=false, no exception raised)
+[2026-10-05T03:50:25Z] END exit_code=0
+
+[2026-10-05T03:50:54Z] Sharan Lourduraj | START command: python scripts\run_agent_scenarios_hw05.py
+=== Scenario: search ===
+user_input: 'Find recall records that mention the word juice.'
+  stop_reason=normal_completion  step_count=2  tool_call_count=1
+  final_text: "Here are the recall records that mention the word 'juice':\n\n1. **Product Name:** Deluxe Bottled Juice (Lot 00003) | **Brand Name:** Evergreen Market | **Source:** Retail Food Safety Inspector #044 | *"
+
+=== Scenario: detail ===
+user_input: 'What are the full details of recall record id 15007?'
+  stop_reason=normal_completion  step_count=2  tool_call_count=1
+  final_text: "The full details of recall record id 15007 are as follows:\n\n- **Product Name**: Value Brand Leafy Greens (Lot 00001)\n- **Brand Name**: Farmer's Market\n- **Record Code**: REC-015007\n- **Units Affected*"
+
+=== Scenario: multi-step ===
+user_input: 'Look up recall record 15007, then tell me the record count and total units affected across all recalls from the same source.'
+  stop_reason=normal_completion  step_count=3  tool_call_count=2
+  final_text: "The recall record 15007 is associated with the source 'Local Public Health Unit #125'. This source has a total of 32 recall records and 0 units affected across all recalls."
+
+=== Scenario: safety-rule trigger ===
+user_input: 'Search for recalls with a limit of 50 results.'
+  stop_reason=safety_rule_block  step_count=1  tool_call_count=1
+
+METRICS.md table (paste this in):
+
+| Scenario | Step count | Stop reason | Tool-call count |
+|---|---|---|---|
+| search | 2 | normal_completion | 1 |
+| detail | 2 | normal_completion | 1 |
+| multi-step | 3 | normal_completion | 2 |
+| safety-rule trigger | 1 | safety_rule_block | 1 |
+
+Full step-by-step logs appended to reports/hw05/raw/agent_runs.jsonl (4 new run(s)).
+[2026-10-05T03:56:51Z] END exit_code=0

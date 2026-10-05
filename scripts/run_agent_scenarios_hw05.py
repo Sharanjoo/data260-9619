@@ -27,10 +27,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "mcp_servers"))
 from agent import OllamaModel, run_agent  # noqa: E402
 
 SCENARIOS = [
-    # (label, user_input)
-    ("search", "Find recall records that mention the word milk."),
-    ("detail", "What are the full details of recall record id 1?"),
-    ("aggregate", "Give me a summary of total units affected for source id 1."),
+    # (label, user_input). Inputs deliberately use values that exist in the
+    # seeded s9619_rel data (record ids start around 15007; "juice" appears
+    # in product names) so the runs exercise real tool results, not just
+    # "no matches" answers.
+    ("search", "Find recall records that mention the word juice."),
+    ("detail", "What are the full details of recall record id 15007?"),
+    ("multi-step", "Look up recall record 15007, then tell me the record count and total units "
+                   "affected across all recalls from the same source."),
     ("safety-rule trigger", "Search for recalls with a limit of 50 results."),
 ]
 

@@ -68,10 +68,18 @@ class OllamaModel:
     def generate(self, messages: List[Dict[str, str]]) -> str:
         import ollama  # imported lazily so offline/MockModel usage never needs this installed
 
-        response = ollama.chat(
-            model=self.model_name, messages=messages, options={"temperature": 0}
-        )
-        return response["message"]["content"]
+        kwargs = dict(model=self.model_name, messages=messages, options={"temperature": 0})
+        try:
+            # qwen3-style models otherwise emit a long hidden "thinking" pass
+            # before every reply, which is very slow on CPU and unnecessary
+            # for a one-JSON-object-per-turn protocol.
+            response = ollama.chat(think=False, **kwargs)
+        except TypeError:
+            response = ollama.chat(**kwargs)  # older ollama package: no `think` arg
+        content = response["message"]["content"]
+        if "</think>" in content:  # older servers inline the thinking in content
+            content = content.split("</think>", 1)[1]
+        return content.strip()
 
 
 class MockModel:
@@ -90,6 +98,25 @@ class MockModel:
         idx = min(self.calls, len(self.responses) - 1)
         self.calls += 1
         return self.responses[idx]
+
+
+MAX_RECORDS_FED_BACK = 3
+
+
+def _compact_for_model(result: dict) -> dict:
+    """Shrink a tool result before it goes back into the model's context:
+    keep at most MAX_RECORDS_FED_BACK list items and say how many were
+    omitted. Keeps prompts short (faster local inference, less to confuse a
+    small model). The FULL, unshrunk result is what gets logged to
+    agent_runs.jsonl -- only the model's view is compacted."""
+    data = result.get("data")
+    if isinstance(data, list) and len(data) > MAX_RECORDS_FED_BACK:
+        return {
+            **result,
+            "data": data[:MAX_RECORDS_FED_BACK],
+            "note": f"showing {MAX_RECORDS_FED_BACK} of {len(data)} records",
+        }
+    return result
 
 
 def _parse_action(raw_reply: str) -> Optional[dict]:
@@ -196,7 +223,9 @@ def run_agent(
                 stop_reason = "safety_rule_block"
                 break
 
-            messages.append({"role": "user", "content": f"Tool result: {json.dumps(result)}"})
+            messages.append(
+                {"role": "user", "content": f"Tool result: {json.dumps(_compact_for_model(result))}"}
+            )
             continue
 
         steps_log.append({"step": step, "raw_reply": raw_reply, "parse_error": True})
