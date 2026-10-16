@@ -1,0 +1,404 @@
+HW6 RUN_LOG - Sharan Lourduraj, SID4 9619, DOMAIN_ID 3 (Grocery Recall Notice)
+======================================================================
+
+[2026-10-13T20:54:27Z] Sharan Lourduraj | START command: python scripts/demo_doc_api_hw06.py
+HW6 Part 1 demo against http://localhost:8619/api/hw6/notices
+
+--- CRUD ---
+[PASS] POST create: HTTP 201 (expected 201)
+       {"id": "6ace9a86e1d692c9312f67a3", "title": "Demo Frozen Peas", "description": "Demo notice created by demo_doc_api_hw06.py", "status": "open", "category": "food-safety-recall", "notice_date": "2026-10-05T09:30:00Z", "created_at":...
+[PASS] GET list (newest 3): HTTP 200 (expected 200)
+       [{"id": "6ace9a86e1d692c9312f67a3", "title": "Demo Frozen Peas", "description": "Demo notice created by demo_doc_api_hw06.py", "status": "open", "category": "food-safety-recall", "notice_date": "2026-10-05T09:30:00Z", "created_at"...
+[PASS] GET one: HTTP 200 (expected 200)
+       {"id": "6ace9a86e1d692c9312f67a3", "title": "Demo Frozen Peas", "description": "Demo notice created by demo_doc_api_hw06.py", "status": "open", "category": "food-safety-recall", "notice_date": "2026-10-05T09:30:00Z", "created_at":...
+[PASS] PUT update: HTTP 200 (expected 200)
+       {"id": "6ace9a86e1d692c9312f67a3", "title": "Demo Frozen Peas (updated)", "description": "Demo notice created by demo_doc_api_hw06.py", "status": "investigating", "category": "food-safety-recall", "notice_date": "2026-10-05T09:30:...
+[PASS] DELETE: HTTP 200 (expected 200)
+       {"deleted": true, "id": "6ace9a86e1d692c9312f67a3"}
+[PASS] GET after delete: HTTP 404 (expected 404)
+       {"detail": "Notice 6ace9a86e1d692c9312f67a3 not found"}
+
+--- Validation (all must be rejected with 422) ---
+[PASS] POST missing required title: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "title", "message": "Field required", "type": "missing"}]}
+[PASS] POST missing required notice_date: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "notice_date", "message": "Field required", "type": "missing"}]}
+[PASS] POST title longer than 100 chars: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "title", "message": "String should have at most 100 characters", "type": "string_too_long"}]}
+[PASS] POST invalid status enum: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "status", "message": "Input should be 'open', 'investigating' or 'resolved'", "type": "enum"}]...
+[PASS] POST invalid category enum: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "category", "message": "Input should be 'food-safety-recall', 'allergen-alert', 'quality-withd...
+[PASS] POST wrong data type (title is a number): HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "title", "message": "Input should be a valid string", "type": "string_type"}]}
+[PASS] POST invalid date format: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "notice_date", "message": "Input should be a valid datetime or date, input is too short", "typ...
+[PASS] POST malformed JSON: HTTP 422 (expected 422)
+       {"error": "validation_failed", "message": "1 validation error(s): the request was not saved", "details": [{"location": "body", "field": "", "message": "JSON decode error", "type": "json_invalid"}]}
+[PASS] GET malformed id: HTTP 422 (expected 422)
+       {"detail": "'not-an-id' is not a valid id: expected a 24-character hex ObjectId"}
+[PASS] GET unknown id: HTTP 404 (expected 404)
+       {"detail": "Notice 64b7f0f0f0f0f0f0f0f0f0f0 not found"}
+
+ALL REQUESTS BEHAVED AS EXPECTED
+[2026-10-13T20:54:30Z] END exit_code=0
+
+[2026-10-16T03:12:09Z] Sharan Lourduraj | START command: python scripts/demo_chat_hw06.py
+HW6 Part 2 chat demo against http://localhost:8619  (user_id=jo-1792120332)
+
+[01] USER: Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods.
+     ASSISTANT: Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know…
+     used: window=1/12 session_summary=no lifetime_summary=no retrieved_facts=none
+     stored: ['User lives in San Jose', 'User shops at Safeway', 'User shops at Whole Foods']
+     tokens: prompt=105 completion=43 latency=84077 ms
+
+[02] USER: I have a severe peanut allergy, so allergen alerts matter most to me.
+     ASSISTANT: Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need fu…
+     used: window=3/12 session_summary=no lifetime_summary=no retrieved_facts=none
+     stored: ['User is allergic to peanuts']
+     tokens: prompt=173 completion=35 latency=31172 ms
+
+[03] USER: What kinds of recall notices should I watch for?
+     ASSISTANT: You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or…
+     used: window=5/12 session_summary=no lifetime_summary=no retrieved_facts=none
+     stored: no new facts
+     tokens: prompt=227 completion=45 latency=26651 ms
+
+[04] USER: I buy a lot of frozen berries for smoothies. Any risk there?
+     ASSISTANT: Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-…
+     used: window=7/12 session_summary=no lifetime_summary=no retrieved_facts=none
+     stored: ['User buys frozen berries for smoothies']
+     tokens: prompt=296 completion=47 latency=35834 ms
+
+[05] USER: I also have a toddler who drinks oat milk every day.
+     ASSISTANT: I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific br…
+     used: window=9/12 session_summary=no lifetime_summary=no retrieved_facts=none
+     stored: ['User has a toddler who drinks oat milk every day']  | session summary updated
+     tokens: prompt=364 completion=36 latency=109181 ms
+
+[06] USER: Explain the difference between a food-safety recall and a quality withdrawal.
+     ASSISTANT: A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a produc…
+     used: window=11/12 session_summary=yes lifetime_summary=no retrieved_facts=none
+     stored: no new facts
+     tokens: prompt=549 completion=73 latency=82792 ms
+
+[07] USER: I prefer short answers and a weekly email digest.
+     ASSISTANT: Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you ne…
+     used: window=12/12 session_summary=yes lifetime_summary=no retrieved_facts=none
+     stored: ['User prefers short answers', 'User wants a weekly email digest']
+     tokens: prompt=615 completion=39 latency=71879 ms
+
+[08] USER: Which of my stores should I check first?
+     ASSISTANT: Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let …
+     used: window=12/12 session_summary=yes lifetime_summary=no retrieved_facts=['User shops at Whole Foods (0.5489)', 'User shops at Safeway (0.5175)']
+     stored: no new facts
+     tokens: prompt=624 completion=45 latency=59961 ms
+
+[09] USER: What should I do if I already ate a recalled product?
+     ASSISTANT: If you already ate a recalled product, monitor for symptoms like allergic reactions, stomach issues, or illness. Contact a doctor if you or your todd…
+     used: window=12/12 session_summary=yes lifetime_summary=no retrieved_facts=['User has a toddler who drinks oat milk every day (0.4834)', 'User is allergic to peanuts (0.4826)', 'User buys frozen berries for smoothies (0.4716)']
+     stored: ['User ate a recalled product']
+     tokens: prompt=650 completion=46 latency=68349 ms
+
+[10] USER: My partner is lactose intolerant, by the way.
+     ASSISTANT: I’ll keep an eye out for recalls related to lactose-free or dairy-free products too. Let me know if you need help checking specific items!
+     used: window=12/12 session_summary=yes lifetime_summary=no retrieved_facts=['User has a toddler who drinks oat milk every day (0.5645)', 'User is allergic to peanuts (0.4787)', 'User ate a recalled product (0.4553)']
+     stored: ["User's partner is lactose intolerant"]  | session summary updated
+     tokens: prompt=646 completion=31 latency=159073 ms
+
+[11] USER: Remind me what allergy I have.
+     ASSISTANT: You have a **peanut allergy**. Let me know if you need help checking for recalls or tracking products!
+     used: window=12/12 session_summary=yes lifetime_summary=no retrieved_facts=['User is allergic to peanuts (0.6198)', 'User ate a recalled product (0.4823)', "User's partner is lactose intolerant (0.4649)"]
+     stored: ['User has a food allergy.']
+     tokens: prompt=637 completion=24 latency=78802 ms
+
+[12] USER: Summarize everything you know about me and my family.
+     ASSISTANT: You live in San Jose and shop at Safeway and Whole Foods. You have a severe peanut allergy and are concerned about recalls related to peanuts, allerg…
+     used: window=12/12 session_summary=yes lifetime_summary=no retrieved_facts=none
+     stored: no new facts
+     tokens: prompt=592 completion=81 latency=68632 ms
+
+=== GET /api/memory/jo-1792120332 (condensed) ===
+messages returned: 16   episodes returned: 11
+session summary:
+- Jo lives in San Jose and shops at Safeway and Whole Foods.  
+- Jo has a severe peanut allergy and is concerned about allergen alerts and recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  
+- Jo’s toddler drinks oat milk daily, making recalls related to plant-based milks a priority.  
+- Jo prefers short answers and a weekly email digest with updates on recalls.  
+- Jo is advised to check Whole Foods first for recalls, with Safeway also being monitored.  
+- Jo’s partner is lactose intolerant, so recalls related to lactose-free or dairy-free products will also be tracked.
+lifetime summary:
+(none yet)
+episodes:
+  - User has a food allergy.  [importance 0.5]
+  - User's partner is lactose intolerant  [importance 0.5]
+  - User ate a recalled product  [importance 1.0]
+  - User wants a weekly email digest  [importance 0.5]
+  - User prefers short answers  [importance 0.5]
+  - User has a toddler who drinks oat milk every day  [importance 0.5]
+  - User buys frozen berries for smoothies  [importance 0.5]
+  - User is allergic to peanuts  [importance 1.0]
+
+=== GET /api/aggregate/jo-1792120332 ===
+{
+  "user_id": "jo-1792120332",
+  "total_messages": 24,
+  "sessions": 1,
+  "episodes": 11,
+  "daily_message_counts": [
+    {
+      "date": "2026-10-16",
+      "messages": 24,
+      "user_messages": 12,
+      "assistant_messages": 12
+    }
+  ]
+}
+recent summaries: 2
+
+Saved raw JSON to C:\Users\shara\data260-9619\reports\hw06\raw
+[2026-10-16T03:26:49Z] END exit_code=0
+
+[2026-10-16T03:52:02Z] Sharan Lourduraj | START command: python scripts/run_memory_sweep_hw06.py --only N4
+HW6 Part 3 sweep against http://localhost:8619; settings: N4
+
+=== N4: SHORT_TERM_N=4, policy=none, user_id=sweep-n4-1792122725 ===
+  turn 01/30  prompt=  105  completion= 43  reply=  35.8s  total=  64.7s  window=1 facts=0
+  turn 02/30  prompt=  173  completion= 35  reply=  10.9s  total=  17.1s  window=3 facts=0
+  turn 03/30  prompt=  201  completion= 45  reply=  16.7s  total=  20.0s  window=4 facts=0
+  turn 04/30  prompt=  203  completion= 41  reply=  17.2s  total=  20.8s  window=4 facts=0
+  turn 05/30  prompt=  214  completion= 55  reply=  20.1s  total=  74.4s  window=4 facts=0
+  turn 06/30  prompt=  363  completion= 52  reply=  32.5s  total=  35.9s  window=4 facts=0
+  turn 07/30  prompt=  393  completion= 68  reply=  23.0s  total=  25.7s  window=4 facts=1
+  turn 08/30  prompt=  402  completion= 50  reply=  20.2s  total=  22.8s  window=4 facts=1
+  turn 09/30  prompt=  381  completion= 60  reply=  20.5s  total=  24.5s  window=4 facts=0
+  turn 10/30  prompt=  375  completion= 50  reply=  19.2s  total= 121.7s  window=4 facts=0
+  turn 11/30  prompt=  534  completion= 69  reply=  42.6s  total=  45.3s  window=4 facts=0
+  turn 12/30  prompt=  543  completion= 39  reply=  18.0s  total=  21.5s  window=4 facts=0
+  turn 13/30  prompt=  531  completion= 46  reply=  19.0s  total=  21.6s  window=4 facts=0
+  turn 14/30  prompt=  528  completion= 51  reply=  18.5s  total=  21.2s  window=4 facts=1
+  turn 15/30  prompt=  544  completion= 53  reply=  20.5s  total=  87.7s  window=4 facts=2
+  turn 16/30  prompt=  595  completion= 39  reply=  28.9s  total=  31.8s  window=4 facts=1
+  turn 17/30  prompt=  584  completion= 48  reply=  18.8s  total=  21.6s  window=4 facts=1
+  turn 18/30  prompt=  583  completion= 59  reply=  21.0s  total=  23.7s  window=4 facts=2
+  turn 19/30  prompt=  577  completion= 63  reply=  20.7s  total=  27.2s  window=4 facts=0
+  turn 20/30  prompt=  624  completion= 83  reply=  28.0s  total= 159.1s  window=4 facts=2
+  turn 21/30  prompt=  650  completion= 55  reply=  47.4s  total=  50.2s  window=4 facts=0
+  turn 22/30  prompt=  648  completion= 72  reply=  24.8s  total=  27.9s  window=4 facts=0
+  turn 23/30  prompt=  636  completion= 56  reply=  21.6s  total=  24.5s  window=4 facts=0
+  turn 24/30  prompt=  637  completion= 57  reply=  21.7s  total=  24.9s  window=4 facts=0
+  turn 25/30  prompt=  644  completion= 61  reply=  25.5s  total=  92.9s  window=4 facts=1
+  turn 26/30  prompt=  629  completion= 26  reply=  25.1s  total=  31.4s  window=4 facts=1
+  turn 27/30  prompt=  576  completion= 43  reply=  16.3s  total=  19.0s  window=4 facts=0
+  turn 28/30  prompt=  556  completion= 45  reply=  15.6s  total=  18.7s  window=4 facts=0
+  turn 29/30  prompt=  579  completion= 28  reply=  13.8s  total=  16.8s  window=4 facts=0
+  turn 30/30  prompt=  562  completion= 28  reply=  12.6s  total= 102.4s  window=4 facts=0
+    attempt 1 failed: HTTP 422: {"detail":[{"type":"extra_forbidden","loc":["body","read_only"],"msg":"Extra inputs are not permitted","input":true}]}
+    attempt 2 failed: HTTP 422: {"detail":[{"type":"extra_forbidden","loc":["body","read_only"],"msg":"Extra inputs are not permitted","input":true}]}
+    attempt 3 failed: HTTP 422: {"detail":[{"type":"extra_forbidden","loc":["body","read_only"],"msg":"Extra inputs are not permitted","input":true}]}
+
+STOPPED in N4: HTTP 422: {"detail":[{"type":"extra_forbidden","loc":["body","read_only"],"msg":"Extra inputs are not permitted","input":true}]}
+Re-run the same command to resume from the next turn.
+[2026-10-16T04:14:13Z] END exit_code=1
+
+[2026-10-16T04:19:08Z] Sharan Lourduraj | START command: python scripts/run_memory_sweep_hw06.py
+HW6 Part 3 sweep against http://localhost:8619; settings: N4, N12, N30, POLICY
+Cannot read http://localhost:8619/api/memory-config (('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))).
+The container is missing or running an OLD image: run 'docker compose up --build -d' and try again.
+[2026-10-16T04:19:10Z] END exit_code=3
+
+[2026-10-16T04:27:43Z] Sharan Lourduraj | START command: python scripts/run_memory_sweep_hw06.py
+HW6 Part 3 sweep against http://localhost:8619; settings: N4, N12, N30, POLICY
+Server settings: {'short_term_n_default': 12, 'summarize_every_user_msgs': 5, 'lifetime_every_session_summaries': 2, 'episode_top_k': 3, 'episode_min_similarity': 0.45, 'compression_policy_default': 'none', 'chat_model': 'qwen3:8b', 'embed_model': 'nomic-embed-text', 'source_fingerprint': '6b3fc415295cc617', 'repo_fingerprint': '6b3fc415295cc617'}
+
+=== N4: SHORT_TERM_N=4, policy=none, user_id=sweep-n4-1792124350 ===
+  turn 01/30  prompt=  105  completion= 43  reply=  32.3s  total=  62.8s  window=1 facts=0
+  turn 02/30  prompt=  173  completion= 35  reply=  12.4s  total=  20.6s  window=3 facts=0
+  turn 03/30  prompt=  201  completion= 45  reply=  17.7s  total=  20.6s  window=4 facts=0
+  turn 04/30  prompt=  203  completion= 41  reply=  14.5s  total=  17.7s  window=4 facts=0
+  turn 05/30  prompt=  214  completion= 55  reply=  17.8s  total=  66.1s  window=4 facts=0
+  turn 06/30  prompt=  363  completion= 52  reply=  30.3s  total=  33.3s  window=4 facts=0
+  turn 07/30  prompt=  393  completion= 68  reply=  22.2s  total=  24.9s  window=4 facts=1
+  turn 08/30  prompt=  402  completion= 50  reply=  19.9s  total=  22.5s  window=4 facts=1
+  turn 09/30  prompt=  381  completion= 60  reply=  20.4s  total=  23.4s  window=4 facts=0
+  turn 10/30  prompt=  375  completion= 50  reply=  18.3s  total= 115.2s  window=4 facts=0
+  turn 11/30  prompt=  518  completion= 74  reply=  43.1s  total=  45.9s  window=4 facts=0
+  turn 12/30  prompt=  533  completion= 41  reply=  19.4s  total=  22.1s  window=4 facts=0
+  turn 13/30  prompt=  523  completion= 62  reply=  21.1s  total=  24.2s  window=4 facts=0
+  turn 14/30  prompt=  530  completion= 41  reply=  18.1s  total=  20.8s  window=4 facts=1
+  turn 15/30  prompt=  534  completion= 50  reply=  19.4s  total=  83.6s  window=4 facts=2
+  turn 16/30  prompt=  545  completion= 39  reply=  27.1s  total=  30.0s  window=4 facts=1
+  turn 17/30  prompt=  544  completion= 44  reply=  17.3s  total=  20.2s  window=4 facts=1
+  turn 18/30  prompt=  542  completion= 55  reply=  19.9s  total=  22.3s  window=4 facts=2
+  turn 19/30  prompt=  532  completion= 58  reply=  20.3s  total=  26.9s  window=4 facts=0
+  turn 20/30  prompt=  578  completion= 61  reply=  23.5s  total= 142.4s  window=4 facts=2
+  turn 21/30  prompt=  599  completion= 53  reply=  43.0s  total=  45.8s  window=4 facts=0
+  turn 22/30  prompt=  600  completion= 65  reply=  22.3s  total=  25.2s  window=4 facts=0
+  turn 23/30  prompt=  603  completion= 67  reply=  22.7s  total=  25.7s  window=4 facts=0
+  turn 24/30  prompt=  617  completion= 61  reply=  21.8s  total=  24.6s  window=4 facts=0
+  turn 25/30  prompt=  635  completion= 54  reply=  22.2s  total=  86.5s  window=4 facts=1
+  turn 26/30  prompt=  637  completion= 24  reply=  24.6s  total=  31.0s  window=4 facts=1
+  turn 27/30  prompt=  578  completion= 49  reply=  16.7s  total=  19.3s  window=4 facts=0
+  turn 28/30  prompt=  571  completion= 45  reply=  15.3s  total=  18.1s  window=4 facts=0
+  turn 29/30  prompt=  596  completion= 35  reply=  14.7s  total=  17.5s  window=4 facts=0
+  turn 30/30  prompt=  580  completion= 28  reply=  12.7s  total= 113.7s  window=4 facts=0
+  probe P1: score 5  (What food allergy do I have?)
+      -> You have a severe peanut allergy. Let me know if you need help checking for allergen information on products.
+  probe P2: score 5  (Which two grocery stores do I shop at?)
+      -> You shop at Safeway and Whole Foods.
+  probe P3: score 5  (What does my toddler drink every day?)
+      -> Your toddler drinks oat milk daily.
+  probe P4: score 5  (Which city do I live in now?)
+      -> You now live in Oakland.
+  probe P5: score 5  (What kind of updates did I ask you to send me, and how often?)
+      -> You asked for short answers and a weekly email digest with food safety tips. I'll send the digest every week. Let me know if you'd like to adjust!
+
+=== N12: SHORT_TERM_N=12, policy=none, user_id=sweep-n12-1792124350 ===
+  turn 01/30  prompt=  105  completion= 43  reply=   9.5s  total=  23.3s  window=1 facts=0
+  turn 02/30  prompt=  173  completion= 35  reply=  11.5s  total=  17.6s  window=3 facts=0
+  turn 03/30  prompt=  227  completion= 45  reply=  12.5s  total=  15.4s  window=5 facts=0
+  turn 04/30  prompt=  297  completion= 46  reply=  15.0s  total=  18.4s  window=7 facts=0
+  turn 05/30  prompt=  367  completion= 71  reply=  17.8s  total=  58.4s  window=9 facts=0
+  turn 06/30  prompt=  614  completion= 49  reply=  48.4s  total=  51.6s  window=11 facts=0
+  turn 07/30  prompt=  680  completion= 60  reply=  43.8s  total=  46.5s  window=12 facts=1
+  turn 08/30  prompt=  692  completion= 59  reply=  42.6s  total=  45.9s  window=12 facts=1
+  turn 09/30  prompt=  696  completion= 57  reply=  43.3s  total=  46.6s  window=12 facts=0
+  turn 10/30  prompt=  705  completion= 54  reply=  42.1s  total= 149.2s  window=12 facts=0
+  turn 11/30  prompt=  843  completion= 71  reply=  68.8s  total=  71.8s  window=12 facts=0
+  turn 12/30  prompt=  841  completion= 60  reply=  43.9s  total=  47.0s  window=12 facts=0
+  turn 13/30  prompt=  855  completion= 72  reply=  49.0s  total=  52.6s  window=12 facts=0
+  turn 14/30  prompt=  889  completion= 59  reply=  50.6s  total=  53.6s  window=12 facts=1
+  turn 15/30  prompt=  890  completion= 63  reply=  48.3s  total= 119.5s  window=12 facts=2
+  turn 16/30  prompt=  904  completion= 56  reply=  55.0s  total=  57.9s  window=12 facts=1
+  turn 17/30  prompt=  902  completion= 68  reply=  45.5s  total=  48.1s  window=12 facts=1
+  turn 18/30  prompt=  902  completion= 53  reply=  41.2s  total=  44.0s  window=12 facts=2
+  turn 19/30  prompt=  866  completion= 69  reply=  41.9s  total=  48.3s  window=12 facts=0
+  turn 20/30  prompt=  896  completion= 81  reply=  45.8s  total= 178.3s  window=12 facts=2
+  turn 21/30  prompt= 1000  completion= 63  reply=  68.5s  total=  71.6s  window=12 facts=0
+  turn 22/30  prompt= 1003  completion= 84  reply=  46.8s  total=  49.6s  window=12 facts=0
+  turn 23/30  prompt= 1032  completion= 88  reply=  49.5s  total=  52.4s  window=12 facts=0
+  turn 24/30  prompt= 1058  completion= 75  reply=  48.8s  total=  51.9s  window=12 facts=0
+  turn 25/30  prompt= 1097  completion= 73  reply=  50.6s  total= 130.6s  window=12 facts=1
+  turn 26/30  prompt= 1125  completion= 43  reply=  55.7s  total=  62.1s  window=12 facts=1
+  turn 27/30  prompt= 1061  completion= 63  reply=  45.4s  total=  48.0s  window=12 facts=0
+  turn 28/30  prompt= 1056  completion= 68  reply=  46.1s  total=  48.8s  window=12 facts=0
+  turn 29/30  prompt= 1044  completion= 40  reply=  39.7s  total=  42.8s  window=12 facts=0
+  turn 30/30  prompt=  989  completion= 24  reply=  33.4s  total= 160.3s  window=12 facts=0
+  probe P1: score 5  (What food allergy do I have?)
+      -> You have a severe **peanut allergy**. Let me know if you need help with allergen alerts or safe food options!
+  probe P2: score 5  (Which two grocery stores do I shop at?)
+      -> You shop at Safeway and Whole Foods. Let me know if you need help with recalls or allergen alerts for these stores!
+  probe P3: score 5  (What does my toddler drink every day?)
+      -> Your toddler drinks oat milk every day. Let me know if you need help with safe storage or allergen checks for oat milk!
+  probe P4: score 5  (Which city do I live in now?)
+      -> You now live in Oakland. Let me know if you need help with local grocery stores or food safety tips!
+  probe P5: score 5  (What kind of updates did I ask you to send me, and how often?)
+      -> You asked for **short answers** and a **weekly email digest** with food safety tips, recalls, and allergen alerts. The digest will come **every week**. Let me k
+
+=== N30: SHORT_TERM_N=30, policy=none, user_id=sweep-n30-1792124350 ===
+  turn 01/30  prompt=  105  completion= 43  reply=   9.7s  total=  22.6s  window=1 facts=0
+  turn 02/30  prompt=  173  completion= 35  reply=   7.0s  total=  12.8s  window=3 facts=0
+  turn 03/30  prompt=  227  completion= 45  reply=  12.1s  total=  14.8s  window=5 facts=0
+  turn 04/30  prompt=  297  completion= 46  reply=  13.6s  total=  16.6s  window=7 facts=0
+  turn 05/30  prompt=  367  completion= 71  reply=  17.2s  total=  45.5s  window=9 facts=0
+  turn 06/30  prompt=  612  completion= 49  reply=  39.8s  total=  42.5s  window=11 facts=0
+  turn 07/30  prompt=  704  completion= 59  reply=  17.6s  total=  20.3s  window=13 facts=1
+  turn 08/30  prompt=  783  completion= 46  reply=  16.1s  total=  19.1s  window=15 facts=1
+  turn 09/30  prompt=  828  completion= 57  reply=  16.2s  total=  19.2s  window=17 facts=0
+  turn 10/30  prompt=  907  completion= 49  reply=  15.3s  total=  97.4s  window=19 facts=0
+  turn 11/30  prompt= 1043  completion= 77  reply=  73.5s  total=  76.5s  window=21 facts=0
+  turn 12/30  prompt= 1142  completion= 58  reply=  19.5s  total=  22.6s  window=23 facts=0
+  turn 13/30  prompt= 1221  completion= 64  reply=  19.3s  total=  22.1s  window=25 facts=0
+  turn 14/30  prompt= 1327  completion= 48  reply=  18.1s  total=  20.6s  window=27 facts=1
+  turn 15/30  prompt= 1400  completion= 52  reply=  18.6s  total=  82.8s  window=29 facts=2
+  turn 16/30  prompt= 1514  completion= 55  reply=  99.2s  total= 102.0s  window=30 facts=1
+  turn 17/30  prompt= 1519  completion= 44  reply=  97.9s  total= 100.6s  window=30 facts=1
+  turn 18/30  prompt= 1534  completion= 41  reply=  96.8s  total=  99.7s  window=30 facts=2
+  turn 19/30  prompt= 1497  completion= 56  reply=  98.0s  total= 104.7s  window=30 facts=0
+  turn 20/30  prompt= 1533  completion= 62  reply= 102.3s  total= 216.3s  window=30 facts=2
+  turn 21/30  prompt= 1570  completion= 59  reply= 105.2s  total= 108.0s  window=30 facts=0
+  turn 22/30  prompt= 1586  completion= 60  reply=  83.8s  total=  86.8s  window=30 facts=0
+  turn 23/30  prompt= 1586  completion= 70  reply=  83.6s  total=  86.4s  window=30 facts=0
+  turn 24/30  prompt= 1610  completion= 72  reply=  85.5s  total=  88.5s  window=30 facts=0
+  turn 25/30  prompt= 1644  completion= 75  reply=  87.9s  total= 159.8s  window=30 facts=1
+  turn 26/30  prompt= 1713  completion= 36  reply= 107.9s  total= 114.5s  window=30 facts=1
+  turn 27/30  prompt= 1644  completion= 41  reply=  79.3s  total=  81.9s  window=30 facts=0
+  turn 28/30  prompt= 1625  completion= 57  reply=  80.7s  total=  83.6s  window=30 facts=0
+  turn 29/30  prompt= 1624  completion= 33  reply=  78.2s  total=  81.4s  window=30 facts=0
+  turn 30/30  prompt= 1609  completion= 25  reply=  73.7s  total= 191.7s  window=30 facts=0
+  probe P1: score 5  (What food allergy do I have?)
+      -> You have a severe peanut allergy. Let me know if you need help checking for peanut-containing products!
+  probe P2: score 5  (Which two grocery stores do I shop at?)
+      -> You shop at Safeway and Whole Foods. Let me know if you need help with anything else!
+  probe P3: score 5  (What does my toddler drink every day?)
+      -> Your toddler drinks oat milk every day. Let me know if you need help checking for recalls or safe storage tips!
+Traceback (most recent call last):
+  File "C:\Users\shara\data260-9619\scripts\run_memory_sweep_hw06.py", line 273, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "C:\Users\shara\data260-9619\scripts\run_memory_sweep_hw06.py", line 261, in main
+    run_setting(label, state, conversation, probes_cfg, out_dir, args.limit_turns)
+  File "C:\Users\shara\data260-9619\scripts\run_memory_sweep_hw06.py", line 202, in run_setting
+    print(f"  probe {probe['id']}: score {result['score']}  ({probe['question']})\n      -> {row['reply'][:160]}")
+  File "C:\Users\shara\AppData\Local\Programs\Python\Python312\Lib\encodings\cp1252.py", line 19, in encode
+    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+UnicodeEncodeError: 'charmap' codec can't encode characters in position 131-132: character maps to <undefined>
+[2026-10-16T06:02:41Z] END exit_code=1
+
+[2026-10-16T06:05:07Z] Sharan Lourduraj | START command: python scripts/run_memory_sweep_hw06.py
+HW6 Part 3 sweep against http://localhost:8619; settings: N4, N12, N30, POLICY
+Server settings: {'short_term_n_default': 12, 'summarize_every_user_msgs': 5, 'lifetime_every_session_summaries': 2, 'episode_top_k': 3, 'episode_min_similarity': 0.45, 'compression_policy_default': 'none', 'chat_model': 'qwen3:8b', 'embed_model': 'nomic-embed-text', 'source_fingerprint': '6b3fc415295cc617', 'repo_fingerprint': '6b3fc415295cc617'}
+
+=== N4: SHORT_TERM_N=4, policy=none, user_id=sweep-n4-1792124350 ===
+
+=== N12: SHORT_TERM_N=12, policy=none, user_id=sweep-n12-1792124350 ===
+
+=== N30: SHORT_TERM_N=30, policy=none, user_id=sweep-n30-1792124350 ===
+  probe P5: score 5  (What kind of updates did I ask you to send me, and how often?)
+      -> You asked for a **weekly email digest** with **food safety tips and recall updates**. I'll send it every **Sunday**. Let me know if you need anything else! 🍎🥛
+
+=== POLICY: SHORT_TERM_N=30, policy=compress_old_assistant, user_id=sweep-policy-1792124350 ===
+  turn 01/30  prompt=  105  completion= 43  reply=   9.6s  total=  22.3s  window=1 facts=0
+  turn 02/30  prompt=  173  completion= 35  reply=   7.0s  total=  13.1s  window=3 facts=0
+  turn 03/30  prompt=  189  completion= 53  reply=  14.9s  total=  17.4s  window=5 facts=0
+  turn 04/30  prompt=  238  completion= 57  reply=  16.0s  total=  18.9s  window=7 facts=0
+  turn 05/30  prompt=  288  completion= 74  reply=  19.8s  total=  54.0s  window=9 facts=0
+  turn 06/30  prompt=  460  completion= 49  reply=  30.7s  total=  33.8s  window=11 facts=0
+  turn 07/30  prompt=  505  completion= 68  reply=  20.4s  total=  22.9s  window=13 facts=1
+  turn 08/30  prompt=  571  completion= 37  reply=  15.3s  total=  18.0s  window=15 facts=1
+  turn 09/30  prompt=  555  completion= 44  reply=  13.6s  total=  16.5s  window=17 facts=0
+  turn 10/30  prompt=  609  completion= 49  reply=  15.5s  total= 124.6s  window=19 facts=0
+  turn 11/30  prompt=  894  completion= 71  reply=  64.0s  total=  66.8s  window=21 facts=0
+  turn 12/30  prompt=  967  completion= 57  reply=  19.1s  total=  21.8s  window=23 facts=0
+  turn 13/30  prompt=  999  completion= 47  reply=  16.4s  total=  19.1s  window=25 facts=0
+  turn 14/30  prompt= 1044  completion= 33  reply=  14.6s  total=  17.5s  window=27 facts=1
+  turn 15/30  prompt= 1083  completion= 35  reply=  15.7s  total=  84.2s  window=29 facts=2
+  turn 16/30  prompt= 1107  completion= 35  reply=  70.3s  total=  73.2s  window=30 facts=1
+  turn 17/30  prompt= 1110  completion= 29  reply=  44.9s  total=  47.7s  window=30 facts=1
+  turn 18/30  prompt= 1119  completion= 39  reply=  47.2s  total=  49.6s  window=30 facts=2
+  turn 19/30  prompt= 1102  completion= 37  reply=  46.4s  total=  53.8s  window=30 facts=0
+  turn 20/30  prompt= 1129  completion= 51  reply=  51.5s  total= 162.0s  window=30 facts=2
+  turn 21/30  prompt= 1045  completion= 49  reply=  72.0s  total=  74.6s  window=30 facts=0
+  turn 22/30  prompt= 1048  completion= 65  reply=  52.0s  total=  55.0s  window=30 facts=0
+  turn 23/30  prompt= 1075  completion= 41  reply=  47.6s  total=  50.6s  window=30 facts=0
+  turn 24/30  prompt= 1051  completion= 56  reply=  50.4s  total=  53.4s  window=30 facts=0
+  turn 25/30  prompt= 1098  completion= 50  reply=  51.3s  total= 111.8s  window=30 facts=1
+  turn 26/30  prompt= 1090  completion= 26  reply=  69.0s  total=  75.4s  window=30 facts=1
+  turn 27/30  prompt= 1038  completion= 29  reply=  44.0s  total=  46.9s  window=30 facts=0
+  turn 28/30  prompt= 1051  completion= 46  reply=  47.9s  total=  50.9s  window=30 facts=0
+  turn 29/30  prompt= 1075  completion= 32  reply=  46.3s  total=  49.1s  window=30 facts=0
+  turn 30/30  prompt= 1074  completion= 27  reply=  45.0s  total= 142.9s  window=30 facts=0
+  probe P1: score 5  (What food allergy do I have?)
+      -> You have a severe peanut allergy.
+  probe P2: score 5  (Which two grocery stores do I shop at?)
+      -> You shop at Safeway and Whole Foods.
+  probe P3: score 5  (What does my toddler drink every day?)
+      -> Your toddler drinks oat milk every day.
+  probe P4: score 5  (Which city do I live in now?)
+      -> You now live in Oakland.
+  probe P5: score 5  (What kind of updates did I ask you to send me, and how often?)
+      -> You asked for **short answers** and a **weekly email digest**, which I’ll send every **Sunday**.
+
+Sweep finished in 29.3 minutes. Raw data: C:\Users\shara\data260-9619\reports\hw06\raw
+[2026-10-16T06:34:25Z] END exit_code=0

@@ -1,0 +1,32 @@
+{
+  "user_id": "jo-1792120332",
+  "total_messages": 24,
+  "sessions": 1,
+  "episodes": 11,
+  "daily_message_counts": [
+    {
+      "date": "2026-10-16",
+      "messages": 24,
+      "user_messages": 12,
+      "assistant_messages": 12
+    }
+  ],
+  "recent_summaries": [
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "scope": "session",
+      "text": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is concerned about allergen alerts and recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo’s toddler drinks oat milk daily, making recalls related to plant-based milks a priority.  \n- Jo prefers short answers and a weekly email digest with updates on recalls.  \n- Jo is advised to check Whole Foods first for recalls, with Safeway also being monitored.  \n- Jo’s partner is lactose intolerant, so recalls related to lactose-free or dairy-free products will also be tracked.",
+      "created_at": "2026-10-16T03:24:21.664000Z",
+      "id": "6ad198e531b39c0c8990fdb4"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "scope": "session",
+      "text": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is particularly concerned about allergen alerts.  \n- Jo frequently buys frozen berries for smoothies and is concerned about potential recalls.  \n- Jo's toddler drinks oat milk daily, so recalls related to oat milk and plant-based milks are a priority.  \n- Jo needs help monitoring recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo is advised to stay alert for notices about contaminated, mislabeled, or unsafe food items.",
+      "created_at": "2026-10-16T03:16:59.600000Z",
+      "id": "6ad1972b31b39c0c8990fda5"
+    }
+  ]
+}

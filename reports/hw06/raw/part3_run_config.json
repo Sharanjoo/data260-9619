@@ -1,0 +1,13 @@
+{
+  "short_term_n_default": 12,
+  "summarize_every_user_msgs": 5,
+  "lifetime_every_session_summaries": 2,
+  "episode_top_k": 3,
+  "episode_min_similarity": 0.45,
+  "compression_policy_default": "none",
+  "chat_model": "qwen3:8b",
+  "embed_model": "nomic-embed-text",
+  "source_fingerprint": "6b3fc415295cc617",
+  "repo_fingerprint": "6b3fc415295cc617",
+  "checked_at": "2026-10-16T06:05:09Z"
+}

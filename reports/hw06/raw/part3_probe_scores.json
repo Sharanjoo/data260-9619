@@ -1,0 +1,122 @@
+{
+  "N4": {
+    "probes": {
+      "P1": {
+        "score": 5,
+        "reply": "You have a severe peanut allergy. Let me know if you need help checking for allergen information on products.",
+        "retrieved_facts": "User has a severe peanut allergy | User shops at Whole Foods"
+      },
+      "P2": {
+        "score": 5,
+        "reply": "You shop at Safeway and Whole Foods.",
+        "retrieved_facts": "User shops at Whole Foods | User shops at Safeway"
+      },
+      "P3": {
+        "score": 5,
+        "reply": "Your toddler drinks oat milk daily.",
+        "retrieved_facts": "User's toddler drinks oat milk daily"
+      },
+      "P4": {
+        "score": 5,
+        "reply": "You now live in Oakland.",
+        "retrieved_facts": "User lives in San Jose | User moved from San Jose to Oakland"
+      },
+      "P5": {
+        "score": 5,
+        "reply": "You asked for short answers and a weekly email digest with food safety tips. I'll send the digest every week. Let me know if you'd like to adjust!",
+        "retrieved_facts": ""
+      }
+    },
+    "mean_score": 5.0
+  },
+  "N12": {
+    "probes": {
+      "P1": {
+        "score": 5,
+        "reply": "You have a severe **peanut allergy**. Let me know if you need help with allergen alerts or safe food options!",
+        "retrieved_facts": "User has a severe peanut allergy | User shops at Whole Foods"
+      },
+      "P2": {
+        "score": 5,
+        "reply": "You shop at Safeway and Whole Foods. Let me know if you need help with recalls or allergen alerts for these stores!",
+        "retrieved_facts": "User shops at Whole Foods | User shops at Safeway"
+      },
+      "P3": {
+        "score": 5,
+        "reply": "Your toddler drinks oat milk every day. Let me know if you need help with safe storage or allergen checks for oat milk!",
+        "retrieved_facts": "User's toddler drinks oat milk daily"
+      },
+      "P4": {
+        "score": 5,
+        "reply": "You now live in Oakland. Let me know if you need help with local grocery stores or food safety tips!",
+        "retrieved_facts": "User lives in San Jose | User moved from San Jose to Oakland"
+      },
+      "P5": {
+        "score": 5,
+        "reply": "You asked for **short answers** and a **weekly email digest** with food safety tips, recalls, and allergen alerts. The digest will come **every week**. Let me know if you need anything else!",
+        "retrieved_facts": ""
+      }
+    },
+    "mean_score": 5.0
+  },
+  "N30": {
+    "probes": {
+      "P1": {
+        "score": 5,
+        "reply": "You have a severe peanut allergy. Let me know if you need help checking for peanut-containing products!",
+        "retrieved_facts": "User has a severe peanut allergy | User shops at Whole Foods"
+      },
+      "P2": {
+        "score": 5,
+        "reply": "You shop at Safeway and Whole Foods. Let me know if you need help with anything else!",
+        "retrieved_facts": "User shops at Whole Foods | User shops at Safeway"
+      },
+      "P3": {
+        "score": 5,
+        "reply": "Your toddler drinks oat milk every day. Let me know if you need help checking for recalls or safe storage tips!",
+        "retrieved_facts": "User's toddler drinks oat milk daily"
+      },
+      "P4": {
+        "score": 5,
+        "reply": "You now live in Oakland. Let me know if you need help with anything! 🍎🥛",
+        "retrieved_facts": "User lives in San Jose | User moved from San Jose to Oakland"
+      },
+      "P5": {
+        "score": 5,
+        "reply": "You asked for a **weekly email digest** with **food safety tips and recall updates**. I'll send it every **Sunday**. Let me know if you need anything else! 🍎🥛",
+        "retrieved_facts": ""
+      }
+    },
+    "mean_score": 5.0
+  },
+  "POLICY": {
+    "probes": {
+      "P1": {
+        "score": 5,
+        "reply": "You have a severe peanut allergy.",
+        "retrieved_facts": "User has a severe peanut allergy | User shops at Whole Foods"
+      },
+      "P2": {
+        "score": 5,
+        "reply": "You shop at Safeway and Whole Foods.",
+        "retrieved_facts": "User shops at Whole Foods | User shops at Safeway"
+      },
+      "P3": {
+        "score": 5,
+        "reply": "Your toddler drinks oat milk every day.",
+        "retrieved_facts": "User's toddler drinks oat milk daily"
+      },
+      "P4": {
+        "score": 5,
+        "reply": "You now live in Oakland.",
+        "retrieved_facts": "User lives in San Jose | User moved from San Jose to Oakland"
+      },
+      "P5": {
+        "score": 5,
+        "reply": "You asked for **short answers** and a **weekly email digest**, which I’ll send every **Sunday**.",
+        "retrieved_facts": ""
+      }
+    },
+    "mean_score": 5.0
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "user_id": "jo-1792120332",
+  "messages": [
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "I also have a toddler who drinks oat milk every day.",
+      "created_at": "2026-10-16T03:15:10.505000Z",
+      "id": "6ad196be31b39c0c8990fda2"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!",
+      "created_at": "2026-10-16T03:15:31.201000Z",
+      "id": "6ad196d331b39c0c8990fda3"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "Explain the difference between a food-safety recall and a quality withdrawal.",
+      "created_at": "2026-10-16T03:16:59.675000Z",
+      "id": "6ad1972b31b39c0c8990fda6"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!",
+      "created_at": "2026-10-16T03:18:17.283000Z",
+      "id": "6ad1977931b39c0c8990fda7"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "I prefer short answers and a weekly email digest.",
+      "created_at": "2026-10-16T03:18:22.459000Z",
+      "id": "6ad1977e31b39c0c8990fda8"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!",
+      "created_at": "2026-10-16T03:19:16.736000Z",
+      "id": "6ad197b431b39c0c8990fda9"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "Which of my stores should I check first?",
+      "created_at": "2026-10-16T03:19:34.340000Z",
+      "id": "6ad197c631b39c0c8990fdac"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let me know if you need help checking specific items!",
+      "created_at": "2026-10-16T03:20:29.724000Z",
+      "id": "6ad197fd31b39c0c8990fdad"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "What should I do if I already ate a recalled product?",
+      "created_at": "2026-10-16T03:20:34.346000Z",
+      "id": "6ad1980231b39c0c8990fdae"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "If you already ate a recalled product, monitor for symptoms like allergic reactions, stomach issues, or illness. Contact a doctor if you or your toddler experience any adverse effects. Let me know if you need help tracking specific products!",
+      "created_at": "2026-10-16T03:21:33.205000Z",
+      "id": "6ad1983d31b39c0c8990fdaf"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "My partner is lactose intolerant, by the way.",
+      "created_at": "2026-10-16T03:21:42.712000Z",
+      "id": "6ad1984631b39c0c8990fdb1"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "I’ll keep an eye out for recalls related to lactose-free or dairy-free products too. Let me know if you need help checking specific items!",
+      "created_at": "2026-10-16T03:22:36.164000Z",
+      "id": "6ad1987c31b39c0c8990fdb2"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "Remind me what allergy I have.",
+      "created_at": "2026-10-16T03:24:21.775000Z",
+      "id": "6ad198e531b39c0c8990fdb5"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "You have a **peanut allergy**. Let me know if you need help checking for recalls or tracking products!",
+      "created_at": "2026-10-16T03:25:29.360000Z",
+      "id": "6ad1992931b39c0c8990fdb6"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "user",
+      "content": "Summarize everything you know about me and my family.",
+      "created_at": "2026-10-16T03:25:40.606000Z",
+      "id": "6ad1993431b39c0c8990fdb8"
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "role": "assistant",
+      "content": "You live in San Jose and shop at Safeway and Whole Foods. You have a severe peanut allergy and are concerned about recalls related to peanuts, allergens, frozen berries, and oat milk—especially since your toddler drinks oat milk daily. Your partner is lactose intolerant, so you also track lactose-free or dairy-free recalls. You prefer short answers and a weekly email digest with updates.",
+      "created_at": "2026-10-16T03:26:44.668000Z",
+      "id": "6ad1997431b39c0c8990fdb9"
+    }
+  ],
+  "session_summary": {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "scope": "session",
+    "text": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is concerned about allergen alerts and recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo’s toddler drinks oat milk daily, making recalls related to plant-based milks a priority.  \n- Jo prefers short answers and a weekly email digest with updates on recalls.  \n- Jo is advised to check Whole Foods first for recalls, with Safeway also being monitored.  \n- Jo’s partner is lactose intolerant, so recalls related to lactose-free or dairy-free products will also be tracked.",
+    "created_at": "2026-10-16T03:24:21.664000Z",
+    "id": "6ad198e531b39c0c8990fdb4"
+  },
+  "lifetime_summary": null,
+  "episodes": [
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User has a food allergy.",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:25:40.536000Z",
+      "id": "6ad1993431b39c0c8990fdb7",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User's partner is lactose intolerant",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:22:48.037000Z",
+      "id": "6ad1988831b39c0c8990fdb3",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User ate a recalled product",
+      "importance": 1.0,
+      "created_at": "2026-10-16T03:21:42.648000Z",
+      "id": "6ad1984631b39c0c8990fdb0",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User wants a weekly email digest",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:19:34.305000Z",
+      "id": "6ad197c631b39c0c8990fdab",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User prefers short answers",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:19:34.202000Z",
+      "id": "6ad197c631b39c0c8990fdaa",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User has a toddler who drinks oat milk every day",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:15:43.198000Z",
+      "id": "6ad196df31b39c0c8990fda4",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User buys frozen berries for smoothies",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:15:10.424000Z",
+      "id": "6ad196be31b39c0c8990fda1",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User is allergic to peanuts",
+      "importance": 1.0,
+      "created_at": "2026-10-16T03:14:07.844000Z",
+      "id": "6ad1967f31b39c0c8990fd9c",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User shops at Whole Foods",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:13:36.404000Z",
+      "id": "6ad1966031b39c0c8990fd99",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User shops at Safeway",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:13:36.080000Z",
+      "id": "6ad1966031b39c0c8990fd98",
+      "embedding_dim": 768
+    },
+    {
+      "user_id": "jo-1792120332",
+      "session_id": "sess-123c1b7b1a4d",
+      "fact": "User lives in San Jose",
+      "importance": 0.5,
+      "created_at": "2026-10-16T03:13:35.882000Z",
+      "id": "6ad1965f31b39c0c8990fd97",
+      "embedding_dim": 768
+    }
+  ]
+}

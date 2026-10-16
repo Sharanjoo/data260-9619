@@ -1,0 +1,154 @@
+{
+  "price_per_million": {
+    "input": 1.0,
+    "output": 5.0
+  },
+  "conversations": 10000,
+  "quality_tolerance": 0.5,
+  "best_setting": "N4",
+  "worst_setting": "N30",
+  "settings": {
+    "N4": {
+      "label": "SHORT_TERM_N=4",
+      "turns": 30,
+      "short_term_n": 4,
+      "policy": "none",
+      "mean_prompt_tokens": 473.5,
+      "mean_completion_tokens": 50.166666666666664,
+      "mean_overhead_prompt_tokens": 422.76666666666665,
+      "mean_overhead_completion_tokens": 55.4,
+      "mean_reply_latency_ms": 21697.993333333336,
+      "mean_total_latency_ms": 41763.68666666667,
+      "median_reply_latency_ms": 20116.800000000003,
+      "mean_by_component": {
+        "system_primer": 69.03333333333333,
+        "long_term_summary": 269.1,
+        "short_term_window": 114.83333333333333,
+        "episodic_facts": 8.466666666666667,
+        "current_message": 12.066666666666666
+      },
+      "max_prompt_tokens": 637,
+      "conversation_input_tokens": 26888,
+      "conversation_output_tokens": 3167,
+      "conversation_cost_usd": 0.042723,
+      "mean_probe_score": 5.0,
+      "probe_scores": {
+        "P1": 5,
+        "P2": 5,
+        "P3": 5,
+        "P4": 5,
+        "P5": 5
+      },
+      "probes_with_retrieved_facts": 4,
+      "probe_prompt_tokens_mean": 511.8
+    },
+    "N12": {
+      "label": "SHORT_TERM_N=12",
+      "turns": 30,
+      "short_term_n": 12,
+      "policy": "none",
+      "mean_prompt_tokens": 793.6333333333333,
+      "mean_completion_tokens": 59.733333333333334,
+      "mean_overhead_prompt_tokens": 438.3,
+      "mean_overhead_completion_tokens": 61.3,
+      "mean_reply_latency_ms": 42035.39666666666,
+      "mean_total_latency_ms": 63739.32666666667,
+      "median_reply_latency_ms": 45415.1,
+      "mean_by_component": {
+        "system_primer": 71.53333333333333,
+        "long_term_summary": 291.0,
+        "short_term_window": 409.76666666666665,
+        "episodic_facts": 8.833333333333334,
+        "current_message": 12.5
+      },
+      "max_prompt_tokens": 1125,
+      "conversation_input_tokens": 36958,
+      "conversation_output_tokens": 3631,
+      "conversation_cost_usd": 0.055112999999999995,
+      "mean_probe_score": 5.0,
+      "probe_scores": {
+        "P1": 5,
+        "P2": 5,
+        "P3": 5,
+        "P4": 5,
+        "P5": 5
+      },
+      "probes_with_retrieved_facts": 4,
+      "probe_prompt_tokens_mean": 923.8
+    },
+    "N30": {
+      "label": "SHORT_TERM_N=30",
+      "turns": 30,
+      "short_term_n": 30,
+      "policy": "none",
+      "mean_prompt_tokens": 1164.8,
+      "mean_completion_tokens": 52.833333333333336,
+      "mean_overhead_prompt_tokens": 424.6666666666667,
+      "mean_overhead_completion_tokens": 56.7,
+      "mean_reply_latency_ms": 55784.020000000004,
+      "mean_total_latency_ms": 74713.05666666667,
+      "median_reply_latency_ms": 73585.85,
+      "mean_by_component": {
+        "system_primer": 72.7,
+        "long_term_summary": 272.7,
+        "short_term_window": 797.5666666666667,
+        "episodic_facts": 9.1,
+        "current_message": 12.733333333333333
+      },
+      "max_prompt_tokens": 1713,
+      "conversation_input_tokens": 47684,
+      "conversation_output_tokens": 3286,
+      "conversation_cost_usd": 0.064114,
+      "mean_probe_score": 5.0,
+      "probe_scores": {
+        "P1": 5,
+        "P2": 5,
+        "P3": 5,
+        "P4": 5,
+        "P5": 5
+      },
+      "probes_with_retrieved_facts": 4,
+      "probe_prompt_tokens_mean": 1549.8
+    },
+    "POLICY": {
+      "label": "SHORT_TERM_N=30 + compress_old_assistant",
+      "turns": 30,
+      "short_term_n": 30,
+      "policy": "compress_old_assistant",
+      "mean_prompt_tokens": 829.7333333333333,
+      "mean_completion_tokens": 45.46666666666667,
+      "mean_overhead_prompt_tokens": 420.5,
+      "mean_overhead_completion_tokens": 55.7,
+      "mean_reply_latency_ms": 35940.189999999995,
+      "mean_total_latency_ms": 54925.433333333334,
+      "median_reply_latency_ms": 44458.95,
+      "mean_by_component": {
+        "system_primer": 76.96666666666667,
+        "long_term_summary": 298.5,
+        "short_term_window": 431.26666666666665,
+        "episodic_facts": 9.633333333333333,
+        "current_message": 13.366666666666667
+      },
+      "max_prompt_tokens": 1129,
+      "conversation_input_tokens": 37507,
+      "conversation_output_tokens": 3035,
+      "conversation_cost_usd": 0.052682,
+      "mean_probe_score": 5.0,
+      "probe_scores": {
+        "P1": 5,
+        "P2": 5,
+        "P3": 5,
+        "P4": 5,
+        "P5": 5
+      },
+      "probes_with_retrieved_facts": 4,
+      "probe_prompt_tokens_mean": 1061.8
+    }
+  },
+  "cost_10000_conversations_usd": {
+    "N4": 427.23,
+    "N12": 551.13,
+    "N30": 641.14,
+    "POLICY": 526.82
+  }
+}

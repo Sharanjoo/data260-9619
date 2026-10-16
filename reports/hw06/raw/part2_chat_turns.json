@@ -1,0 +1,1084 @@
+[
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!",
+    "memory_used": {
+      "short_term": {
+        "count": 1,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": null
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User lives in San Jose",
+          "importance": 0.5
+        },
+        {
+          "fact": "User shops at Safeway",
+          "importance": 0.5
+        },
+        {
+          "fact": "User shops at Whole Foods",
+          "importance": 0.5
+        }
+      ],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 105,
+      "completion_tokens": 43,
+      "tokens_by_component": {
+        "system_primer": 86,
+        "long_term_summary": 0,
+        "short_term_window": 0,
+        "episodic_facts": 0,
+        "current_message": 19
+      },
+      "reply_latency_ms": 42656.5,
+      "model_duration_ms": 42525.4,
+      "latency_ms": 84077.1,
+      "memory_overhead_prompt_tokens": 185,
+      "memory_overhead_completion_tokens": 62,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 1,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!",
+    "memory_used": {
+      "short_term": {
+        "count": 3,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!"
+          },
+          {
+            "role": "user",
+            "content": "I have a severe peanut allergy, so allergen alerts matter most to me."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": null
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User is allergic to peanuts",
+          "importance": 1.0
+        }
+      ],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 173,
+      "completion_tokens": 35,
+      "tokens_by_component": {
+        "system_primer": 85,
+        "long_term_summary": 0,
+        "short_term_window": 69,
+        "episodic_facts": 0,
+        "current_message": 19
+      },
+      "reply_latency_ms": 20023.7,
+      "model_duration_ms": 19984.2,
+      "latency_ms": 31171.7,
+      "memory_overhead_prompt_tokens": 180,
+      "memory_overhead_completion_tokens": 22,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 2,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!",
+    "memory_used": {
+      "short_term": {
+        "count": 5,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!"
+          },
+          {
+            "role": "user",
+            "content": "I have a severe peanut allergy, so allergen alerts matter most to me."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!"
+          },
+          {
+            "role": "user",
+            "content": "What kinds of recall notices should I watch for?"
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": null
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 227,
+      "completion_tokens": 45,
+      "tokens_by_component": {
+        "system_primer": 82,
+        "long_term_summary": 0,
+        "short_term_window": 133,
+        "episodic_facts": 0,
+        "current_message": 12
+      },
+      "reply_latency_ms": 21938.8,
+      "model_duration_ms": 21915.3,
+      "latency_ms": 26650.6,
+      "memory_overhead_prompt_tokens": 174,
+      "memory_overhead_completion_tokens": 6,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 3,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!",
+    "memory_used": {
+      "short_term": {
+        "count": 7,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!"
+          },
+          {
+            "role": "user",
+            "content": "I have a severe peanut allergy, so allergen alerts matter most to me."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!"
+          },
+          {
+            "role": "user",
+            "content": "What kinds of recall notices should I watch for?"
+          },
+          {
+            "role": "assistant",
+            "content": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I buy a lot of frozen berries for smoothies. Any risk there?"
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": null
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User buys frozen berries for smoothies",
+          "importance": 0.5
+        }
+      ],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 296,
+      "completion_tokens": 47,
+      "tokens_by_component": {
+        "system_primer": 80,
+        "long_term_summary": 0,
+        "short_term_window": 201,
+        "episodic_facts": 0,
+        "current_message": 15
+      },
+      "reply_latency_ms": 23612.1,
+      "model_duration_ms": 23567.6,
+      "latency_ms": 35833.9,
+      "memory_overhead_prompt_tokens": 179,
+      "memory_overhead_completion_tokens": 26,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 4,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!",
+    "memory_used": {
+      "short_term": {
+        "count": 9,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!"
+          },
+          {
+            "role": "user",
+            "content": "I have a severe peanut allergy, so allergen alerts matter most to me."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!"
+          },
+          {
+            "role": "user",
+            "content": "What kinds of recall notices should I watch for?"
+          },
+          {
+            "role": "assistant",
+            "content": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I buy a lot of frozen berries for smoothies. Any risk there?"
+          },
+          {
+            "role": "assistant",
+            "content": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!"
+          },
+          {
+            "role": "user",
+            "content": "I also have a toddler who drinks oat milk every day."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": null
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User has a toddler who drinks oat milk every day",
+          "importance": 0.5
+        }
+      ],
+      "session_summary_updated": true,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 364,
+      "completion_tokens": 36,
+      "tokens_by_component": {
+        "system_primer": 77,
+        "long_term_summary": 0,
+        "short_term_window": 274,
+        "episodic_facts": 0,
+        "current_message": 13
+      },
+      "reply_latency_ms": 20534.7,
+      "model_duration_ms": 20498.2,
+      "latency_ms": 109181.2,
+      "memory_overhead_prompt_tokens": 556,
+      "memory_overhead_completion_tokens": 148,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 5,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!",
+    "memory_used": {
+      "short_term": {
+        "count": 11,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Hi! I'm Jo. I live in San Jose and I shop at Safeway and Whole Foods."
+          },
+          {
+            "role": "assistant",
+            "content": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!"
+          },
+          {
+            "role": "user",
+            "content": "I have a severe peanut allergy, so allergen alerts matter most to me."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!"
+          },
+          {
+            "role": "user",
+            "content": "What kinds of recall notices should I watch for?"
+          },
+          {
+            "role": "assistant",
+            "content": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I buy a lot of frozen berries for smoothies. Any risk there?"
+          },
+          {
+            "role": "assistant",
+            "content": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!"
+          },
+          {
+            "role": "user",
+            "content": "I also have a toddler who drinks oat milk every day."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!"
+          },
+          {
+            "role": "user",
+            "content": "Explain the difference between a food-safety recall and a quality withdrawal."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is particularly concerned about allergen alerts.  \n- Jo frequently buys frozen berries for smoothies and is concerned about potential recalls.  \n- Jo's toddler drinks oat milk daily, so recalls related to oat milk and plant-based milks are a priority.  \n- Jo needs help monitoring recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo is advised to stay alert for notices about contaminated, mislabeled, or unsafe food items."
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 549,
+      "completion_tokens": 73,
+      "tokens_by_component": {
+        "system_primer": 73,
+        "long_term_summary": 142,
+        "short_term_window": 315,
+        "episodic_facts": 0,
+        "current_message": 19
+      },
+      "reply_latency_ms": 77411.9,
+      "model_duration_ms": 77311.3,
+      "latency_ms": 82791.7,
+      "memory_overhead_prompt_tokens": 179,
+      "memory_overhead_completion_tokens": 6,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 6,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!",
+    "memory_used": {
+      "short_term": {
+        "count": 12,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Hello, Jo! I'm your grocery recall notice assistant. I'll keep you updated on any recalls related to Safeway and Whole Foods in San Jose. Let me know if you need help with anything else!"
+          },
+          {
+            "role": "user",
+            "content": "I have a severe peanut allergy, so allergen alerts matter most to me."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!"
+          },
+          {
+            "role": "user",
+            "content": "What kinds of recall notices should I watch for?"
+          },
+          {
+            "role": "assistant",
+            "content": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I buy a lot of frozen berries for smoothies. Any risk there?"
+          },
+          {
+            "role": "assistant",
+            "content": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!"
+          },
+          {
+            "role": "user",
+            "content": "I also have a toddler who drinks oat milk every day."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!"
+          },
+          {
+            "role": "user",
+            "content": "Explain the difference between a food-safety recall and a quality withdrawal."
+          },
+          {
+            "role": "assistant",
+            "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I prefer short answers and a weekly email digest."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is particularly concerned about allergen alerts.  \n- Jo frequently buys frozen berries for smoothies and is concerned about potential recalls.  \n- Jo's toddler drinks oat milk daily, so recalls related to oat milk and plant-based milks are a priority.  \n- Jo needs help monitoring recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo is advised to stay alert for notices about contaminated, mislabeled, or unsafe food items."
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User prefers short answers",
+          "importance": 0.5
+        },
+        {
+          "fact": "User wants a weekly email digest",
+          "importance": 0.5
+        }
+      ],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 615,
+      "completion_tokens": 39,
+      "tokens_by_component": {
+        "system_primer": 71,
+        "long_term_summary": 139,
+        "short_term_window": 393,
+        "episodic_facts": 0,
+        "current_message": 12
+      },
+      "reply_latency_ms": 54064.5,
+      "model_duration_ms": 54027.8,
+      "latency_ms": 71879.1,
+      "memory_overhead_prompt_tokens": 174,
+      "memory_overhead_completion_tokens": 43,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 7,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let me know if you need help checking specific items!",
+    "memory_used": {
+      "short_term": {
+        "count": 12,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Got it, Jo! I'll prioritize allergen alerts for peanuts and keep you informed about any recalls related to your allergies. Let me know if you need further assistance!"
+          },
+          {
+            "role": "user",
+            "content": "What kinds of recall notices should I watch for?"
+          },
+          {
+            "role": "assistant",
+            "content": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I buy a lot of frozen berries for smoothies. Any risk there?"
+          },
+          {
+            "role": "assistant",
+            "content": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!"
+          },
+          {
+            "role": "user",
+            "content": "I also have a toddler who drinks oat milk every day."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!"
+          },
+          {
+            "role": "user",
+            "content": "Explain the difference between a food-safety recall and a quality withdrawal."
+          },
+          {
+            "role": "assistant",
+            "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I prefer short answers and a weekly email digest."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!"
+          },
+          {
+            "role": "user",
+            "content": "Which of my stores should I check first?"
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is particularly concerned about allergen alerts.  \n- Jo frequently buys frozen berries for smoothies and is concerned about potential recalls.  \n- Jo's toddler drinks oat milk daily, so recalls related to oat milk and plant-based milks are a priority.  \n- Jo needs help monitoring recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo is advised to stay alert for notices about contaminated, mislabeled, or unsafe food items."
+      },
+      "episodic": [
+        {
+          "fact": "User shops at Whole Foods",
+          "importance": 0.5,
+          "similarity": 0.5489,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User shops at Safeway",
+          "importance": 0.5,
+          "similarity": 0.5175,
+          "session_id": "sess-123c1b7b1a4d"
+        }
+      ]
+    },
+    "memory_events": {
+      "episodes_stored": [],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 624,
+      "completion_tokens": 45,
+      "tokens_by_component": {
+        "system_primer": 72,
+        "long_term_summary": 139,
+        "short_term_window": 384,
+        "episodic_facts": 20,
+        "current_message": 9
+      },
+      "reply_latency_ms": 55224.3,
+      "model_duration_ms": 55156.5,
+      "latency_ms": 59961.2,
+      "memory_overhead_prompt_tokens": 173,
+      "memory_overhead_completion_tokens": 6,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 8,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "If you already ate a recalled product, monitor for symptoms like allergic reactions, stomach issues, or illness. Contact a doctor if you or your toddler experience any adverse effects. Let me know if you need help tracking specific products!",
+    "memory_used": {
+      "short_term": {
+        "count": 12,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "You should watch for recalls related to peanuts and any allergen-containing products. Also, stay alert for notices about contaminated, mislabeled, or unsafe food items. Let me know if you need help checking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I buy a lot of frozen berries for smoothies. Any risk there?"
+          },
+          {
+            "role": "assistant",
+            "content": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!"
+          },
+          {
+            "role": "user",
+            "content": "I also have a toddler who drinks oat milk every day."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!"
+          },
+          {
+            "role": "user",
+            "content": "Explain the difference between a food-safety recall and a quality withdrawal."
+          },
+          {
+            "role": "assistant",
+            "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I prefer short answers and a weekly email digest."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!"
+          },
+          {
+            "role": "user",
+            "content": "Which of my stores should I check first?"
+          },
+          {
+            "role": "assistant",
+            "content": "Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let me know if you need help checking specific items!"
+          },
+          {
+            "role": "user",
+            "content": "What should I do if I already ate a recalled product?"
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is particularly concerned about allergen alerts.  \n- Jo frequently buys frozen berries for smoothies and is concerned about potential recalls.  \n- Jo's toddler drinks oat milk daily, so recalls related to oat milk and plant-based milks are a priority.  \n- Jo needs help monitoring recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo is advised to stay alert for notices about contaminated, mislabeled, or unsafe food items."
+      },
+      "episodic": [
+        {
+          "fact": "User has a toddler who drinks oat milk every day",
+          "importance": 0.5,
+          "similarity": 0.4834,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User is allergic to peanuts",
+          "importance": 1.0,
+          "similarity": 0.4826,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User buys frozen berries for smoothies",
+          "importance": 0.5,
+          "similarity": 0.4716,
+          "session_id": "sess-123c1b7b1a4d"
+        }
+      ]
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User ate a recalled product",
+          "importance": 1.0
+        }
+      ],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 650,
+      "completion_tokens": 46,
+      "tokens_by_component": {
+        "system_primer": 72,
+        "long_term_summary": 139,
+        "short_term_window": 390,
+        "episodic_facts": 36,
+        "current_message": 13
+      },
+      "reply_latency_ms": 58599.2,
+      "model_duration_ms": 58537.9,
+      "latency_ms": 68348.9,
+      "memory_overhead_prompt_tokens": 176,
+      "memory_overhead_completion_tokens": 22,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 9,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "I’ll keep an eye out for recalls related to lactose-free or dairy-free products too. Let me know if you need help checking specific items!",
+    "memory_used": {
+      "short_term": {
+        "count": 12,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "Frozen berries can sometimes be recalled due to contamination or allergen issues. I'll monitor for any recalls related to frozen berries or allergen-containing frozen products and notify you promptly. Let me know if you need help checking specific brands!"
+          },
+          {
+            "role": "user",
+            "content": "I also have a toddler who drinks oat milk every day."
+          },
+          {
+            "role": "assistant",
+            "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!"
+          },
+          {
+            "role": "user",
+            "content": "Explain the difference between a food-safety recall and a quality withdrawal."
+          },
+          {
+            "role": "assistant",
+            "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I prefer short answers and a weekly email digest."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!"
+          },
+          {
+            "role": "user",
+            "content": "Which of my stores should I check first?"
+          },
+          {
+            "role": "assistant",
+            "content": "Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let me know if you need help checking specific items!"
+          },
+          {
+            "role": "user",
+            "content": "What should I do if I already ate a recalled product?"
+          },
+          {
+            "role": "assistant",
+            "content": "If you already ate a recalled product, monitor for symptoms like allergic reactions, stomach issues, or illness. Contact a doctor if you or your toddler experience any adverse effects. Let me know if you need help tracking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "My partner is lactose intolerant, by the way."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is particularly concerned about allergen alerts.  \n- Jo frequently buys frozen berries for smoothies and is concerned about potential recalls.  \n- Jo's toddler drinks oat milk daily, so recalls related to oat milk and plant-based milks are a priority.  \n- Jo needs help monitoring recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo is advised to stay alert for notices about contaminated, mislabeled, or unsafe food items."
+      },
+      "episodic": [
+        {
+          "fact": "User has a toddler who drinks oat milk every day",
+          "importance": 0.5,
+          "similarity": 0.5645,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User is allergic to peanuts",
+          "importance": 1.0,
+          "similarity": 0.4787,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User ate a recalled product",
+          "importance": 1.0,
+          "similarity": 0.4553,
+          "session_id": "sess-123c1b7b1a4d"
+        }
+      ]
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User's partner is lactose intolerant",
+          "importance": 0.5
+        }
+      ],
+      "session_summary_updated": true,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 646,
+      "completion_tokens": 31,
+      "tokens_by_component": {
+        "system_primer": 71,
+        "long_term_summary": 139,
+        "short_term_window": 392,
+        "episodic_facts": 33,
+        "current_message": 11
+      },
+      "reply_latency_ms": 53298.3,
+      "model_duration_ms": 53223.3,
+      "latency_ms": 159073.3,
+      "memory_overhead_prompt_tokens": 682,
+      "memory_overhead_completion_tokens": 159,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 10,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "You have a **peanut allergy**. Let me know if you need help checking for recalls or tracking products!",
+    "memory_used": {
+      "short_term": {
+        "count": 12,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "I'll keep an eye out for recalls related to oat milk and any allergen-containing plant-based milks. Let me know if you need help checking specific brands or products!"
+          },
+          {
+            "role": "user",
+            "content": "Explain the difference between a food-safety recall and a quality withdrawal."
+          },
+          {
+            "role": "assistant",
+            "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I prefer short answers and a weekly email digest."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!"
+          },
+          {
+            "role": "user",
+            "content": "Which of my stores should I check first?"
+          },
+          {
+            "role": "assistant",
+            "content": "Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let me know if you need help checking specific items!"
+          },
+          {
+            "role": "user",
+            "content": "What should I do if I already ate a recalled product?"
+          },
+          {
+            "role": "assistant",
+            "content": "If you already ate a recalled product, monitor for symptoms like allergic reactions, stomach issues, or illness. Contact a doctor if you or your toddler experience any adverse effects. Let me know if you need help tracking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "My partner is lactose intolerant, by the way."
+          },
+          {
+            "role": "assistant",
+            "content": "I’ll keep an eye out for recalls related to lactose-free or dairy-free products too. Let me know if you need help checking specific items!"
+          },
+          {
+            "role": "user",
+            "content": "Remind me what allergy I have."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is concerned about allergen alerts and recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo’s toddler drinks oat milk daily, making recalls related to plant-based milks a priority.  \n- Jo prefers short answers and a weekly email digest with updates on recalls.  \n- Jo is advised to check Whole Foods first for recalls, with Safeway also being monitored.  \n- Jo’s partner is lactose intolerant, so recalls related to lactose-free or dairy-free products will also be tracked."
+      },
+      "episodic": [
+        {
+          "fact": "User is allergic to peanuts",
+          "importance": 1.0,
+          "similarity": 0.6198,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User ate a recalled product",
+          "importance": 1.0,
+          "similarity": 0.4823,
+          "session_id": "sess-123c1b7b1a4d"
+        },
+        {
+          "fact": "User's partner is lactose intolerant",
+          "importance": 0.5,
+          "similarity": 0.4649,
+          "session_id": "sess-123c1b7b1a4d"
+        }
+      ]
+    },
+    "memory_events": {
+      "episodes_stored": [
+        {
+          "fact": "User has a food allergy.",
+          "importance": 0.5
+        }
+      ],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 637,
+      "completion_tokens": 24,
+      "tokens_by_component": {
+        "system_primer": 73,
+        "long_term_summary": 154,
+        "short_term_window": 372,
+        "episodic_facts": 31,
+        "current_message": 7
+      },
+      "reply_latency_ms": 67281.4,
+      "model_duration_ms": 67143.2,
+      "latency_ms": 78801.5,
+      "memory_overhead_prompt_tokens": 172,
+      "memory_overhead_completion_tokens": 24,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 11,
+      "model": "qwen3:8b"
+    }
+  },
+  {
+    "user_id": "jo-1792120332",
+    "session_id": "sess-123c1b7b1a4d",
+    "reply": "You live in San Jose and shop at Safeway and Whole Foods. You have a severe peanut allergy and are concerned about recalls related to peanuts, allergens, frozen berries, and oat milk—especially since your toddler drinks oat milk daily. Your partner is lactose intolerant, so you also track lactose-free or dairy-free recalls. You prefer short answers and a weekly email digest with updates.",
+    "memory_used": {
+      "short_term": {
+        "count": 12,
+        "limit": 12,
+        "messages": [
+          {
+            "role": "assistant",
+            "content": "A **food-safety recall** happens when a product is unsafe due to contamination, allergens, or health risks. A **quality withdrawal** is when a product is removed from shelves due to issues like labeling errors, packaging defects, or poor quality, but it’s not necessarily unsafe. Let me know if you need help distinguishing between them for specific products!"
+          },
+          {
+            "role": "user",
+            "content": "I prefer short answers and a weekly email digest."
+          },
+          {
+            "role": "assistant",
+            "content": "Got it! I’ll send you a weekly email digest with short updates on recalls for peanuts, allergens, frozen berries, and oat milk. Let me know if you need anything else!"
+          },
+          {
+            "role": "user",
+            "content": "Which of my stores should I check first?"
+          },
+          {
+            "role": "assistant",
+            "content": "Check recalls at **Whole Foods** first, as they carry many of the products you mentioned. I’ll also monitor **Safeway** for any relevant alerts. Let me know if you need help checking specific items!"
+          },
+          {
+            "role": "user",
+            "content": "What should I do if I already ate a recalled product?"
+          },
+          {
+            "role": "assistant",
+            "content": "If you already ate a recalled product, monitor for symptoms like allergic reactions, stomach issues, or illness. Contact a doctor if you or your toddler experience any adverse effects. Let me know if you need help tracking specific products!"
+          },
+          {
+            "role": "user",
+            "content": "My partner is lactose intolerant, by the way."
+          },
+          {
+            "role": "assistant",
+            "content": "I’ll keep an eye out for recalls related to lactose-free or dairy-free products too. Let me know if you need help checking specific items!"
+          },
+          {
+            "role": "user",
+            "content": "Remind me what allergy I have."
+          },
+          {
+            "role": "assistant",
+            "content": "You have a **peanut allergy**. Let me know if you need help checking for recalls or tracking products!"
+          },
+          {
+            "role": "user",
+            "content": "Summarize everything you know about me and my family."
+          }
+        ]
+      },
+      "long_term": {
+        "lifetime_summary": null,
+        "session_summary": "- Jo lives in San Jose and shops at Safeway and Whole Foods.  \n- Jo has a severe peanut allergy and is concerned about allergen alerts and recalls for peanuts, allergen-containing products, frozen berries, and oat milk.  \n- Jo’s toddler drinks oat milk daily, making recalls related to plant-based milks a priority.  \n- Jo prefers short answers and a weekly email digest with updates on recalls.  \n- Jo is advised to check Whole Foods first for recalls, with Safeway also being monitored.  \n- Jo’s partner is lactose intolerant, so recalls related to lactose-free or dairy-free products will also be tracked."
+      },
+      "episodic": []
+    },
+    "memory_events": {
+      "episodes_stored": [],
+      "session_summary_updated": false,
+      "lifetime_summary_updated": false,
+      "warnings": []
+    },
+    "metrics": {
+      "prompt_tokens": 592,
+      "completion_tokens": 81,
+      "tokens_by_component": {
+        "system_primer": 74,
+        "long_term_summary": 156,
+        "short_term_window": 349,
+        "episodic_facts": 0,
+        "current_message": 13
+      },
+      "reply_latency_ms": 63769.7,
+      "model_duration_ms": 63702.5,
+      "latency_ms": 68631.5,
+      "memory_overhead_prompt_tokens": 176,
+      "memory_overhead_completion_tokens": 6,
+      "short_term_n": 12,
+      "compression_policy": "none",
+      "user_messages_in_session": 12,
+      "model": "qwen3:8b"
+    }
+  }
+]
