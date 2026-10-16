@@ -236,6 +236,9 @@ def main() -> int:
     parser.add_argument("--fresh", action="store_true", help="ignore saved progress for the selected settings")
     parser.add_argument("--out", default="reports/hw06/raw", help="output folder (relative to the repo root)")
     args = parser.parse_args()
+    for stream in (sys.stdout, sys.stderr):  # model replies may contain characters a Windows console cannot encode
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
 
     out_dir = ROOT / args.out
     out_dir.mkdir(parents=True, exist_ok=True)

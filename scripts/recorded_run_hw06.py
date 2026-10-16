@@ -8,6 +8,7 @@ Usage (from the repo root):
 from __future__ import annotations
 
 import argparse
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -27,6 +28,11 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    # Windows consoles default to cp1252, which cannot print every character a model reply may contain.
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, "reconfigure"):
+            stream.reconfigure(encoding="utf-8", errors="replace")
+    child_env = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
     command = args.command[1:] if args.command[:1] == ["--"] else args.command
     if not command:
         parser.error("provide a command after --")
@@ -45,6 +51,7 @@ def main() -> int:
         process = subprocess.Popen(
             command, cwd=PROJECT_ROOT, stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT, text=True, bufsize=1,
+            encoding="utf-8", errors="replace", env=child_env,
         )
         assert process.stdout is not None
         for line in process.stdout:
