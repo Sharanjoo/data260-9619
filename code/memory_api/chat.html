@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HW6 Memory Chat - Sharan Lourduraj</title>
+<style>
+  body { font-family: Georgia, "Times New Roman", serif; max-width: 920px; margin: 1.5rem auto; padding: 0 1rem; color: #1b1b1b; }
+  h1 { font-size: 1.2rem; margin: 0 0 .25rem; }
+  .bar { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; margin-bottom: .75rem; font-size: .9rem; }
+  input, button { font: inherit; padding: .4rem .6rem; }
+  #log { border: 1px solid #bbb; border-radius: 6px; padding: .75rem; height: 380px; overflow-y: auto; background: #fafafa; }
+  .msg { margin: .4rem 0; padding: .45rem .7rem; border-radius: 8px; max-width: 85%; white-space: pre-wrap; }
+  .user { background: #dff0e2; margin-left: auto; }
+  .assistant { background: #fff; border: 1px solid #ddd; }
+  .meta { font-size: .78rem; color: #555; margin-top: .2rem; }
+  #send-row { display: flex; gap: .5rem; margin-top: .6rem; }
+  #text { flex: 1; }
+  details { margin-top: .6rem; font-size: .85rem; }
+  pre { background: #f1f1f1; padding: .6rem; overflow-x: auto; }
+</style>
+</head>
+<body>
+<h1>HW6 memory chat &mdash; Sharan Lourduraj (SID4 9619)</h1>
+<div class="bar">
+  <label>user_id <input id="user" value="jo"></label>
+  <label>session_id <input id="session" placeholder="(new session)" size="18"></label>
+  <button id="newsession" type="button">New session</button>
+</div>
+<div id="log"></div>
+<div id="send-row">
+  <input id="text" placeholder="Type a message and press Enter" autofocus>
+  <button id="send" type="button">Send</button>
+</div>
+<details open><summary>Memory used for the last reply</summary><pre id="used">(nothing yet)</pre></details>
+<script>
+const log = document.getElementById("log"), used = document.getElementById("used");
+const text = document.getElementById("text"), sessionBox = document.getElementById("session");
+function add(role, content, meta) {
+  const div = document.createElement("div"); div.className = "msg " + role; div.textContent = content;
+  if (meta) { const m = document.createElement("div"); m.className = "meta"; m.textContent = meta; div.appendChild(m); }
+  log.appendChild(div); log.scrollTop = log.scrollHeight;
+}
+async function send() {
+  const message = text.value.trim(); if (!message) return;
+  text.value = ""; add("user", message);
+  const body = { user_id: document.getElementById("user").value.trim(), message };
+  if (sessionBox.value.trim()) body.session_id = sessionBox.value.trim();
+  try {
+    const r = await fetch("/api/chat", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    const data = await r.json();
+    if (!r.ok) { add("assistant", "Error " + r.status + ": " + JSON.stringify(data)); return; }
+    sessionBox.value = data.session_id;
+    const m = data.metrics;
+    add("assistant", data.reply, `prompt ${m.prompt_tokens} tok, reply ${m.completion_tokens} tok, ${Math.round(m.latency_ms)} ms, window ${data.memory_used.short_term.count}, facts ${data.memory_used.episodic.length}`);
+    used.textContent = JSON.stringify({ memory_used: data.memory_used, memory_events: data.memory_events }, null, 2);
+  } catch (e) { add("assistant", "Request failed: " + e); }
+}
+document.getElementById("send").onclick = send;
+text.addEventListener("keydown", e => { if (e.key === "Enter") send(); });
+document.getElementById("newsession").onclick = () => { sessionBox.value = ""; log.innerHTML = ""; used.textContent = "(nothing yet)"; };
+</script>
+</body>
+</html>

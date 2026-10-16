@@ -1,0 +1,77 @@
+# HW6 Part 3 - memory probes (Sharan Lourduraj, SID4 9619)
+# Written BEFORE any sweep run. Five fixed questions are asked after the same
+# 30-turn conversation (reports/hw06/conversation_30.yaml) for every setting.
+# Probes are sent with read_only=true so they use memory but never write to it,
+# and the probe answers cannot help later probes.
+#
+# Where each fact was said (turn of 30; the window holds the last N MESSAGES, i.e. N/2 turns):
+#   P1 peanut allergy   turn 2   -> outside the window for N=4, 12 and 30 (memory-only)
+#   P2 stores           turn 1   -> outside the window for N=4, 12 and 30 (memory-only)
+#   P3 toddler oat milk turn 19  -> inside the window only for N=30 (turns 16-30)
+#   P4 moved to Oakland turn 26  -> inside the window for N=12 and N=30 (N=12 holds turns 25-30)
+#   P5 weekly email     turn 29  -> inside the window for every setting (N=4 holds turns 29-30)
+#
+# Scoring (done by code, see scripts/run_memory_sweep_hw06.py -> score_reply):
+#   a reply is split into "required groups"; a group is satisfied when ANY of its
+#   phrases appears (case-insensitive). "stale" phrases are out-of-date answers.
+
+rubric:
+  5: "Every required fact is stated correctly and no stale fact appears."
+  4: "Every required fact is stated, but a stale fact is also mentioned (for example 'Oakland, previously San Jose')."
+  3: "At least half of the required facts are stated correctly (partial answer)."
+  2: "None of the required facts is stated, but the reply is a confident generic or wrong answer."
+  1: "The reply says it does not know / has no record, or states only the stale fact."
+
+probes:
+  - id: P1
+    question: "What food allergy do I have?"
+    expected: "A peanut allergy (said on turn 2)."
+    required_groups:
+      - ["peanut"]
+    stale: []
+
+  - id: P2
+    question: "Which two grocery stores do I shop at?"
+    expected: "Safeway and Whole Foods (said on turn 1)."
+    required_groups:
+      - ["safeway"]
+      - ["whole foods"]
+    stale: []
+
+  - id: P3
+    question: "What does my toddler drink every day?"
+    expected: "Oat milk (said on turn 19)."
+    required_groups:
+      - ["oat milk", "oat"]
+    stale: []
+
+  - id: P4
+    question: "Which city do I live in now?"
+    expected: "Oakland. The user moved from San Jose on turn 26, so San Jose is stale."
+    required_groups:
+      - ["oakland"]
+    stale: ["san jose"]
+
+  - id: P5
+    question: "What kind of updates did I ask you to send me, and how often?"
+    expected: "A weekly email digest (said on turn 29)."
+    required_groups:
+      - ["weekly"]
+      - ["email", "digest"]
+    stale: []
+
+unknown_phrases:
+  - "don't know"
+  - "do not know"
+  - "haven't told"
+  - "have not told"
+  - "not sure"
+  - "no information"
+  - "don't have"
+  - "do not have"
+  - "can't recall"
+  - "cannot recall"
+  - "didn't mention"
+  - "did not mention"
+  - "not mentioned"
+  - "no record"

@@ -16,6 +16,8 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 from db import get_query_count, init_db, reset_query_counter
 from db_routes import router as db_router
+from doc_api.server import install as install_doc_api  # HW6 Part 1: MongoDB document API
+from memory_api.server import install as install_memory_api  # HW6 Part 2: memory endpoints
 
 PORT_BASE = 8619
 WEB_DIR = Path(__file__).resolve().parent / "web_application"
@@ -63,6 +65,12 @@ async def sql_query_count_and_timing(request, call_next):
 
 
 app.include_router(db_router)
+
+# HW6 Part 1: MongoDB recall-notice document API (/api/hw6/notices) + its own error handlers.
+install_doc_api(app)
+
+# HW6 Part 2: short-term / long-term / episodic memory (POST /api/chat, GET /api/memory, GET /api/aggregate).
+install_memory_api(app)
 
 
 @app.on_event("startup")

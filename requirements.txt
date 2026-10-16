@@ -17,3 +17,4 @@ sqlalchemy
 pymysql
 bcrypt
 email-validator
+pymongo

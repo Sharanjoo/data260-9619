@@ -21,6 +21,21 @@ services:
       retries: 10
       start_period: 15s
 
+  mongo:
+    image: mongo:7.0
+    container_name: data260-hw6-mongo-s9619
+    restart: unless-stopped
+    ports:
+      - "27017:27017"  # if another MongoDB container already uses 27017, stop it first
+    volumes:
+      - mongo_data_s9619:/data/db
+    healthcheck:
+      test: ["CMD", "mongosh", "--quiet", "--eval", "db.adminCommand('ping').ok"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 10s
+
   web:
     build:
       context: .
@@ -35,9 +50,21 @@ services:
       MYSQL_USER: hw4_user
       MYSQL_PASSWORD: hw4_pass_9619
       MYSQL_DB: s9619_rel
+      MONGO_URI: mongodb://mongo:27017
+      MONGO_DB_NAME: s9619_doc
+      OLLAMA_BASE_URL: http://host.docker.internal:11434   # Ollama runs on the laptop, not in Docker
+      CHAT_MODEL: qwen3:8b
+      EMBED_MODEL: nomic-embed-text
+      SHORT_TERM_N: "12"
+      SUMMARIZE_EVERY_USER_MSGS: "5"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     depends_on:
       mysql:
+        condition: service_healthy
+      mongo:
         condition: service_healthy
 
 volumes:
   mysql_data_s9619:
+  mongo_data_s9619:
