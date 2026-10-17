@@ -1,0 +1,2 @@
+/memory
+What do you remember about my allergies and how I want git commands handled?

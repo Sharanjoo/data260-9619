@@ -1,0 +1,413 @@
+{
+  "model": "qwen3:8b",
+  "run_at": "2026-10-16T06:53:13Z",
+  "report": {
+    "before_lines": 52,
+    "after_lines": 31,
+    "before_physical": 55,
+    "after_physical": 34,
+    "before_facts": 50,
+    "after_facts": 21,
+    "merged": 22,
+    "superseded": 2,
+    "flagged_for_review": 5,
+    "passes": 1,
+    "guard_notes": [],
+    "warnings": [
+      "ignored invalid decision {'line': 16, 'action': 'supersede', 'target': 16, 'reason': 'Contradicted by newer line'}",
+      "ignored invalid decision {'line': 18, 'action': 'merge', 'target': 18, 'reason': 'Same font and header, later line is more specific'}",
+      "ignored invalid decision {'line': 19, 'action': 'merge', 'target': 19, 'reason': 'Same name requirement, later line is more specific'}",
+      "ignored invalid decision {'line': 21, 'action': 'merge', 'target': 21, 'reason': 'Same model, later line is more complete'}",
+      "ignored invalid decision {'line': 22, 'action': 'merge', 'target': 22, 'reason': 'Same database, later line is more specific'}",
+      "ignored invalid decision {'line': 23, 'action': 'merge', 'target': 23, 'reason': 'Same collections, later line is more specific'}",
+      "ignored invalid decision {'line': 24, 'action': 'merge', 'target': 24, 'reason': 'Same embeddings, later line is more specific'}",
+      "ignored invalid decision {'line': 25, 'action': 'merge', 'target': 25, 'reason': 'Same domain, later line is more specific'}",
+      "ignored invalid decision {'line': 26, 'action': 'merge', 'target': 26, 'reason': 'Same session settings, later line is more specific'}",
+      "ignored invalid decision {'line': 27, 'action': 'merge', 'target': 27, 'reason': 'Same git role, later line is more specific'}",
+      "ignored invalid decision {'line': 28, 'action': 'merge', 'target': 28, 'reason': 'Same collection, later line is more specific'}",
+      "ignored invalid decision {'line': 29, 'action': 'merge', 'target': 29, 'reason': 'Same app and data, later line is more specific'}",
+      "ignored invalid decision {'line': 30, 'action': 'merge', 'target': 30, 'reason': 'Same Postman rule, later line is more specific'}",
+      "ignored invalid decision {'line': 34, 'action': 'merge', 'target': 34, 'reason': 'Same commit, later line is more specific'}",
+      "ignored invalid decision {'line': 37, 'action': 'merge', 'target': 37, 'reason': 'Same report naming, later line is more specific'}",
+      "ignored invalid decision {'line': 39, 'action': 'merge', 'target': 39, 'reason': 'Same preference, later line is more specific'}",
+      "ignored invalid decision {'line': 40, 'action': 'merge', 'target': 40, 'reason': 'Same milk preference, later line is more specific'}",
+      "ignored invalid decision {'line': 41, 'action': 'merge', 'target': 41, 'reason': 'Same lactose intolerance, later line is more specific'}",
+      "ignored invalid decision {'line': 42, 'action': 'merge', 'target': 42, 'reason': 'Same store preference, later line is more specific'}",
+      "ignored invalid decision {'line': 44, 'action': 'merge', 'target': 44, 'reason': 'Same email request, later line is more specific'}",
+      "ignored invalid decision {'line': 46, 'action': 'merge', 'target': 46, 'reason': 'Same port, later line is more specific'}"
+    ],
+    "under_limit": true
+  },
+  "model_decisions": [
+    [
+      {
+        "line": 1,
+        "action": "merge",
+        "target": 19,
+        "reason": "Same name requirement, later line is more specific"
+      },
+      {
+        "line": 2,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 3,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 4,
+        "action": "merge",
+        "target": 25,
+        "reason": "Same domain, later line is more specific"
+      },
+      {
+        "line": 5,
+        "action": "merge",
+        "target": 33,
+        "reason": "Same model, later line is more specific"
+      },
+      {
+        "line": 6,
+        "action": "merge",
+        "target": 27,
+        "reason": "Same git role, later line is more specific"
+      },
+      {
+        "line": 7,
+        "action": "supersede",
+        "target": 16,
+        "reason": "Contradicted by newer line"
+      },
+      {
+        "line": 8,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 9,
+        "action": "merge",
+        "target": 18,
+        "reason": "Same font and header, later line is more specific"
+      },
+      {
+        "line": 10,
+        "action": "merge",
+        "target": 19,
+        "reason": "Same name requirement, later line is more specific"
+      },
+      {
+        "line": 11,
+        "action": "review",
+        "target": 49,
+        "reason": "Contradictory location, newer is unverified"
+      },
+      {
+        "line": 12,
+        "action": "review",
+        "target": 49,
+        "reason": "Contradictory location, newer is unverified"
+      },
+      {
+        "line": 13,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 14,
+        "action": "merge",
+        "target": 44,
+        "reason": "Same email request, later line is more specific"
+      },
+      {
+        "line": 15,
+        "action": "merge",
+        "target": 25,
+        "reason": "Same domain, later line is more specific"
+      },
+      {
+        "line": 16,
+        "action": "supersede",
+        "target": 16,
+        "reason": "Contradicted by newer line"
+      },
+      {
+        "line": 17,
+        "action": "merge",
+        "target": 46,
+        "reason": "Same port, later line is more specific"
+      },
+      {
+        "line": 18,
+        "action": "merge",
+        "target": 18,
+        "reason": "Same font and header, later line is more specific"
+      },
+      {
+        "line": 19,
+        "action": "merge",
+        "target": 19,
+        "reason": "Same name requirement, later line is more specific"
+      },
+      {
+        "line": 20,
+        "action": "review",
+        "target": 35,
+        "reason": "Contradictory allergy, newer is unverified"
+      },
+      {
+        "line": 21,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 22,
+        "action": "merge",
+        "target": 22,
+        "reason": "Same database, later line is more specific"
+      },
+      {
+        "line": 23,
+        "action": "merge",
+        "target": 23,
+        "reason": "Same collections, later line is more specific"
+      },
+      {
+        "line": 24,
+        "action": "merge",
+        "target": 24,
+        "reason": "Same embeddings, later line is more specific"
+      },
+      {
+        "line": 25,
+        "action": "merge",
+        "target": 25,
+        "reason": "Same domain, later line is more specific"
+      },
+      {
+        "line": 26,
+        "action": "merge",
+        "target": 26,
+        "reason": "Same session settings, later line is more specific"
+      },
+      {
+        "line": 27,
+        "action": "merge",
+        "target": 27,
+        "reason": "Same git role, later line is more specific"
+      },
+      {
+        "line": 28,
+        "action": "merge",
+        "target": 28,
+        "reason": "Same collection, later line is more specific"
+      },
+      {
+        "line": 29,
+        "action": "merge",
+        "target": 29,
+        "reason": "Same app and data, later line is more specific"
+      },
+      {
+        "line": 30,
+        "action": "merge",
+        "target": 30,
+        "reason": "Same Postman rule, later line is more specific"
+      },
+      {
+        "line": 31,
+        "action": "merge",
+        "target": 18,
+        "reason": "Same font and header, later line is more specific"
+      },
+      {
+        "line": 32,
+        "action": "merge",
+        "target": 19,
+        "reason": "Same name requirement, later line is more specific"
+      },
+      {
+        "line": 33,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 34,
+        "action": "merge",
+        "target": 34,
+        "reason": "Same commit, later line is more specific"
+      },
+      {
+        "line": 35,
+        "action": "review",
+        "target": 20,
+        "reason": "Contradictory allergy, newer is unverified"
+      },
+      {
+        "line": 36,
+        "action": "merge",
+        "target": 25,
+        "reason": "Same domain, later line is more specific"
+      },
+      {
+        "line": 37,
+        "action": "merge",
+        "target": 37,
+        "reason": "Same report naming, later line is more specific"
+      },
+      {
+        "line": 38,
+        "action": "merge",
+        "target": 27,
+        "reason": "Same git role, later line is more specific"
+      },
+      {
+        "line": 39,
+        "action": "merge",
+        "target": 39,
+        "reason": "Same preference, later line is more specific"
+      },
+      {
+        "line": 40,
+        "action": "merge",
+        "target": 40,
+        "reason": "Same milk preference, later line is more specific"
+      },
+      {
+        "line": 41,
+        "action": "merge",
+        "target": 41,
+        "reason": "Same lactose intolerance, later line is more specific"
+      },
+      {
+        "line": 42,
+        "action": "merge",
+        "target": 42,
+        "reason": "Same store preference, later line is more specific"
+      },
+      {
+        "line": 43,
+        "action": "merge",
+        "target": 18,
+        "reason": "Same font and header, later line is more specific"
+      },
+      {
+        "line": 44,
+        "action": "merge",
+        "target": 44,
+        "reason": "Same email request, later line is more specific"
+      },
+      {
+        "line": 45,
+        "action": "merge",
+        "target": 21,
+        "reason": "Same model, later line is more complete"
+      },
+      {
+        "line": 46,
+        "action": "merge",
+        "target": 46,
+        "reason": "Same port, later line is more specific"
+      },
+      {
+        "line": 47,
+        "action": "merge",
+        "target": 19,
+        "reason": "Same name requirement, later line is more specific"
+      },
+      {
+        "line": 48,
+        "action": "merge",
+        "target": 25,
+        "reason": "Same domain, later line is more specific"
+      },
+      {
+        "line": 49,
+        "action": "review",
+        "target": 12,
+        "reason": "Contradictory location, newer is unverified"
+      },
+      {
+        "line": 50,
+        "action": "supersede",
+        "target": 27,
+        "reason": "Contradicted by newer line"
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "check": "fewer than 40 file lines",
+      "passed": true,
+      "detail": "34 lines"
+    },
+    {
+      "check": "D1 duplicates merged into one line ('qwen3:8b')",
+      "passed": true,
+      "detail": "5 -> 1"
+    },
+    {
+      "check": "D2 duplicates merged into one line ('DOMAIN_ID 3')",
+      "passed": true,
+      "detail": "5 -> 1"
+    },
+    {
+      "check": "D3 duplicates merged into one line ('git commands')",
+      "passed": false,
+      "detail": "5 -> 2"
+    },
+    {
+      "check": "D4 duplicates merged into one line ('Times New Roman')",
+      "passed": true,
+      "detail": "4 -> 1"
+    },
+    {
+      "check": "D5 duplicates merged into one line ('terminal screenshot')",
+      "passed": true,
+      "detail": "4 -> 1"
+    },
+    {
+      "check": "C1 contradiction resolved correctly",
+      "passed": false,
+      "detail": "keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True"
+    },
+    {
+      "check": "C2 contradiction resolved correctly",
+      "passed": false,
+      "detail": "keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True"
+    },
+    {
+      "check": "C3 contradiction resolved correctly",
+      "passed": false,
+      "detail": "keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False"
+    },
+    {
+      "check": "C4 contradiction resolved correctly",
+      "passed": false,
+      "detail": "keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False"
+    },
+    {
+      "check": "all 19 unique facts survive exactly once",
+      "passed": false,
+      "detail": "missing/duplicated: Sharan Lourduraj (Jo), PREFIX is s9619, VERIFY_SEED is 269619, Sharanjoo/data260-9619, supriyaselvanganesan, HP Pavilion"
+    },
+    {
+      "check": "no silent deletion (kept + merged + logged = original facts)",
+      "passed": true,
+      "detail": "21 kept + 22 merged + 7 logged = 50 (original 50)"
+    }
+  ],
+  "resolved_incorrectly": [
+    "C1: newer address replaces the older one -> keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True",
+    "C2: TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule -> keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True",
+    "C3: newer preference replaces the older one -> keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False",
+    "C4: newer value matches PORT_BASE = 8000 + 9619 mod 900 -> keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False"
+  ]
+}

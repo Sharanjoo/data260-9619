@@ -8,3 +8,7 @@ cookies.txt
 
 # HW4 report deliverables kept local, not committed
 reports/hw04/*.docx
+
+# HW6 Part 4 backup written by /compact
+MEMORY.md.bak
+reports/hw06/raw/consolidation_work/

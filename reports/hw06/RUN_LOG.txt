@@ -402,3 +402,873 @@ Server settings: {'short_term_n_default': 12, 'summarize_every_user_msgs': 5, 'l
 
 Sweep finished in 29.3 minutes. Raw data: C:\Users\shara\data260-9619\reports\hw06\raw
 [2026-10-16T06:34:25Z] END exit_code=0
+
+[2026-10-16T06:48:23Z] Sharan Lourduraj | START command: python scripts/check_agent_md_compliance_hw06.py --generate
+AGENT.md compliance check - Sharan Lourduraj (SID4 9619)
+
+Attempt 1: asking qwen3:8b (AGENT.md and MEMORY.md are in the system prompt) ...
+----- generated code -----
+import re
+
+def normalize_notice_title(title: str, max_length: int = 100) -> str:
+    """
+    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,
+    and ensuring the title is within the specified maximum length.
+    """
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+    
+    trimmed_title = title.strip()
+    if not trimmed_title:
+        raise ValueError("Title cannot be empty after trimming.")
+    
+    cleaned_title = re.sub(r'\s+', ' ', trimmed_title)
+    if len(cleaned_title) > max_length:
+        raise ValueError(f"Title is too long. Maximum allowed length is {max_length} characters.")
+    
+    return cleaned_title
+
+def test_normalize_notice_title_valid_input():
+    assert normalize_notice_title("  This is a test title  ") == "This is a test title"
+
+def test_normalize_notice_title_with_multiple_spaces():
+    assert normalize_notice_title("  Hello   World  ") == "Hello World"
+
+def test_normalize_notice_title_empty_after_trimming():
+    try:
+        normalize_notice_title("   ")
+    except ValueError as e:
+        assert str(e) == "Title cannot be empty after trimming."
+
+def test_normalize_notice_title_non_string_input():
+    try:
+        normalize_notice_title(123)
+    except ValueError as e:
+        assert str(e) == "Title must be a string."
+
+def test_normalize_notice_title_exceeds_max_length():
+    try:
+        normalize_notice_title("a" * 101)
+    except ValueError as e:
+        assert str(e) == "Title is too long. Maximum allowed length is 100 characters."
+
+
+=== Attempt 1: generated function vs AGENT.md ===
+[FAIL] R1 type hints on every parameter and return value: missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_with_multiple_spaces -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_exceeds_max_length -> return
+[FAIL] R2 one-line capitalised docstring ending with a period: normalize_notice_title: docstring is not one line; test_normalize_notice_title_valid_input: no docstring; test_normalize_notice_title_with_multiple_spaces: no docstring; test_normalize_notice_title_empty_after_trimming: no docstring; test_normalize_notice_title_non_string_input: no docstring; test_normalize_notice_title_exceeds_max_length: no docstring
+[PASS] R3 snake_case names / UPPER_SNAKE_CASE constants: snake_case / UPPER_SNAKE_CASE ok
+[PASS] R4 ValueError for invalid input, no bare except: ValueError with messages, no bare except
+[PASS] R5 no print() in library code: no print() calls
+[PASS] R6 tests named test_normalize_notice_title_<case> exist and pass: 5/5 tests pass
+[PASS] R7 function behaves as specified: 10/10 behaviour cases
+-> DOES NOT FOLLOW AGENT.md (5/7 rules)
+
+Attempt 2: asking qwen3:8b (AGENT.md and MEMORY.md are in the system prompt) ...
+----- generated code -----
+import re
+
+def normalize_notice_title(title: str, max_length: int = 100) -> str:
+    """
+    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,
+    and ensuring the title is within the specified maximum length.
+    """
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+    
+    trimmed_title = title.strip()
+    if not trimmed_title:
+        raise ValueError("Title cannot be empty after trimming.")
+    
+    cleaned_title = re.sub(r'\s+', ' ', trimmed_title)
+    if len(cleaned_title) > max_length:
+        raise ValueError(f"Title is too long. Maximum allowed length is {max_length} characters.")
+    
+    return cleaned_title
+
+def test_normalize_notice_title_valid_input():
+    """
+    Test that the function correctly handles a valid input with leading and trailing whitespace.
+    """
+    assert normalize_notice_title("  This is a test title  ") == "This is a test title"
+
+def test_normalize_notice_title_with_multiple_spaces():
+    """
+    Test that the function correctly collapses multiple spaces into a single space.
+    """
+    assert normalize_notice_title("  Hello   World  ") == "Hello World"
+
+def test_normalize_notice_title_empty_after_trimming():
+    """
+    Test that the function raises ValueError when the title is empty after trimming.
+    """
+    try:
+        normalize_notice_title("   ")
+    except ValueError as e:
+        assert str(e) == "Title cannot be empty after trimming."
+
+def test_normalize_notice_title_non_string_input():
+    """
+    Test that the function raises ValueError when the input is not a string.
+    """
+    try:
+        normalize_notice_title(123)
+    except ValueError as e:
+        assert str(e) == "Title must be a string."
+
+def test_normalize_notice_title_exceeds_max_length():
+    """
+    Test that the function raises ValueError when the title exceeds the maximum allowed length.
+    """
+    try:
+        normalize_notice_title("a" * 101)
+    except ValueError as e:
+        assert str(e) == "Title is too long. Maximum allowed length is 100 characters."
+
+
+=== Attempt 2: generated function vs AGENT.md ===
+[FAIL] R1 type hints on every parameter and return value: missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_with_multiple_spaces -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_exceeds_max_length -> return
+[FAIL] R2 one-line capitalised docstring ending with a period: normalize_notice_title: docstring is not one line
+[PASS] R3 snake_case names / UPPER_SNAKE_CASE constants: snake_case / UPPER_SNAKE_CASE ok
+[PASS] R4 ValueError for invalid input, no bare except: ValueError with messages, no bare except
+[PASS] R5 no print() in library code: no print() calls
+[PASS] R6 tests named test_normalize_notice_title_<case> exist and pass: 5/5 tests pass
+[PASS] R7 function behaves as specified: 10/10 behaviour cases
+-> DOES NOT FOLLOW AGENT.md (5/7 rules)
+[2026-10-16T06:53:12Z] END exit_code=1
+
+[2026-10-16T06:53:12Z] Sharan Lourduraj | START command: python scripts/run_consolidation_hw06.py
+HW6 Part 4 consolidation test - Sharan Lourduraj (SID4 9619)
+Original: 55 file lines, 52 memory lines (non-empty, non-comment)
+Trigger check: consolidation required? -> ['52 memory lines (limit 40)', 'last consolidated 366.9 hours ago (limit 24)']
+
+Running /compact (model qwen3:8b; this takes a few minutes on CPU) ...
+
+Before: 52 memory lines (50 facts, 55 file lines)
+After:  31 memory lines (21 facts, 34 file lines)
+Merged duplicates: 22 | Superseded by newer facts: 2 | Flagged for review: 5 | Passes: 1
+Warning: ignored invalid decision {'line': 16, 'action': 'supersede', 'target': 16, 'reason': 'Contradicted by newer line'}
+Warning: ignored invalid decision {'line': 18, 'action': 'merge', 'target': 18, 'reason': 'Same font and header, later line is more specific'}
+Warning: ignored invalid decision {'line': 19, 'action': 'merge', 'target': 19, 'reason': 'Same name requirement, later line is more specific'}
+Warning: ignored invalid decision {'line': 21, 'action': 'merge', 'target': 21, 'reason': 'Same model, later line is more complete'}
+Warning: ignored invalid decision {'line': 22, 'action': 'merge', 'target': 22, 'reason': 'Same database, later line is more specific'}
+Warning: ignored invalid decision {'line': 23, 'action': 'merge', 'target': 23, 'reason': 'Same collections, later line is more specific'}
+Warning: ignored invalid decision {'line': 24, 'action': 'merge', 'target': 24, 'reason': 'Same embeddings, later line is more specific'}
+Warning: ignored invalid decision {'line': 25, 'action': 'merge', 'target': 25, 'reason': 'Same domain, later line is more specific'}
+Warning: ignored invalid decision {'line': 26, 'action': 'merge', 'target': 26, 'reason': 'Same session settings, later line is more specific'}
+Warning: ignored invalid decision {'line': 27, 'action': 'merge', 'target': 27, 'reason': 'Same git role, later line is more specific'}
+Warning: ignored invalid decision {'line': 28, 'action': 'merge', 'target': 28, 'reason': 'Same collection, later line is more specific'}
+Warning: ignored invalid decision {'line': 29, 'action': 'merge', 'target': 29, 'reason': 'Same app and data, later line is more specific'}
+Warning: ignored invalid decision {'line': 30, 'action': 'merge', 'target': 30, 'reason': 'Same Postman rule, later line is more specific'}
+Warning: ignored invalid decision {'line': 34, 'action': 'merge', 'target': 34, 'reason': 'Same commit, later line is more specific'}
+Warning: ignored invalid decision {'line': 37, 'action': 'merge', 'target': 37, 'reason': 'Same report naming, later line is more specific'}
+Warning: ignored invalid decision {'line': 39, 'action': 'merge', 'target': 39, 'reason': 'Same preference, later line is more specific'}
+Warning: ignored invalid decision {'line': 40, 'action': 'merge', 'target': 40, 'reason': 'Same milk preference, later line is more specific'}
+Warning: ignored invalid decision {'line': 41, 'action': 'merge', 'target': 41, 'reason': 'Same lactose intolerance, later line is more specific'}
+Warning: ignored invalid decision {'line': 42, 'action': 'merge', 'target': 42, 'reason': 'Same store preference, later line is more specific'}
+Warning: ignored invalid decision {'line': 44, 'action': 'merge', 'target': 44, 'reason': 'Same email request, later line is more specific'}
+Warning: ignored invalid decision {'line': 46, 'action': 'merge', 'target': 46, 'reason': 'Same port, later line is more specific'}
+Result: under the limit of 40 file lines.
+
+----- consolidated file (34 lines) -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T06:53:13Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-08-27] Never run git commands yourself, hand them to the user.
+- [2026-09-01] Report font is Times New Roman, tables have green headers. <!-- merged duplicates L9, L31, L43 -->
+- [2026-09-02] Every terminal screenshot must show the name Sharan Lourduraj. <!-- merged duplicates L1, L10, L32, L47 -->
+- [2026-09-03] Model: qwen3:8b (Ollama, local, no paid API). <!-- merged duplicates L2, L3, L5, L8, L13, L33, L45 -->
+- [2026-09-04] The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.
+- [2026-09-05] The memory collections are messages, summaries and episodes.
+- [2026-09-06] Episodic memory embeddings use nomic-embed-text served by Ollama.
+- [2026-09-07] Domain: grocery recalls, DOMAIN_ID 3. <!-- merged duplicates L4, L15, L36, L48 -->
+- [2026-09-08] SHORT_TERM_N defaults to 12 and a session summary is written every 5 user messages.
+- [2026-09-09] The user runs all git commands (add, commit, push); the assistant only writes them out. <!-- merged duplicates L6, L38 -->
+- [2026-09-10] The Part 1 collection is recall_notices with a status enum and a category enum.
+- [2026-09-12] One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.
+- [2026-09-14] In Postman, decline the AI Fix suggestion because it rewrites test bodies.
+- [2026-09-19] The HW5 submission is tagged hw5 at commit 69fc4b5.
+- [2026-09-23] Reports are exported as PDF named Lourduraj_HWn.pdf.
+- [2026-09-26] The user prefers short answers.
+- [2026-09-28] The user's toddler drinks oat milk every day.
+- [2026-09-29] The user's partner is lactose intolerant.
+- [2026-09-30] The user shops at Safeway and Whole Foods.
+- [2026-10-01] The user wants a weekly email digest of recalls. <!-- merged duplicates L14 -->
+- [2026-10-02] The API runs on port 8619 (PORT_BASE). <!-- merged duplicates L17 -->
+
+## Resolved conflicts
+- KEPT [2026-08-27] Never run git commands yourself, hand them to the user. | SUPERSEDED [2026-08-13] The assistant never runs git commands; the user runs them. | reason: Contradicted by newer line
+- NEEDS REVIEW (kept: [2026-10-05] The user lives in Oakland.) | UNVERIFIED [2026-08-17] The laptop is an HP Pavilion with 32 GB RAM and a 512 GB disk. | reason: Contradictory location, newer is unverified
+- NEEDS REVIEW (kept: [2026-10-05] The user lives in Oakland.) | UNVERIFIED [2026-08-18] The user lives in San Jose. | reason: Contradictory location, newer is unverified
+- NEEDS REVIEW (kept: [2026-09-20] The user said they are not allergic to peanuts (joking, unverified).) | UNVERIFIED [2026-09-02] The user has a severe peanut allergy (confirmed by a doctor). | reason: Contradictory allergy, newer is unverified
+- NEEDS REVIEW (kept: [2026-09-02] The user has a severe peanut allergy (confirmed by a doctor).) | UNVERIFIED [2026-09-20] The user said they are not allergic to peanuts (joking, unverified). | reason: Contradictory allergy, newer is unverified
+- NEEDS REVIEW (kept: [2026-08-18] The user lives in San Jose.) | UNVERIFIED [2026-10-05] The user lives in Oakland. | reason: Contradictory location, newer is unverified
+- KEPT [2026-09-09] The user runs all git commands (add, commit, push); the assistant only writes them out. | SUPERSEDED [2026-10-06] Do not execute git commands; give them to the user. | reason: Contradicted by newer line
+
+----- checks against consolidation_truth.yaml -----
+[PASS] fewer than 40 file lines: 34 lines
+[PASS] D1 duplicates merged into one line ('qwen3:8b'): 5 -> 1
+[PASS] D2 duplicates merged into one line ('DOMAIN_ID 3'): 5 -> 1
+[FAIL] D3 duplicates merged into one line ('git commands'): 5 -> 2
+[PASS] D4 duplicates merged into one line ('Times New Roman'): 4 -> 1
+[PASS] D5 duplicates merged into one line ('terminal screenshot'): 4 -> 1
+[FAIL] C1 contradiction resolved correctly: keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True
+[FAIL] C2 contradiction resolved correctly: keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True
+[FAIL] C3 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False
+[FAIL] C4 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False
+[FAIL] all 19 unique facts survive exactly once: missing/duplicated: Sharan Lourduraj (Jo), PREFIX is s9619, VERIFY_SEED is 269619, Sharanjoo/data260-9619, supriyaselvanganesan, HP Pavilion
+[PASS] no silent deletion (kept + merged + logged = original facts): 21 kept + 22 merged + 7 logged = 50 (original 50)
+
+Contradictions NOT resolved correctly: 
+  - C1: newer address replaces the older one -> keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True
+  - C2: TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule -> keeper in Facts: False, loser out of Facts: True, loser logged in Resolved conflicts: True
+  - C3: newer preference replaces the older one -> keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False
+  - C4: newer value matches PORT_BASE = 8000 + 9619 mod 900 -> keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: False
+
+Trap C2 (TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule):
+  guard interventions: none (the model itself left the critical allergy alone)
+
+6/12 checks passed. Raw result: reports/hw06/raw/consolidation_result.json
+[2026-10-16T07:03:08Z] END exit_code=1
+
+[2026-10-16T07:06:47Z] Sharan Lourduraj | START command: python scripts/check_agent_md_compliance_hw06.py --generate
+AGENT.md compliance check - Sharan Lourduraj (SID4 9619)
+
+Attempt 1: asking qwen3:8b (AGENT.md and MEMORY.md are in the system prompt) ...
+----- generated code -----
+import re
+
+def normalize_notice_title(title: str, max_length: int = 100) -> str:
+    """
+    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,
+    and ensuring the title does not exceed the specified maximum length.
+    """
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+    
+    trimmed_title = title.strip()
+    if not trimmed_title:
+        raise ValueError("Title cannot be empty after trimming.")
+    
+    cleaned_title = re.sub(r'\s+', ' ', trimmed_title)
+    if len(cleaned_title) > max_length:
+        raise ValueError(f"Title is too long. Maximum allowed length is {max_length} characters.")
+    
+    return cleaned_title
+
+def test_normalize_notice_title_valid_input():
+    assert normalize_notice_title("  Example Title  ") == "Example Title"
+    assert normalize_notice_title("This is a test title with multiple spaces") == "This is a test title with multiple spaces"
+    assert normalize_notice_title("Short title", 20) == "Short title"
+
+def test_normalize_notice_title_non_string_input():
+    try:
+        normalize_notice_title(123)
+    except ValueError as e:
+        assert str(e) == "Title must be a string."
+
+def test_normalize_notice_title_empty_after_trimming():
+    try:
+        normalize_notice_title("   ")
+    except ValueError as e:
+        assert str(e) == "Title cannot be empty after trimming."
+
+def test_normalize_notice_title_exceeds_max_length():
+    try:
+        normalize_notice_title("This title is longer than the allowed maximum length", 20)
+    except ValueError as e:
+        assert str(e) == "Title is too long. Maximum allowed length is 20 characters."
+
+
+=== Attempt 1: generated function vs AGENT.md ===
+[FAIL] R1 type hints on every parameter and return value: missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_exceeds_max_length -> return
+[FAIL] R2 one-line capitalised docstring ending with a period: normalize_notice_title: docstring is not one line; test_normalize_notice_title_valid_input: no docstring; test_normalize_notice_title_non_string_input: no docstring; test_normalize_notice_title_empty_after_trimming: no docstring; test_normalize_notice_title_exceeds_max_length: no docstring
+[PASS] R3 snake_case names / UPPER_SNAKE_CASE constants: snake_case / UPPER_SNAKE_CASE ok
+[PASS] R4 ValueError for invalid input, no bare except: ValueError with messages, no bare except
+[PASS] R5 no print() in library code: no print() calls
+[PASS] R6 tests named test_normalize_notice_title_<case> exist and pass: 4/4 tests pass
+[PASS] R7 function behaves as specified: 10/10 behaviour cases
+-> DOES NOT FOLLOW AGENT.md (5/7 rules)
+
+Attempt 2: asking qwen3:8b (AGENT.md and MEMORY.md are in the system prompt) ...
+----- generated code -----
+import re
+
+def normalize_notice_title(title: str, max_length: int = 100) -> str:
+    """
+    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,
+    and ensuring the title does not exceed the specified maximum length.
+    """
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+    
+    trimmed_title = title.strip()
+    if not trimmed_title:
+        raise ValueError("Title cannot be empty after trimming.")
+    
+    cleaned_title = re.sub(r'\s+', ' ', trimmed_title)
+    if len(cleaned_title) > max_length:
+        raise ValueError(f"Title is too long. Maximum allowed length is {max_length} characters.")
+    
+    return cleaned_title
+
+def test_normalize_notice_title_valid_input():
+    """
+    Test that the function correctly handles valid input.
+    """
+    assert normalize_notice_title("  Example Title  ") == "Example Title"
+    assert normalize_notice_title("This is a test title with multiple spaces") == "This is a test title with multiple spaces"
+    assert normalize_notice_title("Short title", 20) == "Short title"
+
+def test_normalize_notice_title_non_string_input():
+    """
+    Test that the function raises ValueError for non-string input.
+    """
+    try:
+        normalize_notice_title(123)
+    except ValueError as e:
+        assert str(e) == "Title must be a string."
+
+def test_normalize_notice_title_empty_after_trimming():
+    """
+    Test that the function raises ValueError for empty title after trimming.
+    """
+    try:
+        normalize_notice_title("   ")
+    except ValueError as e:
+        assert str(e) == "Title cannot be empty after trimming."
+
+def test_normalize_notice_title_exceeds_max_length():
+    """
+    Test that the function raises ValueError for title exceeding max length.
+    """
+    try:
+        normalize_notice_title("This title is longer than the allowed maximum length", 20)
+    except ValueError as e:
+        assert str(e) == "Title is too long. Maximum allowed length is 20 characters."
+
+
+=== Attempt 2: generated function vs AGENT.md ===
+[FAIL] R1 type hints on every parameter and return value: missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_exceeds_max_length -> return
+[FAIL] R2 one-line capitalised docstring ending with a period: normalize_notice_title: docstring is not one line
+[PASS] R3 snake_case names / UPPER_SNAKE_CASE constants: snake_case / UPPER_SNAKE_CASE ok
+[PASS] R4 ValueError for invalid input, no bare except: ValueError with messages, no bare except
+[PASS] R5 no print() in library code: no print() calls
+[PASS] R6 tests named test_normalize_notice_title_<case> exist and pass: 4/4 tests pass
+[PASS] R7 function behaves as specified: 10/10 behaviour cases
+-> DOES NOT FOLLOW AGENT.md (5/7 rules)
+
+Attempt 3: asking qwen3:8b (AGENT.md and MEMORY.md are in the system prompt) ...
+----- generated code -----
+import re
+
+def normalize_notice_title(title: str, max_length: int = 100) -> str:
+    """
+    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,
+    and ensuring the title does not exceed the specified maximum length.
+    """
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+    
+    trimmed_title = title.strip()
+    if not trimmed_title:
+        raise ValueError("Title cannot be empty after trimming.")
+    
+    cleaned_title = re.sub(r'\s+', ' ', trimmed_title)
+    if len(cleaned_title) > max_length:
+        raise ValueError(f"Title is too long. Maximum allowed length is {max_length} characters.")
+    
+    return cleaned_title
+
+def test_normalize_notice_title_valid_input():
+    """
+    Test that the function correctly handles valid input.
+    """
+    assert normalize_notice_title("  Example Title  ") == "Example Title"
+    assert normalize_notice_title("This is a test title with multiple spaces") == "This is a test title with multiple spaces"
+    assert normalize_notice_title("Short title", 20) == "Short title"
+
+def test_normalize_notice_title_non_string_input():
+    """
+    Test that the function raises ValueError for non-string input.
+    """
+    try:
+        normalize_notice_title(123)
+    except ValueError as e:
+        assert str(e) == "Title must be a string."
+
+def test_normalize_notice_title_empty_after_trimming():
+    """
+    Test that the function raises ValueError for empty title after trimming.
+    """
+    try:
+        normalize_notice_title("   ")
+    except ValueError as e:
+        assert str(e) == "Title cannot be empty after trimming."
+
+def test_normalize_notice_title_exceeds_max_length():
+    """
+    Test that the function raises ValueError for title exceeding max length.
+    """
+    try:
+        normalize_notice_title("This title is longer than the allowed maximum length", 20)
+    except ValueError as e:
+        assert str(e) == "Title is too long. Maximum allowed length is 20 characters."
+
+
+=== Attempt 3: generated function vs AGENT.md ===
+[FAIL] R1 type hints on every parameter and return value: missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_exceeds_max_length -> return
+[FAIL] R2 one-line capitalised docstring ending with a period: normalize_notice_title: docstring is not one line
+[PASS] R3 snake_case names / UPPER_SNAKE_CASE constants: snake_case / UPPER_SNAKE_CASE ok
+[PASS] R4 ValueError for invalid input, no bare except: ValueError with messages, no bare except
+[PASS] R5 no print() in library code: no print() calls
+[PASS] R6 tests named test_normalize_notice_title_<case> exist and pass: 4/4 tests pass
+[PASS] R7 function behaves as specified: 10/10 behaviour cases
+-> DOES NOT FOLLOW AGENT.md (5/7 rules)
+
+Attempt 4: asking qwen3:8b (AGENT.md and MEMORY.md are in the system prompt) ...
+----- generated code -----
+import re
+
+def normalize_notice_title(title: str, max_length: int = 100) -> str:
+    """
+    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,
+    and ensuring the title does not exceed the specified maximum length.
+    """
+    if not isinstance(title, str):
+        raise ValueError("Title must be a string.")
+    
+    trimmed_title = title.strip()
+    if not trimmed_title:
+        raise ValueError("Title cannot be empty after trimming.")
+    
+    cleaned_title = re.sub(r'\s+', ' ', trimmed_title)
+    if len(cleaned_title) > max_length:
+        raise ValueError(f"Title is too long. Maximum allowed length is {max_length} characters.")
+    
+    return cleaned_title
+
+def test_normalize_notice_title_valid_input():
+    """
+    Test that the function correctly handles valid input.
+    """
+    assert normalize_notice_title("  Example Title  ") == "Example Title"
+    assert normalize_notice_title("This is a test title with multiple spaces") == "This is a test title with multiple spaces"
+    assert normalize_notice_title("Short title", 20) == "Short title"
+
+def test_normalize_notice_title_non_string_input():
+    """
+    Test that the function raises ValueError for non-string input.
+    """
+    try:
+        normalize_notice_title(123)
+    except ValueError as e:
+        assert str(e) == "Title must be a string."
+
+def test_normalize_notice_title_empty_after_trimming():
+    """
+    Test that the function raises ValueError for empty title after trimming.
+    """
+    try:
+        normalize_notice_title("   ")
+    except ValueError as e:
+        assert str(e) == "Title cannot be empty after trimming."
+
+def test_normalize_notice_title_exceeds_max_length():
+    """
+    Test that the function raises ValueError for title exceeding max length.
+    """
+    try:
+        normalize_notice_title("This title is longer than the allowed maximum length", 20)
+    except ValueError as e:
+        assert str(e) == "Title is too long. Maximum allowed length is 20 characters."
+
+
+=== Attempt 4: generated function vs AGENT.md ===
+[FAIL] R1 type hints on every parameter and return value: missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_exceeds_max_length -> return
+[FAIL] R2 one-line capitalised docstring ending with a period: normalize_notice_title: docstring is not one line
+[PASS] R3 snake_case names / UPPER_SNAKE_CASE constants: snake_case / UPPER_SNAKE_CASE ok
+[PASS] R4 ValueError for invalid input, no bare except: ValueError with messages, no bare except
+[PASS] R5 no print() in library code: no print() calls
+[PASS] R6 tests named test_normalize_notice_title_<case> exist and pass: 4/4 tests pass
+[PASS] R7 function behaves as specified: 10/10 behaviour cases
+-> DOES NOT FOLLOW AGENT.md (5/7 rules)
+[2026-10-16T07:15:25Z] END exit_code=1
+
+[2026-10-16T07:15:50Z] Sharan Lourduraj | START command: python scripts/run_consolidation_hw06.py
+HW6 Part 4 consolidation test - Sharan Lourduraj (SID4 9619)
+Original: 55 file lines, 52 memory lines (non-empty, non-comment)
+Trigger check: consolidation required? -> ['52 memory lines (limit 40)', 'last consolidated 367.3 hours ago (limit 24)']
+
+Running /compact (model qwen3:8b; this takes a few minutes on CPU) ...
+
+Before: 52 memory lines (50 facts, 55 file lines)
+After:  36 memory lines (30 facts, 39 file lines)
+Merged duplicates: 18 | Superseded by newer facts: 2 | Flagged for review: 1 | Passes: 2
+Guard: L14 and L44 were each flagged against the other; both kept, one conflict logged
+Warning: ignored merge L2 -> L3: the two lines are about different things
+Warning: ignored merge L5 -> L14: the two lines are about different things
+Warning: ignored merge L6 -> L36: the two lines are about different things
+Warning: ignored merge L11 -> L32: the two lines are about different things
+Warning: ignored invalid decision {'line': 20, 'line_quote': '[critical] The user has a severe peanut allergy (confirmed by a doctor).', 'action': 'review', 'target': 35, 'target_quote': 'The user said they are not allergic to peanuts (joking, unverified).', 'reason': 'Contradictory allergy status, unverified newer line.'}
+Warning: ignored merge L22 -> L25: the two lines are about different things
+Warning: decision said L28 but its quote only fits L29; used L29
+Warning: ignored merge L23 -> L29: the two lines are about different things
+Warning: ignored merge L24 -> L34: the two lines are about different things
+Warning: ignored merge L26 -> L31: the two lines are about different things
+Warning: ignored merge L29 -> L39: the two lines are about different things
+Warning: ignored merge L30 -> L31: the two lines are about different things
+Warning: ignored merge L31 -> L35: the two lines are about different things
+Warning: ignored invalid decision {'line': 33, 'line_quote': 'qwen3:8b via Oll,ama is the chat model for every homework.', 'action': 'merge', 'target': 34, 'target_quote': 'The HW5 submission is tagged hw5 at commit 69fc4b5.', 'reason': 'Different topics, no conflict.'}
+Warning: ignored merge L34 -> L35: the two lines are about different things
+Warning: ignored invalid decision {'line': 35, 'line_quote': 'The user said they are not allergic to peanuts (joking, unverified).', 'action': 'review', 'target': 20, 'target_quote': '[critical] The user has a severe peanut allergy (confirmed by a doctor).', 'reason': 'Contradictory allergy status, unverified newer line.'}
+Warning: ignored merge L37 -> L18: the two lines are about different things
+Warning: ignored merge L39 -> L29: the two lines are about different things
+Warning: ignored merge L41 -> L42: the two lines are about different things
+Warning: ignored supersede L46 -> L17: the replacing line is older
+Warning: ignored supersede L49 -> L12: the replacing line is older
+Warning: L4: target L15 is not a kept fact; L4 kept
+Warning: L15: target L48 is not a kept fact; L15 kept
+Warning: L27: target L38 is not a kept fact; L27 kept
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L1 -> L19: the two lines are about different things
+Warning: ignored merge L2 -> L3: the two lines are about different things
+Warning: ignored merge L5 -> L20: the two lines are about different things
+Warning: ignored merge L6 -> L20: the two lines are about different things
+Warning: ignored invalid decision {'line': 13, 'line_quote': '[critical] The user has a severe peanut allergy (confirmed by a doctor).', 'action': 'review', 'target': 26, 'target_quote': 'The user said they are not allergic to peanuts (joking, unverified).', 'reason': 'Contradicting critical facts; unverified.'}
+Warning: ignored supersede L19 -> L10: the replacing line is older
+Warning: ignored merge L25 -> L21: the two lines are about different things
+Warning: ignored merge L27 -> L11: the two lines are about different things
+Warning: ignored supersede L31 -> L8: the replacing line is older
+Warning: ignored merge L32 -> L15: the two lines are about different things
+Warning: ignored merge L33 -> L30: the two lines are about different things
+Result: under the limit of 40 file lines.
+
+----- consolidated file (39 lines) -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T07:15:50Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-08-12] The student is Sharan Lourduraj (Jo) at SJSU, course DATA-260.
+- [2026-08-12] SID4 is 9619 and the PREFIX is s9619.
+- [2026-08-12] SEED is 9619 and VERIFY_SEED is 269619.
+- [2026-08-13] The repository is https://github.com/Sharanjoo/data260-9619.
+- [2026-08-13] Collaborators on the repository are Sbnikitha and supriyaselvanganesan.
+- [2026-08-17] The laptop is an HP Pavilion with 32 GB RAM and a 512 GB disk.
+- [2026-08-22] The user wants a daily email digest of recalls. <!-- CONFLICT with the [2026-10-01] line, needs review -->
+- [2026-08-25] DOMAIN_ID 3 means the grocery recall domain. <!-- merged duplicates L25, L36, L48 merged duplicates L4 -->
+- [2026-08-27] Never run git commands yourself, hand them to the user. <!-- merged duplicates L7 -->
+- [2026-09-01] Report font is Times New Roman, tables have green headers. <!-- merged duplicates L9, L43 merged duplicates L23 -->
+- [2026-09-02] Every terminal screenshot must show the name Sharan Lourduraj. <!-- merged duplicates L10, L32, L47 -->
+- [2026-09-02] [critical] The user has a severe peanut allergy (confirmed by a doctor).
+- [2026-09-03] Model: qwen3:8b (Ollama, local, no paid API). <!-- merged duplicates L8, L45 -->
+- [2026-09-04] The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.
+- [2026-09-05] The memory collections are messages, summaries and episodes.
+- [2026-09-06] Episodic memory embeddings use nomic-embed-text served by Ollama.
+- [2026-09-08] SHORT_TERM_N defaults to 12 and a session summary is written every 5 user messages.
+- [2026-09-09] The user runs all git commands (add, commit, push); the assistant only writes them out. <!-- merged duplicates L38, L50 -->
+- [2026-09-10] The Part 1 collection is recall_notices with a status enum and a category enum.
+- [2026-09-14] In Postman, decline the AI Fix suggestion because it rewrites test bodies.
+- [2026-09-18] qwen3:8b via Ollama is the chat model for every homework. <!-- merged duplicates L13 merged duplicates L21 -->
+- [2026-09-19] The HW5 submission is tagged hw5 at commit 69fc4b5.
+- [2026-09-20] The user said they are not allergic to peanuts (joking, unverified).
+- [2026-09-23] Reports are exported as PDF named Lourduraj_HWn.pdf.
+- [2026-09-26] The user prefers short answers.
+- [2026-09-29] The user's partner is lactose intolerant. <!-- merged duplicates L40 -->
+- [2026-09-30] The user shops at Safeway and Whole Foods.
+- [2026-10-01] The user wants a weekly email digest of recalls. <!-- CONFLICT with the [2026-08-22] line, needs review -->
+- [2026-10-02] The API runs on port 8619 (PORT_BASE).
+- [2026-10-05] The user lives in Oakland.
+
+## Resolved conflicts
+- KEPT [2026-10-05] The user lives in Oakland. | SUPERSEDED [2026-08-18] The user lives in San Jose. | reason: Contradictory location, newer line is more recent.
+- UNRESOLVED (both kept in Facts) [2026-08-22] The user wants a daily email digest of recalls. | [2026-10-01] The user wants a weekly email digest of recalls. | reason: Contradictory frequency, unverified newer line.
+- KEPT [2026-10-02] The API runs on port 8619 (PORT_BASE). | SUPERSEDED [2026-08-30] The API runs on port 8000. | reason: Contradictory port, newer line is more recent.
+
+----- checks against consolidation_truth.yaml -----
+[PASS] fewer than 40 file lines: 39 lines
+[FAIL] D1 duplicates merged into one line ('qwen3:8b'): 5 -> 2
+[PASS] D2 duplicates merged into one line ('DOMAIN_ID 3'): 5 -> 1
+[FAIL] D3 duplicates merged into one line ('git commands'): 5 -> 2
+[PASS] D4 duplicates merged into one line ('Times New Roman'): 4 -> 1
+[PASS] D5 duplicates merged into one line ('terminal screenshot'): 4 -> 1
+[PASS] C1 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True
+[FAIL] C2 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: False, loser logged in Resolved conflicts: False
+[FAIL] C3 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: False, loser logged in Resolved conflicts: True
+[PASS] C4 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True
+[FAIL] all 19 unique facts survive exactly once: missing/duplicated: MySQL holds, oat milk
+[FAIL] no silent deletion (kept + merged + logged = original facts): 30 kept + 18 merged + 3 logged = 51 (original 50)
+
+Contradictions NOT resolved correctly: 
+  - C2: TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule -> keeper in Facts: True, loser out of Facts: False, loser logged in Resolved conflicts: False
+  - C3: newer preference replaces the older one -> keeper in Facts: True, loser out of Facts: False, loser logged in Resolved conflicts: True
+
+Trap C2 (TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule):
+  guard interventions: ['L14 and L44 were each flagged against the other; both kept, one conflict logged']
+
+6/12 checks passed. Raw result: reports/hw06/raw/consolidation_result.json
+[2026-10-16T07:41:47Z] END exit_code=1
+
+[2026-10-16T07:46:05Z] Sharan Lourduraj | START command: python scripts/run_consolidation_hw06.py
+HW6 Part 4 consolidation test - Sharan Lourduraj (SID4 9619)
+Original: 55 file lines, 52 memory lines (non-empty, non-comment)
+Trigger check: consolidation required? -> ['52 memory lines (limit 40)', 'last consolidated 367.8 hours ago (limit 24)']
+
+Running /compact (model qwen3:8b; this takes a few minutes on CPU) ...
+
+Before: 52 memory lines (50 facts, 55 file lines)
+After:  35 memory lines (28 facts, 38 file lines)
+Merged duplicates: 18 | Superseded by newer facts: 3 | Flagged for review: 1 | Passes: 2
+Guard: L20 is [critical]; the proposal to review it with L35 was reversed, L35 flagged for review
+Warning: ignored merge L2 -> L3: the two lines are about different things
+Warning: ignored merge L5 -> L14: the two lines are about different things
+Warning: ignored merge L6 -> L36: the two lines are about different things
+Warning: ignored merge L11 -> L32: the two lines are about different things
+Warning: ignored merge L22 -> L25: the two lines are about different things
+Warning: decision said L28 but its quote only fits L29; used L29
+Warning: ignored merge L23 -> L29: the two lines are about different things
+Warning: ignored merge L24 -> L34: the two lines are about different things
+Warning: ignored merge L26 -> L31: the two lines are about different things
+Warning: ignored merge L29 -> L39: the two lines are about different things
+Warning: ignored merge L30 -> L31: the two lines are about different things
+Warning: ignored merge L31 -> L35: the two lines are about different things
+Warning: ignored invalid decision {'line': 33, 'line_quote': 'qwen3:8b via Oll,ama is the chat model for every homework.', 'action': 'merge', 'target': 35, 'target_quote': 'The user said they are not allergic to peanuts (joking, unverified).', 'reason': 'Different topics, no overlap.'}
+Warning: ignored merge L34 -> L29: the two lines are about different things
+Warning: ignored merge L37 -> L18: the two lines are about different things
+Warning: ignored merge L39 -> L29: the two lines are about different things
+Warning: ignored merge L40 -> L41: the two lines are about different things
+Warning: ignored merge L41 -> L40: the two lines are about different things
+Warning: ignored merge L42 -> L43: the two lines are about different things
+Warning: ignored supersede L46 -> L17: the replacing line is older
+Warning: ignored supersede L49 -> L12: the replacing line is older
+Warning: L4: target L15 is not a kept fact; L4 kept
+Warning: L14: target L44 is not a kept fact; L14 kept
+Warning: L15: target L48 is not a kept fact; L15 kept
+Warning: L27: target L38 is not a kept fact; L27 kept
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L1 -> L19: the two lines are about different things
+Warning: ignored merge L2 -> L15: the two lines are about different things
+Warning: ignored merge L3 -> L15: the two lines are about different things
+Warning: ignored merge L5 -> L21: the two lines are about different things
+Warning: ignored merge L6 -> L21: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L7 -> L19: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L8 -> L19: the two lines are about different things
+Warning: ignored review L13 -> L28: the two lines are about different things
+Warning: ignored merge L15 -> L21: the two lines are about different things
+Warning: ignored merge L16 -> L17: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L18 -> L19: the two lines are about different things
+Warning: ignored supersede L19 -> L10: the replacing line is older
+Warning: ignored merge L20 -> L21: the two lines are about different things
+Warning: ignored merge L21 -> L20: the two lines are about different things
+Warning: ignored merge L22 -> L24: the two lines are about different things
+Warning: ignored merge L25 -> L21: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L26 -> L19: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L27 -> L19: the two lines are about different things
+Warning: ignored review L28 -> L13: the two lines are about different things
+Warning: ignored merge L29 -> L13: the two lines are about different things
+Warning: ignored merge L30 -> L13: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L31 -> L19: the two lines are about different things
+Warning: decision said L12 but its quote only fits L19; used L19
+Warning: ignored merge L32 -> L19: the two lines are about different things
+Warning: L11: target L23 is not a kept fact; L11 kept
+Warning: L14: target L24 is not a kept fact; L14 kept
+Result: under the limit of 40 file lines.
+
+----- consolidated file (38 lines) -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T07:46:05Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-08-12] The student is Sharan Lourduraj (Jo) at SJSU, course DATA-260.
+- [2026-08-12] SID4 is 9619 and the PREFIX is s9619.
+- [2026-08-12] SEED is 9619 and VERIFY_SEED is 269619.
+- [2026-08-13] The repository is https://github.com/Sharanjoo/data260-9619.
+- [2026-08-13] Collaborators on the repository are Sbnikitha and supriyaselvanganesan.
+- [2026-08-17] The laptop is an HP Pavilion with 32 GB RAM and a 512 GB disk.
+- [2026-08-22] The user wants a daily email digest of recalls. <!-- merged duplicates L44 -->
+- [2026-08-25] DOMAIN_ID 3 means the grocery recall domain. <!-- merged duplicates L25, L36, L48 merged duplicates L4 -->
+- [2026-09-01] Report font is Times New Roman, tables have green headers. <!-- merged duplicates L9, L43 merged duplicates L23 -->
+- [2026-09-02] Every terminal screenshot must show the name Sharan Lourduraj. <!-- merged duplicates L10, L32, L47 -->
+- [2026-09-02] [critical] The user has a severe peanut allergy (confirmed by a doctor).
+- [2026-09-03] Model: qwen3:8b (Ollama, local, no paid API). <!-- merged duplicates L8, L45 merged duplicates L24 -->
+- [2026-09-04] The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.
+- [2026-09-05] The memory collections are messages, summaries and episodes.
+- [2026-09-06] Episodic memory embeddings use nomic-embed-text served by Ollama.
+- [2026-09-08] SHORT_TERM_N defaults to 12 and a session summary is written every 5 user messages.
+- [2026-09-09] The user runs all git commands (add, commit, push); the assistant only writes them out. <!-- merged duplicates L38, L50 -->
+- [2026-09-10] The Part 1 collection is recall_notices with a status enum and a category enum.
+- [2026-09-12] One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.
+- [2026-09-14] In Postman, decline the AI Fix suggestion because it rewrites test bodies.
+- [2026-09-19] The HW5 submission is tagged hw5 at commit 69fc4b5.
+- [2026-09-23] Reports are exported as PDF named Lourduraj_HWn.pdf.
+- [2026-09-26] The user prefers short answers.
+- [2026-09-28] The user's toddler drinks oat milk every day.
+- [2026-09-29] The user's partner is lactose intolerant.
+- [2026-09-30] The user shops at Safeway and Whole Foods.
+- [2026-10-02] The API runs on port 8619 (PORT_BASE).
+- [2026-10-05] The user lives in Oakland.
+
+## Resolved conflicts
+- KEPT [2026-10-05] The user lives in Oakland. | SUPERSEDED [2026-08-18] The user lives in San Jose. | reason: Contradictory location, newer line is more recent.
+- KEPT [2026-10-02] The API runs on port 8619 (PORT_BASE). | SUPERSEDED [2026-08-30] The API runs on port 8000. | reason: Contradictory port, newer line is more recent.
+- NEEDS REVIEW (kept: [2026-09-02] The user has a severe peanut allergy (confirmed by a doctor).) | UNVERIFIED [2026-09-20] The user said they are not allergic to peanuts (joking, unverified). | reason: contradicts [critical] fact L20; Contradictory allergy info, unverified statement.
+- KEPT [2026-09-09] The user runs all git commands (add, commit, push); the assistant only writes them out. | SUPERSEDED [2026-08-27] Never run git commands yourself, hand them to the user. | reason: Contradiction, newer line replaces.
+
+----- checks against consolidation_truth.yaml -----
+[PASS] fewer than 40 file lines: 38 lines
+[PASS] D1 duplicates merged into one line ('qwen3:8b'): 5 -> 1
+[PASS] D2 duplicates merged into one line ('DOMAIN_ID 3'): 5 -> 1
+[PASS] D3 duplicates merged into one line ('git commands'): 5 -> 1
+[PASS] D4 duplicates merged into one line ('Times New Roman'): 4 -> 1
+[PASS] D5 duplicates merged into one line ('terminal screenshot'): 4 -> 1
+[PASS] C1 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True
+[PASS] C2 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True
+[FAIL] C3 contradiction resolved correctly: keeper in Facts: False, loser out of Facts: False, loser logged in Resolved conflicts: False
+[PASS] C4 contradiction resolved correctly: keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True
+[PASS] all 19 unique facts survive exactly once: 19/19
+[PASS] no silent deletion (kept + merged + logged = original facts): 28 kept + 18 merged + 4 logged = 50 (original 50)
+
+Contradictions NOT resolved correctly: 
+  - C3: newer preference replaces the older one -> keeper in Facts: False, loser out of Facts: False, loser logged in Resolved conflicts: False
+
+Trap C2 (TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule):
+  guard interventions: ['L20 is [critical]; the proposal to review it with L35 was reversed, L35 flagged for review']
+
+11/12 checks passed. Raw result: reports/hw06/raw/consolidation_result.json
+[2026-10-16T08:17:13Z] END exit_code=1
+
+[2026-10-16T08:19:57Z] Sharan Lourduraj | START command: python scripts/file_memory_cli.py --script scripts/file_memory_demo_commands.txt
+File-based memory chat - Sharan Lourduraj (SID4 9619)
+model=qwen3:8b  AGENT.md=AGENT.md  MEMORY.md=MEMORY.md
+
+Memory check: MEMORY.md: 9 memory lines (limit 40), last consolidated 2026-10-16T00:00:00Z, consolidation due: no
+
+you> /help
+Available commands:
+  /memory   show the current file-based memory (AGENT.md summary, MEMORY.md, consolidation status)
+  /compact  consolidate MEMORY.md now (merge duplicates, resolve contradictions) and report line counts before and after
+  /dream    pick durable long-term facts out of the recent conversation and add them to MEMORY.md
+  /help     show this list
+  /quit     leave the chat
+Anything else is sent to the model with AGENT.md and MEMORY.md in its system prompt.
+[0.0 s]
+
+you> /memory
+AGENT.md: 53 lines, 20 instruction lines; sections: Project description, Technology stack, Coding conventions, Testing approach, Prohibited actions, Code review output rules (apply only when asked to review code)
+MEMORY.md: 9 memory lines (limit 40), last consolidated 2026-10-16T00:00:00Z, consolidation due: no
+----- MEMORY.md -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T00:00:00Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-10-16] The student is Sharan Lourduraj (Jo); SID4 9619, PORT_BASE 8619, PREFIX s9619, SEED 9619, VERIFY_SEED 269619.
+- [2026-10-16] The assigned domain is grocery recall notices (DOMAIN_ID 3).
+- [2026-10-16] The local model is qwen3:8b served by Ollama; the laptop has no GPU, so replies take 20-70 seconds.
+- [2026-10-16] The user runs all git commands; the assistant only writes them out.
+- [2026-10-16] Reports use Times New Roman with green table headers and are exported as Lourduraj_HWn.pdf.
+- [2026-10-16] The student name must be visible in every terminal screenshot.
+- [2026-10-16] MongoDB database s9619_doc runs as mongo:7.0 in Docker on host port 27017.
+[0.0 s]
+
+you> Please remember that I always want git commands listed at the end of each checkpoint.
+assistant> I'll make sure to list git commands at the end of each checkpoint. Let me know when you're ready to proceed with your DATA-260 homework!
+[13.0 s]
+
+you> My peanut allergy is severe, so flag any recalled peanut product as critical.
+assistant> I've noted your severe peanut allergy and will flag any recalled peanut products as critical in the system. Let me know when you're ready to proceed with your DATA-260 homework!
+[14.5 s]
+
+you> /dream
+/dream: added to MEMORY.md:
+- [2026-10-16] [critical] The user has a severe peanut allergy and any recalled peanut product must be flagged as critical.
+- [2026-10-16] The user wants git commands listed at the end of each checkpoint.
+[54.9 s]
+
+you> /memory
+AGENT.md: 53 lines, 20 instruction lines; sections: Project description, Technology stack, Coding conventions, Testing approach, Prohibited actions, Code review output rules (apply only when asked to review code)
+MEMORY.md: 11 memory lines (limit 40), last consolidated 2026-10-16T00:00:00Z, consolidation due: no
+----- MEMORY.md -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T00:00:00Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-10-16] The student is Sharan Lourduraj (Jo); SID4 9619, PORT_BASE 8619, PREFIX s9619, SEED 9619, VERIFY_SEED 269619.
+- [2026-10-16] The assigned domain is grocery recall notices (DOMAIN_ID 3).
+- [2026-10-16] The local model is qwen3:8b served by Ollama; the laptop has no GPU, so replies take 20-70 seconds.
+- [2026-10-16] The user runs all git commands; the assistant only writes them out.
+- [2026-10-16] Reports use Times New Roman with green table headers and are exported as Lourduraj_HWn.pdf.
+- [2026-10-16] The student name must be visible in every terminal screenshot.
+- [2026-10-16] MongoDB database s9619_doc runs as mongo:7.0 in Docker on host port 27017.
+- [2026-10-16] [critical] The user has a severe peanut allergy and any recalled peanut product must be flagged as critical.
+- [2026-10-16] The user wants git commands listed at the end of each checkpoint.
+[0.0 s]
+
+you> /compact
+/compact
+Before: 11 memory lines (9 facts, 13 file lines)
+After:  11 memory lines (9 facts, 13 file lines)
+Merged duplicates: 0 | Superseded by newer facts: 0 | Flagged for review: 0 | Passes: 1
+Warning: ignored merge L1 -> L6: the two lines are about different things
+Warning: ignored merge L5 -> L9: the two lines are about different things
+Warning: ignored review L8 -> L1: the two lines are about different things
+Result: under the limit of 40 file lines.
+[90.1 s]
+
+you> /memory
+AGENT.md: 53 lines, 20 instruction lines; sections: Project description, Technology stack, Coding conventions, Testing approach, Prohibited actions, Code review output rules (apply only when asked to review code)
+MEMORY.md: 11 memory lines (limit 40), last consolidated 2026-10-16T08:21:19Z, consolidation due: no
+----- MEMORY.md -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T08:21:19Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-10-16] The student is Sharan Lourduraj (Jo); SID4 9619, PORT_BASE 8619, PREFIX s9619, SEED 9619, VERIFY_SEED 269619.
+- [2026-10-16] The assigned domain is grocery recall notices (DOMAIN_ID 3).
+- [2026-10-16] The local model is qwen3:8b served by Ollama; the laptop has no GPU, so replies take 20-70 seconds.
+- [2026-10-16] The user runs all git commands; the assistant only writes them out.
+- [2026-10-16] Reports use Times New Roman with green table headers and are exported as Lourduraj_HWn.pdf.
+- [2026-10-16] The student name must be visible in every terminal screenshot.
+- [2026-10-16] MongoDB database s9619_doc runs as mongo:7.0 in Docker on host port 27017.
+- [2026-10-16] [critical] The user has a severe peanut allergy and any recalled peanut product must be flagged as critical.
+- [2026-10-16] The user wants git commands listed at the end of each checkpoint.
+[0.0 s]
+
+[2026-10-16T08:22:50Z] END exit_code=0
+
+[2026-10-16T08:22:50Z] Sharan Lourduraj | START command: python scripts/file_memory_cli.py --script scripts/file_memory_restart_commands.txt
+File-based memory chat - Sharan Lourduraj (SID4 9619)
+model=qwen3:8b  AGENT.md=AGENT.md  MEMORY.md=MEMORY.md
+
+Memory check: MEMORY.md: 11 memory lines (limit 40), last consolidated 2026-10-16T08:21:19Z, consolidation due: no
+
+you> /memory
+AGENT.md: 53 lines, 20 instruction lines; sections: Project description, Technology stack, Coding conventions, Testing approach, Prohibited actions, Code review output rules (apply only when asked to review code)
+MEMORY.md: 11 memory lines (limit 40), last consolidated 2026-10-16T08:21:19Z, consolidation due: no
+----- MEMORY.md -----
+# MEMORY.md
+<!-- last-consolidated: 2026-10-16T08:21:19Z -->
+<!-- format: one fact per bullet '- [YYYY-MM-DD] text'; tag [critical] for safety facts -->
+## Facts
+- [2026-10-16] The student is Sharan Lourduraj (Jo); SID4 9619, PORT_BASE 8619, PREFIX s9619, SEED 9619, VERIFY_SEED 269619.
+- [2026-10-16] The assigned domain is grocery recall notices (DOMAIN_ID 3).
+- [2026-10-16] The local model is qwen3:8b served by Ollama; the laptop has no GPU, so replies take 20-70 seconds.
+- [2026-10-16] The user runs all git commands; the assistant only writes them out.
+- [2026-10-16] Reports use Times New Roman with green table headers and are exported as Lourduraj_HWn.pdf.
+- [2026-10-16] The student name must be visible in every terminal screenshot.
+- [2026-10-16] MongoDB database s9619_doc runs as mongo:7.0 in Docker on host port 27017.
+- [2026-10-16] [critical] The user has a severe peanut allergy and any recalled peanut product must be flagged as critical.
+- [2026-10-16] The user wants git commands listed at the end of each checkpoint.
+[0.0 s]
+
+you> What do you remember about my allergies and how I want git commands handled?
+assistant> - [critical] I remember you have a severe peanut allergy, so any recalled peanut product must be flagged as critical.  
+- I remember you want git commands listed at the end of each checkpoint.
+[17.5 s]
+
+[2026-10-16T08:23:08Z] END exit_code=0

@@ -1,0 +1,727 @@
+{
+  "model": "qwen3:8b",
+  "run_at": "2026-10-16T07:46:05Z",
+  "report": {
+    "before_lines": 52,
+    "after_lines": 35,
+    "before_physical": 55,
+    "after_physical": 38,
+    "before_facts": 50,
+    "after_facts": 28,
+    "merged": 18,
+    "superseded": 3,
+    "flagged_for_review": 1,
+    "passes": 2,
+    "guard_notes": [
+      "L20 is [critical]; the proposal to review it with L35 was reversed, L35 flagged for review"
+    ],
+    "warnings": [
+      "ignored merge L2 -> L3: the two lines are about different things",
+      "ignored merge L5 -> L14: the two lines are about different things",
+      "ignored merge L6 -> L36: the two lines are about different things",
+      "ignored merge L11 -> L32: the two lines are about different things",
+      "ignored merge L22 -> L25: the two lines are about different things",
+      "decision said L28 but its quote only fits L29; used L29",
+      "ignored merge L23 -> L29: the two lines are about different things",
+      "ignored merge L24 -> L34: the two lines are about different things",
+      "ignored merge L26 -> L31: the two lines are about different things",
+      "ignored merge L29 -> L39: the two lines are about different things",
+      "ignored merge L30 -> L31: the two lines are about different things",
+      "ignored merge L31 -> L35: the two lines are about different things",
+      "ignored invalid decision {'line': 33, 'line_quote': 'qwen3:8b via Oll,ama is the chat model for every homework.', 'action': 'merge', 'target': 35, 'target_quote': 'The user said they are not allergic to peanuts (joking, unverified).', 'reason': 'Different topics, no overlap.'}",
+      "ignored merge L34 -> L29: the two lines are about different things",
+      "ignored merge L37 -> L18: the two lines are about different things",
+      "ignored merge L39 -> L29: the two lines are about different things",
+      "ignored merge L40 -> L41: the two lines are about different things",
+      "ignored merge L41 -> L40: the two lines are about different things",
+      "ignored merge L42 -> L43: the two lines are about different things",
+      "ignored supersede L46 -> L17: the replacing line is older",
+      "ignored supersede L49 -> L12: the replacing line is older",
+      "L4: target L15 is not a kept fact; L4 kept",
+      "L14: target L44 is not a kept fact; L14 kept",
+      "L15: target L48 is not a kept fact; L15 kept",
+      "L27: target L38 is not a kept fact; L27 kept",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L1 -> L19: the two lines are about different things",
+      "ignored merge L2 -> L15: the two lines are about different things",
+      "ignored merge L3 -> L15: the two lines are about different things",
+      "ignored merge L5 -> L21: the two lines are about different things",
+      "ignored merge L6 -> L21: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L7 -> L19: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L8 -> L19: the two lines are about different things",
+      "ignored review L13 -> L28: the two lines are about different things",
+      "ignored merge L15 -> L21: the two lines are about different things",
+      "ignored merge L16 -> L17: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L18 -> L19: the two lines are about different things",
+      "ignored supersede L19 -> L10: the replacing line is older",
+      "ignored merge L20 -> L21: the two lines are about different things",
+      "ignored merge L21 -> L20: the two lines are about different things",
+      "ignored merge L22 -> L24: the two lines are about different things",
+      "ignored merge L25 -> L21: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L26 -> L19: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L27 -> L19: the two lines are about different things",
+      "ignored review L28 -> L13: the two lines are about different things",
+      "ignored merge L29 -> L13: the two lines are about different things",
+      "ignored merge L30 -> L13: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L31 -> L19: the two lines are about different things",
+      "decision said L12 but its quote only fits L19; used L19",
+      "ignored merge L32 -> L19: the two lines are about different things",
+      "L11: target L23 is not a kept fact; L11 kept",
+      "L14: target L24 is not a kept fact; L14 kept"
+    ],
+    "under_limit": true
+  },
+  "model_decisions": [
+    [
+      {
+        "line": 2,
+        "line_quote": "SID4 is 9619 and the PREFIX is s9619.",
+        "action": "merge",
+        "target": 3,
+        "target_quote": "SEED is 9619 and VERIFY_SEED is 269619.",
+        "reason": "Same SID4 and SEED, different VERIFY_SEED."
+      },
+      {
+        "line": 4,
+        "line_quote": "The assigned domain is grocery recall notices (DOMAIN_ID 3).",
+        "action": "merge",
+        "target": 15,
+        "target_quote": "DOMAIN_ID 3 means the grocery recall domain.",
+        "reason": "Same domain and DOMAIN_ID, different phrasing."
+      },
+      {
+        "line": 5,
+        "line_quote": "The repository is https://github.com/Sharanjoo/data260-9619.",
+        "action": "merge",
+        "target": 14,
+        "target_quote": "The user wants a daily email digest of recalls.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 6,
+        "line_quote": "Collaborators on the repository are Sbnikitha and supriyaselvanganesan.",
+        "action": "merge",
+        "target": 36,
+        "target_quote": "My domain is grocery recall notices, DOMAIN_ID 3.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 7,
+        "line_quote": "The assistant never runs git commands; the user runs them.",
+        "action": "merge",
+        "target": 16,
+        "target_quote": "Never run git commands yourself, hand them to the user.",
+        "reason": "Same message, different phrasing."
+      },
+      {
+        "line": 8,
+        "line_quote": "The local model is qwen3:8b served by Ollama.",
+        "action": "merge",
+        "target": 21,
+        "target_quote": "Model: qwen3:8b (Ollama, local, no paid API).",
+        "reason": "Same model, different details."
+      },
+      {
+        "line": 9,
+        "line_quote": "Reports use Times New Roman with green table headers.",
+        "action": "merge",
+        "target": 18,
+        "target_quote": "Report font is Times New Roman, tables have green headers.",
+        "reason": "Same details, different phrasing."
+      },
+      {
+        "line": 10,
+        "line_quote": "The student name must be visible in every terminal screenshot.",
+        "action": "merge",
+        "target": 19,
+        "target_quote": "Every terminal screenshot must show the name Sharan Lourduraj.",
+        "reason": "Same requirement, different phrasing."
+      },
+      {
+        "line": 11,
+        "line_quote": "The laptop is an HP Pavilion with 32 GB RAM and a 512 GB disk.",
+        "action": "merge",
+        "target": 32,
+        "target_quote": "Make sure the name appears in each terminal screenshot.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 12,
+        "line_quote": "The user lives in San Jose.",
+        "action": "supersede",
+        "target": 49,
+        "target_quote": "The user lives in Oakland.",
+        "reason": "Contradictory location, newer line is more recent."
+      },
+      {
+        "line": 13,
+        "line_quote": "All LLM calls use qwen3:8b through Ollama on the laptop.",
+        "action": "merge",
+        "target": 33,
+        "target_quote": "qwen3:8b via Ollama is the chat model for every homework.",
+        "reason": "Same model, different context."
+      },
+      {
+        "line": 14,
+        "line_quote": "The user wants a daily email digest of recalls.",
+        "action": "merge",
+        "target": 44,
+        "target_quote": "The user wants a weekly email digest of recalls.",
+        "reason": "Same request, different frequency."
+      },
+      {
+        "line": 15,
+        "line_quote": "DOMAIN_ID 3 means the grocery recall domain.",
+        "action": "merge",
+        "target": 48,
+        "target_quote": "DOMAIN_ID 3 = grocery recall notices.",
+        "reason": "Same domain and DOMAIN_ID, different phrasing."
+      },
+      {
+        "line": 17,
+        "line_quote": "The API runs on port 8000.",
+        "action": "supersede",
+        "target": 46,
+        "target_quote": "The API runs on port 8619 (PORT_BASE).",
+        "reason": "Contradictory port, newer line is more recent."
+      },
+      {
+        "line": 20,
+        "line_quote": "[critical] The user has a severe peanut allergy (confirmed by a doctor).",
+        "action": "review",
+        "target": 35,
+        "target_quote": "The user said they are not allergic to peanuts (joking, unverified).",
+        "reason": "Contradictory allergy info, unverified statement."
+      },
+      {
+        "line": 22,
+        "line_quote": "The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.",
+        "action": "merge",
+        "target": 25,
+        "target_quote": "Domain: grocery recalls, DOMAIN_ID 3.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 23,
+        "line_quote": "The memory collections are messages, summaries and episodes.",
+        "action": "merge",
+        "target": 28,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 24,
+        "line_quote": "Episodic memory embeddings use nomic-embed-text served by Ollama.",
+        "action": "merge",
+        "target": 34,
+        "target_quote": "The HW5 submission is tagged hw5 at commit 69fc4b5.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 25,
+        "line_quote": "Domain: grocery recalls, DOMAIN_ID 3.",
+        "action": "merge",
+        "target": 48,
+        "target_quote": "DOMAIN_ID 3 = grocery recall notices.",
+        "reason": "Same domain and DOMAIN_ID, different phrasing."
+      },
+      {
+        "line": 26,
+        "line_quote": "SHORT_TERM_N defaults to 12 and a session summary is written every 5 user messages.",
+        "action": "merge",
+        "target": 31,
+        "target_quote": "Use Times New Roman and green table header rows in every report.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 27,
+        "line_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "action": "merge",
+        "target": 38,
+        "target_quote": "Git commands are run by the user only.",
+        "reason": "Same message, different phrasing."
+      },
+      {
+        "line": 29,
+        "line_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "action": "merge",
+        "target": 39,
+        "target_quote": "The user prefers short answers.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 30,
+        "line_quote": "In Postman, decline the AI Fix suggestion because it rewrites test bodies.",
+        "action": "merge",
+        "target": 31,
+        "target_quote": "Use Times New Roman and green table header rows in every report.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 31,
+        "line_quote": "Use Times New Roman and green table header rows in every report.",
+        "action": "merge",
+        "target": 35,
+        "target_quote": "The user said they are not allergic to peanuts (joking, unverified).",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 32,
+        "line_quote": "Make sure the name appears in each terminal screenshot.",
+        "action": "merge",
+        "target": 19,
+        "target_quote": "Every terminal screenshot must show the name Sharan Lourduraj.",
+        "reason": "Same requirement, different phrasing."
+      },
+      {
+        "line": 33,
+        "line_quote": "qwen3:8b via Oll,ama is the chat model for every homework.",
+        "action": "merge",
+        "target": 35,
+        "target_quote": "The user said they are not allergic to peanuts (joking, unverified).",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 34,
+        "line_quote": "The HW5 submission is tagged hw5 at commit 69fc4b5.",
+        "action": "merge",
+        "target": 29,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 35,
+        "line_quote": "The user said they are not allergic to peanuts (joking, unverified).",
+        "action": "review",
+        "target": 20,
+        "target_quote": "[critical] The user has a severe peanut allergy (confirmed by a doctor).",
+        "reason": "Contradictory allergy info, unverified statement."
+      },
+      {
+        "line": 36,
+        "line_quote": "My domain is grocery recall notices, DOMAIN_ID 3.",
+        "action": "merge",
+        "target": 48,
+        "target_quote": "DOMAIN_ID 3 = grocery recall notices.",
+        "reason": "Same domain and DOMAIN_ID, different phrasing."
+      },
+      {
+        "line": 37,
+        "line_quote": "Reports are exported as PDF named Lourduraj_HWn.pdf.",
+        "action": "merge",
+        "target": 18,
+        "target_quote": "Report font is Times New Roman, tables have green headers.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 38,
+        "line_quote": "Git commands are run by the user only.",
+        "action": "merge",
+        "target": 27,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same message, different phrasing."
+      },
+      {
+        "line": 39,
+        "line_quote": "The user prefers short answers.",
+        "action": "merge",
+        "target": 29,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 40,
+        "line_quote": "The user's toddler drinks oat milk every day.",
+        "action": "merge",
+        "target": 41,
+        "target_quote": "The user's partner is lactose intolerant.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 41,
+        "line_quote": "The user's partner is lactose intolerant.",
+        "action": "merge",
+        "target": 40,
+        "target_quote": "The user's toddler drinks oat milk every day.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 42,
+        "line_quote": "The user shops at Safeway and Whole Foods.",
+        "action": "merge",
+        "target": 43,
+        "target_quote": "Green table headers and Times New Roman throughout the report.",
+        "reason": "Different topics, no overlap."
+      },
+      {
+        "line": 43,
+        "line_quote": "Green table headers and Times New Roman throughout the report.",
+        "action": "merge",
+        "target": 18,
+        "target_quote": "Report font is Times New Roman, tables have green headers.",
+        "reason": "Same details, different phrasing."
+      },
+      {
+        "line": 44,
+        "line_quote": "The user wants a weekly email digest of recalls.",
+        "action": "merge",
+        "target": 14,
+        "target_quote": "The user wants a daily email digest of recalls.",
+        "reason": "Same request, different frequency."
+      },
+      {
+        "line": 45,
+        "line_quote": "The model is qwen3:8b, run locally with Ollama.",
+        "action": "merge",
+        "target": 8,
+        "target_quote": "The local model is qwen3:8b served by Ollama.",
+        "reason": "Same model, different details."
+      },
+      {
+        "line": 46,
+        "line_quote": "The API runs on port 8619 (PORT_BASE).",
+        "action": "supersede",
+        "target": 17,
+        "target_quote": "The API runs on port 8000.",
+        "reason": "Contradictory port, newer line is more recent."
+      },
+      {
+        "line": 47,
+        "line_quote": "Terminal screenshots without the student name lose points.",
+        "action": "merge",
+        "target": 10,
+        "target_quote": "The student name must be visible in every terminal screenshot.",
+        "reason": "Same requirement, different phrasing."
+      },
+      {
+        "line": 48,
+        "line_quote": "DOMAIN_ID 3 = grocery recall notices.",
+        "action": "merge",
+        "target": 15,
+        "target_quote": "DOMAIN_ID 3 means the grocery recall domain.",
+        "reason": "Same domain and DOMAIN_ID, different phrasing."
+      },
+      {
+        "line": 49,
+        "line_quote": "The user lives in Oakland.",
+        "action": "supersede",
+        "target": 12,
+        "target_quote": "The user lives in San Jose.",
+        "reason": "Contradictory location, newer line is more recent."
+      },
+      {
+        "line": 50,
+        "line_quote": "Do not execute git commands; give them to the user.",
+        "action": "merge",
+        "target": 38,
+        "target_quote": "Git commands are run by the user only.",
+        "reason": "Same message, different phrasing."
+      }
+    ],
+    [
+      {
+        "line": 1,
+        "line_quote": "The student is Sharan Lourduraj (Jo) at SJSU, course DATA-260.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 2,
+        "line_quote": "SID4 is 9619 and the PREFIX is s9619.",
+        "action": "merge",
+        "target": 15,
+        "target_quote": "The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 3,
+        "line_quote": "SEED is 9619 and VERIFY_SEED is 269619.",
+        "action": "merge",
+        "target": 15,
+        "target_quote": "The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 4,
+        "line_quote": "The assigned domain is grocery recall notices (DOMAIN_ID 3).",
+        "action": "merge",
+        "target": 9,
+        "target_quote": "DOMAIN_ID 3 means the grocery recall domain.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 5,
+        "line_quote": "The repository is https://github.com/Sharanjoo/data260-9619.",
+        "action": "merge",
+        "target": 21,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 6,
+        "line_quote": "Collaborators on the repository are Sbnikitha and supriyaselvanganesan.",
+        "action": "merge",
+        "target": 21,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 7,
+        "line_quote": "The laptop is an HP Pavilion with 32 GB RAM and a 512 GB disk.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 8,
+        "line_quote": "The user wants a daily email digest of recalls.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 10,
+        "line_quote": "Never run git commands yourself, hand them to the user.",
+        "action": "supersede",
+        "target": 19,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Contradiction, newer line replaces."
+      },
+      {
+        "line": 11,
+        "line_quote": "Report font is Times New Roman, tables have green headers.",
+        "action": "merge",
+        "target": 23,
+        "target_quote": "Use Times New Roman and green table header rows in every report.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 13,
+        "line_quote": "[critical] The user has a severe peanut allergy (confirmed by a doctor).",
+        "action": "review",
+        "target": 28,
+        "target_quote": "The user's toddler drinks oat milk every day.",
+        "reason": "Contradiction, unverified."
+      },
+      {
+        "line": 14,
+        "line_quote": "Model: qwen3:8b (Ollama, local, no paid API).",
+        "action": "merge",
+        "target": 24,
+        "target_quote": "qwen3:8b via Ollama is the chat model for every homework.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 15,
+        "line_quote": "The MongoDB database is s9619_doc, running as mongo:7.0 in Docker on host port 27017.",
+        "action": "merge",
+        "target": 21,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 16,
+        "line_quote": "The memory collections are messages, summaries and episodes.",
+        "action": "merge",
+        "target": 17,
+        "target_quote": "Episodic memory embeddings use nomic-embed-text served by Ollama.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 18,
+        "line_quote": "SHORT_TERM_N defaults to 12 and a session summary is written every 5 user messages.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 19,
+        "line_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "action": "supersede",
+        "target": 10,
+        "target_quote": "Never run git commands yourself, hand them to the user.",
+        "reason": "Contradiction, newer line replaces."
+      },
+      {
+        "line": 20,
+        "line_quote": "The Part 1 collection is recall_notices with a status enum and a category enum.",
+        "action": "merge",
+        "target": 21,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 21,
+        "line_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "action": "merge",
+        "target": 20,
+        "target_quote": "The Part 1 collection is recall_notices with a status enum and a category enum.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 22,
+        "line_quote": "In Postman, decline the AI Fix suggestion because it rewrites test bodies.",
+        "action": "merge",
+        "target": 24,
+        "target_quote": "qwen3:8b via Ollama is the chat model for every homework.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 23,
+        "line_quote": "Use Times New Roman and green table header rows in every report.",
+        "action": "merge",
+        "target": 11,
+        "target_quote": "Report font is Times New Roman, tables have green headers.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 24,
+        "line_quote": "qwen3:8b via Ollama is the chat model for every homework.",
+        "action": "merge",
+        "target": 14,
+        "target_quote": "Model: qwen3:8b (Ollama, local, no paid API).",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 25,
+        "line_quote": "The HW5 submission is tagged hw5 at commit 69fc4b5.",
+        "action": "merge",
+        "target": 21,
+        "target_quote": "One FastAPI app serves every homework; MySQL holds the HW4 and HW5 relational data.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 26,
+        "line_quote": "Reports are exported as PDF named Lourduraj_HWn.pdf.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 27,
+        "line_quote": "The user prefers short answers.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 28,
+        "line_quote": "The user's toddler drinks oat milk every day.",
+        "action": "review",
+        "target": 13,
+        "target_quote": "[critical] The user has a severe peanut allergy (confirmed by a doctor).",
+        "reason": "Contradiction, unverified."
+      },
+      {
+        "line": 29,
+        "line_quote": "The user's partner is lactose intolerant.",
+        "action": "merge",
+        "target": 13,
+        "target_quote": "[critical] The user has a severe peanut allergy (confirmed by a doctor).",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 30,
+        "line_quote": "The user shops at Safeway and Whole Foods.",
+        "action": "merge",
+        "target": 13,
+        "target_quote": "[critical] The user has a severe peanut allergy (confirmed by a doctor).",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 31,
+        "line_quote": "The API runs on port 8619 (PORT_BASE).",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      },
+      {
+        "line": 32,
+        "line_quote": "The user lives in Oakland.",
+        "action": "merge",
+        "target": 12,
+        "target_quote": "The user runs all git commands (add, commit, push); the assistant only writes them out.",
+        "reason": "Same topic, different details."
+      }
+    ]
+  ],
+  "checks": [
+    {
+      "check": "fewer than 40 file lines",
+      "passed": true,
+      "detail": "38 lines"
+    },
+    {
+      "check": "D1 duplicates merged into one line ('qwen3:8b')",
+      "passed": true,
+      "detail": "5 -> 1"
+    },
+    {
+      "check": "D2 duplicates merged into one line ('DOMAIN_ID 3')",
+      "passed": true,
+      "detail": "5 -> 1"
+    },
+    {
+      "check": "D3 duplicates merged into one line ('git commands')",
+      "passed": true,
+      "detail": "5 -> 1"
+    },
+    {
+      "check": "D4 duplicates merged into one line ('Times New Roman')",
+      "passed": true,
+      "detail": "4 -> 1"
+    },
+    {
+      "check": "D5 duplicates merged into one line ('terminal screenshot')",
+      "passed": true,
+      "detail": "4 -> 1"
+    },
+    {
+      "check": "C1 contradiction resolved correctly",
+      "passed": true,
+      "detail": "keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True"
+    },
+    {
+      "check": "C2 contradiction resolved correctly",
+      "passed": true,
+      "detail": "keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True"
+    },
+    {
+      "check": "C3 contradiction resolved correctly",
+      "passed": false,
+      "detail": "keeper in Facts: False, loser out of Facts: False, loser logged in Resolved conflicts: False"
+    },
+    {
+      "check": "C4 contradiction resolved correctly",
+      "passed": true,
+      "detail": "keeper in Facts: True, loser out of Facts: True, loser logged in Resolved conflicts: True"
+    },
+    {
+      "check": "all 19 unique facts survive exactly once",
+      "passed": true,
+      "detail": "19/19"
+    },
+    {
+      "check": "no silent deletion (kept + merged + logged = original facts)",
+      "passed": true,
+      "detail": "28 kept + 18 merged + 4 logged = 50 (original 50)"
+    }
+  ],
+  "resolved_incorrectly": [
+    "C3: newer preference replaces the older one -> keeper in Facts: False, loser out of Facts: False, loser logged in Resolved conflicts: False"
+  ]
+}

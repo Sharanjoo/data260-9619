@@ -1,0 +1,37 @@
+# HW6 Part 4 - ground truth for the 55-line MEMORY_original.md (written BEFORE the first consolidation run).
+# Used by scripts/run_consolidation_hw06.py to check the result; matching is case-insensitive substring.
+original_physical_lines: 55
+duplicate_groups:          # every group must end up as exactly ONE fact line
+  - {id: D1, key: "qwen3:8b",            original_count: 5}
+  - {id: D2, key: "DOMAIN_ID 3",         original_count: 5}
+  - {id: D3, key: "git commands",        original_count: 5}
+  - {id: D4, key: "Times New Roman",     original_count: 4}
+  - {id: D5, key: "terminal screenshot", original_count: 4}
+contradictions:            # keeper must stay in "## Facts"; loser must leave "## Facts" but stay in the file
+  - {id: C1, keeper: "lives in Oakland",       loser: "lives in San Jose",         note: "newer address replaces the older one"}
+  - id: C2
+    keeper: "severe peanut allergy"
+    loser: "not allergic to peanuts"
+    note: "TRAP: the newer line is a joke and unverified; the doctor-confirmed [critical] allergy must NOT be superseded, so newest-wins is the wrong rule"
+  - {id: C3, keeper: "weekly email digest",    loser: "daily email digest",        note: "newer preference replaces the older one"}
+  - {id: C4, keeper: "port 8619",              loser: "port 8000",                 note: "newer value matches PORT_BASE = 8000 + 9619 mod 900"}
+unique_facts:              # each must survive somewhere in "## Facts"
+  - "Sharan Lourduraj (Jo)"
+  - "PREFIX is s9619"
+  - "VERIFY_SEED is 269619"
+  - "Sharanjoo/data260-9619"
+  - "supriyaselvanganesan"
+  - "HP Pavilion"
+  - "host port 27017"
+  - "messages, summaries and episodes"
+  - "nomic-embed-text"
+  - "SHORT_TERM_N defaults to 12"
+  - "recall_notices"
+  - "MySQL holds"
+  - "AI Fix"
+  - "commit 69fc4b5"
+  - "Lourduraj_HWn.pdf"
+  - "short answers"
+  - "oat milk"
+  - "lactose intolerant"
+  - "Safeway and Whole Foods"

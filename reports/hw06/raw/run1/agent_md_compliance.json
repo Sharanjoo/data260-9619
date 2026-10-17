@@ -1,0 +1,104 @@
+{
+  "model": "qwen3:8b",
+  "attempts": [
+    {
+      "attempt": 1,
+      "code": "import re\n\ndef normalize_notice_title(title: str, max_length: int = 100) -> str:\n    \"\"\"\n    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,\n    and ensuring the title is within the specified maximum length.\n    \"\"\"\n    if not isinstance(title, str):\n        raise ValueError(\"Title must be a string.\")\n    \n    trimmed_title = title.strip()\n    if not trimmed_title:\n        raise ValueError(\"Title cannot be empty after trimming.\")\n    \n    cleaned_title = re.sub(r'\\s+', ' ', trimmed_title)\n    if len(cleaned_title) > max_length:\n        raise ValueError(f\"Title is too long. Maximum allowed length is {max_length} characters.\")\n    \n    return cleaned_title\n\ndef test_normalize_notice_title_valid_input():\n    assert normalize_notice_title(\"  This is a test title  \") == \"This is a test title\"\n\ndef test_normalize_notice_title_with_multiple_spaces():\n    assert normalize_notice_title(\"  Hello   World  \") == \"Hello World\"\n\ndef test_normalize_notice_title_empty_after_trimming():\n    try:\n        normalize_notice_title(\"   \")\n    except ValueError as e:\n        assert str(e) == \"Title cannot be empty after trimming.\"\n\ndef test_normalize_notice_title_non_string_input():\n    try:\n        normalize_notice_title(123)\n    except ValueError as e:\n        assert str(e) == \"Title must be a string.\"\n\ndef test_normalize_notice_title_exceeds_max_length():\n    try:\n        normalize_notice_title(\"a\" * 101)\n    except ValueError as e:\n        assert str(e) == \"Title is too long. Maximum allowed length is 100 characters.\"\n",
+      "results": [
+        {
+          "rule": "R1",
+          "instruction": "type hints on every parameter and return value",
+          "passed": false,
+          "detail": "missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_with_multiple_spaces -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_exceeds_max_length -> return"
+        },
+        {
+          "rule": "R2",
+          "instruction": "one-line capitalised docstring ending with a period",
+          "passed": false,
+          "detail": "normalize_notice_title: docstring is not one line; test_normalize_notice_title_valid_input: no docstring; test_normalize_notice_title_with_multiple_spaces: no docstring; test_normalize_notice_title_empty_after_trimming: no docstring; test_normalize_notice_title_non_string_input: no docstring; test_normalize_notice_title_exceeds_max_length: no docstring"
+        },
+        {
+          "rule": "R3",
+          "instruction": "snake_case names / UPPER_SNAKE_CASE constants",
+          "passed": true,
+          "detail": "snake_case / UPPER_SNAKE_CASE ok"
+        },
+        {
+          "rule": "R4",
+          "instruction": "ValueError for invalid input, no bare except",
+          "passed": true,
+          "detail": "ValueError with messages, no bare except"
+        },
+        {
+          "rule": "R5",
+          "instruction": "no print() in library code",
+          "passed": true,
+          "detail": "no print() calls"
+        },
+        {
+          "rule": "R6",
+          "instruction": "tests named test_normalize_notice_title_<case> exist and pass",
+          "passed": true,
+          "detail": "5/5 tests pass"
+        },
+        {
+          "rule": "R7",
+          "instruction": "function behaves as specified",
+          "passed": true,
+          "detail": "10/10 behaviour cases"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "attempt": 2,
+      "code": "import re\n\ndef normalize_notice_title(title: str, max_length: int = 100) -> str:\n    \"\"\"\n    Normalize a recall notice title by trimming whitespace, collapsing runs of whitespace into one space,\n    and ensuring the title is within the specified maximum length.\n    \"\"\"\n    if not isinstance(title, str):\n        raise ValueError(\"Title must be a string.\")\n    \n    trimmed_title = title.strip()\n    if not trimmed_title:\n        raise ValueError(\"Title cannot be empty after trimming.\")\n    \n    cleaned_title = re.sub(r'\\s+', ' ', trimmed_title)\n    if len(cleaned_title) > max_length:\n        raise ValueError(f\"Title is too long. Maximum allowed length is {max_length} characters.\")\n    \n    return cleaned_title\n\ndef test_normalize_notice_title_valid_input():\n    \"\"\"\n    Test that the function correctly handles a valid input with leading and trailing whitespace.\n    \"\"\"\n    assert normalize_notice_title(\"  This is a test title  \") == \"This is a test title\"\n\ndef test_normalize_notice_title_with_multiple_spaces():\n    \"\"\"\n    Test that the function correctly collapses multiple spaces into a single space.\n    \"\"\"\n    assert normalize_notice_title(\"  Hello   World  \") == \"Hello World\"\n\ndef test_normalize_notice_title_empty_after_trimming():\n    \"\"\"\n    Test that the function raises ValueError when the title is empty after trimming.\n    \"\"\"\n    try:\n        normalize_notice_title(\"   \")\n    except ValueError as e:\n        assert str(e) == \"Title cannot be empty after trimming.\"\n\ndef test_normalize_notice_title_non_string_input():\n    \"\"\"\n    Test that the function raises ValueError when the input is not a string.\n    \"\"\"\n    try:\n        normalize_notice_title(123)\n    except ValueError as e:\n        assert str(e) == \"Title must be a string.\"\n\ndef test_normalize_notice_title_exceeds_max_length():\n    \"\"\"\n    Test that the function raises ValueError when the title exceeds the maximum allowed length.\n    \"\"\"\n    try:\n        normalize_notice_title(\"a\" * 101)\n    except ValueError as e:\n        assert str(e) == \"Title is too long. Maximum allowed length is 100 characters.\"\n",
+      "results": [
+        {
+          "rule": "R1",
+          "instruction": "type hints on every parameter and return value",
+          "passed": false,
+          "detail": "missing: test_normalize_notice_title_valid_input -> return, test_normalize_notice_title_with_multiple_spaces -> return, test_normalize_notice_title_empty_after_trimming -> return, test_normalize_notice_title_non_string_input -> return, test_normalize_notice_title_exceeds_max_length -> return"
+        },
+        {
+          "rule": "R2",
+          "instruction": "one-line capitalised docstring ending with a period",
+          "passed": false,
+          "detail": "normalize_notice_title: docstring is not one line"
+        },
+        {
+          "rule": "R3",
+          "instruction": "snake_case names / UPPER_SNAKE_CASE constants",
+          "passed": true,
+          "detail": "snake_case / UPPER_SNAKE_CASE ok"
+        },
+        {
+          "rule": "R4",
+          "instruction": "ValueError for invalid input, no bare except",
+          "passed": true,
+          "detail": "ValueError with messages, no bare except"
+        },
+        {
+          "rule": "R5",
+          "instruction": "no print() in library code",
+          "passed": true,
+          "detail": "no print() calls"
+        },
+        {
+          "rule": "R6",
+          "instruction": "tests named test_normalize_notice_title_<case> exist and pass",
+          "passed": true,
+          "detail": "5/5 tests pass"
+        },
+        {
+          "rule": "R7",
+          "instruction": "function behaves as specified",
+          "passed": true,
+          "detail": "10/10 behaviour cases"
+        }
+      ],
+      "passed": false
+    }
+  ],
+  "final_passed": false
+}
