@@ -16,7 +16,9 @@ Usage (repo root):
 from __future__ import annotations
 
 import argparse
+import contextlib
 import hashlib
+import io
 import importlib.util
 import json
 import random
@@ -297,11 +299,13 @@ def check_part4() -> None:
 
     gen = RAW / "agent_md_compliance.json"
     compliance = load_script("check_agent_md_compliance_hw06")
-    ref = compliance.check_files([REPO_ROOT / "src/notice_text.py", REPO_ROOT / "tests/test_notice_text_hw06.py"])
+    with contextlib.redirect_stdout(io.StringIO()):  # the checked code's own prints are not part of this report
+        ref = compliance.check_files([REPO_ROOT / "src/notice_text.py", REPO_ROOT / "tests/test_notice_text_hw06.py"])
     with tempfile.TemporaryDirectory() as tmp:  # negative control: code that breaks the conventions must be reported as failing
         bad = Path(tmp) / "bad_sample.py"
         bad.write_text('def normalize_notice_title(title, max_length=100):\n    """\n    Multi-line docstring\n    """\n    print(title)\n    return " ".join(title.split())\n', encoding="utf-8")
-        control = compliance.check_files([bad])
+        with contextlib.redirect_stdout(io.StringIO()):
+            control = compliance.check_files([bad])
     control_failed = {r["rule"] for r in control if not r["passed"]}
     try:
         g = json.loads(gen.read_text(encoding="utf-8"))
@@ -322,7 +326,9 @@ def check_offline_tests() -> None:
     for script, marker in suites:
         try:
             p = subprocess.run([sys.executable, str(REPO_ROOT / "scripts" / script)], cwd=REPO_ROOT, capture_output=True, text=True, timeout=240)
-            last = (p.stdout.strip().splitlines() or ["no output"])[-1]
+            out_lines = [l for l in p.stdout.strip().splitlines() if l.strip()]
+            err_lines = [l for l in p.stderr.strip().splitlines() if l.strip()]
+            last = out_lines[-1] if out_lines else ("stderr: " + err_lines[-1] if err_lines else "no output")
             ok = p.returncode == 0 and "checks passed" in last
             if marker != "/":
                 ok = ok and marker in last
