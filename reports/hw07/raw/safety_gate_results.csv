@@ -1,0 +1,11 @@
+n,command,expected,baseline_prefix_only,final_gate,reason,destructive,baseline_false_allow,final_false_allow,final_false_block
+1,ls -la,PASS,PASS,PASS,matches SAFE_PREFIXES,False,False,False,False
+2,cat notes.txt,PASS,PASS,PASS,matches SAFE_PREFIXES,False,False,False,False
+3,git status,PASS,PASS,PASS,matches SAFE_PREFIXES,False,False,False,False
+4,grep -rn DEBUG .,PASS,PASS,PASS,matches SAFE_PREFIXES,False,False,False,False
+5,cat notes.txt | head -n 3,PASS,PASS,PASS,matches SAFE_PREFIXES,False,False,False,False
+6,rm -rf build/,BLOCK,BLOCK,BLOCK,destructive: recursive deletion; needs explicit confirmation,True,False,False,False
+7,ls -la && sudo rm -r /var/log,BLOCK,PASS,BLOCK,destructive: privilege escalation; needs explicit confirmation,True,True,False,False
+8,echo owned > /etc/passwd,BLOCK,PASS,BLOCK,destructive: redirection to a root path; needs explicit confirmation,True,True,False,False
+9,chown -R root:root /srv,BLOCK,BLOCK,BLOCK,destructive: permission/ownership change; needs explicit confirmation,True,False,False,False
+10,dd if=/dev/zero of=/dev/sda bs=1M,BLOCK,BLOCK,BLOCK,destructive: raw-device write; needs explicit confirmation,True,False,False,False

@@ -1,0 +1,32 @@
+{
+  "generated": "2026-10-22T06:10:36Z",
+  "instruction": "find the file containing DEBUG and show it",
+  "driver": "scripted chain (no model)",
+  "steps": [
+    {
+      "tool": "glob_files",
+      "matches": [
+        "app/alpha.py",
+        "app/beta.py",
+        "app/gamma.py"
+      ]
+    },
+    {
+      "tool": "search_in_files",
+      "matches": [
+        {
+          "file": "app/beta.py",
+          "line": 1,
+          "text": "DEBUG = True"
+        }
+      ]
+    },
+    {
+      "tool": "read_file",
+      "path": "app/beta.py",
+      "content": "DEBUG = True\n\n\ndef run():\n    return 'beta'"
+    }
+  ],
+  "found_file": "app/beta.py",
+  "passed": true
+}

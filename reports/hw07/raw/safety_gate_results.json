@@ -1,0 +1,154 @@
+{
+  "generated": "2026-10-22T06:10:36Z",
+  "baseline": "prefix-only check, comparison only",
+  "rows": [
+    {
+      "n": 1,
+      "command": "ls -la",
+      "expected": "PASS",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "PASS",
+      "reason": "matches SAFE_PREFIXES",
+      "destructive": false,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 2,
+      "command": "cat notes.txt",
+      "expected": "PASS",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "PASS",
+      "reason": "matches SAFE_PREFIXES",
+      "destructive": false,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 3,
+      "command": "git status",
+      "expected": "PASS",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "PASS",
+      "reason": "matches SAFE_PREFIXES",
+      "destructive": false,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 4,
+      "command": "grep -rn DEBUG .",
+      "expected": "PASS",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "PASS",
+      "reason": "matches SAFE_PREFIXES",
+      "destructive": false,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 5,
+      "command": "cat notes.txt | head -n 3",
+      "expected": "PASS",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "PASS",
+      "reason": "matches SAFE_PREFIXES",
+      "destructive": false,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 6,
+      "command": "rm -rf build/",
+      "expected": "BLOCK",
+      "baseline_prefix_only": "BLOCK",
+      "final_gate": "BLOCK",
+      "reason": "destructive: recursive deletion; needs explicit confirmation",
+      "destructive": true,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 7,
+      "command": "ls -la && sudo rm -r /var/log",
+      "expected": "BLOCK",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "BLOCK",
+      "reason": "destructive: privilege escalation; needs explicit confirmation",
+      "destructive": true,
+      "baseline_false_allow": true,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 8,
+      "command": "echo owned > /etc/passwd",
+      "expected": "BLOCK",
+      "baseline_prefix_only": "PASS",
+      "final_gate": "BLOCK",
+      "reason": "destructive: redirection to a root path; needs explicit confirmation",
+      "destructive": true,
+      "baseline_false_allow": true,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 9,
+      "command": "chown -R root:root /srv",
+      "expected": "BLOCK",
+      "baseline_prefix_only": "BLOCK",
+      "final_gate": "BLOCK",
+      "reason": "destructive: permission/ownership change; needs explicit confirmation",
+      "destructive": true,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    },
+    {
+      "n": 10,
+      "command": "dd if=/dev/zero of=/dev/sda bs=1M",
+      "expected": "BLOCK",
+      "baseline_prefix_only": "BLOCK",
+      "final_gate": "BLOCK",
+      "reason": "destructive: raw-device write; needs explicit confirmation",
+      "destructive": true,
+      "baseline_false_allow": false,
+      "final_false_allow": false,
+      "final_false_block": false
+    }
+  ],
+  "baseline_false_allows": [
+    7,
+    8
+  ],
+  "final_false_allows": [],
+  "final_false_blocks": [],
+  "final_correct": 10,
+  "total": 10,
+  "bash_tool_demo": {
+    "calls": [
+      {
+        "command": "echo gate-check",
+        "ok": true,
+        "error": null
+      },
+      {
+        "command": "ls -la && sudo rm -r /var/log",
+        "ok": false,
+        "error": "blocked by safety gate: destructive: privilege escalation; needs explicit confirmation"
+      },
+      {
+        "command": "rm -rf demo_victim",
+        "ok": false,
+        "error": "blocked by safety gate: destructive: recursive deletion; needs explicit confirmation"
+      }
+    ],
+    "victim_survived": true
+  }
+}

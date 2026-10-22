@@ -1,0 +1,64 @@
+HW7 RUN_LOG - Sharan Lourduraj, SID4 9619, DOMAIN_ID 3 (Grocery Recall Notice)
+======================================================================
+
+[2026-10-22T06:10:36Z] Sharan Lourduraj | START command: python scripts\demo_file_tools_hw07.py --save
+Sharan Lourduraj | SID4 9619 | DATA 260 HW7
+Part 6 combined test run | temporary sandbox: C:\Users\shara\AppData\Local\Temp\hw07_sandbox_y2rb76hn
+
+=== (a) Integration test: glob -> search -> read ===
+instruction: "Find the Python file that contains DEBUG and show its contents."
+setup: write_file created 3 files in the sandbox: app/alpha.py, app/beta.py, app/gamma.py
+
+step 1  glob_files(pattern='app/*.py')
+        -> ok
+        matches: ['app/alpha.py', 'app/beta.py', 'app/gamma.py']
+step 2  search_in_files(pattern='DEBUG', file_pattern='*.py')
+        -> ok
+        app/beta.py:1  DEBUG = True
+step 3  read_file(path='app/beta.py', max_lines=20)
+        -> ok
+         1 | DEBUG = True
+         2 | 
+         3 | 
+         4 | def run():
+         5 |     return 'beta'
+
+RESULT: the file containing DEBUG is app/beta.py   [PASS]
+
+=== (b) Safety-gate test: 10 commands (5 should pass, 5 should be blocked) ===
+ #  expected baseline               final gate  command
+ 1  PASS     PASS                   PASS        ls -la
+ 2  PASS     PASS                   PASS        cat notes.txt
+ 3  PASS     PASS                   PASS        git status
+ 4  PASS     PASS                   PASS        grep -rn DEBUG .
+ 5  PASS     PASS                   PASS        cat notes.txt | head -n 3
+ 6  BLOCK    BLOCK                  BLOCK       rm -rf build/
+ 7  BLOCK    PASS  <- FALSE ALLOW   BLOCK       ls -la && sudo rm -r /var/log
+ 8  BLOCK    PASS  <- FALSE ALLOW   BLOCK       echo owned > /etc/passwd
+ 9  BLOCK    BLOCK                  BLOCK       chown -R root:root /srv
+10  BLOCK    BLOCK                  BLOCK       dd if=/dev/zero of=/dev/sda bs=1M
+
+final-gate reasons for the blocked commands:
+  #6  destructive: recursive deletion; needs explicit confirmation
+  #7  destructive: privilege escalation; needs explicit confirmation
+  #8  destructive: redirection to a root path; needs explicit confirmation
+  #9  destructive: permission/ownership change; needs explicit confirmation
+  #10  destructive: raw-device write; needs explicit confirmation
+
+baseline (prefix-only) false allows: 2  (commands #7, #8)
+final gate: 10/10 as expected | false allows: 0 | false blocks: 0
+   [PASS]
+
+=== (c) The bash tool enforces the gate: a blocked command never runs ===
+bash('echo gate-check')
+   -> ran: exit 0, stdout 'gate-check'
+bash('ls -la && sudo rm -r /var/log')
+   -> blocked by safety gate: destructive: privilege escalation; needs explicit confirmation  (executed=False)
+bash('rm -rf demo_victim')
+   -> blocked by safety gate: destructive: recursive deletion; needs explicit confirmation  (executed=False)
+
+demo_victim/keep.txt still exists after the blocked rm -rf: True   [PASS]
+
+OVERALL: ALL PASSED
+saved: C:\Users\shara\data260-9619\reports\hw07\raw\safety_gate_results.csv, safety_gate_results.json, file_tools_integration.json
+[2026-10-22T06:10:36Z] END exit_code=0
