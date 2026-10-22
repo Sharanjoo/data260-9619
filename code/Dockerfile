@@ -1,11 +1,14 @@
 FROM python:3.11-slim
 WORKDIR /app
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
+# HW7: install only what the web container imports (requirements-docker.txt). The root
+# requirements.txt also holds torch/llama-index for the RAG homeworks -- ~2 GB the app never uses.
+COPY requirements-docker.txt .
+RUN pip install --no-cache-dir --default-timeout=100 --retries 10 -r requirements-docker.txt
 COPY code/main.py .
 COPY code/auth.py .
 COPY code/db.py .
 COPY code/db_routes.py .
+COPY code/jwt_auth.py .
 COPY code/templates ./templates
 COPY code/web_application ./web_application
 COPY code/doc_api ./doc_api

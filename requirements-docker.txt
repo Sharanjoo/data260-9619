@@ -1,0 +1,16 @@
+# Runtime dependencies of the web container (code/Dockerfile).
+# Deliberately small: the app imports only these. The full set for the other homeworks
+# (llama-index, sentence-transformers/torch, pandas, ...) lives in the root requirements.txt
+# and is NOT needed in the container.
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+pymysql
+bcrypt
+pymongo
+PyJWT>=2.8
+# needed at runtime without being imported directly:
+itsdangerous      # starlette SessionMiddleware (HW3 login)
+jinja2            # Jinja2Templates (HW3 pages)
+python-multipart  # Form(...) parsing in HW3 login

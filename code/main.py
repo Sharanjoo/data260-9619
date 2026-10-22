@@ -16,6 +16,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 from db import get_query_count, init_db, reset_query_counter
 from db_routes import router as db_router
+from jwt_auth import router as jwt_router  # HW7 Part 1: JWT login + /auth/me
 from doc_api.server import install as install_doc_api  # HW6 Part 1: MongoDB document API
 from memory_api.server import install as install_memory_api  # HW6 Part 2: memory endpoints
 
@@ -64,6 +65,7 @@ async def sql_query_count_and_timing(request, call_next):
     return response
 
 
+app.include_router(jwt_router)  # HW7 Part 1: POST /auth/login, GET /auth/me
 app.include_router(db_router)
 
 # HW6 Part 1: MongoDB recall-notice document API (/api/hw6/notices) + its own error handlers.

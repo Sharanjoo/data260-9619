@@ -1,30 +1,31 @@
-"""HW4 Part 2 / HW5 Part 1.II: MySQL-backed CRUD for the primary domain
-entity and its related entity, plus email+password login backed by
-server-side sessions (opaque cookie token only -- the session record itself
-lives in MySQL).
+"""HW4 Part 2 / HW5 Part 1.II / HW7 Part 1: MySQL-backed CRUD for the primary
+domain entity (recall_record) and its related entity (recall_source).
 
-Mounted into the same FastAPI app as auth.py's HW3 routes and main.py's
-original /api/notices routes -- this file adds new routes, it does not
-touch either of those.
+HW7: these routes are protected by JWT bearer tokens with roles (see
+jwt_auth.py) instead of HW4's server-side sessions:
+
+    list / read  -> any authenticated role (reader, writer, moderator)
+    create/update -> writer or moderator
+    delete        -> moderator only
+
+401 = missing/invalid/expired token, 403 = valid token but wrong role.
+The route names are unchanged. The old session login lives at the hw4 tag.
 """
 from __future__ import annotations
 
 import secrets
-from datetime import datetime, timedelta, timezone
+from datetime import datetime
 from typing import List, Optional
 
-import bcrypt
-from fastapi import APIRouter, Depends, HTTPException, Query, Request, Response
-from pydantic import BaseModel, EmailStr, Field
+from fastapi import APIRouter, Depends, HTTPException, Query
+from pydantic import BaseModel, Field
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session, joinedload
 
-from db import RecallRecord, RecallSource, User, UserSession, get_db
+from db import RecallRecord, RecallSource, User, get_db
+from jwt_auth import require_moderator, require_reader, require_writer
 
 router = APIRouter(prefix="/api/hw4")
-
-SESSION_COOKIE_NAME = "hw4_session"
-SESSION_TTL_HOURS = 24
 
 # HW5 Part 1.I/1.II: shared format for the two new required "unique field"
 # columns (recall_source.source_code, recall_record.record_code).
@@ -32,17 +33,6 @@ CODE_PATTERN = r"^[A-Za-z0-9_-]{3,40}$"
 
 
 # Schemas
-class RegisterIn(BaseModel):
-    name: str = Field(..., min_length=1)
-    email: EmailStr
-    password: str = Field(..., min_length=6)
-
-
-class LoginIn(BaseModel):
-    email: EmailStr
-    password: str
-
-
 # --- HW5 Part 1.I related entity ("author"-equivalent) schemas ---
 class SourceCreateIn(BaseModel):
     source_name: str = Field(..., min_length=1)
@@ -148,87 +138,9 @@ def _validate_source_id(db: Session, source_id: Optional[int]) -> None:
         raise HTTPException(status_code=422, detail=f"source_id {source_id} does not exist")
 
 
-# Auth: server-side sessions, opaque cookie token only
-def _hash_password(raw: str) -> str:
-    return bcrypt.hashpw(raw.encode("utf-8"), bcrypt.gensalt()).decode("utf-8")
-
-
-def _verify_password(raw: str, hashed: str) -> bool:
-    try:
-        return bcrypt.checkpw(raw.encode("utf-8"), hashed.encode("utf-8"))
-    except ValueError:
-        return False
-
-
-def require_user(request: Request, db: Session = Depends(get_db)) -> User:
-    token = request.cookies.get(SESSION_COOKIE_NAME)
-    if not token:
-        raise HTTPException(status_code=401, detail="Login required")
-
-    sess = db.get(UserSession, token)
-    if not sess or sess.expires_at < datetime.now(timezone.utc).replace(tzinfo=None):
-        raise HTTPException(status_code=401, detail="Login required")
-
-    user = db.get(User, sess.user_id)
-    if not user:
-        raise HTTPException(status_code=401, detail="Login required")
-    return user
-
-
-@router.post("/auth/register", status_code=201)
-def register(payload: RegisterIn, db: Session = Depends(get_db)):
-    if db.query(User).filter(User.email == payload.email).first():
-        raise HTTPException(status_code=409, detail="Email already registered")
-    user = User(name=payload.name, email=payload.email, password_hash=_hash_password(payload.password))
-    db.add(user)
-    db.commit()
-    db.refresh(user)
-    return {"id": user.id, "name": user.name, "email": user.email}
-
-
-@router.post("/auth/login")
-def login(payload: LoginIn, response: Response, db: Session = Depends(get_db)):
-    user = db.query(User).filter(User.email == payload.email).first()
-    if not user or not _verify_password(payload.password, user.password_hash):
-        raise HTTPException(status_code=401, detail="Invalid email or password")
-
-    token = secrets.token_urlsafe(32)
-    expires_at = datetime.utcnow() + timedelta(hours=SESSION_TTL_HOURS)
-    db.add(UserSession(id=token, user_id=user.id, expires_at=expires_at))
-    db.commit()
-
-    # Opaque token only -- no user data in the cookie itself.
-    response.set_cookie(
-        key=SESSION_COOKIE_NAME,
-        value=token,
-        httponly=True,
-        secure=True,       # works on http://localhost (secure-context exception)
-        samesite="none",   # React dev server runs on a different port (cross-site)
-        max_age=SESSION_TTL_HOURS * 3600,
-    )
-    return {"id": user.id, "name": user.name, "email": user.email}
-
-
-@router.post("/auth/logout")
-def logout(request: Request, response: Response, db: Session = Depends(get_db)):
-    token = request.cookies.get(SESSION_COOKIE_NAME)
-    if token:
-        sess = db.get(UserSession, token)
-        if sess:
-            db.delete(sess)
-            db.commit()
-    response.delete_cookie(SESSION_COOKIE_NAME)
-    return {"message": "logged out"}
-
-
-@router.get("/auth/me")
-def me(user: User = Depends(require_user)):
-    return {"id": user.id, "name": user.name, "email": user.email}
-
-
 # --- HW5 Part 1.II: CRUD for the related entity (recall_source) ---
 @router.post("/sources", response_model=SourceOut, status_code=201)
-def create_source(payload: SourceCreateIn, db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def create_source(payload: SourceCreateIn, db: Session = Depends(get_db), _user: User = Depends(require_writer)):
     code = payload.source_code or _generate_code("SRC")
     src = RecallSource(
         source_name=payload.source_name.strip(),
@@ -246,7 +158,7 @@ def list_sources(
     limit: Optional[int] = Query(default=None, ge=1, le=5000),
     offset: int = Query(default=0, ge=0),
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _user: User = Depends(require_reader),
 ):
     q = db.query(RecallSource).order_by(RecallSource.id).offset(offset)
     if limit is not None:
@@ -255,7 +167,7 @@ def list_sources(
 
 
 @router.get("/sources/{source_id}", response_model=SourceOut)
-def get_source(source_id: int, db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def get_source(source_id: int, db: Session = Depends(get_db), _user: User = Depends(require_reader)):
     src = db.get(RecallSource, source_id)
     if not src:
         raise HTTPException(status_code=404, detail=f"Source {source_id} not found")
@@ -267,7 +179,7 @@ def update_source(
     source_id: int,
     payload: SourceUpdateIn,
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _user: User = Depends(require_writer),
 ):
     src = db.get(RecallSource, source_id)
     if not src:
@@ -282,7 +194,7 @@ def update_source(
 
 
 @router.delete("/sources/{source_id}")
-def delete_source(source_id: int, db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def delete_source(source_id: int, db: Session = Depends(get_db), _user: User = Depends(require_moderator)):
     src = db.get(RecallSource, source_id)
     if not src:
         raise HTTPException(status_code=404, detail=f"Source {source_id} not found")
@@ -312,7 +224,7 @@ def list_records_for_source(
     limit: Optional[int] = Query(default=None, ge=1, le=5000),
     offset: int = Query(default=0, ge=0),
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _user: User = Depends(require_reader),
 ):
     src = db.get(RecallSource, source_id)
     if not src:
@@ -333,7 +245,7 @@ def list_records_for_source(
 
 # CRUD for the primary domain entity (recall_record), gated on login
 @router.post("/records", response_model=RecordOut, status_code=201)
-def create_record(payload: RecordCreateIn, db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def create_record(payload: RecordCreateIn, db: Session = Depends(get_db), _user: User = Depends(require_writer)):
     _validate_source_id(db, payload.source_id)
     code = payload.record_code or _generate_code("REC")
     rec = RecallRecord(
@@ -354,7 +266,7 @@ def list_records_naive(
     limit: Optional[int] = Query(default=None, ge=1, le=5000),
     offset: int = Query(default=0, ge=0),
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _user: User = Depends(require_reader),
 ):
     """Deliberately naive (Part 3): one extra query per record to load its
     related source -- SQLAlchemy lazy-loads rec.source on each access below."""
@@ -366,7 +278,7 @@ def list_records_naive(
 
 
 @router.get("/records/{record_id}", response_model=RecordOut)
-def get_record(record_id: int, db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def get_record(record_id: int, db: Session = Depends(get_db), _user: User = Depends(require_reader)):
     rec = db.get(RecallRecord, record_id)
     if not rec:
         raise HTTPException(status_code=404, detail=f"Record {record_id} not found")
@@ -378,7 +290,7 @@ def update_record(
     record_id: int,
     payload: RecordUpdateIn,
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _user: User = Depends(require_writer),
 ):
     rec = db.get(RecallRecord, record_id)
     if not rec:
@@ -401,7 +313,7 @@ def update_record(
 
 
 @router.delete("/records/{record_id}")
-def delete_record(record_id: int, db: Session = Depends(get_db), _user: User = Depends(require_user)):
+def delete_record(record_id: int, db: Session = Depends(get_db), _user: User = Depends(require_moderator)):
     rec = db.get(RecallRecord, record_id)
     if not rec:
         raise HTTPException(status_code=404, detail=f"Record {record_id} not found")
@@ -417,7 +329,7 @@ def list_records_fixed(
     limit: Optional[int] = Query(default=None, ge=1, le=5000),
     offset: int = Query(default=0, ge=0),
     db: Session = Depends(get_db),
-    _user: User = Depends(require_user),
+    _user: User = Depends(require_reader),
 ):
     q = (
         db.query(RecallRecord)

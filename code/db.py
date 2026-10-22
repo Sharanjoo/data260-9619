@@ -5,9 +5,20 @@ Required exact variable name for the DB connection/session factory: SessionLocal
 """
 from __future__ import annotations
 
+import contextvars
 import os
 
-from sqlalchemy import Column, DateTime, ForeignKey, Integer, String, create_engine, func
+from sqlalchemy import (
+    CheckConstraint,
+    Column,
+    DateTime,
+    ForeignKey,
+    Integer,
+    String,
+    create_engine,
+    event,
+    func,
+)
 from sqlalchemy.orm import Session, declarative_base, relationship, sessionmaker
 
 MYSQL_HOST = os.environ.get("MYSQL_HOST", "127.0.0.1")
@@ -25,9 +36,6 @@ engine = create_engine(DATABASE_URL, pool_pre_ping=True, pool_recycle=280)
 
 # --- Part 3: per-request SQL statement counter (thread-local via contextvars,
 # correctly propagated into FastAPI's sync-endpoint threadpool by anyio) ---
-import contextvars
-from sqlalchemy import event
-
 _query_count_var: contextvars.ContextVar[list] = contextvars.ContextVar("query_count", default=None)
 
 
@@ -54,31 +62,26 @@ Base = declarative_base()
 
 
 class User(Base):
-    """HW4 Part 2 required table: users(id, name, email UNIQUE, password_hash)."""
+    """HW7 Part 1 users table: id, username (unique), password_hash (bcrypt only),
+    role (reader | writer | moderator).
 
-    __tablename__ = "users"
-
-    id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(120), nullable=False)
-    email = Column(String(190), unique=True, nullable=False, index=True)
-    password_hash = Column(String(255), nullable=False)
-
-
-class UserSession(Base):
-    """HW4 Part 2 required table: sessions(id [token], user_id, created_at, expires_at).
-
-    id is the opaque session token itself — the only thing the browser's
-    HttpOnly cookie ever holds. No user data lives in the cookie.
+    ``name`` and ``email`` are legacy HW4 columns, now optional; HW4 rows keep
+    them (scripts/migrate_hw07.py backfills their username and gives them the
+    reader role). The HW4 ``sessions`` table is no longer mapped: server-side
+    sessions only live on at the hw4 tag.
     """
 
-    __tablename__ = "sessions"
+    __tablename__ = "users"
+    __table_args__ = (
+        CheckConstraint("role IN ('reader', 'writer', 'moderator')", name="ck_users_role"),
+    )
 
-    id = Column(String(64), primary_key=True)
-    user_id = Column(Integer, ForeignKey("users.id"), nullable=False)
-    created_at = Column(DateTime, server_default=func.now())
-    expires_at = Column(DateTime, nullable=False)
-
-    user = relationship("User")
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    username = Column(String(80), unique=True, nullable=False, index=True)
+    password_hash = Column(String(255), nullable=False)
+    role = Column(String(20), nullable=False, default="reader", server_default="reader")
+    name = Column(String(120), nullable=True)
+    email = Column(String(190), nullable=True)
 
 
 class RecallSource(Base):

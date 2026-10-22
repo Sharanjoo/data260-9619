@@ -18,3 +18,4 @@ pymysql
 bcrypt
 email-validator
 pymongo
+PyJWT
