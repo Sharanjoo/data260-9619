@@ -62,3 +62,229 @@ demo_victim/keep.txt still exists after the blocked rm -rf: True   [PASS]
 OVERALL: ALL PASSED
 saved: C:\Users\shara\data260-9619\reports\hw07\raw\safety_gate_results.csv, safety_gate_results.json, file_tools_integration.json
 [2026-10-22T06:10:36Z] END exit_code=0
+
+[2026-10-22T06:29:40Z] Sharan Lourduraj | START command: python scripts\demo_agent_hw07.py --save
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+model=qwen3:8b temperature=0.0
+
+==============================================================================
+TASK A: search term, then detail lookup of the first result
+prompt: Search the recalls for 'Farmstead Yogurt' and give me the full details of the first result: its record id, record code, brand name and the name of the source that filed it.
+[tool 1] search_recalls {"query": "Farmstead Yogurt", "limit": 1} -> ok (1 records)
+[tool 2] recall_detail {"record_id": 15012} -> ok
+[done] stop_reason=final_answer total_tool_calls=2 invalid_calls=0 repair_reprompts=0 tokens=1970+124
+final answer: The full details for the recall of 'Farmstead Yogurt' are as follows:
+
+- **Record ID**: 15012  
+- **Record Code**: REC-015012  
+- **Brand Name**: Sunrise Valley Naturals  
+- **Source that filed it**: Regional Poison Control Center #191
+verifier: PASS 
+expected: {"id": 15012, "record_code": "REC-015012", "brand_name": "Sunrise Valley Naturals", "source_name": "Regional Poison Control Center #191"}
+
+==============================================================================
+TASK B: aggregate question, then one supporting example
+prompt: How many recall records has source 611 filed in total? Then give one supporting example: the product name and record code of recall record 15013.
+[tool 1] source_recall_summary {"source_id": 611} -> ok
+[tool 2] recall_detail {"record_id": 15013} -> ok
+[done] stop_reason=final_answer total_tool_calls=2 invalid_calls=0 repair_reprompts=0 tokens=1781+111
+final answer: Source 611 has filed a total of 23 recall records. One supporting example is recall record 15013, which has the product name "Farmstead Chicken Breast (Lot 00007)" and record code "REC-015013".
+verifier: PASS 
+expected: {"record_count": 23, "product_name": "Farmstead Chicken Breast (Lot 00007)", "record_code": "REC-015013"}
+
+==============================================================================
+TASK C: compare two entities (two searches + two detail lookups)
+prompt: Compare the first 'Farmstead Yogurt' recall with the first 'Deluxe Bottled Juice' recall. Look up each one's full details, then tell me which of the two has the smaller record id and give each one's record code and source name.
+[tool 1] search_recalls {"query": "Farmstead Yogurt", "limit": 1} -> ok (1 records)
+[tool 2] search_recalls {"query": "Deluxe Bottled Juice", "limit": 1} -> ok (1 records)
+[repair] iteration 2: lost_chain - answered after 2 tool call(s) but the task needs at least 4
+[tool 3] recall_detail {"record_id": 15012} -> ok
+[tool 4] recall_detail {"record_id": 15009} -> ok
+[done] stop_reason=final_answer total_tool_calls=4 invalid_calls=0 repair_reprompts=1 tokens=4975+356
+final answer: The first 'Farmstead Yogurt' recall has a record ID of 15012, and the first 'Deluxe Bottled Juice' recall has a record ID of 15009. The 'Deluxe Bottled Juice' recall has the smaller record ID. 
+
+- **Farmstead Yogurt**: Record Code = REC-015012, Source Name = Regional Poison Control Center #191
+- **Deluxe Bottled Juice**: Record Code = REC-015009, Source Name = Retail Food Safety Inspector #044
+verifier: PASS 
+expected: {"ids": [15012, 15009], "smaller_id": 15009, "record_codes": ["REC-015012", "REC-015009"], "source_names": ["Regional Poison Control Center #191", "Retail Food Safety Inspector #044"]}
+
+==============================================================================
+TASK D: error recovery: nonexistent record id
+prompt: Show me the full details of recall record 999999.
+[tool 1] recall_detail {"record_id": 999999} -> ERROR: no recall record with id 999999
+[done] stop_reason=final_answer total_tool_calls=1 invalid_calls=0 repair_reprompts=0 tokens=940+43
+final answer: There is no recall record with the ID 999999.
+verifier: PASS 
+expected: {"phrases": ["not found", "no recall", "does not exist", "doesn't exist", "no record", "could not find", "couldn't find", "not exist", "no such", "unable to find", "not available", "can't find", "cannot find"]}
+
+==============================================================================
+task tool calls  invalid  reprompts  stop          tokens    wall s  answer
+A    2           0        0          final_answer  2094      147.6   correct
+B    2           0        0          final_answer  1892      74.1    correct
+C    4           0        1          final_answer  5331      253.0   correct
+D    1           0        0          final_answer  983       26.6    correct
+
+raw records appended to reports\hw07\raw\agent_tasks.jsonl
+[2026-10-22T06:38:08Z] END exit_code=0
+
+[2026-10-22T06:42:56Z] Sharan Lourduraj | START command: python scripts\measure_agent_reliability_hw07.py
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+model=qwen3:8b temperature=0.7; 0 attempts already saved, target 21
+attempt  1/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 89.8s
+attempt  2/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 74.5s
+attempt  3/21 task C calls=4 invalid=0 stop=final_answer correct=True events=lost_chain(fixed) 207.8s
+attempt  4/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 82.8s
+attempt  5/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 73.6s
+attempt  6/21 task C calls=4 invalid=0 stop=final_answer correct=True events=lost_chain(fixed) 208.5s
+attempt  7/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 79.8s
+attempt  8/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 69.4s
+attempt  9/21 task C calls=4 invalid=0 stop=final_answer correct=True events=lost_chain(fixed) 219.2s
+attempt 10/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 77.9s
+attempt 11/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 72.8s
+attempt 12/21 task C calls=4 invalid=0 stop=final_answer correct=True events=lost_chain(fixed) 214.7s
+attempt 13/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 81.1s
+attempt 14/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 72.8s
+attempt 15/21 task C calls=4 invalid=0 stop=final_answer correct=True events=- 152.2s
+attempt 16/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 82.0s
+attempt 17/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 77.0s
+attempt 18/21 task C calls=4 invalid=0 stop=final_answer correct=True events=lost_chain(fixed) 204.9s
+attempt 19/21 task A calls=2 invalid=0 stop=final_answer correct=True events=- 79.5s
+attempt 20/21 task B calls=2 invalid=0 stop=final_answer correct=True events=- 70.2s
+attempt 21/21 task C calls=4 invalid=0 stop=final_answer correct=True events=lost_chain(fixed) 214.1s
+
+==============================================================================
+RELIABILITY SUMMARY  model=qwen3:8b temperature=0.7 attempts=21
+call-level well-formed rate : 56/56 = 100.0%
+runs clean BEFORE repair    : 15/21 =  71.4%
+runs OK AFTER repair        : 21/21 = 100.0%
+answers correct (verifier)  : 21/21 = 100.0%
+failure class           events   repaired 
+malformed_arguments     0        0        
+unknown_tool            0        0        
+text_instead_of_tool    0        0        
+lost_chain              6        6        
+stop reasons: {'final_answer': 21}
+mean tool calls/attempt 2.67  mean wall 119.3s  tokens 60216
+  task A: correct 7/7  clean first try 7/7
+  task B: correct 7/7  clean first try 7/7
+  task C: correct 7/7  clean first try 1/7
+
+saved: reports\hw07\raw\agent_reliability_attempts.jsonl, reports\hw07\raw\agent_reliability_attempts.csv, reports\hw07\raw\agent_reliability_summary.json
+[2026-10-22T07:24:49Z] END exit_code=0
+
+[2026-10-22T07:26:31Z] Sharan Lourduraj | START command: python scripts\demo_agent_hw07.py --tasks A --save
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+model=qwen3:8b temperature=0.0
+
+==============================================================================
+TASK A: search term, then detail lookup of the first result
+prompt: Search the recalls for 'Farmstead Yogurt' and give me the full details of the first result: its record id, record code, brand name and the name of the source that filed it.
+[tool 1] search_recalls {"limit": 1, "query": "Farmstead Yogurt"} -> ok (1 records)
+[tool 2] recall_detail {"record_id": 15012} -> ok
+[done] stop_reason=final_answer total_tool_calls=2 invalid_calls=0 repair_reprompts=0 tokens=1970+124
+final answer: The full details for the recall of 'Farmstead Yogurt' are as follows:
+
+- **Record ID**: 15012  
+- **Record Code**: REC-015012  
+- **Brand Name**: Sunrise Valley Naturals  
+- **Source that filed it**: Regional Poison Control Center #191
+verifier: PASS 
+expected: {"id": 15012, "record_code": "REC-015012", "brand_name": "Sunrise Valley Naturals", "source_name": "Regional Poison Control Center #191"}
+
+==============================================================================
+task tool calls  invalid  reprompts  stop          tokens    wall s  answer
+A    2           0        0          final_answer  2094      90.5    correct
+
+raw records appended to reports\hw07\raw\agent_tasks.jsonl
+[2026-10-22T07:28:07Z] END exit_code=0
+
+[2026-10-22T07:29:45Z] Sharan Lourduraj | START command: python scripts\demo_agent_hw07.py --tasks B --save --append
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+model=qwen3:8b temperature=0.0
+
+==============================================================================
+TASK B: aggregate question, then one supporting example
+prompt: How many recall records has source 611 filed in total? Then give one supporting example: the product name and record code of recall record 15013.
+[tool 1] source_recall_summary {"source_id": 611} -> ok
+[tool 2] recall_detail {"record_id": 15013} -> ok
+[done] stop_reason=final_answer total_tool_calls=2 invalid_calls=0 repair_reprompts=0 tokens=1781+111
+final answer: Source 611 has filed a total of 23 recall records. One supporting example is recall record 15013, which has the product name "Farmstead Chicken Breast (Lot 00007)" and record code "REC-015013".
+verifier: PASS 
+expected: {"record_count": 23, "product_name": "Farmstead Chicken Breast (Lot 00007)", "record_code": "REC-015013"}
+
+==============================================================================
+task tool calls  invalid  reprompts  stop          tokens    wall s  answer
+B    2           0        0          final_answer  1892      72.9    correct
+
+raw records appended to reports\hw07\raw\agent_tasks.jsonl
+[2026-10-22T07:31:02Z] END exit_code=0
+
+[2026-10-22T07:31:22Z] Sharan Lourduraj | START command: python scripts\demo_agent_hw07.py --tasks C --save --append
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+model=qwen3:8b temperature=0.0
+
+==============================================================================
+TASK C: compare two entities (two searches + two detail lookups)
+prompt: Compare the first 'Farmstead Yogurt' recall with the first 'Deluxe Bottled Juice' recall. Look up each one's full details, then tell me which of the two has the smaller record id and give each one's record code and source name.
+[tool 1] search_recalls {"query": "Farmstead Yogurt", "limit": 1} -> ok (1 records)
+[tool 2] search_recalls {"query": "Deluxe Bottled Juice", "limit": 1} -> ok (1 records)
+[repair] iteration 2: lost_chain - answered after 2 tool call(s) but the task needs at least 4
+[tool 3] recall_detail {"record_id": 15012} -> ok
+[tool 4] recall_detail {"record_id": 15009} -> ok
+[done] stop_reason=final_answer total_tool_calls=4 invalid_calls=0 repair_reprompts=1 tokens=4975+356
+final answer: The first 'Farmstead Yogurt' recall has a record ID of 15012, and the first 'Deluxe Bottled Juice' recall has a record ID of 15009. The 'Deluxe Bottled Juice' recall has the smaller record ID. 
+
+- **Farmstead Yogurt**: Record Code = REC-015012, Source Name = Regional Poison Control Center #191
+- **Deluxe Bottled Juice**: Record Code = REC-015009, Source Name = Retail Food Safety Inspector #044
+verifier: PASS 
+expected: {"ids": [15012, 15009], "smaller_id": 15009, "record_codes": ["REC-015012", "REC-015009"], "source_names": ["Regional Poison Control Center #191", "Retail Food Safety Inspector #044"]}
+
+==============================================================================
+task tool calls  invalid  reprompts  stop          tokens    wall s  answer
+C    4           0        1          final_answer  5331      220.1   correct
+
+raw records appended to reports\hw07\raw\agent_tasks.jsonl
+[2026-10-22T07:35:07Z] END exit_code=0
+
+[2026-10-22T07:35:29Z] Sharan Lourduraj | START command: python scripts\demo_agent_hw07.py --tasks D --save --append
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+model=qwen3:8b temperature=0.0
+
+==============================================================================
+TASK D: error recovery: nonexistent record id
+prompt: Show me the full details of recall record 999999.
+[tool 1] recall_detail {"record_id": 999999} -> ERROR: no recall record with id 999999
+[done] stop_reason=final_answer total_tool_calls=1 invalid_calls=0 repair_reprompts=0 tokens=940+43
+final answer: There is no recall record with the ID 999999.
+verifier: PASS 
+expected: {"phrases": ["not found", "no recall", "does not exist", "doesn't exist", "no record", "could not find", "couldn't find", "not exist", "no such", "unable to find", "not available", "can't find", "cannot find"]}
+
+==============================================================================
+task tool calls  invalid  reprompts  stop          tokens    wall s  answer
+D    1           0        0          final_answer  983       26.0    correct
+
+raw records appended to reports\hw07\raw\agent_tasks.jsonl
+[2026-10-22T07:36:00Z] END exit_code=0
+
+[2026-10-22T07:36:42Z] Sharan Lourduraj | START command: python scripts\measure_agent_reliability_hw07.py --summary-only
+Student: Sharan Lourduraj (SJSU 018169619)  PREFIX s9619  DOMAIN_ID 3 (grocery recall notices)
+
+==============================================================================
+RELIABILITY SUMMARY  model=qwen3:8b temperature=0.7 attempts=21
+call-level well-formed rate : 56/56 = 100.0%
+runs clean BEFORE repair    : 15/21 =  71.4%
+runs OK AFTER repair        : 21/21 = 100.0%
+answers correct (verifier)  : 21/21 = 100.0%
+failure class           events   repaired 
+malformed_arguments     0        0        
+unknown_tool            0        0        
+text_instead_of_tool    0        0        
+lost_chain              6        6        
+stop reasons: {'final_answer': 21}
+mean tool calls/attempt 2.67  mean wall 119.3s  tokens 60216
+  task A: correct 7/7  clean first try 7/7
+  task B: correct 7/7  clean first try 7/7
+  task C: correct 7/7  clean first try 1/7
+
+saved: reports\hw07\raw\agent_reliability_attempts.jsonl, reports\hw07\raw\agent_reliability_attempts.csv, reports\hw07\raw\agent_reliability_summary.json
+[2026-10-22T07:36:43Z] END exit_code=0

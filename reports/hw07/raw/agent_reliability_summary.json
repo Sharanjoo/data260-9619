@@ -1,0 +1,40 @@
+{
+  "attempts": 21,
+  "emitted_calls": 56,
+  "invalid_calls": 0,
+  "call_well_formed_rate": 1.0,
+  "runs_clean_before_repair": 15,
+  "runs_ok_after_repair": 21,
+  "answers_correct": 21,
+  "failure_events": {
+    "lost_chain": 6
+  },
+  "failure_events_repaired": {
+    "lost_chain": 6
+  },
+  "stop_reasons": {
+    "final_answer": 21
+  },
+  "mean_tool_calls": 2.6666666666666665,
+  "mean_wall_s": 119.26543333333333,
+  "total_tokens": 60216,
+  "by_task": {
+    "A": {
+      "attempts": 7,
+      "correct": 7,
+      "clean_first_try": 7
+    },
+    "B": {
+      "attempts": 7,
+      "correct": 7,
+      "clean_first_try": 7
+    },
+    "C": {
+      "attempts": 7,
+      "correct": 7,
+      "clean_first_try": 1
+    }
+  },
+  "model": "qwen3:8b",
+  "temperature": 0.7
+}
