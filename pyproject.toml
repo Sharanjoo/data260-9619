@@ -1,0 +1,10 @@
+# HW7 Part 1: Ruff configuration (used by the pre-commit hook in .pre-commit-config.yaml).
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["client", "reports", "Claude outputs", "data"]
+
+[tool.ruff.lint]
+# Pyflakes (F) + the pycodestyle error groups for syntax/imports/statements (E4, E7, E9).
+# Catches unused imports/variables, undefined names, bad imports -- real bugs, not style.
+select = ["E4", "E7", "E9", "F"]
