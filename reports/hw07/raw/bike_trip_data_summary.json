@@ -1,0 +1,31 @@
+{
+  "M": {
+    "file": "data/bike/scenario_M_membership.csv",
+    "rows": 540,
+    "rides_by_type": {
+      "electric_bike": 414,
+      "classic_bike": 126
+    },
+    "distinct_calendar_months": 1,
+    "first_start": "2024-10-01 07:18:24.696",
+    "last_start": "2024-10-31 20:53:50.873",
+    "total_minutes": 5693.11,
+    "mean_minutes": 10.54,
+    "min_minutes": 0.02,
+    "max_minutes": 191.59
+  },
+  "P": {
+    "file": "data/bike/scenario_P_payperuse.csv",
+    "rows": 504,
+    "rides_by_type": {
+      "classic_bike": 504
+    },
+    "distinct_calendar_months": 72,
+    "first_start": "2019-01-09 14:16:07",
+    "last_start": "2024-12-26 17:15:11",
+    "total_minutes": 4359.03,
+    "mean_minutes": 8.65,
+    "min_minutes": 1.0,
+    "max_minutes": 14.95
+  }
+}

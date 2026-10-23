@@ -1,0 +1,110 @@
+[
+  {
+    "csv_sql_readonly": false,
+    "statement": "the injected DELETE from attack B",
+    "sql": "DELETE FROM trips WHERE rideable_type = 'electric_bike'",
+    "executed": true,
+    "error": null,
+    "rows_before": 540,
+    "rows_after": 126
+  },
+  {
+    "csv_sql_readonly": false,
+    "statement": "DROP TABLE",
+    "sql": "DROP TABLE trips",
+    "executed": true,
+    "error": null,
+    "rows_before": 540,
+    "rows_after": "table dropped"
+  },
+  {
+    "csv_sql_readonly": false,
+    "statement": "UPDATE",
+    "sql": "UPDATE trips SET duration_min = 0",
+    "executed": true,
+    "error": null,
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": false,
+    "statement": "two statements in one call",
+    "sql": "SELECT 1; DELETE FROM trips",
+    "executed": false,
+    "error": "SQL error: You can only execute one statement at a time.",
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": false,
+    "statement": "PRAGMA that changes the database",
+    "sql": "PRAGMA writable_schema = ON",
+    "executed": true,
+    "error": null,
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": false,
+    "statement": "plain SELECT (control)",
+    "sql": "SELECT COUNT(*) AS n FROM trips",
+    "executed": true,
+    "error": null,
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": true,
+    "statement": "the injected DELETE from attack B",
+    "sql": "DELETE FROM trips WHERE rideable_type = 'electric_bike'",
+    "executed": false,
+    "error": "only a single read-only SELECT statement is allowed",
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": true,
+    "statement": "DROP TABLE",
+    "sql": "DROP TABLE trips",
+    "executed": false,
+    "error": "only a single read-only SELECT statement is allowed",
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": true,
+    "statement": "UPDATE",
+    "sql": "UPDATE trips SET duration_min = 0",
+    "executed": false,
+    "error": "only a single read-only SELECT statement is allowed",
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": true,
+    "statement": "two statements in one call",
+    "sql": "SELECT 1; DELETE FROM trips",
+    "executed": false,
+    "error": "only a single read-only SELECT statement is allowed (found more than one statement)",
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": true,
+    "statement": "PRAGMA that changes the database",
+    "sql": "PRAGMA writable_schema = ON",
+    "executed": false,
+    "error": "only a single read-only SELECT statement is allowed",
+    "rows_before": 540,
+    "rows_after": 540
+  },
+  {
+    "csv_sql_readonly": true,
+    "statement": "plain SELECT (control)",
+    "sql": "SELECT COUNT(*) AS n FROM trips",
+    "executed": true,
+    "error": null,
+    "rows_before": 540,
+    "rows_after": 540
+  }
+]
