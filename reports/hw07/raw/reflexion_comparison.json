@@ -1,0 +1,131 @@
+{
+  "Original (Part 2 as built)": {
+    "n": 21,
+    "task_success": 21,
+    "unsupported_claims_total": 0,
+    "runs_with_unsupported": 0,
+    "runs_with_retry": 0,
+    "mean_retries": 0,
+    "mean_tool_calls": 2.6666666666666665,
+    "mean_tokens": 2867.4285714285716,
+    "mean_latency_ms": 119265.43333333333,
+    "false_rejections": 0,
+    "stop_reasons": {
+      "success": 21
+    },
+    "by_task": {
+      "A": {
+        "n": 7,
+        "success": 7,
+        "runs_with_retry": 0
+      },
+      "B": {
+        "n": 7,
+        "success": 7,
+        "runs_with_retry": 0
+      },
+      "C": {
+        "n": 7,
+        "success": 7,
+        "runs_with_retry": 0
+      }
+    }
+  },
+  "Reflexion (Part 2 loop + verifier + reflections)": {
+    "n": 21,
+    "task_success": 21,
+    "unsupported_claims_total": 0,
+    "runs_with_unsupported": 0,
+    "runs_with_retry": 0,
+    "mean_retries": 0,
+    "mean_tool_calls": 2.6666666666666665,
+    "mean_tokens": 2736.7619047619046,
+    "mean_latency_ms": 123908.64285714286,
+    "false_rejections": 0,
+    "stop_reasons": {
+      "success": 21
+    },
+    "by_task": {
+      "A": {
+        "n": 7,
+        "success": 7,
+        "runs_with_retry": 0
+      },
+      "B": {
+        "n": 7,
+        "success": 7,
+        "runs_with_retry": 0
+      },
+      "C": {
+        "n": 7,
+        "success": 7,
+        "runs_with_retry": 0
+      }
+    }
+  },
+  "Ablation, 1st attempt only (no step-repair, no Reflexion)": {
+    "n": 12,
+    "task_success": 6,
+    "unsupported_claims_total": 0,
+    "runs_with_unsupported": 0,
+    "runs_with_retry": 0,
+    "mean_retries": 0,
+    "mean_tool_calls": 1.8333333333333333,
+    "mean_tokens": 1702.6666666666667,
+    "mean_latency_ms": 83614.93333333333,
+    "false_rejections": 4,
+    "stop_reasons": {
+      "rejected": 6,
+      "success": 6
+    },
+    "by_task": {
+      "A": {
+        "n": 4,
+        "success": 4,
+        "runs_with_retry": 0
+      },
+      "B": {
+        "n": 4,
+        "success": 2,
+        "runs_with_retry": 0
+      },
+      "C": {
+        "n": 4,
+        "success": 0,
+        "runs_with_retry": 0
+      }
+    }
+  },
+  "Ablation with Reflexion (no step-repair)": {
+    "n": 12,
+    "task_success": 12,
+    "unsupported_claims_total": 0,
+    "runs_with_unsupported": 0,
+    "runs_with_retry": 6,
+    "mean_retries": 0.5,
+    "mean_tool_calls": 3.5,
+    "mean_tokens": 3248.5833333333335,
+    "mean_latency_ms": 180270.30833333335,
+    "false_rejections": 4,
+    "stop_reasons": {
+      "success": 12
+    },
+    "by_task": {
+      "A": {
+        "n": 4,
+        "success": 4,
+        "runs_with_retry": 0
+      },
+      "B": {
+        "n": 4,
+        "success": 4,
+        "runs_with_retry": 2
+      },
+      "C": {
+        "n": 4,
+        "success": 4,
+        "runs_with_retry": 4
+      }
+    }
+  }
+}

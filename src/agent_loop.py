@@ -31,7 +31,7 @@ from typing import Any, Callable, Dict, List, Mapping, Optional, Sequence
 REPO_ROOT = Path(__file__).resolve().parent.parent
 
 FAILURE_CLASSES = ("malformed_arguments", "unknown_tool", "text_instead_of_tool", "lost_chain")
-STOP_REASONS = ("final_answer", "max_iterations", "repair_exhausted", "model_error")
+STOP_REASONS = ("final_answer", "max_iterations", "repair_exhausted", "model_error", "tool_budget", "token_budget")
 
 DEFAULT_SYSTEM_PROMPT = (
     "You are an assistant for a grocery recall database. Use the provided tools to look things up. "
@@ -206,6 +206,8 @@ def run_agent(
     min_tool_calls: int = 0,
     max_iterations: int = 8,
     max_failed_repairs: int = 2,
+    max_tool_calls: Optional[int] = None,
+    max_total_tokens: Optional[int] = None,
     temperature: float = 0.0,
     log: Optional[Callable[[str], None]] = print,
     log_path: Optional[Path] = None,
@@ -217,6 +219,9 @@ def run_agent(
                     (0 = no requirement). Used to detect text_instead_of_tool and lost_chain.
     max_iterations  hard ceiling on model calls.
     max_failed_repairs  failed repair attempts tolerated per failure situation before stopping.
+    max_tool_calls / max_total_tokens  optional hard budgets (used by the Reflexion wrapper): no tool call is
+                    executed past the first, and no new model call is made past the second; the run ends with
+                    stop_reason "tool_budget" / "token_budget".
     """
     say = log or (lambda _msg: None)
     execute = execute or default_recall_execute()
@@ -250,6 +255,10 @@ def run_agent(
         say(f"[repair] iteration {iteration}: {cls} - {detail}")
 
     for iteration in range(1, max_iterations + 1):
+        if max_total_tokens is not None and input_tokens + output_tokens >= max_total_tokens:
+            stop_reason = "token_budget"
+            say(f"[stop] token budget of {max_total_tokens} reached")
+            break
         t0 = time.perf_counter()
         try:
             resp = client.complete(messages, tools=tools_payload, temperature=temperature)
@@ -270,6 +279,10 @@ def run_agent(
             messages.append({"role": "assistant", "content": content,
                              "tool_calls": [c["raw"] for c in calls]})
             for call in calls:
+                if max_tool_calls is not None and len(invocations) >= max_tool_calls:
+                    stop_reason = "tool_budget"
+                    say(f"[stop] tool-call budget of {max_tool_calls} reached")
+                    break
                 emitted += 1
                 name, args = call["name"], call["arguments"]
                 problem = call["problem"]
@@ -319,6 +332,8 @@ def run_agent(
             else:
                 final_text, stop_reason = content.strip(), "final_answer"
 
+        if stop_reason == "tool_budget":
+            break
         if turn_failed:
             streak += 1
             if streak > max_failed_repairs:
