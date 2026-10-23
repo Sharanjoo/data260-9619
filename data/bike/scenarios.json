@@ -1,0 +1,55 @@
+{
+  "seed": 9619,
+  "source_file": "202410-baywheels-tripdata.csv.zip",
+  "source_url": "https://s3.amazonaws.com/baywheels-data/202410-baywheels-tripdata.csv.zip",
+  "source_rows": 378317,
+  "scenarios": {
+    "M": {
+      "file": "data/bike/scenario_M_membership.csv",
+      "rows": 540,
+      "sha256": "35c07aefa3590d353ecbeade3a3824877b2edca3b0586278f6d184751654ac8e",
+      "reference": {
+        "rides": 540,
+        "months": 1,
+        "rides_per_month": 540.0,
+        "avg_minutes": 10.54280518518518,
+        "total_minutes": 5693.114799999998,
+        "bike_types": {
+          "electric_bike": 414,
+          "classic_bike": 126
+        },
+        "pay_per_use_total": 2911.45,
+        "membership_pass_cost": 29.0,
+        "membership_residual": 776.58,
+        "membership_total": 805.58,
+        "break_even_rides_per_month": 7.3,
+        "decision": "Buy Monthly Membership",
+        "difference": 2105.88
+      },
+      "weekly_rows": 5
+    },
+    "P": {
+      "file": "data/bike/scenario_P_payperuse.csv",
+      "rows": 504,
+      "sha256": "f7e63fd668af1de33d48a1bf3fd2ba1c7c0f1ff191f451f089f725d5a542ed41",
+      "reference": {
+        "rides": 504,
+        "months": 72,
+        "rides_per_month": 7.0,
+        "avg_minutes": 8.648875661375664,
+        "total_minutes": 4359.033333333335,
+        "bike_types": {
+          "classic_bike": 504
+        },
+        "pay_per_use_total": 1332.22,
+        "membership_pass_cost": 2088.0,
+        "membership_residual": 0.0,
+        "membership_total": 2088.0,
+        "break_even_rides_per_month": 11.0,
+        "decision": "Pay Per Ride/Minute",
+        "difference": 755.78
+      },
+      "weekly_rows": 269
+    }
+  }
+}

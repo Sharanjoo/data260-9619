@@ -12,3 +12,6 @@ reports/hw04/*.docx
 # HW6 Part 4 backup written by /compact
 MEMORY.md.bak
 reports/hw06/raw/consolidation_work/
+
+# HW7 Part 4 downloaded Bay Wheels trip files (large, re-downloadable)
+data/baywheels_raw/
