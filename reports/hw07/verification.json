@@ -1,0 +1,158 @@
+{
+  "homework_number": 7,
+  "sid4": 9619,
+  "commit_hash": "ff48417323542ee7fc2a9394fcd28f975954215c",
+  "model_configuration": "qwen3:8b via Ollama (temperature 0) + nomic-embed-text; JWT bearer auth (reader/writer/moderator) on MySQL users; hand-written tool loop (max 8 iterations, 2 repairs); Reflexion (max 2 retries, 14 tool calls, 24000 tokens); LangChain create_agent (LangGraph ReAct) bike-share agent; file tools + safety gate",
+  "seed": 9619,
+  "verify_seed": 269619,
+  "port_base": 8619,
+  "generated_at": "2026-10-24T02:18:33.753878+00:00",
+  "info": {
+    "report_pdf_present": false
+  },
+  "checks_passed": 28,
+  "checks_total": 28,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "backend_reachable",
+      "passed": true,
+      "detail": "http://localhost:8619"
+    },
+    {
+      "check": "login_valid_returns_token",
+      "passed": true,
+      "detail": "HTTP 200, token_type=bearer"
+    },
+    {
+      "check": "login_invalid_returns_401",
+      "passed": true,
+      "detail": "wrong password HTTP 401, unknown user HTTP 401"
+    },
+    {
+      "check": "three_roles_can_log_in",
+      "passed": true,
+      "detail": "3/3 demo users"
+    },
+    {
+      "check": "auth_me_requires_token_and_reports_role",
+      "passed": true,
+      "detail": "no token HTTP 401; with token HTTP 200 role=writer"
+    },
+    {
+      "check": "tampered_token_rejected",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "rbac_reader_cannot_create_writer_can",
+      "passed": true,
+      "detail": "reader HTTP 403, writer HTTP 201"
+    },
+    {
+      "check": "rbac_list_needs_a_valid_token",
+      "passed": true,
+      "detail": "reader HTTP 200, no token HTTP 401"
+    },
+    {
+      "check": "rbac_delete_moderator_only",
+      "passed": true,
+      "detail": "writer HTTP 403, moderator HTTP 200 (temporary row removed)"
+    },
+    {
+      "check": "suite_test_jwt_auth_hw07",
+      "passed": true,
+      "detail": "38/38 checks passed"
+    },
+    {
+      "check": "suite_test_agent_loop_hw07",
+      "passed": true,
+      "detail": "31 checks passed, 0 failed"
+    },
+    {
+      "check": "suite_test_reflexion_hw07",
+      "passed": true,
+      "detail": "30 checks passed, 0 failed"
+    },
+    {
+      "check": "suite_test_file_tools_hw07",
+      "passed": true,
+      "detail": "67/67 checks passed"
+    },
+    {
+      "check": "suite_test_safety_gate_hw07",
+      "passed": true,
+      "detail": "822/822 checks passed"
+    },
+    {
+      "check": "suite_test_bike_tools_hw07",
+      "passed": true,
+      "detail": "73 checks passed, 0 failed"
+    },
+    {
+      "check": "suite_test_bike_agent_hw07",
+      "passed": true,
+      "detail": "28 checks passed, 0 failed"
+    },
+    {
+      "check": "suite_test_injection_hw07",
+      "passed": true,
+      "detail": "48 checks passed, 0 failed"
+    },
+    {
+      "check": "safety_gate_5_pass_5_blocked",
+      "passed": true,
+      "detail": "allowed 5/5, blocked 5/5"
+    },
+    {
+      "check": "safety_gate_confirmation_never_implicit",
+      "passed": true,
+      "detail": "auto_approve cannot override a destructive command"
+    },
+    {
+      "check": "bike_scenario_M_has_500_rows_and_expected_winner",
+      "passed": true,
+      "detail": "540 rows; reference decision Buy Monthly Membership (pay-per-use $2911.45 vs membership $805.58)"
+    },
+    {
+      "check": "bike_scenario_P_has_500_rows_and_expected_winner",
+      "passed": true,
+      "detail": "504 rows; reference decision Pay Per Ride/Minute (pay-per-use $1332.22 vs membership $2088.00)"
+    },
+    {
+      "check": "pricing_snapshots_match_their_recorded_sha256",
+      "passed": true,
+      "detail": "12/12 snapshots re-hash to the recorded SHA-256"
+    },
+    {
+      "check": "injection_fixtures_present_with_all_three_attacks",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "injection_tool_boundary_replay_saved",
+      "passed": true,
+      "detail": "raw/injection_tool_replay.json"
+    },
+    {
+      "check": "injection_before_after_results_saved",
+      "passed": true,
+      "detail": "11 cells (9 required) in raw/injection_results.json"
+    },
+    {
+      "check": "required_deliverable_files_present",
+      "passed": true,
+      "detail": "raw data, RUN_LOG.txt, METRICS.md, AI_USE.md"
+    },
+    {
+      "check": "agent_loop_completes_a_verification_task",
+      "passed": true,
+      "detail": "task A: stop=final_answer, tool calls=2, verifier=ok, 142 s"
+    },
+    {
+      "check": "verification_did_not_modify_application_code",
+      "passed": true,
+      "detail": "sha256 of code/ and src/ before == after: 541e70fe3d53"
+    }
+  ]
+}

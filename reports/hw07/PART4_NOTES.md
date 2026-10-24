@@ -8,6 +8,16 @@ is rounded to make a wrong number look closer to correct.
 
 ---
 
+## About the data (read this first)
+
+Both scenario files are built by `scripts/build_bike_scenarios_hw07.py` (seed 9619) from one real month of Bay Wheels trips (October 2024, `202410-baywheels-tripdata.csv.zip`, 378,317 rows). Summary: `reports/hw07/raw/bike_trip_data_summary.json`.
+
+- **Scenario M (540 trips):** real trips by Bay Wheels members that started in October 2024 (real timestamps, one calendar month, a heavy-user profile: 414 ebike and 126 classic rides).
+- **Scenario P (504 trips): the dates are SYNTHETIC.** The 504 trips are real short (15 minutes or less) classic-bike trips by casual riders, but each trip's start date was replaced so that there are exactly 7 trips in each of the 72 months from 2019-01 to 2024-12 (an occasional rider). Time of day and ride duration are the real values; the original timestamp is kept in the `orig_started_at` column. The file and this note say so on purpose; the 72 "calendar months" in the results below come from this remapping, not from a real six-year rider.
+- The trips are from 2024, but they are priced with the pricing page fetched on 2026-10-23 and 2026-10-24, so the dollar totals are illustrative, not a statement of what these riders actually paid.
+- The reference calculation (`src/bike_pricing.py`) assumes exact fractional minutes and buys the monthly pass for every calendar month that has at least one trip.
+
+
 ## Scenario M (membership should win)
 
 **Final run used: `M_run4`** (started 2026-10-23T05:14:25Z, ended 2026-10-23T05:29:00Z)
@@ -154,3 +164,22 @@ preference for recommending membership regardless of the numbers is not somethin
 can distinguish, since every M scenario's correct answer happens to also be "Buy Monthly
 Membership" — but the P-scenario runs show the agent computing the right numbers and then stating
 a conclusion those numbers do not support.
+
+---
+
+## UI runs (Streamlit page `bike_ui/bike_app.py`, port 8620, defences on)
+
+These two runs were made through the page itself for the UI screenshots (CSV chosen with the demo-scenario dropdown, pricing URL left at the default). The page does not write a raw JSON file, so the numbers below are read from the page; the same pricing page was fetched (SHA-256 `7d7d2b21...9148d13`).
+The first M run through the page showed `$...$` amounts rendered as maths and a collapsed timeline; the page was fixed (plain-text answer, escaped dollar signs, timeline kept open) and scenario M was run again. Only the fixed-page runs are used for the screenshots.
+
+| | Scenario M (UI run) | Scenario P (UI run) |
+|---|---|---|
+| Agent decision | Buy Monthly Membership (correct) | Buy Monthly Membership (WRONG; reference: Pay Per Ride/Minute) |
+| Pay-per-use total (agent / reference) | $2,371.45 / $2,911.45 (wrong by $540: no unlock fee) | $1,332.22 / $1,332.22 (exact) |
+| Membership total (agent / reference) | $805.58 / $805.58 (exact) | $2,088.00 / $2,088.00 (exact) |
+| Break-even rides per month (agent / reference) | 1565.87 / 7.3 (wrong) | 13.0 / 11.0 (wrong); "actual" 504.0 vs reference 7.0 |
+| Steps, time, stop reason | 9, 963.6 s, final_answer | 9, 982.0 s, final_answer |
+| Tokens in / out | 31,689 / 1,004 | 32,372 / 823 |
+| Page warning | none | "decision does not match its own totals" shown |
+
+Scenario P: the page's check message fired because the agent's own two totals (pay-per-use $1,332.22 < membership $2,088.00) say pay-per-use is cheaper while its decision says membership, the same self-contradiction seen in P_run2 and P_run4. The page reports it; it does not change the agent's answer.

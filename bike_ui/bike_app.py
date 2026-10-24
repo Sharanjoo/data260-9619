@@ -20,6 +20,11 @@ from src.bike_agent import decision_contradicts_totals, stream_agent  # noqa: E4
 from src.bike_pricing import evaluate_trips  # noqa: E402
 from src.bike_tools import BikeTools  # noqa: E402
 
+
+def esc(text: str) -> str:
+    """Streamlit markdown treats $...$ as math; escape dollar signs so prices display as typed."""
+    return text.replace("$", "\\$")
+
 PRICING_URL = "https://www.lyft.com/bikes/bay-wheels/pricing"
 DEMOS = {"(upload my own file)": None,
          "Demo scenario M - heavy rider, 540 trips in one month": REPO / "data/bike/scenario_M_membership.csv",
@@ -68,15 +73,15 @@ if run:
         for ev in stream_agent(tools, url=url.strip(), prompt_defense=defence):
             if ev["type"] == "tool_call":
                 arg_text = ", ".join(f"{k}={str(v)[:90]!r}" for k, v in ev["args"].items())
-                st.markdown(f"**Step {ev['step']}** - `{ev['tool']}`({arg_text})  _[{ev['t']} s]_")
+                st.markdown(esc(f"**Step {ev['step']}** - `{ev['tool']}`({arg_text})  _[{ev['t']} s]_"))
             elif ev["type"] == "observation":
                 mark = "ok" if ev["success"] else f"error: {ev['error']}"
-                st.caption(f"observation ({mark}): {ev['summary'][:220]}")
+                st.caption(esc(f"observation ({mark}): {ev['summary'][:220]}"))
             elif ev["type"] == "final":
                 st.markdown("**Final answer ready**")
             elif ev["type"] == "stop":
                 stop = ev
-        status.update(label=f"Finished: {stop['reason']}", state="complete" if stop["reason"] == "final_answer" else "error")
+        status.update(label=f"Finished: {stop['reason']}", state="complete" if stop["reason"] == "final_answer" else "error", expanded=True)
 
     parsed = stop["parsed"]
     with results_box:
@@ -93,10 +98,10 @@ if run:
                  if parsed["break_even"] is not None else "n/a")
         if parsed["pay_per_use_total"] is not None and parsed["membership_total"] is not None:
             st.bar_chart({"Pay per ride/minute": parsed["pay_per_use_total"], "Monthly membership": parsed["membership_total"]})
-        st.markdown(stop["final_text"] or "_no final answer_")
+        st.text(stop["final_text"] or "(no final answer)")  # plain text: keeps the answer's line breaks and '$' amounts intact
         if stop["snapshots"]:
             s = stop["snapshots"][-1]
-            st.caption(f"Citation: pricing page {s['url']} - captured {s['accessed_at']} - SHA-256 {s['sha256']}")
+            st.caption(esc(f"Citation: pricing page {s['url']} - captured {s['accessed_at']} - SHA-256 {s['sha256']}"))
         with st.expander("Check against the independent calculation"):
             ref = evaluate_trips(csv_path)
             st.write({"reference decision": ref["decision"], "pay-per-use total": ref["pay_per_use_total"],
