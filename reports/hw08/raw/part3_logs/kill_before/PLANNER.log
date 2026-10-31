@@ -1,0 +1,8 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | PLANNER | mode=fast
+01:51:55.151 [PLANNER] partitions assigned: topic=s9619_inbox partitions=[0]
+01:51:55.162 [PLANNER] Consumer is ready and listening...
+01:51:55.162 [PLANNER] reads s9619_inbox (group s9619-planner) -> writes s9619_tasks; mode=fast idempotent=True commit=before max_attempts=3 task_key=entity
+01:51:55.653 [PLANNER] received topic=s9619_inbox partition=0 offset=58 message={"correlation_id":"85a737de-487e-4b92-ba2b-bedecab5b2cd","question":"What should I do with recalled spinach?","entity_key":"kill-test"}
+01:51:55.656 [PLANNER] offset committed BEFORE processing (topic=s9619_inbox partition=0 offset=58)
+01:51:55.656 [PLANNER] processing correlation_id=85a737de-487e-4b92-ba2b-bedecab5b2cd
+01:51:55.672 [PLANNER] sent topic=s9619_tasks partition=1 offset=30 correlation_id=85a737de-487e-4b92-ba2b-bedecab5b2cd key=kill-test message={"correlation_id":"85a737de-487e-4b92-ba2b-bedecab5b2cd","stage":"plan","question":"What should I do with recalled spinach?","plan":{"steps":["Identify the recalled product and why it was recalled","Tell the shopper what to do with product they already have","Point to the official recall notice for refund and contact details"]},"entity_key":"kill-test"}

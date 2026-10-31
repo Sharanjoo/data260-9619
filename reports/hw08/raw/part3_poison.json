@@ -1,0 +1,23 @@
+{
+  "test": "poison",
+  "variants": {
+    "before": {
+      "bad_correlation_id": "7d04cd73-d181-4595-8eaa-c5af70c7d5f6",
+      "failed_attempts_logged": 30,
+      "dead_letter_copies": 0,
+      "dead_letter_error": null,
+      "good_messages_processed": 0,
+      "as_expected": true,
+      "started_at": "2026-10-30T18:54:12"
+    },
+    "after": {
+      "bad_correlation_id": "8f5b0a1c-94bd-43cb-b861-970fb27ecb3e",
+      "failed_attempts_logged": 3,
+      "dead_letter_copies": 1,
+      "dead_letter_error": "ValueError: plan.steps must be a non-empty list of strings",
+      "good_messages_processed": 2,
+      "as_expected": true,
+      "started_at": "2026-10-30T18:54:38"
+    }
+  }
+}

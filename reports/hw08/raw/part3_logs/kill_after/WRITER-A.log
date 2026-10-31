@@ -1,0 +1,6 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | WRITER-A | mode=fast
+01:53:10.778 [WRITER-A] partitions assigned: topic=s9619_tasks partitions=[0, 1]
+01:53:10.793 [WRITER-A] Consumer is ready and listening...
+01:53:10.793 [WRITER-A] reads s9619_tasks (group s9619-writer) -> writes s9619_drafts; mode=fast idempotent=True commit=after max_attempts=3 task_key=entity
+01:53:10.877 [WRITER-A] received topic=s9619_tasks partition=1 offset=31 key=kill-test message={"correlation_id":"26dca564-4445-4706-97f6-706b0fefbaba","stage":"plan","question":"What should I do with recalled spinach?","plan":{"steps":["Identify the recalled product and why it was recalled","Tell the shopper what to do with product they already have","Point to the official recall notice for refund and contact details"]},"entity_key":"kill-test"}
+01:53:10.877 [WRITER-A] processing correlation_id=26dca564-4445-4706-97f6-706b0fefbaba

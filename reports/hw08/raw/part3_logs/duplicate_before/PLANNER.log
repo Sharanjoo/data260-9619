@@ -1,0 +1,12 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | PLANNER | mode=fast
+01:50:04.612 [PLANNER] partitions assigned: topic=s9619_inbox partitions=[0]
+01:50:04.629 [PLANNER] Consumer is ready and listening...
+01:50:04.629 [PLANNER] reads s9619_inbox (group s9619-planner) -> writes s9619_tasks; mode=fast idempotent=False commit=after max_attempts=3 task_key=entity
+01:50:05.159 [PLANNER] received topic=s9619_inbox partition=0 offset=54 message={"correlation_id":"8cbf5992-4dfe-48ab-aca9-80665590327f","question":"What should I do with recalled frozen berries I already bought?","entity_key":"dup-test"}
+01:50:05.159 [PLANNER] processing correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f
+01:50:05.177 [PLANNER] sent topic=s9619_tasks partition=0 offset=29 correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f key=dup-test message={"correlation_id":"8cbf5992-4dfe-48ab-aca9-80665590327f","stage":"plan","question":"What should I do with recalled frozen berries I already bought?","plan":{"steps":["Identify the recalled product and why it was recalled","Tell the shopper what to do with product they already have","Point to the official recall notice for refund and contact details"]},"entity_key":"dup-test"}
+01:50:05.180 [PLANNER] offset committed (topic=s9619_inbox partition=0 offset=54)
+01:50:06.692 [PLANNER] received topic=s9619_inbox partition=0 offset=55 message={"correlation_id":"8cbf5992-4dfe-48ab-aca9-80665590327f","question":"What should I do with recalled frozen berries I already bought?","entity_key":"dup-test"}
+01:50:06.692 [PLANNER] processing correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f
+01:50:06.700 [PLANNER] sent topic=s9619_tasks partition=0 offset=30 correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f key=dup-test message={"correlation_id":"8cbf5992-4dfe-48ab-aca9-80665590327f","stage":"plan","question":"What should I do with recalled frozen berries I already bought?","plan":{"steps":["Identify the recalled product and why it was recalled","Tell the shopper what to do with product they already have","Point to the official recall notice for refund and contact details"]},"entity_key":"dup-test"}
+01:50:06.705 [PLANNER] offset committed (topic=s9619_inbox partition=0 offset=55)

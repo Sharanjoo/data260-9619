@@ -1,0 +1,19 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | WRITER-A | mode=fast
+01:54:36.152 [WRITER-A] partitions assigned: topic=s9619_tasks partitions=[0, 1]
+01:54:36.170 [WRITER-A] Consumer is ready and listening...
+01:54:36.170 [WRITER-A] reads s9619_tasks (group s9619-writer) -> writes s9619_drafts; mode=fast idempotent=True commit=after max_attempts=3 task_key=entity
+01:54:36.371 [WRITER-A] received topic=s9619_tasks partition=1 offset=35 key=poison-test message={"correlation_id":"8f5b0a1c-94bd-43cb-b861-970fb27ecb3e","stage":"plan","question":"poison","plan":"THIS IS NOT A LIST OF STEPS","entity_key":"poison-test"}
+01:54:36.371 [WRITER-A] processing correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e
+01:54:36.371 [WRITER-A] attempt 1/3 failed correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e: ValueError: plan.steps must be a non-empty list of strings
+01:54:36.884 [WRITER-A] attempt 2/3 failed correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e: ValueError: plan.steps must be a non-empty list of strings
+01:54:37.396 [WRITER-A] attempt 3/3 failed correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e: ValueError: plan.steps must be a non-empty list of strings
+01:54:37.411 [WRITER-A] gave up after 3 attempts: moved to s9619_dead_letter partition=0 offset=1 correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e
+01:54:37.414 [WRITER-A] offset committed (topic=s9619_tasks partition=1 offset=35); the next message is not blocked
+01:54:37.478 [WRITER-A] received topic=s9619_tasks partition=1 offset=36 key=poison-test message={"correlation_id":"33f23310-b93d-416c-9e2a-1ae74690e73d","stage":"plan","question":"good message 1","plan":{"steps":["Identify the product","Say what to do","Point to the official notice"]},"entity_key":"poison-test"}
+01:54:37.478 [WRITER-A] processing correlation_id=33f23310-b93d-416c-9e2a-1ae74690e73d
+01:54:37.491 [WRITER-A] sent topic=s9619_drafts partition=0 offset=57 correlation_id=33f23310-b93d-416c-9e2a-1ae74690e73d message={"correlation_id":"33f23310-b93d-416c-9e2a-1ae74690e73d","stage":"draft","question":"good message 1","plan":{"steps":["Identify the product","Say what to do","Point to the official notice"]},"draft":"Do not eat or serve the recalled product. Return it to the store or throw it away, wash hands and any surfaces it touched, and follow the official recall notice for refund and contact details. See a doctor if you feel unwell after eating it.","writer":"WRITER-A","entity_key":"poison-test"}
+01:54:37.495 [WRITER-A] offset committed (topic=s9619_tasks partition=1 offset=36)
+01:54:37.495 [WRITER-A] received topic=s9619_tasks partition=1 offset=37 key=poison-test message={"correlation_id":"f85aa109-1ab5-49ea-afdf-88c419320c02","stage":"plan","question":"good message 2","plan":{"steps":["Identify the product","Say what to do","Point to the official notice"]},"entity_key":"poison-test"}
+01:54:37.495 [WRITER-A] processing correlation_id=f85aa109-1ab5-49ea-afdf-88c419320c02
+01:54:37.497 [WRITER-A] sent topic=s9619_drafts partition=0 offset=58 correlation_id=f85aa109-1ab5-49ea-afdf-88c419320c02 message={"correlation_id":"f85aa109-1ab5-49ea-afdf-88c419320c02","stage":"draft","question":"good message 2","plan":{"steps":["Identify the product","Say what to do","Point to the official notice"]},"draft":"Do not eat or serve the recalled product. Return it to the store or throw it away, wash hands and any surfaces it touched, and follow the official recall notice for refund and contact details. See a doctor if you feel unwell after eating it.","writer":"WRITER-A","entity_key":"poison-test"}
+01:54:37.497 [WRITER-A] offset committed (topic=s9619_tasks partition=1 offset=37)

@@ -1,0 +1,4 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | REVIEWER | mode=fast
+01:51:55.192 [REVIEWER] partitions assigned: topic=s9619_drafts partitions=[0]
+01:51:55.200 [REVIEWER] Consumer is ready and listening...
+01:51:55.200 [REVIEWER] reads s9619_drafts (group s9619-reviewer) -> writes s9619_final; mode=fast idempotent=True commit=before max_attempts=3 task_key=entity

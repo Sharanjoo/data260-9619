@@ -1,0 +1,4 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | PLANNER | mode=fast
+01:53:56.607 [PLANNER] partitions assigned: topic=s9619_inbox partitions=[0]
+01:53:56.629 [PLANNER] Consumer is ready and listening...
+01:53:56.629 [PLANNER] reads s9619_inbox (group s9619-planner) -> writes s9619_tasks; mode=fast idempotent=True commit=after max_attempts=unlimited task_key=entity

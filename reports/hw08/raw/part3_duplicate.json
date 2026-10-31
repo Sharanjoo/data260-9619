@@ -1,0 +1,33 @@
+{
+  "test": "duplicate",
+  "variants": {
+    "before": {
+      "correlation_id": "8cbf5992-4dfe-48ab-aca9-80665590327f",
+      "first_answer_arrived": true,
+      "counts": {
+        "s9619_inbox": 2,
+        "s9619_tasks": 2,
+        "s9619_drafts": 2,
+        "s9619_final": 2
+      },
+      "extra_side_effects": 2,
+      "duplicate_log_lines": 0,
+      "as_expected": true,
+      "started_at": "2026-10-30T18:50:10"
+    },
+    "after": {
+      "correlation_id": "cfc195cd-240f-4b4e-8ff1-97e631c0d193",
+      "first_answer_arrived": true,
+      "counts": {
+        "s9619_inbox": 2,
+        "s9619_tasks": 1,
+        "s9619_drafts": 1,
+        "s9619_final": 1
+      },
+      "extra_side_effects": 0,
+      "duplicate_log_lines": 1,
+      "as_expected": true,
+      "started_at": "2026-10-30T18:50:59"
+    }
+  }
+}

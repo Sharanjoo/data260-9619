@@ -1,0 +1,25 @@
+{
+  "test": "kill",
+  "variants": {
+    "before": {
+      "correlation_id": "85a737de-487e-4b92-ba2b-bedecab5b2cd",
+      "drafts_after_kill": 0,
+      "restarted_writer_finished_it": false,
+      "drafts_after_restart": 0,
+      "final_after_restart": 0,
+      "outcome": "message lost",
+      "as_expected": true,
+      "started_at": "2026-10-30T18:52:45"
+    },
+    "after": {
+      "correlation_id": "26dca564-4445-4706-97f6-706b0fefbaba",
+      "drafts_after_kill": 0,
+      "restarted_writer_finished_it": true,
+      "drafts_after_restart": 1,
+      "final_after_restart": 1,
+      "outcome": "redelivered and completed after the restart",
+      "as_expected": true,
+      "started_at": "2026-10-30T18:53:24"
+    }
+  }
+}

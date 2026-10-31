@@ -1,0 +1,10 @@
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | PLANNER | mode=fast
+01:50:34.534 [PLANNER] partitions assigned: topic=s9619_inbox partitions=[0]
+01:50:34.547 [PLANNER] Consumer is ready and listening...
+01:50:34.547 [PLANNER] reads s9619_inbox (group s9619-planner) -> writes s9619_tasks; mode=fast idempotent=True commit=after max_attempts=3 task_key=entity
+01:50:34.711 [PLANNER] received topic=s9619_inbox partition=0 offset=56 message={"correlation_id":"cfc195cd-240f-4b4e-8ff1-97e631c0d193","question":"What should I do with recalled frozen berries I already bought?","entity_key":"dup-test"}
+01:50:34.711 [PLANNER] processing correlation_id=cfc195cd-240f-4b4e-8ff1-97e631c0d193
+01:50:34.730 [PLANNER] sent topic=s9619_tasks partition=0 offset=31 correlation_id=cfc195cd-240f-4b4e-8ff1-97e631c0d193 key=dup-test message={"correlation_id":"cfc195cd-240f-4b4e-8ff1-97e631c0d193","stage":"plan","question":"What should I do with recalled frozen berries I already bought?","plan":{"steps":["Identify the recalled product and why it was recalled","Tell the shopper what to do with product they already have","Point to the official recall notice for refund and contact details"]},"entity_key":"dup-test"}
+01:50:34.735 [PLANNER] offset committed (topic=s9619_inbox partition=0 offset=56)
+01:50:36.258 [PLANNER] received topic=s9619_inbox partition=0 offset=57 message={"correlation_id":"cfc195cd-240f-4b4e-8ff1-97e631c0d193","question":"What should I do with recalled frozen berries I already bought?","entity_key":"dup-test"}
+01:50:36.258 [PLANNER] DUPLICATE correlation_id=cfc195cd-240f-4b4e-8ff1-97e631c0d193: already processed, skipped, nothing is sent again
