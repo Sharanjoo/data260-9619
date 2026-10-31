@@ -13,6 +13,7 @@ COPY code/templates ./templates
 COPY code/web_application ./web_application
 COPY code/doc_api ./doc_api
 COPY code/memory_api ./memory_api
+COPY code/kafka_api ./kafka_api
 COPY src ./src
 EXPOSE 8619
 HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \

@@ -57,6 +57,8 @@ services:
       EMBED_MODEL: nomic-embed-text
       SHORT_TERM_N: "12"
       SUMMARIZE_EVERY_USER_MSGS: "5"
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092   # HW8: reaches the broker over the Docker network
+      PYTHONUNBUFFERED: "1"                  # HW8: log lines show up in `docker logs` immediately
     extra_hosts:
       - "host.docker.internal:host-gateway"
     depends_on:
@@ -64,6 +66,80 @@ services:
         condition: service_healthy
       mongo:
         condition: service_healthy
+
+  # ---------------------------------------------------------------- HW8: Kafka request/response
+  kafka:
+    image: apache/kafka:3.9.2
+    container_name: data260-hw8-kafka-s9619
+    restart: unless-stopped
+    ports:
+      - "49092:49092"  # listener for scripts on the laptop (localhost:49092); 9092 is left free for other projects
+    environment:
+      KAFKA_NODE_ID: 1
+      KAFKA_PROCESS_ROLES: broker,controller
+      KAFKA_LISTENERS: INTERNAL://:19092,EXTERNAL://:49092,CONTROLLER://:9093
+      KAFKA_ADVERTISED_LISTENERS: INTERNAL://kafka:19092,EXTERNAL://localhost:49092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,INTERNAL:PLAINTEXT,EXTERNAL:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INTERNAL
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@localhost:9093
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_NUM_PARTITIONS: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+    healthcheck:
+      test: ["CMD-SHELL", "/opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server localhost:19092 > /dev/null 2>&1"]
+      interval: 10s
+      timeout: 10s
+      retries: 12
+      start_period: 20s
+
+  kafka-init:
+    image: apache/kafka:3.9.2
+    container_name: data260-hw8-kafka-init-s9619
+    restart: "no"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    entrypoint: ["/bin/bash", "-c"]
+    command:
+      - |
+        set -e
+        T=/opt/kafka/bin/kafka-topics.sh
+        B=kafka:19092
+        $$T --create --if-not-exists --topic s9619_entity_requests  --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s9619_entity_responses --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s9619_inbox --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s9619_tasks --partitions 2 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s9619_drafts --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s9619_final --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --create --if-not-exists --topic s9619_dead_letter --partitions 1 --replication-factor 1 --bootstrap-server $$B
+        $$T --list --bootstrap-server $$B
+
+  worker:
+    build:
+      context: .
+      dockerfile: code/Dockerfile
+    image: data260-hw3-s9619:latest   # the same image as web, started with a different command
+    container_name: data260-hw8-worker-s9619
+    restart: unless-stopped
+    command: ["python", "-m", "kafka_api.worker"]
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:19092
+      PYTHONUNBUFFERED: "1"
+    healthcheck:
+      test: ["CMD", "python", "-m", "kafka_api.healthcheck"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 20s
+    depends_on:
+      kafka:
+        condition: service_healthy
+      kafka-init:
+        condition: service_completed_successfully
 
 volumes:
   mysql_data_s9619:

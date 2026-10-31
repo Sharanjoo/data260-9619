@@ -19,6 +19,7 @@ from db_routes import router as db_router
 from jwt_auth import router as jwt_router  # HW7 Part 1: JWT login + /auth/me
 from doc_api.server import install as install_doc_api  # HW6 Part 1: MongoDB document API
 from memory_api.server import install as install_memory_api  # HW6 Part 2: memory endpoints
+from kafka_api.server import install as install_kafka_api  # HW8 Part 1: request/response over Kafka
 
 PORT_BASE = 8619
 WEB_DIR = Path(__file__).resolve().parent / "web_application"
@@ -73,6 +74,9 @@ install_doc_api(app)
 
 # HW6 Part 2: short-term / long-term / episodic memory (POST /api/chat, GET /api/memory, GET /api/aggregate).
 install_memory_api(app)
+
+# HW8 Part 1: POST /api/hw8/requests, /recall-notices, GET /recall-notices/{id} -> Kafka -> worker -> Kafka -> reply.
+install_kafka_api(app)
 
 
 @app.on_event("startup")

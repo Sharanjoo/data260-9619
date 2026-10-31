@@ -1,0 +1,150 @@
+{
+  "created_at": "2026-10-31T00:58:01Z",
+  "create": {
+    "request": {
+      "operation": "CREATE_RECALL_NOTICE",
+      "data": {
+        "productName": "Frozen Mixed Berries",
+        "brandName": "Northfield Farms",
+        "submitterEmail": "safety@northfield.example",
+        "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.",
+        "category": "food-safety-recall",
+        "termsAccepted": true
+      },
+      "correlation_id": "a8b33a36-eed7-4e7a-9c84-a25ec8229459"
+    },
+    "http_status": 201,
+    "response": {
+      "correlation_id": "a8b33a36-eed7-4e7a-9c84-a25ec8229459",
+      "success": true,
+      "recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667",
+      "message": "Recall notice created"
+    },
+    "flow_lines": [
+      "00:57:59.420 [API] sent request topic=s9619_entity_requests partition=0 offset=5 correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 message={\"correlation_id\":\"a8b33a36-eed7-4e7a-9c84-a25ec8229459\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"CREATE_RECALL_NOTICE\",\"data\":{\"productName\":\"Frozen Mixed Berries\",\"brandName\":\"Northfield Farms\",\"submitterEmail\":\"safety@northfield.example\",\"description\":\"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.\",\"category\":\"food-safety-recall\",\"termsAccepted\":true}}",
+      "00:57:59.434 [WORKER] received topic=s9619_entity_requests partition=0 offset=5 message={\"correlation_id\":\"a8b33a36-eed7-4e7a-9c84-a25ec8229459\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"CREATE_RECALL_NOTICE\",\"data\":{\"productName\":\"Frozen Mixed Berries\",\"brandName\":\"Northfield Farms\",\"submitterEmail\":\"safety@northfield.example\",\"description\":\"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.\",\"category\":\"food-safety-recall\",\"termsAccepted\":true}}",
+      "00:57:59.434 [WORKER] processing operation=CREATE_RECALL_NOTICE correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 reply_to=s9619_entity_responses",
+      "00:57:59.491 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=5 correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 success=True message={\"correlation_id\":\"a8b33a36-eed7-4e7a-9c84-a25ec8229459\",\"success\":true,\"recall_notice_id\":\"0f4b9a93-ef01-4a25-8f03-bdb5866c8667\",\"message\":\"Recall notice created\"}",
+      "00:57:59.512 [API] received response topic=s9619_entity_responses partition=0 offset=5 correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 message={\"correlation_id\":\"a8b33a36-eed7-4e7a-9c84-a25ec8229459\",\"success\":true,\"recall_notice_id\":\"0f4b9a93-ef01-4a25-8f03-bdb5866c8667\",\"message\":\"Recall notice created\"}",
+      "00:57:59.516 [API] returning response to the caller correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 success=True"
+    ]
+  },
+  "get": {
+    "request": {
+      "operation": "GET_RECALL_NOTICE",
+      "data": {
+        "recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667"
+      },
+      "correlation_id": "51066170-c61c-4ccc-9a20-8d1cc916fe28"
+    },
+    "http_status": 200,
+    "response": {
+      "correlation_id": "51066170-c61c-4ccc-9a20-8d1cc916fe28",
+      "success": true,
+      "recall_notice": {
+        "recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667",
+        "productName": "Frozen Mixed Berries",
+        "brandName": "Northfield Farms",
+        "submitterEmail": "safety@northfield.example",
+        "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.",
+        "category": "food-safety-recall",
+        "termsAccepted": true,
+        "submissionDate": "2026-10-31T00:57:59+00:00"
+      }
+    },
+    "flow_lines": [
+      "00:57:59.922 [API] sent request topic=s9619_entity_requests partition=0 offset=6 correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 message={\"correlation_id\":\"51066170-c61c-4ccc-9a20-8d1cc916fe28\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"GET_RECALL_NOTICE\",\"data\":{\"recall_notice_id\":\"0f4b9a93-ef01-4a25-8f03-bdb5866c8667\"}}",
+      "00:57:59.923 [WORKER] received topic=s9619_entity_requests partition=0 offset=6 message={\"correlation_id\":\"51066170-c61c-4ccc-9a20-8d1cc916fe28\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"GET_RECALL_NOTICE\",\"data\":{\"recall_notice_id\":\"0f4b9a93-ef01-4a25-8f03-bdb5866c8667\"}}",
+      "00:57:59.923 [WORKER] processing operation=GET_RECALL_NOTICE correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 reply_to=s9619_entity_responses",
+      "00:57:59.928 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=6 correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 success=True message={\"correlation_id\":\"51066170-c61c-4ccc-9a20-8d1cc916fe28\",\"success\":true,\"recall_notice\":{\"recall_notice_id\":\"0f4b9a93-ef01-4a25-8f03-bdb5866c8667\",\"productName\":\"Frozen Mixed Berries\",\"brandName\":\"Northfield Farms\",\"submitterEmail\":\"safety@northfield.example\",\"description\":\"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.\",\"category\":\"food-safety-recall\",\"termsAccepted\":true,\"submissionDate\":\"2026-10-31T00:57:59+00:00\"}}",
+      "00:57:59.929 [API] received response topic=s9619_entity_responses partition=0 offset=6 correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 message={\"correlation_id\":\"51066170-c61c-4ccc-9a20-8d1cc916fe28\",\"success\":true,\"recall_notice\":{\"recall_notice_id\":\"0f4b9a93-ef01-4a25-8f03-bdb5866c8667\",\"productName\":\"Frozen Mixed Berries\",\"brandName\":\"Northfield Farms\",\"submitterEmail\":\"safety@northfield.example\",\"description\":\"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.\",\"category\":\"food-safety-recall\",\"termsAccepted\":true,\"submissionDate\":\"2026-10-31T00:57:59+00:00\"}}",
+      "00:57:59.929 [API] returning response to the caller correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 success=True"
+    ]
+  },
+  "checks": {
+    "CREATE succeeded and returned a UUID": true,
+    "CREATE response kept the correlation_id": true,
+    "GET returned the same recall_notice_id": true,
+    "GET returned the fields that were stored": true,
+    "GET response kept the correlation_id": true
+  },
+  "errors": [
+    {
+      "case": "invalid CREATE (category missing)",
+      "ok": true,
+      "request": {
+        "operation": "CREATE_RECALL_NOTICE",
+        "data": {
+          "productName": "Frozen Mixed Berries",
+          "brandName": "Northfield Farms",
+          "submitterEmail": "safety@northfield.example",
+          "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.",
+          "termsAccepted": true
+        },
+        "correlation_id": "25831086-9084-4a4a-a0a6-0e1dd886c1ec"
+      },
+      "http_status": 422,
+      "response": {
+        "correlation_id": "25831086-9084-4a4a-a0a6-0e1dd886c1ec",
+        "success": false,
+        "error": "category is required"
+      },
+      "flow_lines": [
+        "00:58:00.293 [API] sent request topic=s9619_entity_requests partition=0 offset=7 correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec message={\"correlation_id\":\"25831086-9084-4a4a-a0a6-0e1dd886c1ec\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"CREATE_RECALL_NOTICE\",\"data\":{\"productName\":\"Frozen Mixed Berries\",\"brandName\":\"Northfield Farms\",\"submitterEmail\":\"safety@northfield.example\",\"description\":\"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.\",\"termsAccepted\":true}}",
+        "00:58:00.295 [WORKER] received topic=s9619_entity_requests partition=0 offset=7 message={\"correlation_id\":\"25831086-9084-4a4a-a0a6-0e1dd886c1ec\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"CREATE_RECALL_NOTICE\",\"data\":{\"productName\":\"Frozen Mixed Berries\",\"brandName\":\"Northfield Farms\",\"submitterEmail\":\"safety@northfield.example\",\"description\":\"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.\",\"termsAccepted\":true}}",
+        "00:58:00.295 [WORKER] processing operation=CREATE_RECALL_NOTICE correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec reply_to=s9619_entity_responses",
+        "00:58:00.300 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=7 correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec success=False message={\"correlation_id\":\"25831086-9084-4a4a-a0a6-0e1dd886c1ec\",\"success\":false,\"error\":\"category is required\"}",
+        "00:58:00.302 [API] received response topic=s9619_entity_responses partition=0 offset=7 correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec message={\"correlation_id\":\"25831086-9084-4a4a-a0a6-0e1dd886c1ec\",\"success\":false,\"error\":\"category is required\"}",
+        "00:58:00.302 [API] returning response to the caller correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec success=False"
+      ]
+    },
+    {
+      "case": "GET with an unknown id",
+      "ok": true,
+      "request": {
+        "operation": "GET_RECALL_NOTICE",
+        "data": {
+          "recall_notice_id": "eed1c221-1e12-4fb4-a459-2f6a95575bda"
+        },
+        "correlation_id": "0886ce36-9601-47fe-8507-84ac9d255efe"
+      },
+      "http_status": 404,
+      "response": {
+        "correlation_id": "0886ce36-9601-47fe-8507-84ac9d255efe",
+        "success": false,
+        "error": "Recall notice not found"
+      },
+      "flow_lines": [
+        "00:58:00.637 [API] sent request topic=s9619_entity_requests partition=0 offset=8 correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe message={\"correlation_id\":\"0886ce36-9601-47fe-8507-84ac9d255efe\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"GET_RECALL_NOTICE\",\"data\":{\"recall_notice_id\":\"eed1c221-1e12-4fb4-a459-2f6a95575bda\"}}",
+        "00:58:00.637 [WORKER] received topic=s9619_entity_requests partition=0 offset=8 message={\"correlation_id\":\"0886ce36-9601-47fe-8507-84ac9d255efe\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"GET_RECALL_NOTICE\",\"data\":{\"recall_notice_id\":\"eed1c221-1e12-4fb4-a459-2f6a95575bda\"}}",
+        "00:58:00.637 [WORKER] processing operation=GET_RECALL_NOTICE correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe reply_to=s9619_entity_responses",
+        "00:58:00.642 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=8 correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe success=False message={\"correlation_id\":\"0886ce36-9601-47fe-8507-84ac9d255efe\",\"success\":false,\"error\":\"Recall notice not found\"}",
+        "00:58:00.643 [API] received response topic=s9619_entity_responses partition=0 offset=8 correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe message={\"correlation_id\":\"0886ce36-9601-47fe-8507-84ac9d255efe\",\"success\":false,\"error\":\"Recall notice not found\"}",
+        "00:58:00.648 [API] returning response to the caller correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe success=False"
+      ]
+    },
+    {
+      "case": "unknown operation",
+      "ok": true,
+      "request": {
+        "operation": "DELETE_RECALL_NOTICE",
+        "data": {},
+        "correlation_id": "49be79a6-6f09-4802-b1ab-a0eb0df250c2"
+      },
+      "http_status": 422,
+      "response": {
+        "correlation_id": "49be79a6-6f09-4802-b1ab-a0eb0df250c2",
+        "success": false,
+        "error": "Unknown operation"
+      },
+      "flow_lines": [
+        "00:58:01.075 [API] sent request topic=s9619_entity_requests partition=0 offset=9 correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 message={\"correlation_id\":\"49be79a6-6f09-4802-b1ab-a0eb0df250c2\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"DELETE_RECALL_NOTICE\",\"data\":{}}",
+        "00:58:01.078 [WORKER] received topic=s9619_entity_requests partition=0 offset=9 message={\"correlation_id\":\"49be79a6-6f09-4802-b1ab-a0eb0df250c2\",\"reply_to\":\"s9619_entity_responses\",\"operation\":\"DELETE_RECALL_NOTICE\",\"data\":{}}",
+        "00:58:01.078 [WORKER] processing operation=DELETE_RECALL_NOTICE correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 reply_to=s9619_entity_responses",
+        "00:58:01.086 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=9 correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 success=False message={\"correlation_id\":\"49be79a6-6f09-4802-b1ab-a0eb0df250c2\",\"success\":false,\"error\":\"Unknown operation\"}",
+        "00:58:01.088 [API] received response topic=s9619_entity_responses partition=0 offset=9 correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 message={\"correlation_id\":\"49be79a6-6f09-4802-b1ab-a0eb0df250c2\",\"success\":false,\"error\":\"Unknown operation\"}",
+        "00:58:01.088 [API] returning response to the caller correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 success=False"
+      ]
+    }
+  ]
+}

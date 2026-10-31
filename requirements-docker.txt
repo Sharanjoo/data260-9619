@@ -10,6 +10,7 @@ pymysql
 bcrypt
 pymongo
 PyJWT>=2.8
+aiokafka          # HW8: Kafka client (API wrapper + worker)
 # needed at runtime without being imported directly:
 itsdangerous      # starlette SessionMiddleware (HW3 login)
 jinja2            # Jinja2Templates (HW3 pages)
