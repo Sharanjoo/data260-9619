@@ -1,0 +1,127 @@
+{
+  "homework_number": 8,
+  "sid4": "9619",
+  "commit_hash": "6efceb20af530bb714ab1a7ae803117fd4862b5a",
+  "model_configuration": "Part 2 journey: qwen3:8b via Ollama (HW1 adapter, temperature 0, think off); Part 3 failure tests: the same agents in deterministic fast mode (no model call). Kafka: apache/kafka:3.9.2 single-node KRaft, aiokafka client, manual offset commit after processing, 2-partition task topic",
+  "seed": 9619,
+  "verify_seed": 269619,
+  "port_base": 8619,
+  "generated_at": "2026-10-31T02:03:46.221345+00:00",
+  "info": {
+    "report_pdf_present": false,
+    "aiokafka": "0.15.0",
+    "kafka_image": "apache/kafka:3.9.2",
+    "bootstrap_servers_from_host": "localhost:49092",
+    "live_checks_skipped": false
+  },
+  "checks_passed": 21,
+  "checks_total": 21,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "backend_reachable",
+      "passed": true,
+      "detail": "GET http://127.0.0.1:8619/api/hw8/health -> HTTP 200"
+    },
+    {
+      "check": "create_goes_through_kafka_and_returns_uuid",
+      "passed": true,
+      "detail": "HTTP 201, recall_notice_id=daab9bd8-d35d-4686-ba6d-787604753bdf"
+    },
+    {
+      "check": "create_response_keeps_correlation_id",
+      "passed": true,
+      "detail": "sent 25ac0c7c-2abe-5ab9-a341-eaa05008df59, got 25ac0c7c-2abe-5ab9-a341-eaa05008df59"
+    },
+    {
+      "check": "get_returns_the_stored_notice",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "check": "get_response_keeps_correlation_id",
+      "passed": true,
+      "detail": "sent 95c33b62-2dae-4740-9e14-efe90ac5c735, got 95c33b62-2dae-4740-9e14-efe90ac5c735"
+    },
+    {
+      "check": "invalid_create_rejected_with_correlation_id",
+      "passed": true,
+      "detail": "HTTP 422, error=category is required"
+    },
+    {
+      "check": "unknown_id_returns_not_found_with_correlation_id",
+      "passed": true,
+      "detail": "HTTP 404, error=Recall notice not found"
+    },
+    {
+      "check": "unknown_operation_rejected_with_correlation_id",
+      "passed": true,
+      "detail": "HTTP 422, error=Unknown operation"
+    },
+    {
+      "check": "kafka_topics_exist",
+      "passed": true,
+      "detail": "all 7 topics present"
+    },
+    {
+      "check": "entity_service_uses_exactly_two_topics_and_tasks_has_two_partitions",
+      "passed": true,
+      "detail": "s9619_tasks: 2 partitions"
+    },
+    {
+      "check": "suite_test_kafka_hw08",
+      "passed": true,
+      "detail": "68 checks passed, 0 failed"
+    },
+    {
+      "check": "suite_test_agents_hw08",
+      "passed": true,
+      "detail": "40 checks passed, 0 failed"
+    },
+    {
+      "check": "part1_demo_run_saved",
+      "passed": true,
+      "detail": "raw/homework_demo.json"
+    },
+    {
+      "check": "part2_final_message_approved_with_answer",
+      "passed": true,
+      "detail": "status=approved"
+    },
+    {
+      "check": "part2_correlation_id_in_every_stage_log",
+      "passed": true,
+      "detail": "77c63d87...: PLANNER=yes, WRITER=yes, REVIEWER=yes, CLIENT=yes"
+    },
+    {
+      "check": "part3_duplicate_before_shows_the_failure_after_shows_the_fix",
+      "passed": true,
+      "detail": "saved by scripts/part3_hw08.py"
+    },
+    {
+      "check": "part3_kill_before_shows_the_failure_after_shows_the_fix",
+      "passed": true,
+      "detail": "saved by scripts/part3_hw08.py"
+    },
+    {
+      "check": "part3_poison_before_shows_the_failure_after_shows_the_fix",
+      "passed": true,
+      "detail": "saved by scripts/part3_hw08.py"
+    },
+    {
+      "check": "part3_ordering_before_shows_the_failure_after_shows_the_fix",
+      "passed": true,
+      "detail": "saved by scripts/part3_hw08.py"
+    },
+    {
+      "check": "required_deliverable_files_present",
+      "passed": true,
+      "detail": "RUN_LOG.txt, METRICS.md, AI_USE.md, raw/"
+    },
+    {
+      "check": "verification_did_not_modify_application_code",
+      "passed": true,
+      "detail": "sha256 of code/ and src/ before == after: d54c7b8f8f5a"
+    }
+  ]
+}

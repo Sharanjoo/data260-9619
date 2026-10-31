@@ -1,0 +1,218 @@
+HW8 RUN_LOG - Sharan Lourduraj, SID4 9619, DOMAIN_ID 3 (Grocery Recall Notice)
+======================================================================
+
+[2026-10-31T00:57:57Z] Sharan Lourduraj | START command: python scripts/homework_demo.py --errors --save
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 1 (request/response over Kafka)
+topics: s9619_entity_requests (requests), s9619_entity_responses (responses)   API: http://127.0.0.1:8619/api/hw8
+
+1. created correlation_id for CREATE: a8b33a36-eed7-4e7a-9c84-a25ec8229459
+
+[CLIENT] 2-6. CREATE: send CREATE_RECALL_NOTICE correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459
+[CLIENT] POST http://127.0.0.1:8619/api/hw8/requests -> the API wrapper puts it on topic s9619_entity_requests
+[CLIENT] request body: {"operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Frozen Mixed Berries", "brandName": "Northfield Farms", "submitterEmail": "safety@northfield.example", "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.", "category": "food-safety-recall", "termsAccepted": true}, "correlation_id": "a8b33a36-eed7-4e7a-9c84-a25ec8229459"}
+[CLIENT] response received: HTTP 201 {"correlation_id": "a8b33a36-eed7-4e7a-9c84-a25ec8229459", "success": true, "recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667", "message": "Recall notice created"}
+[KAFKA FLOW] lines the API and the worker logged for this correlation_id (docker logs):
+    00:57:59.420 [API] sent request topic=s9619_entity_requests partition=0 offset=5 correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 message={"correlation_id":"a8b33a36-eed7-4e7a-9c84-a25ec8229459","reply_to":"s9619_entity_responses","operation":"CREATE_RECALL_NOTICE","data":{"productName":"Frozen Mixed Berries","brandName":"Northfield Farms","submitterEmail":"safety@northfield.example","description":"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.","category":"food-safety-recall","termsAccepted":true}}
+    00:57:59.434 [WORKER] received topic=s9619_entity_requests partition=0 offset=5 message={"correlation_id":"a8b33a36-eed7-4e7a-9c84-a25ec8229459","reply_to":"s9619_entity_responses","operation":"CREATE_RECALL_NOTICE","data":{"productName":"Frozen Mixed Berries","brandName":"Northfield Farms","submitterEmail":"safety@northfield.example","description":"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.","category":"food-safety-recall","termsAccepted":true}}
+    00:57:59.434 [WORKER] processing operation=CREATE_RECALL_NOTICE correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 reply_to=s9619_entity_responses
+    00:57:59.491 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=5 correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 success=True message={"correlation_id":"a8b33a36-eed7-4e7a-9c84-a25ec8229459","success":true,"recall_notice_id":"0f4b9a93-ef01-4a25-8f03-bdb5866c8667","message":"Recall notice created"}
+    00:57:59.512 [API] received response topic=s9619_entity_responses partition=0 offset=5 correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 message={"correlation_id":"a8b33a36-eed7-4e7a-9c84-a25ec8229459","success":true,"recall_notice_id":"0f4b9a93-ef01-4a25-8f03-bdb5866c8667","message":"Recall notice created"}
+    00:57:59.516 [API] returning response to the caller correlation_id=a8b33a36-eed7-4e7a-9c84-a25ec8229459 success=True
+
+7. generated recall_notice_id extracted from the CREATE response: 0f4b9a93-ef01-4a25-8f03-bdb5866c8667
+
+8. new correlation_id for the GET request: 51066170-c61c-4ccc-9a20-8d1cc916fe28
+
+[CLIENT] 8-9. GET: send GET_RECALL_NOTICE correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28
+[CLIENT] POST http://127.0.0.1:8619/api/hw8/requests -> the API wrapper puts it on topic s9619_entity_requests
+[CLIENT] request body: {"operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667"}, "correlation_id": "51066170-c61c-4ccc-9a20-8d1cc916fe28"}
+[CLIENT] response received: HTTP 200 {"correlation_id": "51066170-c61c-4ccc-9a20-8d1cc916fe28", "success": true, "recall_notice": {"recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667", "productName": "Frozen Mixed Berries", "brandName": "Northfield Farms", "submitterEmail": "safety@northfield.example", "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.", "category": "food-safety-recall", "termsAccepted": true, "submissionDate": "2026-10-31T00:57:59+00:00"}}
+[KAFKA FLOW] lines the API and the worker logged for this correlation_id (docker logs):
+    00:57:59.922 [API] sent request topic=s9619_entity_requests partition=0 offset=6 correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 message={"correlation_id":"51066170-c61c-4ccc-9a20-8d1cc916fe28","reply_to":"s9619_entity_responses","operation":"GET_RECALL_NOTICE","data":{"recall_notice_id":"0f4b9a93-ef01-4a25-8f03-bdb5866c8667"}}
+    00:57:59.923 [WORKER] received topic=s9619_entity_requests partition=0 offset=6 message={"correlation_id":"51066170-c61c-4ccc-9a20-8d1cc916fe28","reply_to":"s9619_entity_responses","operation":"GET_RECALL_NOTICE","data":{"recall_notice_id":"0f4b9a93-ef01-4a25-8f03-bdb5866c8667"}}
+    00:57:59.923 [WORKER] processing operation=GET_RECALL_NOTICE correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 reply_to=s9619_entity_responses
+    00:57:59.928 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=6 correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 success=True message={"correlation_id":"51066170-c61c-4ccc-9a20-8d1cc916fe28","success":true,"recall_notice":{"recall_notice_id":"0f4b9a93-ef01-4a25-8f03-bdb5866c8667","productName":"Frozen Mixed Berries","brandName":"Northfield Farms","submitterEmail":"safety@northfield.example","description":"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.","category":"food-safety-recall","termsAccepted":true,"submissionDate":"2026-10-31T00:57:59+00:00"}}
+    00:57:59.929 [API] received response topic=s9619_entity_responses partition=0 offset=6 correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 message={"correlation_id":"51066170-c61c-4ccc-9a20-8d1cc916fe28","success":true,"recall_notice":{"recall_notice_id":"0f4b9a93-ef01-4a25-8f03-bdb5866c8667","productName":"Frozen Mixed Berries","brandName":"Northfield Farms","submitterEmail":"safety@northfield.example","description":"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.","category":"food-safety-recall","termsAccepted":true,"submissionDate":"2026-10-31T00:57:59+00:00"}}
+    00:57:59.929 [API] returning response to the caller correlation_id=51066170-c61c-4ccc-9a20-8d1cc916fe28 success=True
+
+10. retrieved recall notice:
+{
+  "recall_notice_id": "0f4b9a93-ef01-4a25-8f03-bdb5866c8667",
+  "productName": "Frozen Mixed Berries",
+  "brandName": "Northfield Farms",
+  "submitterEmail": "safety@northfield.example",
+  "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.",
+  "category": "food-safety-recall",
+  "termsAccepted": true,
+  "submissionDate": "2026-10-31T00:57:59+00:00"
+}
+    [PASS] CREATE succeeded and returned a UUID
+    [PASS] CREATE response kept the correlation_id
+    [PASS] GET returned the same recall_notice_id
+    [PASS] GET returned the fields that were stored
+    [PASS] GET response kept the correlation_id
+
+=== extra: error responses also keep the correlation_id ===
+
+[CLIENT] invalid CREATE (category missing): send CREATE_RECALL_NOTICE correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec
+[CLIENT] POST http://127.0.0.1:8619/api/hw8/requests -> the API wrapper puts it on topic s9619_entity_requests
+[CLIENT] request body: {"operation": "CREATE_RECALL_NOTICE", "data": {"productName": "Frozen Mixed Berries", "brandName": "Northfield Farms", "submitterEmail": "safety@northfield.example", "description": "Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.", "termsAccepted": true}, "correlation_id": "25831086-9084-4a4a-a0a6-0e1dd886c1ec"}
+[CLIENT] response received: HTTP 422 {"correlation_id": "25831086-9084-4a4a-a0a6-0e1dd886c1ec", "success": false, "error": "category is required"}
+[KAFKA FLOW] lines the API and the worker logged for this correlation_id (docker logs):
+    00:58:00.293 [API] sent request topic=s9619_entity_requests partition=0 offset=7 correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec message={"correlation_id":"25831086-9084-4a4a-a0a6-0e1dd886c1ec","reply_to":"s9619_entity_responses","operation":"CREATE_RECALL_NOTICE","data":{"productName":"Frozen Mixed Berries","brandName":"Northfield Farms","submitterEmail":"safety@northfield.example","description":"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.","termsAccepted":true}}
+    00:58:00.295 [WORKER] received topic=s9619_entity_requests partition=0 offset=7 message={"correlation_id":"25831086-9084-4a4a-a0a6-0e1dd886c1ec","reply_to":"s9619_entity_responses","operation":"CREATE_RECALL_NOTICE","data":{"productName":"Frozen Mixed Berries","brandName":"Northfield Farms","submitterEmail":"safety@northfield.example","description":"Possible Hepatitis A contamination found in one lot; do not eat and return it to the store.","termsAccepted":true}}
+    00:58:00.295 [WORKER] processing operation=CREATE_RECALL_NOTICE correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec reply_to=s9619_entity_responses
+    00:58:00.300 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=7 correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec success=False message={"correlation_id":"25831086-9084-4a4a-a0a6-0e1dd886c1ec","success":false,"error":"category is required"}
+    00:58:00.302 [API] received response topic=s9619_entity_responses partition=0 offset=7 correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec message={"correlation_id":"25831086-9084-4a4a-a0a6-0e1dd886c1ec","success":false,"error":"category is required"}
+    00:58:00.302 [API] returning response to the caller correlation_id=25831086-9084-4a4a-a0a6-0e1dd886c1ec success=False
+[CLIENT] invalid CREATE (category missing): success=false and correlation_id preserved: YES  error='category is required'
+
+[CLIENT] GET with an unknown id: send GET_RECALL_NOTICE correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe
+[CLIENT] POST http://127.0.0.1:8619/api/hw8/requests -> the API wrapper puts it on topic s9619_entity_requests
+[CLIENT] request body: {"operation": "GET_RECALL_NOTICE", "data": {"recall_notice_id": "eed1c221-1e12-4fb4-a459-2f6a95575bda"}, "correlation_id": "0886ce36-9601-47fe-8507-84ac9d255efe"}
+[CLIENT] response received: HTTP 404 {"correlation_id": "0886ce36-9601-47fe-8507-84ac9d255efe", "success": false, "error": "Recall notice not found"}
+[KAFKA FLOW] lines the API and the worker logged for this correlation_id (docker logs):
+    00:58:00.637 [API] sent request topic=s9619_entity_requests partition=0 offset=8 correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe message={"correlation_id":"0886ce36-9601-47fe-8507-84ac9d255efe","reply_to":"s9619_entity_responses","operation":"GET_RECALL_NOTICE","data":{"recall_notice_id":"eed1c221-1e12-4fb4-a459-2f6a95575bda"}}
+    00:58:00.637 [WORKER] received topic=s9619_entity_requests partition=0 offset=8 message={"correlation_id":"0886ce36-9601-47fe-8507-84ac9d255efe","reply_to":"s9619_entity_responses","operation":"GET_RECALL_NOTICE","data":{"recall_notice_id":"eed1c221-1e12-4fb4-a459-2f6a95575bda"}}
+    00:58:00.637 [WORKER] processing operation=GET_RECALL_NOTICE correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe reply_to=s9619_entity_responses
+    00:58:00.642 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=8 correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe success=False message={"correlation_id":"0886ce36-9601-47fe-8507-84ac9d255efe","success":false,"error":"Recall notice not found"}
+    00:58:00.643 [API] received response topic=s9619_entity_responses partition=0 offset=8 correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe message={"correlation_id":"0886ce36-9601-47fe-8507-84ac9d255efe","success":false,"error":"Recall notice not found"}
+    00:58:00.648 [API] returning response to the caller correlation_id=0886ce36-9601-47fe-8507-84ac9d255efe success=False
+[CLIENT] GET with an unknown id: success=false and correlation_id preserved: YES  error='Recall notice not found'
+
+[CLIENT] unknown operation: send DELETE_RECALL_NOTICE correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2
+[CLIENT] POST http://127.0.0.1:8619/api/hw8/requests -> the API wrapper puts it on topic s9619_entity_requests
+[CLIENT] request body: {"operation": "DELETE_RECALL_NOTICE", "data": {}, "correlation_id": "49be79a6-6f09-4802-b1ab-a0eb0df250c2"}
+[CLIENT] response received: HTTP 422 {"correlation_id": "49be79a6-6f09-4802-b1ab-a0eb0df250c2", "success": false, "error": "Unknown operation"}
+[KAFKA FLOW] lines the API and the worker logged for this correlation_id (docker logs):
+    00:58:01.075 [API] sent request topic=s9619_entity_requests partition=0 offset=9 correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 message={"correlation_id":"49be79a6-6f09-4802-b1ab-a0eb0df250c2","reply_to":"s9619_entity_responses","operation":"DELETE_RECALL_NOTICE","data":{}}
+    00:58:01.078 [WORKER] received topic=s9619_entity_requests partition=0 offset=9 message={"correlation_id":"49be79a6-6f09-4802-b1ab-a0eb0df250c2","reply_to":"s9619_entity_responses","operation":"DELETE_RECALL_NOTICE","data":{}}
+    00:58:01.078 [WORKER] processing operation=DELETE_RECALL_NOTICE correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 reply_to=s9619_entity_responses
+    00:58:01.086 [WORKER] sent response topic=s9619_entity_responses partition=0 offset=9 correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 success=False message={"correlation_id":"49be79a6-6f09-4802-b1ab-a0eb0df250c2","success":false,"error":"Unknown operation"}
+    00:58:01.088 [API] received response topic=s9619_entity_responses partition=0 offset=9 correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 message={"correlation_id":"49be79a6-6f09-4802-b1ab-a0eb0df250c2","success":false,"error":"Unknown operation"}
+    00:58:01.088 [API] returning response to the caller correlation_id=49be79a6-6f09-4802-b1ab-a0eb0df250c2 success=False
+[CLIENT] unknown operation: success=false and correlation_id preserved: YES  error='Unknown operation'
+
+saved C:\Users\shara\data260-9619\reports\hw08\raw\homework_demo.json
+[2026-10-31T00:58:01Z] END exit_code=0
+
+[2026-10-31T01:49:47Z] Sharan Lourduraj | START command: python scripts/part3_hw08.py duplicate
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 3 (failure tests, real Kafka)
+18:50:03 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:50:03 [DRIVER] I. DUPLICATE DELIVERY / before (HW8_IDEMPOTENT=0)
+18:50:05 [DRIVER] sent the question, correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f
+18:50:06 [DRIVER] REPLAYED the very same message (same correlation_id), as a broker redelivery would
+18:50:10 [DRIVER] messages with this correlation_id: {'s9619_inbox': 2, 's9619_tasks': 2, 's9619_drafts': 2, 's9619_final': 2}
+18:50:10 [DRIVER]   log| 01:50:05.194 [WRITER-A] sent topic=s9619_drafts partition=0 offset=53 correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f message={"correlation_id":"8cbf5992-4dfe-48ab-aca9-80665590327f","stage":"draft","question":"What should I d ...
+18:50:10 [DRIVER]   log| 01:50:06.706 [WRITER-A] sent topic=s9619_drafts partition=0 offset=54 correlation_id=8cbf5992-4dfe-48ab-aca9-80665590327f message={"correlation_id":"8cbf5992-4dfe-48ab-aca9-80665590327f","stage":"draft","question":"What should I d ...
+18:50:10 [DRIVER] ==> duplicate / before: matches what the protection should do
+18:50:14 [DRIVER] group s9619-planner still has members (a killed agent leaves after its session timeout); waiting
+18:50:33 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:50:33 [DRIVER] I. DUPLICATE DELIVERY / after (HW8_IDEMPOTENT=1)
+18:50:34 [DRIVER] sent the question, correlation_id=cfc195cd-240f-4b4e-8ff1-97e631c0d193
+18:50:36 [DRIVER] REPLAYED the very same message (same correlation_id), as a broker redelivery would
+18:50:59 [DRIVER] messages with this correlation_id: {'s9619_inbox': 2, 's9619_tasks': 1, 's9619_drafts': 1, 's9619_final': 1}
+18:50:59 [DRIVER]   log| 01:50:36.258 [PLANNER] DUPLICATE correlation_id=cfc195cd-240f-4b4e-8ff1-97e631c0d193: already processed, skipped, nothing is sent again
+18:50:59 [DRIVER] ==> duplicate / after: matches what the protection should do
+18:50:59 [DRIVER] saved C:\Users\shara\data260-9619\reports\hw08\raw\part3_duplicate.json
+
+=== summary ===
+  duplicate  before  OK  
+  duplicate  after   OK  
+[2026-10-31T01:50:59Z] END exit_code=0
+
+[2026-10-31T01:51:37Z] Sharan Lourduraj | START command: python scripts/part3_hw08.py kill
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 3 (failure tests, real Kafka)
+18:51:54 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:51:54 [DRIVER] II. CONSUMER KILLED MID-PROCESSING / before (HW8_COMMIT_MODE=before)
+18:51:55 [DRIVER] sent the question, correlation_id=85a737de-487e-4b92-ba2b-bedecab5b2cd
+18:51:57 [DRIVER] KILLED WRITER-A while it was still working on the task (no clean shutdown)
+18:51:57 [DRIVER] drafts for this correlation_id right after the kill: 0
+18:51:57 [DRIVER] restarted the Writer (same group); the broker hands it the dead Writer's partition after the session timeout
+18:52:45 [DRIVER] after the restart: drafts=0 final=0
+18:52:45 [DRIVER]   log| 01:51:55.673 [WRITER-A] received topic=s9619_tasks partition=1 offset=30 key=kill-test message={"correlation_id":"85a737de-487e-4b92-ba2b-bedecab5b2cd","stage":"plan","question":"What should I do with recalled spinach?","plan":{"s ...
+18:52:45 [DRIVER]   log| 01:51:55.676 [WRITER-A] offset committed BEFORE processing (topic=s9619_tasks partition=1 offset=30)
+18:52:45 [DRIVER] ==> kill / before: matches what the protection should do
+18:52:50 [DRIVER] group s9619-planner still has members (a killed agent leaves after its session timeout); waiting
+18:53:09 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:53:09 [DRIVER] II. CONSUMER KILLED MID-PROCESSING / after (HW8_COMMIT_MODE=after)
+18:53:10 [DRIVER] sent the question, correlation_id=26dca564-4445-4706-97f6-706b0fefbaba
+18:53:12 [DRIVER] KILLED WRITER-A while it was still working on the task (no clean shutdown)
+18:53:12 [DRIVER] drafts for this correlation_id right after the kill: 0
+18:53:12 [DRIVER] restarted the Writer (same group); the broker hands it the dead Writer's partition after the session timeout
+18:53:24 [DRIVER] after the restart: drafts=1 final=1
+18:53:24 [DRIVER]   log| 01:53:10.877 [WRITER-A] received topic=s9619_tasks partition=1 offset=31 key=kill-test message={"correlation_id":"26dca564-4445-4706-97f6-706b0fefbaba","stage":"plan","question":"What should I do with recalled spinach?","plan":{"s ...
+18:53:24 [DRIVER]   log| 01:53:20.792 [WRITER-A] received topic=s9619_tasks partition=1 offset=31 key=kill-test message={"correlation_id":"26dca564-4445-4706-97f6-706b0fefbaba","stage":"plan","question":"What should I do with recalled spinach?","plan":{"s ...
+18:53:24 [DRIVER]   log| 01:53:21.813 [WRITER-A] sent topic=s9619_drafts partition=0 offset=56 correlation_id=26dca564-4445-4706-97f6-706b0fefbaba message={"correlation_id":"26dca564-4445-4706-97f6-706b0fefbaba","stage":"draft","question":"What should I d ...
+18:53:24 [DRIVER]   log| 01:53:21.817 [WRITER-A] offset committed (topic=s9619_tasks partition=1 offset=31)
+18:53:24 [DRIVER] ==> kill / after: matches what the protection should do
+18:53:24 [DRIVER] saved C:\Users\shara\data260-9619\reports\hw08\raw\part3_kill.json
+
+=== summary ===
+  kill       before  OK  
+  kill       after   OK  
+[2026-10-31T01:53:24Z] END exit_code=0
+
+[2026-10-31T01:53:38Z] Sharan Lourduraj | START command: python scripts/part3_hw08.py poison
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 3 (failure tests, real Kafka)
+18:53:55 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:53:55 [DRIVER] III. POISON MESSAGE / before (HW8_MAX_ATTEMPTS=0 = retry forever)
+18:53:56 [DRIVER] sent 1 bad message (plan is not a list, correlation_id=7d04cd73-d181-4595-8eaa-c5af70c7d5f6) followed by 2 good ones
+18:54:12 [DRIVER] bad message: 30 failed attempts logged, dead-letter copies=0; good messages that reached drafts=0 of 2
+18:54:12 [DRIVER]   log| 01:53:56.991 [WRITER-A] attempt 1/unlimited failed correlation_id=7d04cd73-d181-4595-8eaa-c5af70c7d5f6: ValueError: plan.steps must be a non-empty list of strings
+18:54:12 [DRIVER]   log| 01:53:57.482 [WRITER-A] attempt 2/unlimited failed correlation_id=7d04cd73-d181-4595-8eaa-c5af70c7d5f6: ValueError: plan.steps must be a non-empty list of strings
+18:54:12 [DRIVER]   log| 01:53:58.004 [WRITER-A] attempt 3/unlimited failed correlation_id=7d04cd73-d181-4595-8eaa-c5af70c7d5f6: ValueError: plan.steps must be a non-empty list of strings
+18:54:12 [DRIVER] ==> poison / before: matches what the protection should do
+18:54:16 [DRIVER] group s9619-planner still has members (a killed agent leaves after its session timeout); waiting
+18:54:35 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:54:35 [DRIVER] III. POISON MESSAGE / after (HW8_MAX_ATTEMPTS=3)
+18:54:36 [DRIVER] sent 1 bad message (plan is not a list, correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e) followed by 2 good ones
+18:54:38 [DRIVER] bad message: 3 failed attempts logged, dead-letter copies=1; good messages that reached drafts=2 of 2
+18:54:38 [DRIVER]   log| 01:54:36.371 [WRITER-A] attempt 1/3 failed correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e: ValueError: plan.steps must be a non-empty list of strings
+18:54:38 [DRIVER]   log| 01:54:36.884 [WRITER-A] attempt 2/3 failed correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e: ValueError: plan.steps must be a non-empty list of strings
+18:54:38 [DRIVER]   log| 01:54:37.396 [WRITER-A] attempt 3/3 failed correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e: ValueError: plan.steps must be a non-empty list of strings
+18:54:38 [DRIVER]   log| 01:54:37.411 [WRITER-A] gave up after 3 attempts: moved to s9619_dead_letter partition=0 offset=1 correlation_id=8f5b0a1c-94bd-43cb-b861-970fb27ecb3e
+18:54:38 [DRIVER]   log| 01:54:37.414 [WRITER-A] offset committed (topic=s9619_tasks partition=1 offset=35); the next message is not blocked
+18:54:38 [DRIVER]   log| 01:54:37.491 [WRITER-A] sent topic=s9619_drafts partition=0 offset=57 correlation_id=33f23310-b93d-416c-9e2a-1ae74690e73d message={"correlation_id":"33f23310-b93d-416c-9e2a-1ae74690e73d","stage":"draft","question":"good message 1" ...
+18:54:38 [DRIVER]   log| 01:54:37.497 [WRITER-A] sent topic=s9619_drafts partition=0 offset=58 correlation_id=f85aa109-1ab5-49ea-afdf-88c419320c02 message={"correlation_id":"f85aa109-1ab5-49ea-afdf-88c419320c02","stage":"draft","question":"good message 2" ...
+18:54:38 [DRIVER] ==> poison / after: matches what the protection should do
+18:54:38 [DRIVER] saved C:\Users\shara\data260-9619\reports\hw08\raw\part3_poison.json
+
+=== summary ===
+  poison     before  OK  
+  poison     after   OK  
+[2026-10-31T01:54:38Z] END exit_code=0
+
+[2026-10-31T01:54:54Z] Sharan Lourduraj | START command: python scripts/part3_hw08.py ordering
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 3 (failure tests, real Kafka)
+18:55:11 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:55:11 [DRIVER] IV. ORDERING, 2 partitions + 2 Writers / before (HW8_TASK_KEY=none; 20 messages from VERIFY_SEED=269619)
+18:55:16 [DRIVER] WRITER-A partitions=[0] WRITER-B partitions=[1]
+18:55:16 [DRIVER] sent 20 related messages (several per recall notice) in seq order through the Planner
+18:55:22 [DRIVER] processed=20/20  tasks per partition={0: 12, 1: 8}  drafts per Writer={'WRITER-B': 8, 'WRITER-A': 12}
+18:55:22 [DRIVER]   chicken-nuggets  partitions=[0, 1]  finished order of seq=[5, 3, 12, 7, 10, 15] out-of-order pairs=3
+18:55:22 [DRIVER]   frozen-berries   partitions=[0, 1]  finished order of seq=[1, 2, 6, 9, 19] out-of-order pairs=0
+18:55:22 [DRIVER]   infant-formula   partitions=[0]  finished order of seq=[18] out-of-order pairs=0
+18:55:22 [DRIVER]   peanut-butter    partitions=[0, 1]  finished order of seq=[13, 17] out-of-order pairs=0
+18:55:22 [DRIVER]   spinach-bag      partitions=[0, 1]  finished order of seq=[0, 4, 8, 14, 16, 11] out-of-order pairs=2
+18:55:22 [DRIVER] TOTAL out-of-order pairs for the same entity: 5
+18:55:22 [DRIVER] ==> ordering / before: matches what the protection should do
+18:55:27 [DRIVER] group s9619-planner still has members (a killed agent leaves after its session timeout); waiting
+18:55:45 [DRIVER] agent consumer groups moved to the end of their topics (clean start)
+18:55:45 [DRIVER] IV. ORDERING, 2 partitions + 2 Writers / after (HW8_TASK_KEY=entity; 20 messages from VERIFY_SEED=269619)
+18:55:49 [DRIVER] WRITER-A partitions=[0] WRITER-B partitions=[1]
+18:55:49 [DRIVER] sent 20 related messages (several per recall notice) in seq order through the Planner
+18:55:56 [DRIVER] processed=20/20  tasks per partition={0: 12, 1: 8}  drafts per Writer={'WRITER-B': 8, 'WRITER-A': 12}
+18:55:56 [DRIVER]   chicken-nuggets  partitions=[0]  finished order of seq=[3, 5, 7, 10, 12, 15] out-of-order pairs=0
+18:55:56 [DRIVER]   frozen-berries   partitions=[0]  finished order of seq=[1, 2, 6, 9, 19] out-of-order pairs=0
+18:55:56 [DRIVER]   infant-formula   partitions=[0]  finished order of seq=[18] out-of-order pairs=0
+18:55:56 [DRIVER]   peanut-butter    partitions=[1]  finished order of seq=[13, 17] out-of-order pairs=0
+18:55:56 [DRIVER]   spinach-bag      partitions=[1]  finished order of seq=[0, 4, 8, 11, 14, 16] out-of-order pairs=0
+18:55:56 [DRIVER] TOTAL out-of-order pairs for the same entity: 0
+18:55:56 [DRIVER] ==> ordering / after: matches what the protection should do
+18:55:56 [DRIVER] saved C:\Users\shara\data260-9619\reports\hw08\raw\part3_ordering.json
+
+=== summary ===
+  ordering   before  OK  
+  ordering   after   OK  
+[2026-10-31T01:55:56Z] END exit_code=0
