@@ -1,0 +1,45 @@
+HW8 Part 2 - one complete journey, inbox -> final (real Kafka, mode=llm, qwen3:8b)
+Verbatim terminal output of the four processes for correlation_id 77c63d87-a42c-4d6f-abe5-59c5d0868438.
+Shell prompts removed; nothing else edited. All times are UTC, 2026-10-31.
+
+===== send_question.py =====
+python code/kafka_agents/send_question.py --entity-key frozen-berries-lot-1 --output-json reports/hw08/raw/part2_final.json
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | send_question
+01:14:34.078 [CLIENT] sent question topic=s9619_inbox partition=0 offset=0 correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","entity_key":"frozen-berries-lot-1"}
+01:16:15.863 [CLIENT] final message received topic=s9619_final partition=0 offset=0 correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438
+{
+  "correlation_id": "77c63d87-a42c-4d6f-abe5-59c5d0868438",
+  "status": "approved",
+  "answer": "Check the recall notice for specific instructions. If told to return the product, contact Northfield Farms or the retailer. If told to discard, safely throw away the bag to prevent contamination. Do not consume or share the product."
+}
+01:16:15.893 [CLIENT] correlation_id preserved from question to final answer: YES
+
+===== planner.py =====
+python code/kafka_agents/planner.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | PLANNER | mode=llm
+01:13:43.800 [PLANNER] Consumer is ready and listening...
+01:13:43.800 [PLANNER] reads s9619_inbox (group s9619-planner) -> writes s9619_tasks; mode=llm idempotent=True commit=after max_attempts=3 task_key=entity
+01:14:34.081 [PLANNER] received topic=s9619_inbox partition=0 offset=0 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","entity_key":"frozen-berries-lot-1"}
+01:14:34.083 [PLANNER] processing correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438
+01:15:17.441 [PLANNER] sent topic=s9619_tasks partition=1 offset=0 correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438 key=frozen-berries-lot-1 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","stage":"plan","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","plan":{"steps":["Check the recall notice for specific instructions on returning or disposing of the product.","If instructed to return the product, contact Northfield Farms or the retailer for guidance.","If instructed to discard the product, safely throw away the bag to prevent contamination."]},"entity_key":"frozen-berries-lot-1"}
+01:15:17.448 [PLANNER] offset committed (topic=s9619_inbox partition=0 offset=0)
+
+===== writer.py =====
+python code/kafka_agents/writer.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | WRITER-A | mode=llm
+01:13:50.020 [WRITER-A] Consumer is ready and listening...
+01:13:50.020 [WRITER-A] reads s9619_tasks (group s9619-writer) -> writes s9619_drafts; mode=llm idempotent=True commit=after max_attempts=3 task_key=entity
+01:15:17.445 [WRITER-A] received topic=s9619_tasks partition=1 offset=0 key=frozen-berries-lot-1 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","stage":"plan","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","plan":{"steps":["Check the recall notice for specific instructions on returning or disposing of the product.","If instructed to return the product, contact Northfield Farms or the retailer for guidance.","If instructed to discard the product, safely throw away the bag to prevent contamination."]},"entity_key":"frozen-berries-lot-1"}
+01:15:17.445 [WRITER-A] processing correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438
+01:15:43.550 [WRITER-A] sent topic=s9619_drafts partition=0 offset=0 correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","stage":"draft","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","plan":{"steps":["Check the recall notice for specific instructions on returning or disposing of the product.","If instructed to return the product, contact Northfield Farms or the retailer for guidance.","If instructed to discard the product, safely throw away the bag to prevent contamination."]},"draft":"Check the recall notice for specific instructions. If told to return the product, contact Northfield Farms or the retailer. If told to discard, safely throw away the bag to prevent contamination. Do not consume or share the product.","writer":"WRITER-A","entity_key":"frozen-berries-lot-1"}
+01:15:43.558 [WRITER-A] offset committed (topic=s9619_tasks partition=1 offset=0)
+
+===== reviewer.py =====
+python code/kafka_agents/reviewer.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW8 Part 2/3 (three Kafka agents) | REVIEWER | mode=llm
+01:13:58.111 [REVIEWER] Consumer is ready and listening...
+01:13:58.113 [REVIEWER] reads s9619_drafts (group s9619-reviewer) -> writes s9619_final; mode=llm idempotent=True commit=after max_attempts=3 task_key=entity
+01:15:43.552 [REVIEWER] received topic=s9619_drafts partition=0 offset=0 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","stage":"draft","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","plan":{"steps":["Check the recall notice for specific instructions on returning or disposing of the product.","If instructed to return the product, contact Northfield Farms or the retailer for guidance.","If instructed to discard the product, safely throw away the bag to prevent contamination."]},"draft":"Check the recall notice for specific instructions. If told to return the product, contact Northfield Farms or the retailer. If told to discard, safely throw away the bag to prevent contamination. Do not consume or share the product.","writer":"WRITER-A","entity_key":"frozen-berries-lot-1"}
+01:15:43.553 [REVIEWER] processing correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438
+01:16:15.862 [REVIEWER] sent topic=s9619_final partition=0 offset=0 correlation_id=77c63d87-a42c-4d6f-abe5-59c5d0868438 message={"correlation_id":"77c63d87-a42c-4d6f-abe5-59c5d0868438","stage":"final","status":"approved","answer":"Check the recall notice for specific instructions. If told to return the product, contact Northfield Farms or the retailer. If told to discard, safely throw away the bag to prevent contamination. Do not consume or share the product.","question":"I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?","review":{"llm_approved":true,"checks":{"not_empty":true,"length_20_to_900":true,"no_url_or_phone_number":true},"notes":"The draft correctly instructs the shopper not to eat or use the recalled product and to follow official notice instructions without inventing any lot codes, dates, phone numbers, or web addresses."},"entity_key":"frozen-berries-lot-1"}
+01:16:15.882 [REVIEWER] offset committed (topic=s9619_drafts partition=0 offset=0)

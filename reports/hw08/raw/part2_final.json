@@ -1,0 +1,17 @@
+{
+  "correlation_id": "77c63d87-a42c-4d6f-abe5-59c5d0868438",
+  "stage": "final",
+  "status": "approved",
+  "answer": "Check the recall notice for specific instructions. If told to return the product, contact Northfield Farms or the retailer. If told to discard, safely throw away the bag to prevent contamination. Do not consume or share the product.",
+  "question": "I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible Hepatitis A contamination. What should I do with the bag I already have?",
+  "review": {
+    "llm_approved": true,
+    "checks": {
+      "not_empty": true,
+      "length_20_to_900": true,
+      "no_url_or_phone_number": true
+    },
+    "notes": "The draft correctly instructs the shopper not to eat or use the recalled product and to follow official notice instructions without inventing any lot codes, dates, phone numbers, or web addresses."
+  },
+  "entity_key": "frozen-berries-lot-1"
+}
