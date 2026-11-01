@@ -1,12 +1,12 @@
 {
   "homework_number": 8,
   "sid4": "9619",
-  "commit_hash": "6efceb20af530bb714ab1a7ae803117fd4862b5a",
+  "commit_hash": "451ea046b885b0c72a55669895fe21d27fabbbf0",
   "model_configuration": "Part 2 journey: qwen3:8b via Ollama (HW1 adapter, temperature 0, think off); Part 3 failure tests: the same agents in deterministic fast mode (no model call). Kafka: apache/kafka:3.9.2 single-node KRaft, aiokafka client, manual offset commit after processing, 2-partition task topic",
   "seed": 9619,
   "verify_seed": 269619,
   "port_base": 8619,
-  "generated_at": "2026-10-31T02:03:46.221345+00:00",
+  "generated_at": "2026-11-01T19:13:09.702367+00:00",
   "info": {
     "report_pdf_present": false,
     "aiokafka": "0.15.0",
@@ -26,12 +26,12 @@
     {
       "check": "create_goes_through_kafka_and_returns_uuid",
       "passed": true,
-      "detail": "HTTP 201, recall_notice_id=daab9bd8-d35d-4686-ba6d-787604753bdf"
+      "detail": "HTTP 201, recall_notice_id=60293913-d489-4202-8741-716611b4a888"
     },
     {
       "check": "create_response_keeps_correlation_id",
       "passed": true,
-      "detail": "sent 25ac0c7c-2abe-5ab9-a341-eaa05008df59, got 25ac0c7c-2abe-5ab9-a341-eaa05008df59"
+      "detail": "sent 6da65061-7bab-548b-879c-15be7ac11fc1, got 6da65061-7bab-548b-879c-15be7ac11fc1"
     },
     {
       "check": "get_returns_the_stored_notice",
@@ -41,7 +41,7 @@
     {
       "check": "get_response_keeps_correlation_id",
       "passed": true,
-      "detail": "sent 95c33b62-2dae-4740-9e14-efe90ac5c735, got 95c33b62-2dae-4740-9e14-efe90ac5c735"
+      "detail": "sent a7f0c58c-2b66-44a0-a1f5-66ac9126ff7d, got a7f0c58c-2b66-44a0-a1f5-66ac9126ff7d"
     },
     {
       "check": "invalid_create_rejected_with_correlation_id",
