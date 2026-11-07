@@ -201,6 +201,9 @@ def flow_tests(tmp: Path) -> None:
     check("validate: stale and fabricated lessons accepted", len(gate["accepted"]) >= 2)
     check("validate: C0 baseline below the lessons run", gate["C2"]["summary"]["first_pass"] > gate["C0"]["first_pass"])
     check("validate: no regressions in the combined run", gate["C2"]["broken"] == [])
+    check("validate: decide() strict vs net", validate.decide("strict", ["a", "b"], ["c"]) == "reject"
+          and validate.decide("net", ["a", "b"], ["c"]) == "accept" and validate.decide("net", ["a"], ["b"]) == "inconclusive"
+          and validate.decide("strict", [], []) == "inconclusive" and validate.decide("net", [], ["x"]) == "reject")
     accepted = LessonStore(acc)
     check("validate: lessons.json written", len(accepted.lessons) == len(gate["accepted"]))
     check("variants: runs", _run(variants))

@@ -1,0 +1,62 @@
+{
+  "V1": {
+    "n": 20,
+    "first_pass": 17,
+    "final_pass": 17,
+    "first_pass_rate": 0.85,
+    "final_pass_rate": 0.85,
+    "mean_attempts": 1.0,
+    "mean_seconds": 7.9,
+    "retried": 0,
+    "rescued": 0,
+    "name": "baseline (no lessons, no retry)",
+    "failed_final": [
+      "X03",
+      "X12",
+      "X19"
+    ]
+  },
+  "V2": {
+    "n": 20,
+    "first_pass": 16,
+    "final_pass": 19,
+    "first_pass_rate": 0.8,
+    "final_pass_rate": 0.95,
+    "mean_attempts": 1.2,
+    "mean_seconds": 8.8,
+    "retried": 4,
+    "rescued": 3,
+    "name": "retry only",
+    "failed_final": [
+      "X12"
+    ]
+  },
+  "V3": {
+    "n": 20,
+    "first_pass": 19,
+    "final_pass": 19,
+    "first_pass_rate": 0.95,
+    "final_pass_rate": 0.95,
+    "mean_attempts": 1.0,
+    "mean_seconds": 6.8,
+    "retried": 0,
+    "rescued": 0,
+    "name": "lessons only",
+    "failed_final": [
+      "X12"
+    ]
+  },
+  "V4": {
+    "n": 20,
+    "first_pass": 19,
+    "final_pass": 20,
+    "first_pass_rate": 0.95,
+    "final_pass_rate": 1.0,
+    "mean_attempts": 1.05,
+    "mean_seconds": 6.7,
+    "retried": 1,
+    "rescued": 1,
+    "name": "lessons + retry",
+    "failed_final": []
+  }
+}

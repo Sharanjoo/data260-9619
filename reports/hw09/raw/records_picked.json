@@ -1,0 +1,365 @@
+{
+  "seed": 9619,
+  "groups": {
+    "base": [
+      {
+        "id": 15545,
+        "record_code": "REC-015545",
+        "product_name": "Farmstead Shell Eggs (Lot 00539)",
+        "brand_name": "Blue Ridge Kitchen",
+        "units_affected": 31863,
+        "source_name": "Regional Poison Control Center #162",
+        "source_region": "Midwest",
+        "source_code": "SRC-00762",
+        "units_before": 0
+      },
+      {
+        "id": 17792,
+        "record_code": "REC-017792",
+        "product_name": "Reduced Sodium Cantaloupe (Lot 02786)",
+        "brand_name": "Oakhollow Market",
+        "units_affected": 9407,
+        "source_name": "Regional Poison Control Center #166",
+        "source_region": "Mountain West",
+        "source_code": "SRC-00766",
+        "units_before": 0
+      },
+      {
+        "id": 18041,
+        "record_code": "REC-018041",
+        "product_name": "Premium Bottled Juice (Lot 03035)",
+        "brand_name": "Blue Ridge Pantry",
+        "units_affected": 24753,
+        "source_name": "FDA District Office #155",
+        "source_region": "Pacific Northwest",
+        "source_code": "SRC-00755",
+        "units_before": 0
+      },
+      {
+        "id": 15220,
+        "record_code": "REC-015220",
+        "product_name": "Value Brand Bottled Juice (Lot 00214)",
+        "brand_name": "Red Barn Pantry",
+        "units_affected": 38021,
+        "source_name": "Regional Poison Control Center #136",
+        "source_region": "Gulf Coast",
+        "source_code": "SRC-00736",
+        "units_before": 0
+      },
+      {
+        "id": 18625,
+        "record_code": "REC-018625",
+        "product_name": "Frozen Yogurt (Lot 03619)",
+        "brand_name": "Harvest Moon Provisions",
+        "units_affected": 17354,
+        "source_name": "County Health Inspector #173",
+        "source_region": "Northern California",
+        "source_code": "SRC-00773",
+        "units_before": 0
+      },
+      {
+        "id": 16603,
+        "record_code": "REC-016603",
+        "product_name": "Plant-Based Mixed Berries (Lot 01597)",
+        "brand_name": "Northfield Farms",
+        "units_affected": 32650,
+        "source_name": "Consumer Product Safety Bureau #197",
+        "source_region": "Texas Triangle",
+        "source_code": "SRC-00797",
+        "units_before": 0
+      },
+      {
+        "id": 17158,
+        "record_code": "REC-017158",
+        "product_name": "Reduced Sodium Trail Mix (Lot 02152)",
+        "brand_name": "Sunrise Valley Co.",
+        "units_affected": 45168,
+        "source_name": "County Health Inspector #073",
+        "source_region": "Mid-Atlantic",
+        "source_code": "SRC-00673",
+        "units_before": 0
+      },
+      {
+        "id": 17706,
+        "record_code": "REC-017706",
+        "product_name": "Premium Mixed Berries (Lot 02700)",
+        "brand_name": "Silver Creek Market",
+        "units_affected": 22074,
+        "source_name": "State Health Department #018",
+        "source_region": "Mid-Atlantic",
+        "source_code": "SRC-00618",
+        "units_before": 0
+      },
+      {
+        "id": 15224,
+        "record_code": "REC-015224",
+        "product_name": "Original Peanut Butter (Lot 00218)",
+        "brand_name": "Ironwood Naturals",
+        "units_affected": 39784,
+        "source_name": "State Health Department #003",
+        "source_region": "New England",
+        "source_code": "SRC-00603",
+        "units_before": 0
+      },
+      {
+        "id": 19153,
+        "record_code": "REC-019153",
+        "product_name": "Artisan Shell Eggs (Lot 04147)",
+        "brand_name": "Red Barn Co.",
+        "units_affected": 45660,
+        "source_name": "Consumer Product Safety Bureau #190",
+        "source_region": "Mid-Atlantic",
+        "source_code": "SRC-00790",
+        "units_before": 0
+      },
+      {
+        "id": 18874,
+        "record_code": "REC-018874",
+        "product_name": "Reduced Sodium Bagged Spinach (Lot 03868)",
+        "brand_name": "Prairie Gold Naturals",
+        "units_affected": 8569,
+        "source_name": "FDA District Office #017",
+        "source_region": "Southeast",
+        "source_code": "SRC-00617",
+        "units_before": 0
+      },
+      {
+        "id": 16568,
+        "record_code": "REC-016568",
+        "product_name": "Premium Salmon Fillets (Lot 01562)",
+        "brand_name": "Clearwater Farms",
+        "units_affected": 5968,
+        "source_name": "FDA District Office #155",
+        "source_region": "Pacific Northwest",
+        "source_code": "SRC-00755",
+        "units_before": 0
+      },
+      {
+        "id": 15945,
+        "record_code": "REC-015945",
+        "product_name": "Premium Peanut Butter (Lot 00939)",
+        "brand_name": "Sunrise Valley Naturals",
+        "units_affected": 18167,
+        "source_name": "County Health Inspector #107",
+        "source_region": "Southwest",
+        "source_code": "SRC-00707",
+        "units_before": 0
+      },
+      {
+        "id": 15978,
+        "record_code": "REC-015978",
+        "product_name": "Reduced Sodium Cookie Dough (Lot 00972)",
+        "brand_name": "Coastal Harbor Co.",
+        "units_affected": 13475,
+        "source_name": "Regional Poison Control Center #082",
+        "source_region": "Mountain West",
+        "source_code": "SRC-00682",
+        "units_before": 0
+      },
+      {
+        "id": 17004,
+        "record_code": "REC-017004",
+        "product_name": "Family Size Ground Beef (Lot 01998)",
+        "brand_name": "Willow Bend Farms",
+        "units_affected": 44160,
+        "source_name": "CDC Regional Lab #028",
+        "source_region": "Southeast",
+        "source_code": "SRC-00628",
+        "units_before": 0
+      },
+      {
+        "id": 18145,
+        "record_code": "REC-018145",
+        "product_name": "Plant-Based Ground Beef (Lot 03139)",
+        "brand_name": "Silver Creek Kitchen",
+        "units_affected": 17933,
+        "source_name": "CDC Regional Lab #070",
+        "source_region": "Southeast",
+        "source_code": "SRC-00670",
+        "units_before": 0
+      },
+      {
+        "id": 16017,
+        "record_code": "REC-016017",
+        "product_name": "Whole Grain Soft Cheese (Lot 01011)",
+        "brand_name": "Silver Creek Pantry",
+        "units_affected": 23850,
+        "source_name": "Consumer Product Safety Bureau #008",
+        "source_region": "Pacific Northwest",
+        "source_code": "SRC-00608",
+        "units_before": 0
+      },
+      {
+        "id": 15344,
+        "record_code": "REC-015344",
+        "product_name": "Reduced Sodium Peanut Butter (Lot 00338)",
+        "brand_name": "Evergreen Kitchen",
+        "units_affected": 22539,
+        "source_name": "Consumer Product Safety Bureau #117",
+        "source_region": "Pacific Southwest",
+        "source_code": "SRC-00717",
+        "units_before": 0
+      },
+      {
+        "id": 19034,
+        "record_code": "REC-019034",
+        "product_name": "Whole Grain Hummus (Lot 04028)",
+        "brand_name": "Red Barn Pantry",
+        "units_affected": 23510,
+        "source_name": "Local Public Health Unit #080",
+        "source_region": "Mountain West",
+        "source_code": "SRC-00680",
+        "units_before": 0
+      },
+      {
+        "id": 15679,
+        "record_code": "REC-015679",
+        "product_name": "Farmstead Salmon Fillets (Lot 00673)",
+        "brand_name": "Harvest Moon Farms",
+        "units_affected": 42043,
+        "source_name": "County Health Inspector #095",
+        "source_region": "Texas Triangle",
+        "source_code": "SRC-00695",
+        "units_before": 0
+      }
+    ],
+    "sibling": [
+      {
+        "id": 19735,
+        "record_code": "REC-019735",
+        "product_name": "Farmstead Shell Eggs (Lot 04729)",
+        "brand_name": "Silver Creek Naturals",
+        "units_affected": 43025,
+        "source_name": "Local Public Health Unit #064",
+        "source_region": "Midwest",
+        "source_code": "SRC-00664",
+        "units_before": 0
+      },
+      {
+        "id": 17711,
+        "record_code": "REC-017711",
+        "product_name": "Reduced Sodium Cantaloupe (Lot 02705)",
+        "brand_name": "GreenAcre Foods",
+        "units_affected": 2058,
+        "source_name": "CDC Regional Lab #109",
+        "source_region": "Texas Triangle",
+        "source_code": "SRC-00709",
+        "units_before": 0
+      },
+      {
+        "id": 15092,
+        "record_code": "REC-015092",
+        "product_name": "Premium Bottled Juice (Lot 00086)",
+        "brand_name": "Blue Ridge Naturals",
+        "units_affected": 35574,
+        "source_name": "FDA District Office #172",
+        "source_region": "Midwest",
+        "source_code": "SRC-00772",
+        "units_before": 0
+      },
+      {
+        "id": 17563,
+        "record_code": "REC-017563",
+        "product_name": "Value Brand Bottled Juice (Lot 02557)",
+        "brand_name": "Clearwater Foods",
+        "units_affected": 37607,
+        "source_name": "State Agriculture Department #094",
+        "source_region": "Tri-State Area",
+        "source_code": "SRC-00694",
+        "units_before": 0
+      },
+      {
+        "id": 18607,
+        "record_code": "REC-018607",
+        "product_name": "Frozen Yogurt (Lot 03601)",
+        "brand_name": "GreenAcre Provisions",
+        "units_affected": 47426,
+        "source_name": "CDC Regional Lab #167",
+        "source_region": "Southeast",
+        "source_code": "SRC-00767",
+        "units_before": 0
+      }
+    ],
+    "part2": [
+      {
+        "id": 18083,
+        "record_code": "REC-018083",
+        "product_name": "Gluten-Free Cookie Dough (Lot 03077)",
+        "brand_name": "Evergreen Kitchen",
+        "units_affected": 6842,
+        "source_name": "State Agriculture Department #062",
+        "source_region": "Southwest",
+        "source_code": "SRC-00662",
+        "units_before": 0
+      },
+      {
+        "id": 17389,
+        "record_code": "REC-017389",
+        "product_name": "Whole Grain Chicken Breast (Lot 02383)",
+        "brand_name": "Sunrise Valley Farms",
+        "units_affected": 13807,
+        "source_name": "USDA FSIS Field Office #137",
+        "source_region": "South Atlantic",
+        "source_code": "SRC-00737",
+        "units_before": 0
+      },
+      {
+        "id": 19116,
+        "record_code": "REC-019116",
+        "product_name": "Gluten-Free Sprouts (Lot 04110)",
+        "brand_name": "Golden Fields Farms",
+        "units_affected": 17265,
+        "source_name": "State Health Department #029",
+        "source_region": "Southeast",
+        "source_code": "SRC-00629",
+        "units_before": 0
+      },
+      {
+        "id": 15886,
+        "record_code": "REC-015886",
+        "product_name": "Reduced Sodium Tortillas (Lot 00880)",
+        "brand_name": "Amber Grove Kitchen",
+        "units_affected": 31284,
+        "source_name": "Local Public Health Unit #009",
+        "source_region": "Pacific Northwest",
+        "source_code": "SRC-00609",
+        "units_before": 0
+      },
+      {
+        "id": 15346,
+        "record_code": "REC-015346",
+        "product_name": "Organic Deli Meat (Lot 00340)",
+        "brand_name": "Coastal Harbor Foods",
+        "units_affected": 4866,
+        "source_name": "State Agriculture Department #062",
+        "source_region": "Southwest",
+        "source_code": "SRC-00662",
+        "units_before": 0
+      },
+      {
+        "id": 15364,
+        "record_code": "REC-015364",
+        "product_name": "Original Shell Eggs (Lot 00358)",
+        "brand_name": "Maplewood Farms",
+        "units_affected": 7395,
+        "source_name": "Local Public Health Unit #065",
+        "source_region": "Pacific Northwest",
+        "source_code": "SRC-00665",
+        "units_before": 0
+      }
+    ],
+    "stale": [
+      {
+        "id": 16586,
+        "record_code": "REC-016586",
+        "product_name": "Value Brand Bagged Spinach (Lot 01580)",
+        "brand_name": "Sunrise Valley Naturals",
+        "units_affected": 5445,
+        "source_name": "Consumer Product Safety Bureau #115",
+        "source_region": "Inland Northwest",
+        "source_code": "SRC-00715",
+        "units_before": 0
+      }
+    ]
+  }
+}

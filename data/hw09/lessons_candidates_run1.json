@@ -1,0 +1,15 @@
+{
+  "lessons": [
+    {
+      "lesson_id": "L001",
+      "failure_pattern": "fabricated_answer",
+      "correction": "Answer only from the notice text. If no notice is provided, or the question is about something a recall notice never contains (fines, lawsuits, prices, company executives), say that you do not have that information. Never invent numbers, lot codes, dates or links.",
+      "created_at": "2026-11-07T09:34:05Z",
+      "use_count": 3
+    }
+  ],
+  "occurrences": {
+    "missing_value": 1,
+    "fabricated_answer": 3
+  }
+}

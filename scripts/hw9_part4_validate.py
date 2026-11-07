@@ -6,11 +6,15 @@ Uses validation_data.json (questions only; different notices from training). All
   C0  no lessons                      (baseline)
   C1  one candidate lesson at a time  (each lesson alone)
   C2  all lessons that passed C1 together
-A lesson passes C1 only if it fixes at least one question that C0 got wrong and breaks none that C0 got right.
-If C2 breaks a question C0 got right, the most recent lesson is dropped and C2 is repeated. Accepted lessons -> data/hw09/lessons.json.
+Gate rule (--rule):
+  strict  accept a lesson only if it fixes at least one question C0 got wrong and breaks none C0 got right (first version)
+  net     accept a lesson if it fixes more questions than it breaks (net gain >= 1); breaks are still listed (default)
+The combined C2 set must satisfy the same rule against C0; if it does not, the most recent lesson is dropped and C2 is repeated.
+Accepted lessons -> data/hw09/lessons.json. With --rule strict the gate summary goes to part4_gate_strict.json.
 Resumable: every run is cached in reports/hw09/raw/part4_validate_runs.jsonl."""
 from __future__ import annotations
 
+import argparse
 import json
 import sys
 from pathlib import Path
@@ -26,7 +30,18 @@ def passed_ids(results: list) -> set:
     return {r["id"] for r in results if r["passed_first"]}
 
 
+def decide(rule: str, fixed: list, broken: list) -> str:
+    """accept / reject / inconclusive for a lesson (or a lesson set) compared with the no-lesson baseline."""
+    if rule == "strict":
+        return "accept" if fixed and not broken else ("reject" if broken else "inconclusive")
+    net = len(fixed) - len(broken)
+    return "accept" if net >= 1 else ("reject" if net < 0 else "inconclusive")
+
+
 def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--rule", choices=["strict", "net"], default="net")
+    args = ap.parse_args()
     data = load_data()
     candidates = LessonStore(CANDIDATES)
     llm = OllamaLLM()
@@ -46,13 +61,13 @@ def main() -> int:
 
     c0 = run("C0", [])
     base = passed_ids(c0)
-    report = {"C0": summarize(c0), "C1": {}, "C2": {}, "accepted": []}
+    report = {"rule": args.rule, "C0": summarize(c0), "C1": {}, "C2": {}, "accepted": []}
     keep = []
     for lesson in candidates.lessons:
         res = run(f"C1_{lesson['lesson_id']}", [lesson["lesson_id"]])
         now = passed_ids(res)
         fixed, broken = sorted(now - base), sorted(base - now)
-        verdict = "accept" if fixed and not broken else ("reject" if broken else "inconclusive")
+        verdict = decide(args.rule, fixed, broken)
         report["C1"][lesson["lesson_id"]] = {"pattern": lesson["failure_pattern"], "pass": len(now), "fixed": fixed,
                                              "broken": broken, "verdict": verdict}
         print(f"  {lesson['lesson_id']} {lesson['failure_pattern']}: fixed {fixed} broken {broken} -> {verdict}")
@@ -60,12 +75,13 @@ def main() -> int:
             keep.append(lesson["lesson_id"])
     while keep:
         res = run("C2_" + "_".join(keep), keep)
-        broken = sorted(base - passed_ids(res))
-        report["C2"] = {"lessons": list(keep), "summary": summarize(res), "broken": broken}
-        if not broken:
+        now = passed_ids(res)
+        fixed, broken = sorted(now - base), sorted(base - now)
+        report["C2"] = {"lessons": list(keep), "summary": summarize(res), "fixed": fixed, "broken": broken}
+        if decide(args.rule, fixed, broken) == "accept":
             break
         dropped = keep.pop()
-        print(f"  combined set breaks {broken}: dropping {dropped}")
+        print(f"  combined set: fixed {fixed} broken {broken} fails the {args.rule} rule: dropping {dropped}")
         report.setdefault("dropped_in_C2", []).append(dropped)
     accepted = candidates.only(keep)
     accepted.path = ACCEPTED
@@ -74,7 +90,7 @@ def main() -> int:
     accepted.occurrences = dict(candidates.occurrences)
     accepted.save()
     report["accepted"] = keep
-    (RAW / "part4_gate.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
+    (RAW / ("part4_gate_strict.json" if args.rule == "strict" else "part4_gate.json")).write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(f"accepted lessons: {keep or 'none'} -> {ACCEPTED}")
     return 0
 

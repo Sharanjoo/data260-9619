@@ -1,0 +1,96 @@
+{
+  "no_retry": {
+    "id": "DEMO1a",
+    "question": "How many units of Northfield Farms Frozen Mixed Berries are affected by the recall?",
+    "scope": "answerable",
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "Northfield Farms Frozen Mixed Berries: 3,070 units are affected by the recall (published 2026-09-10).",
+        "passed": false,
+        "pattern": "stale_value",
+        "detail": "stale_value: number of affected units",
+        "feedback": "Your answer gives an outdated value for: number of affected units. The notice was updated after it was first published. Use the values from the most recent UPDATE in the notice.",
+        "seconds": 0.0,
+        "forced": true
+      }
+    ],
+    "passed_first": false,
+    "passed_final": false,
+    "n_attempts": 1,
+    "first_pattern": "stale_value"
+  },
+  "with_retry": {
+    "id": "DEMO1b",
+    "question": "How many units of Northfield Farms Frozen Mixed Berries are affected by the recall?",
+    "scope": "answerable",
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "Northfield Farms Frozen Mixed Berries: 3,070 units are affected by the recall (published 2026-09-10).",
+        "passed": false,
+        "pattern": "stale_value",
+        "detail": "stale_value: number of affected units",
+        "feedback": "Your answer gives an outdated value for: number of affected units. The notice was updated after it was first published. Use the values from the most recent UPDATE in the notice.",
+        "seconds": 0.0,
+        "forced": true
+      },
+      {
+        "attempt": 2,
+        "answer": "Northfield Farms Frozen Mixed Berries: 6,260 units are affected by the recall (updated 2026-10-09).",
+        "passed": true,
+        "pattern": null,
+        "detail": "",
+        "feedback": "",
+        "seconds": 12.67,
+        "forced": false
+      }
+    ],
+    "passed_first": false,
+    "passed_final": true,
+    "n_attempts": 2,
+    "first_pattern": "stale_value"
+  },
+  "normal": {
+    "id": "DEMO2",
+    "question": "How many units of Trail & Oat Crunchy Granola Bars are affected by the recall?",
+    "scope": "answerable",
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "The recall affects 16,420 units of Trail & Oat Crunchy Granola Bars.",
+        "passed": true,
+        "pattern": null,
+        "detail": "",
+        "feedback": "",
+        "seconds": 4.81,
+        "forced": false
+      }
+    ],
+    "passed_first": true,
+    "passed_final": true,
+    "n_attempts": 1,
+    "first_pattern": null
+  },
+  "outside": {
+    "id": "DEMO3",
+    "question": "Who is the CEO of Casa Dorada?",
+    "scope": "refuse",
+    "attempts": [
+      {
+        "attempt": 1,
+        "answer": "You do not have that information.",
+        "passed": true,
+        "pattern": null,
+        "detail": "",
+        "feedback": "",
+        "seconds": 3.95,
+        "forced": false
+      }
+    ],
+    "passed_first": true,
+    "passed_final": true,
+    "n_attempts": 1,
+    "first_pattern": null
+  }
+}

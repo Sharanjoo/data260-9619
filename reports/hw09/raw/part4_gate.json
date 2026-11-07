@@ -1,0 +1,82 @@
+{
+  "rule": "net",
+  "C0": {
+    "n": 14,
+    "first_pass": 11,
+    "final_pass": 11,
+    "first_pass_rate": 0.786,
+    "final_pass_rate": 0.786,
+    "mean_attempts": 1.0,
+    "mean_seconds": 8.0,
+    "retried": 0,
+    "rescued": 0
+  },
+  "C1": {
+    "L001": {
+      "pattern": "stale_value",
+      "pass": 12,
+      "fixed": [
+        "V08",
+        "V12"
+      ],
+      "broken": [
+        "V06"
+      ],
+      "verdict": "accept"
+    },
+    "L002": {
+      "pattern": "missing_value",
+      "pass": 10,
+      "fixed": [
+        "V12"
+      ],
+      "broken": [
+        "V04",
+        "V06"
+      ],
+      "verdict": "reject"
+    },
+    "L003": {
+      "pattern": "fabricated_answer",
+      "pass": 13,
+      "fixed": [
+        "V02",
+        "V08",
+        "V12"
+      ],
+      "broken": [
+        "V06"
+      ],
+      "verdict": "accept"
+    }
+  },
+  "C2": {
+    "lessons": [
+      "L001",
+      "L003"
+    ],
+    "summary": {
+      "n": 14,
+      "first_pass": 13,
+      "final_pass": 13,
+      "first_pass_rate": 0.929,
+      "final_pass_rate": 0.929,
+      "mean_attempts": 1.0,
+      "mean_seconds": 7.1,
+      "retried": 0,
+      "rescued": 0
+    },
+    "fixed": [
+      "V02",
+      "V08",
+      "V12"
+    ],
+    "broken": [
+      "V06"
+    ]
+  },
+  "accepted": [
+    "L001",
+    "L003"
+  ]
+}

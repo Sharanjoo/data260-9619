@@ -1,0 +1,137 @@
+{
+  "threshold": 0.85,
+  "queries": 14,
+  "cache_hits": 7,
+  "hit_rate_percent": 50.0,
+  "mean_latency_ms_cached": 153.34,
+  "mean_latency_ms_not_cached": 99037.42,
+  "met_expectation": 14,
+  "per_query": [
+    {
+      "n": 1,
+      "kind": "new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.0,
+      "latency_ms": 132418.9,
+      "status": "approved"
+    },
+    {
+      "n": 2,
+      "kind": "exact duplicate of 1",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 148.73,
+      "status": "cached"
+    },
+    {
+      "n": 3,
+      "kind": "new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.443187,
+      "latency_ms": 105536.71,
+      "status": "approved"
+    },
+    {
+      "n": 4,
+      "kind": "paraphrase of 1",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 0.86107,
+      "latency_ms": 331.79,
+      "status": "cached"
+    },
+    {
+      "n": 5,
+      "kind": "new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.444642,
+      "latency_ms": 68013.67,
+      "status": "approved"
+    },
+    {
+      "n": 6,
+      "kind": "exact duplicate of 3",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 104.61,
+      "status": "cached"
+    },
+    {
+      "n": 7,
+      "kind": "new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.805715,
+      "latency_ms": 100039.55,
+      "status": "approved"
+    },
+    {
+      "n": 8,
+      "kind": "paraphrase of 3",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 0.957988,
+      "latency_ms": 178.89,
+      "status": "cached"
+    },
+    {
+      "n": 9,
+      "kind": "paraphrase of 5",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 0.940563,
+      "latency_ms": 54.37,
+      "status": "cached"
+    },
+    {
+      "n": 10,
+      "kind": "completely new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.515164,
+      "latency_ms": 82798.24,
+      "status": "approved"
+    },
+    {
+      "n": 11,
+      "kind": "new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.779572,
+      "latency_ms": 89742.24,
+      "status": "approved"
+    },
+    {
+      "n": 12,
+      "kind": "exact duplicate of 7",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 1.0,
+      "latency_ms": 165.84,
+      "status": "cached"
+    },
+    {
+      "n": 13,
+      "kind": "paraphrase of 11",
+      "expected": "hit",
+      "is_cached": true,
+      "similarity": 0.898907,
+      "latency_ms": 89.17,
+      "status": "cached"
+    },
+    {
+      "n": 14,
+      "kind": "new",
+      "expected": "miss",
+      "is_cached": false,
+      "similarity": 0.753588,
+      "latency_ms": 114712.61,
+      "status": "approved"
+    }
+  ]
+}
