@@ -1,0 +1,466 @@
+# HW9 Part 3.1 - labeled test set for the semantic cache (40 queries).
+# Written and committed BEFORE any threshold sweep. Labels are never changed afterwards; if a labeling mistake is
+# found it is documented in reports/hw09/LABEL_NOTES.md instead of editing this file.
+#
+# cached_queries : the 20 questions whose answers are in the cache before the 40 cases run (B01..B20).
+# cases          : group = exact_duplicate | paraphrase | lookalike | unrelated
+#                  expected = hit (the cache should answer it) | miss (the agents must answer it)
+#                  expected_match = the cached question a hit should return (hit cases only)
+#                  fact = the database value that makes the answer correct (units_affected or the reporting agency)
+# Fact values come from the MySQL rows chosen by scripts/hw9_pick_records.py (units_affected was 0 in every seeded row, so
+# HW9 assigned fixed seeded values to those 32 records with scripts/hw9_seed_units.py).
+meta:
+  homework: 9
+  sid4: '9619'
+  prefix: s9619
+  seed: 9619
+  cases: 40
+  groups:
+    exact_duplicate: 10
+    paraphrase: 10
+    lookalike: 10
+    unrelated: 10
+cached_queries:
+- id: B01
+  query: How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?
+  fact:
+    aspect: units
+    record_code: REC-015545
+    value: 31863
+- id: B02
+  query: Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?
+  fact:
+    aspect: agency
+    record_code: REC-017792
+    value: 'Regional Poison Control Center #166'
+- id: B03
+  query: How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?
+  fact:
+    aspect: units
+    record_code: REC-018041
+    value: 24753
+- id: B04
+  query: Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?
+  fact:
+    aspect: agency
+    record_code: REC-015220
+    value: 'Regional Poison Control Center #136'
+- id: B05
+  query: How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?
+  fact:
+    aspect: units
+    record_code: REC-018625
+    value: 17354
+- id: B06
+  query: Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?
+  fact:
+    aspect: agency
+    record_code: REC-016603
+    value: 'Consumer Product Safety Bureau #197'
+- id: B07
+  query: How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?
+  fact:
+    aspect: units
+    record_code: REC-017158
+    value: 45168
+- id: B08
+  query: Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?
+  fact:
+    aspect: agency
+    record_code: REC-017706
+    value: 'State Health Department #018'
+- id: B09
+  query: How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?
+  fact:
+    aspect: units
+    record_code: REC-015224
+    value: 39784
+- id: B10
+  query: Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?
+  fact:
+    aspect: agency
+    record_code: REC-019153
+    value: 'Consumer Product Safety Bureau #190'
+- id: B11
+  query: How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?
+  fact:
+    aspect: units
+    record_code: REC-018874
+    value: 8569
+- id: B12
+  query: Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?
+  fact:
+    aspect: agency
+    record_code: REC-016568
+    value: 'FDA District Office #155'
+- id: B13
+  query: How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?
+  fact:
+    aspect: units
+    record_code: REC-015945
+    value: 18167
+- id: B14
+  query: Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?
+  fact:
+    aspect: agency
+    record_code: REC-015978
+    value: 'Regional Poison Control Center #082'
+- id: B15
+  query: How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?
+  fact:
+    aspect: units
+    record_code: REC-017004
+    value: 44160
+- id: B16
+  query: Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?
+  fact:
+    aspect: agency
+    record_code: REC-018145
+    value: 'CDC Regional Lab #070'
+- id: B17
+  query: How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?
+  fact:
+    aspect: units
+    record_code: REC-016017
+    value: 23850
+- id: B18
+  query: Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?
+  fact:
+    aspect: agency
+    record_code: REC-015344
+    value: 'Consumer Product Safety Bureau #117'
+- id: B19
+  query: How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?
+  fact:
+    aspect: units
+    record_code: REC-019034
+    value: 23510
+- id: B20
+  query: Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?
+  fact:
+    aspect: agency
+    record_code: REC-015679
+    value: 'County Health Inspector #095'
+cases:
+- id: C01
+  group: exact_duplicate
+  expected: hit
+  query: How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?
+  expected_match: B01
+  fact:
+    aspect: units
+    record_code: REC-015545
+    value: 31863
+- id: C02
+  group: exact_duplicate
+  expected: hit
+  query: Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?
+  expected_match: B02
+  fact:
+    aspect: agency
+    record_code: REC-017792
+    value: 'Regional Poison Control Center #166'
+- id: C03
+  group: exact_duplicate
+  expected: hit
+  query: How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?
+  expected_match: B03
+  fact:
+    aspect: units
+    record_code: REC-018041
+    value: 24753
+- id: C04
+  group: exact_duplicate
+  expected: hit
+  query: Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?
+  expected_match: B04
+  fact:
+    aspect: agency
+    record_code: REC-015220
+    value: 'Regional Poison Control Center #136'
+- id: C05
+  group: exact_duplicate
+  expected: hit
+  query: How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?
+  expected_match: B05
+  fact:
+    aspect: units
+    record_code: REC-018625
+    value: 17354
+- id: C06
+  group: exact_duplicate
+  expected: hit
+  query: Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?
+  expected_match: B06
+  fact:
+    aspect: agency
+    record_code: REC-016603
+    value: 'Consumer Product Safety Bureau #197'
+- id: C07
+  group: exact_duplicate
+  expected: hit
+  query: How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?
+  expected_match: B07
+  fact:
+    aspect: units
+    record_code: REC-017158
+    value: 45168
+- id: C08
+  group: exact_duplicate
+  expected: hit
+  query: Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?
+  expected_match: B08
+  fact:
+    aspect: agency
+    record_code: REC-017706
+    value: 'State Health Department #018'
+- id: C09
+  group: exact_duplicate
+  expected: hit
+  query: How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?
+  expected_match: B09
+  fact:
+    aspect: units
+    record_code: REC-015224
+    value: 39784
+- id: C10
+  group: exact_duplicate
+  expected: hit
+  query: Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?
+  expected_match: B10
+  fact:
+    aspect: agency
+    record_code: REC-019153
+    value: 'Consumer Product Safety Bureau #190'
+- id: C11
+  group: paraphrase
+  expected: hit
+  query: What is the total number of units covered by the Prairie Gold Naturals Reduced Sodium Bagged Spinach (Lot 03868)
+    recall, record REC-018874?
+  expected_match: B11
+  fact:
+    aspect: units
+    record_code: REC-018874
+    value: 8569
+- id: C12
+  group: paraphrase
+  expected: hit
+  query: Which organisation filed recall REC-016568 covering Premium Salmon Fillets (Lot 01562) from Clearwater Farms?
+  expected_match: B12
+  fact:
+    aspect: agency
+    record_code: REC-016568
+    value: 'FDA District Office #155'
+- id: C13
+  group: paraphrase
+  expected: hit
+  query: Can you tell me the unit count for the REC-015945 recall of Sunrise Valley Naturals Premium Peanut Butter (Lot 00939)?
+  expected_match: B13
+  fact:
+    aspect: units
+    record_code: REC-015945
+    value: 18167
+- id: C14
+  group: paraphrase
+  expected: hit
+  query: Which reporting agency is behind recall REC-015978 (Reduced Sodium Cookie Dough (Lot 00972), Coastal Harbor Co.)?
+  expected_match: B14
+  fact:
+    aspect: agency
+    record_code: REC-015978
+    value: 'Regional Poison Control Center #082'
+- id: C15
+  group: paraphrase
+  expected: hit
+  query: 'REC-017004: how many units of Family Size Ground Beef (Lot 01998) (Willow Bend Farms) were recalled?'
+  expected_match: B15
+  fact:
+    aspect: units
+    record_code: REC-017004
+    value: 44160
+- id: C16
+  group: paraphrase
+  expected: hit
+  query: Who reported the Silver Creek Kitchen Plant-Based Ground Beef (Lot 03139) recall REC-018145?
+  expected_match: B16
+  fact:
+    aspect: agency
+    record_code: REC-018145
+    value: 'CDC Regional Lab #070'
+- id: C17
+  group: paraphrase
+  expected: hit
+  query: For recall REC-016017 of Whole Grain Soft Cheese (Lot 01011) by Silver Creek Pantry, how many units were involved?
+  expected_match: B17
+  fact:
+    aspect: units
+    record_code: REC-016017
+    value: 23850
+- id: C18
+  group: paraphrase
+  expected: hit
+  query: 'Recall REC-015344 for Evergreen Kitchen Reduced Sodium Peanut Butter (Lot 00338): which agency was the source of
+    the report?'
+  expected_match: B18
+  fact:
+    aspect: agency
+    record_code: REC-015344
+    value: 'Consumer Product Safety Bureau #117'
+- id: C19
+  group: paraphrase
+  expected: hit
+  query: How big was the Whole Grain Hummus (Lot 04028) recall from Red Barn Pantry (REC-019034) in units?
+  expected_match: B19
+  fact:
+    aspect: units
+    record_code: REC-019034
+    value: 23510
+- id: C20
+  group: paraphrase
+  expected: hit
+  query: Name the agency that reported the REC-015679 recall of Farmstead Salmon Fillets (Lot 00673) by Harvest Moon Farms.
+  expected_match: B20
+  fact:
+    aspect: agency
+    record_code: REC-015679
+    value: 'County Health Inspector #095'
+- id: C21
+  group: lookalike
+  expected: miss
+  query: How many units were affected by recall REC-019735 (Farmstead Shell Eggs (Lot 04729), Silver Creek Naturals)?
+  differs_from: B01
+  why: same question and product name, different lot, brand and agency
+  fact:
+    aspect: units
+    record_code: REC-019735
+    value: 43025
+- id: C22
+  group: lookalike
+  expected: miss
+  query: Which agency reported recall REC-017711 for Reduced Sodium Cantaloupe (Lot 02705) from GreenAcre Foods?
+  differs_from: B02
+  why: same question and product name, different lot, brand and agency
+  fact:
+    aspect: agency
+    record_code: REC-017711
+    value: 'CDC Regional Lab #109'
+- id: C23
+  group: lookalike
+  expected: miss
+  query: How many units were affected by recall REC-015092 (Premium Bottled Juice (Lot 00086), Blue Ridge Naturals)?
+  differs_from: B03
+  why: same question and product name, different lot, brand and agency
+  fact:
+    aspect: units
+    record_code: REC-015092
+    value: 35574
+- id: C24
+  group: lookalike
+  expected: miss
+  query: Which agency reported recall REC-017563 for Value Brand Bottled Juice (Lot 02557) from Clearwater Foods?
+  differs_from: B04
+  why: same question and product name, different lot, brand and agency
+  fact:
+    aspect: agency
+    record_code: REC-017563
+    value: 'State Agriculture Department #094'
+- id: C25
+  group: lookalike
+  expected: miss
+  query: How many units were affected by recall REC-018607 (Frozen Yogurt (Lot 03601), GreenAcre Provisions)?
+  differs_from: B05
+  why: same question and product name, different lot, brand and agency
+  fact:
+    aspect: units
+    record_code: REC-018607
+    value: 47426
+- id: C26
+  group: lookalike
+  expected: miss
+  query: How many units were affected by recall REC-016603 (Plant-Based Mixed Berries (Lot 01597), Northfield Farms)?
+  differs_from: B06
+  why: same record, asks for the units instead of the agency
+  fact:
+    aspect: units
+    record_code: REC-016603
+    value: 32650
+- id: C27
+  group: lookalike
+  expected: miss
+  query: Which agency reported recall REC-017158 for Reduced Sodium Trail Mix (Lot 02152) from Sunrise Valley Co.?
+  differs_from: B07
+  why: same record, asks for the agency instead of the units
+  fact:
+    aspect: agency
+    record_code: REC-017158
+    value: 'County Health Inspector #073'
+- id: C28
+  group: lookalike
+  expected: miss
+  query: How many units were affected by recall REC-017706 (Premium Mixed Berries (Lot 02700), Silver Creek Market)?
+  differs_from: B08
+  why: same record, asks for the units instead of the agency
+  fact:
+    aspect: units
+    record_code: REC-017706
+    value: 22074
+- id: C29
+  group: lookalike
+  expected: miss
+  query: Which agency reported recall REC-015224 for Original Peanut Butter (Lot 00218) from Ironwood Naturals?
+  differs_from: B09
+  why: same record, asks for the agency instead of the units
+  fact:
+    aspect: agency
+    record_code: REC-015224
+    value: 'State Health Department #003'
+- id: C30
+  group: lookalike
+  expected: miss
+  query: How many units were affected by recall REC-019153 (Artisan Shell Eggs (Lot 04147), Red Barn Co.)?
+  differs_from: B10
+  why: same record, asks for the units instead of the agency
+  fact:
+    aspect: units
+    record_code: REC-019153
+    value: 45660
+- id: C31
+  group: unrelated
+  expected: miss
+  query: How do I find out whether my store sells a recalled product?
+- id: C32
+  group: unrelated
+  expected: miss
+  query: What is the difference between a food safety recall and an allergen alert?
+- id: C33
+  group: unrelated
+  expected: miss
+  query: How long does a grocery recall usually stay on the shelves?
+- id: C34
+  group: unrelated
+  expected: miss
+  query: Can I get a refund for a recalled item without a receipt?
+- id: C35
+  group: unrelated
+  expected: miss
+  query: What symptoms should I watch for after eating a recalled product?
+- id: C36
+  group: unrelated
+  expected: miss
+  query: How should I store a recalled item until I return it?
+- id: C37
+  group: unrelated
+  expected: miss
+  query: Who decides when a grocery product has to be recalled?
+- id: C38
+  group: unrelated
+  expected: miss
+  query: What does a quality withdrawal mean for shoppers?
+- id: C39
+  group: unrelated
+  expected: miss
+  query: How do stores tell customers about a supply shortage?
+- id: C40
+  group: unrelated
+  expected: miss
+  query: Is it safe to donate recalled food to a food bank?
