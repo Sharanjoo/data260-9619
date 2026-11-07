@@ -19,3 +19,12 @@ os.environ.setdefault("MYSQL_HOST", "127.0.0.1")
 os.environ.setdefault("MYSQL_PORT", "43306")
 
 VIEWS_SYNC_EVERY = 10
+
+# --- Parts 2-3: semantic response cache ---
+CACHE_INDEX = f"{PREFIX}_cache_idx"       # RediSearch index name
+CACHE_KEY_PREFIX = f"{PREFIX}:cache:"     # every cached entry (hash) lives under this prefix
+EMBED_MODEL = os.environ.get("HW9_EMBED_MODEL", "sentence-transformers/all-MiniLM-L6-v2")
+EMBED_DIM = 384
+DEFAULT_THRESHOLD = 0.85
+NO_DEPENDENCY = "none"                    # depends_on / data_version value for answers that read no database record
+AGENT_TIMEOUT_S = float(os.environ.get("HW9_AGENT_TIMEOUT", "600"))

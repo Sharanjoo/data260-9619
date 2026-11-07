@@ -1,6 +1,12 @@
 """HW9: pick the real recall_record rows that the cache questions are about (deterministic, SEED = 9619).
 
     python scripts/hw9_pick_records.py          -> reports/hw09/raw/records_picked.json
+    python scripts/hw9_seed_units.py            -> writes the planned units_affected into those rows
+
+Every seeded recall_record has units_affected = 0 (the column was added by the HW5 migration with a default of 0), so a
+question like "how many units were affected" would have no answer. This script plans a number for each picked record
+(random.Random(SEED + 1), distinct values 120..48000) and stores it in the JSON as units_affected; hw9_seed_units.py
+then applies it to the database. The database is only read here.
 
 Groups (every record has a different product, so two questions about different records never share an answer):
   base      20 records whose questions are cached in Part 3
@@ -34,12 +40,24 @@ def base_name(product: str) -> str:
 def main() -> int:
     print(config.BANNER + " | hw9_pick_records", flush=True)
     with engine.connect() as conn:
+        stats = conn.execute(text(
+            "SELECT COUNT(*) AS total, SUM(source_id IS NOT NULL) AS with_source, SUM(units_affected > 0) AS with_units, "
+            "COUNT(DISTINCT units_affected) AS distinct_units, MIN(units_affected) AS min_units, "
+            "MAX(units_affected) AS max_units FROM recall_record")).mappings().first()
+        sources = conn.execute(text("SELECT COUNT(*) FROM recall_source")).scalar()
+        print(f"recall_record: {dict(stats)}   recall_source rows: {sources}")
+        for r in conn.execute(text("SELECT id, record_code, product_name, brand_name, units_affected, source_id "
+                                   "FROM recall_record ORDER BY id LIMIT 3")).mappings():
+            print("  sample:", dict(r))
         rows = [dict(r) for r in conn.execute(text(
             "SELECT r.id, r.record_code, r.product_name, r.brand_name, r.units_affected, "
             "       s.source_name, s.source_region, s.source_code "
             "FROM recall_record r JOIN recall_source s ON s.id = r.source_id "
-            "WHERE r.units_affected > 0 ORDER BY r.id")).mappings()]
-    print(f"eligible records: {len(rows)}")
+            "ORDER BY r.id")).mappings()]
+    print(f"eligible records (with a source): {len(rows)}")
+    if len(rows) < 100:
+        print("too few eligible records to pick from - see the counts above")
+        return 1
     rng = random.Random(config.SEED)
     order = list(range(len(rows)))
     rng.shuffle(order)
@@ -57,8 +75,7 @@ def main() -> int:
             b = base_name(r["product_name"])
             if r["id"] in used_ids or b in used_bases:
                 continue
-            if need_sibling and not any(o["id"] != r["id"] and o["units_affected"] != r["units_affected"]
-                                        and o["id"] not in used_ids for o in by_base[b]):
+            if need_sibling and not any(o["id"] != r["id"] and o["id"] not in used_ids for o in by_base[b]):
                 continue
             used_bases.add(b)
             used_ids.add(r["id"])
@@ -69,8 +86,7 @@ def main() -> int:
     sibling = []
     for r in base[:5]:
         b = base_name(r["product_name"])
-        options = [o for o in by_base[b] if o["id"] != r["id"] and o["units_affected"] != r["units_affected"]
-                   and o["id"] not in used_ids]
+        options = [o for o in by_base[b] if o["id"] != r["id"] and o["id"] not in used_ids]
         pick = options[rng.randrange(len(options))]
         used_ids.add(pick["id"])
         sibling.append(pick)
@@ -81,12 +97,18 @@ def main() -> int:
         print("not enough distinct products to fill every group")
         return 1
 
+    units_rng = random.Random(config.SEED + 1)
+    values = units_rng.sample(range(120, 48001), 32)
+    for r, v in zip((x for g in groups.values() for x in g), values):
+        r["units_before"] = r["units_affected"]
+        r["units_affected"] = v
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps({"seed": config.SEED, "groups": groups}, indent=2, ensure_ascii=False), encoding="utf-8")
     for name, g in groups.items():
         print(f"\n{name} ({len(g)})")
         for r in g:
-            print(f"  {r['record_code']}  units={r['units_affected']:>6}  {r['product_name']} / {r['brand_name']}  "
+            print(f"  {r['record_code']}  units {r['units_before']} -> {r['units_affected']:>6}  {r['product_name']} / {r['brand_name']}  "
                   f"[{r['source_name']}, {r['source_region']}]")
     print(f"\nwritten: {OUT}")
     return 0
