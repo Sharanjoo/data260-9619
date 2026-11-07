@@ -1,0 +1,112 @@
+{
+  "notices": [
+    {
+      "notice_id": "RN-001",
+      "product": "Frozen Mixed Berries",
+      "brand": "Northfield Farms",
+      "text": "NOTICE RN-001, published 2026-09-10: Northfield Farms is recalling Frozen Mixed Berries (food safety recall) because of possible Hepatitis A contamination. Units affected: 3,070. Lot codes: NF-1552. Sold in: NM, UT. Status: active. Refund deadline: 2026-11-19. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-09: the recall is now expanded. Units affected: 6,260. Lot codes: NF-1552, NF-1568, NF-1566. Sold in: ID, NM, UT. Refund deadline: 2026-12-12."
+    },
+    {
+      "notice_id": "RN-002",
+      "product": "Chunky Peanut Butter",
+      "brand": "GreenAcre Foods",
+      "text": "NOTICE RN-002, published 2026-09-06: GreenAcre Foods is recalling Chunky Peanut Butter (allergen alert) because of undeclared tree nuts. Units affected: 3,740. Lot codes: GF-7542. Sold in: AZ, NY. Status: active. Refund deadline: 2026-11-10. What to do: do not eat it if you are allergic; return it to the store for a refund or throw it away.\nUPDATE 2026-10-02: the recall is now expanded. Units affected: 7,740. Lot codes: GF-7542, GF-7578, GF-7551. Sold in: AZ, CO, NY. Refund deadline: 2026-12-14."
+    },
+    {
+      "notice_id": "RN-003",
+      "product": "Baby Spinach 10 oz",
+      "brand": "Harvest Valley",
+      "text": "NOTICE RN-003, published 2026-09-17: Harvest Valley is recalling Baby Spinach 10 oz (food safety recall) because of Listeria monocytogenes found in sampled bags. Units affected: 4,280. Lot codes: HV-7209. Sold in: ID, OR. Status: active. Refund deadline: 2026-11-11. What to do: do not eat it; return it to the store for a refund or throw it away."
+    },
+    {
+      "notice_id": "RN-004",
+      "product": "Sharp Cheddar Slices",
+      "brand": "Dairy Meadow",
+      "text": "NOTICE RN-004, published 2026-09-05: Dairy Meadow is recalling Sharp Cheddar Slices (quality withdrawal) because of a packaging seal defect that can shorten shelf life. Units affected: 3,020. Lot codes: DM-5990. Sold in: NM, WA. Status: active. Refund deadline: 2026-11-12. What to do: stop using it and return it to the store for a refund.\nUPDATE 2026-10-03: the recall is now expanded. Units affected: 12,230. Lot codes: DM-5990, DM-5996. Sold in: NM, OR, WA. Refund deadline: 2026-12-09."
+    },
+    {
+      "notice_id": "RN-005",
+      "product": "Orange Juice 64 oz",
+      "brand": "Sunrise Orchards",
+      "text": "NOTICE RN-005, published 2026-09-11: Sunrise Orchards is recalling Orange Juice 64 oz (food safety recall) because of under-pasteurised bottles. Units affected: 1,750. Lot codes: SO-4424. Sold in: OR, TX. Status: active. Refund deadline: 2026-11-21. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-13: the recall is now expanded. Units affected: 5,460. Lot codes: SO-4424, SO-4450. Sold in: OR, TX, UT. Refund deadline: 2026-12-21."
+    },
+    {
+      "notice_id": "RN-006",
+      "product": "Tuna Chunks in Water",
+      "brand": "BlueTide Cannery",
+      "text": "NOTICE RN-006, published 2026-09-10: BlueTide Cannery is recalling Tuna Chunks in Water (quality withdrawal) because of a can lining defect that can cause leaks. Units affected: 1,530. Lot codes: BC-1555. Sold in: NJ, NY. Status: active. Refund deadline: 2026-11-25. What to do: stop using it and return it to the store for a refund."
+    },
+    {
+      "notice_id": "RN-007",
+      "product": "Crunchy Granola Bars",
+      "brand": "Trail & Oat",
+      "text": "NOTICE RN-007, published 2026-09-06: Trail & Oat is recalling Crunchy Granola Bars (allergen alert) because of undeclared milk. Units affected: 4,040. Lot codes: TO-3695. Sold in: TX, WA. Status: active. Refund deadline: 2026-11-28. What to do: do not eat it if you are allergic; return it to the store for a refund or throw it away.\nUPDATE 2026-10-03: the recall is now expanded. Units affected: 16,420. Lot codes: TO-3695, TO-3714, TO-3703. Sold in: NY, TX, WA. Refund deadline: 2026-12-27."
+    },
+    {
+      "notice_id": "RN-008",
+      "product": "Roasted Garlic Hummus",
+      "brand": "Olive Branch",
+      "text": "NOTICE RN-008, published 2026-09-07: Olive Branch is recalling Roasted Garlic Hummus (food safety recall) because of possible Salmonella contamination. Units affected: 1,970. Lot codes: OB-1994. Sold in: NJ, NM. Status: active. Refund deadline: 2026-11-26. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-14: the recall is now expanded. Units affected: 8,060. Lot codes: OB-1994, OB-2026. Sold in: NJ, NM, UT. Refund deadline: 2026-12-13."
+    },
+    {
+      "notice_id": "RN-009",
+      "product": "Whole Wheat Tortillas",
+      "brand": "Casa Dorada",
+      "text": "NOTICE RN-009, published 2026-09-10: Casa Dorada is recalling Whole Wheat Tortillas (allergen alert) because of undeclared sesame. Units affected: 2,910. Lot codes: CD-7354. Sold in: NM, NV. Status: active. Refund deadline: 2026-11-25. What to do: do not eat it if you are allergic; return it to the store for a refund or throw it away."
+    },
+    {
+      "notice_id": "RN-010",
+      "product": "Vanilla Ice Cream Pint",
+      "brand": "Frosty Hollow",
+      "text": "NOTICE RN-010, published 2026-09-18: Frosty Hollow is recalling Vanilla Ice Cream Pint (food safety recall) because of possible Listeria contamination. Units affected: 3,400. Lot codes: FH-6483. Sold in: NV, NY. Status: active. Refund deadline: 2026-11-26. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-09: the recall is now expanded. Units affected: 13,860. Lot codes: FH-6483, FH-6508, FH-6510. Sold in: CA, NV, NY. Refund deadline: 2026-12-12."
+    },
+    {
+      "notice_id": "RN-011",
+      "product": "Sliced Turkey Breast",
+      "brand": "Prairie Table",
+      "text": "NOTICE RN-011, published 2026-09-19: Prairie Table is recalling Sliced Turkey Breast (food safety recall) because of possible foreign plastic pieces. Units affected: 1,570. Lot codes: PT-2661. Sold in: ID, NY. Status: active. Refund deadline: 2026-11-20. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-02: the recall is now expanded. Units affected: 4,940. Lot codes: PT-2661, PT-2679. Sold in: ID, NV, NY. Refund deadline: 2026-12-19."
+    },
+    {
+      "notice_id": "RN-012",
+      "product": "Strawberry Yogurt Cups",
+      "brand": "Meadowlark Dairy",
+      "text": "NOTICE RN-012, published 2026-09-21: Meadowlark Dairy is recalling Strawberry Yogurt Cups (quality withdrawal) because of mold found in some sealed cups. Units affected: 930. Lot codes: MD-6760. Sold in: ID, NY. Status: active. Refund deadline: 2026-11-15. What to do: stop using it and return it to the store for a refund."
+    },
+    {
+      "notice_id": "RN-013",
+      "product": "Almond Milk 32 oz",
+      "brand": "Silver Creek Naturals",
+      "text": "NOTICE RN-013, published 2026-09-07: Silver Creek Naturals is recalling Almond Milk 32 oz (allergen alert) because of undeclared soy. Units affected: 4,740. Lot codes: SC-2130. Sold in: NY, WA. Status: active. Refund deadline: 2026-11-19. What to do: do not eat it if you are allergic; return it to the store for a refund or throw it away.\nUPDATE 2026-10-14: the recall is now expanded. Units affected: 14,380. Lot codes: SC-2130, SC-2151, SC-2131. Sold in: AZ, NY, WA. Refund deadline: 2026-12-09."
+    },
+    {
+      "notice_id": "RN-014",
+      "product": "Bagged Salad Kit",
+      "brand": "Green Basket",
+      "text": "NOTICE RN-014, published 2026-09-21: Green Basket is recalling Bagged Salad Kit (food safety recall) because of possible E. coli contamination. Units affected: 1,460. Lot codes: GB-4725. Sold in: UT, WA. Status: active. Refund deadline: 2026-11-12. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-13: the recall is now expanded. Units affected: 4,680. Lot codes: GB-4725, GB-4742. Sold in: NM, UT, WA. Refund deadline: 2026-12-19."
+    },
+    {
+      "notice_id": "RN-015",
+      "product": "Canned Tomato Soup",
+      "brand": "Redwood Pantry",
+      "text": "NOTICE RN-015, published 2026-09-07: Redwood Pantry is recalling Canned Tomato Soup (quality withdrawal) because of a seam defect in the cans. Units affected: 3,140. Lot codes: RP-5974. Sold in: NM, NY. Status: active. Refund deadline: 2026-11-21. What to do: stop using it and return it to the store for a refund."
+    },
+    {
+      "notice_id": "RN-016",
+      "product": "Chocolate Chip Cookies",
+      "brand": "Sweet Hearth",
+      "text": "NOTICE RN-016, published 2026-09-13: Sweet Hearth is recalling Chocolate Chip Cookies (allergen alert) because of undeclared egg. Units affected: 1,430. Lot codes: SH-5033. Sold in: ID, WA. Status: active. Refund deadline: 2026-11-10. What to do: do not eat it if you are allergic; return it to the store for a refund or throw it away.\nUPDATE 2026-10-03: the recall is now expanded. Units affected: 3,080. Lot codes: SH-5033, SH-5070. Sold in: ID, NY, WA. Refund deadline: 2026-12-21."
+    },
+    {
+      "notice_id": "RN-017",
+      "product": "Fresh Salmon Fillets",
+      "brand": "Cold Harbor Seafood",
+      "text": "NOTICE RN-017, published 2026-09-16: Cold Harbor Seafood is recalling Fresh Salmon Fillets (food safety recall) because of possible Listeria contamination. Units affected: 2,680. Lot codes: CH-3750. Sold in: CA, NY. Status: active. Refund deadline: 2026-11-17. What to do: do not eat it; return it to the store for a refund or throw it away.\nUPDATE 2026-10-07: the recall is now expanded. Units affected: 8,050. Lot codes: CH-3750, CH-3785, CH-3778. Sold in: CA, NY, OR. Refund deadline: 2026-12-14."
+    },
+    {
+      "notice_id": "RN-018",
+      "product": "Pasta Sauce 24 oz",
+      "brand": "Villa Rosso",
+      "text": "NOTICE RN-018, published 2026-09-22: Villa Rosso is recalling Pasta Sauce 24 oz (quality withdrawal) because of glass fragments in some jars. Units affected: 1,350. Lot codes: VR-5692. Sold in: CA, NY. Status: active. Refund deadline: 2026-11-13. What to do: stop using it and return it to the store for a refund."
+    }
+  ]
+}

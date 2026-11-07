@@ -1,0 +1,1066 @@
+{
+  "seed": 9619,
+  "notices": [
+    {
+      "notice_id": "RN-001",
+      "product": "Frozen Mixed Berries",
+      "brand": "Northfield Farms",
+      "category": "food-safety-recall",
+      "hazard": "possible Hepatitis A contamination",
+      "hazard_keywords": [
+        "hepatitis a"
+      ],
+      "published": "2026-09-10",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 3070,
+        "current": 6260
+      },
+      "lot_codes": {
+        "initial": [
+          "NF-1552"
+        ],
+        "current": [
+          "NF-1552",
+          "NF-1568",
+          "NF-1566"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NM",
+          "UT"
+        ],
+        "current": [
+          "ID",
+          "NM",
+          "UT"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-19",
+        "current": "2026-12-12"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-09"
+    },
+    {
+      "notice_id": "RN-002",
+      "product": "Chunky Peanut Butter",
+      "brand": "GreenAcre Foods",
+      "category": "allergen-alert",
+      "hazard": "undeclared tree nuts",
+      "hazard_keywords": [
+        "tree nut"
+      ],
+      "published": "2026-09-06",
+      "action": "do not eat it if you are allergic; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 3740,
+        "current": 7740
+      },
+      "lot_codes": {
+        "initial": [
+          "GF-7542"
+        ],
+        "current": [
+          "GF-7542",
+          "GF-7578",
+          "GF-7551"
+        ]
+      },
+      "states": {
+        "initial": [
+          "AZ",
+          "NY"
+        ],
+        "current": [
+          "AZ",
+          "CO",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-10",
+        "current": "2026-12-14"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-02"
+    },
+    {
+      "notice_id": "RN-003",
+      "product": "Baby Spinach 10 oz",
+      "brand": "Harvest Valley",
+      "category": "food-safety-recall",
+      "hazard": "Listeria monocytogenes found in sampled bags",
+      "hazard_keywords": [
+        "listeria"
+      ],
+      "published": "2026-09-17",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 4280,
+        "current": 4280
+      },
+      "lot_codes": {
+        "initial": [
+          "HV-7209"
+        ],
+        "current": [
+          "HV-7209"
+        ]
+      },
+      "states": {
+        "initial": [
+          "ID",
+          "OR"
+        ],
+        "current": [
+          "ID",
+          "OR"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-11",
+        "current": "2026-11-11"
+      },
+      "status": {
+        "initial": "active",
+        "current": "active"
+      },
+      "updated_on": null
+    },
+    {
+      "notice_id": "RN-004",
+      "product": "Sharp Cheddar Slices",
+      "brand": "Dairy Meadow",
+      "category": "quality-withdrawal",
+      "hazard": "a packaging seal defect that can shorten shelf life",
+      "hazard_keywords": [
+        "seal",
+        "packaging"
+      ],
+      "published": "2026-09-05",
+      "action": "stop using it and return it to the store for a refund",
+      "action_check": [
+        [
+          "return",
+          "refund",
+          "stop using",
+          "do not use",
+          "don't use"
+        ]
+      ],
+      "units_affected": {
+        "initial": 3020,
+        "current": 12230
+      },
+      "lot_codes": {
+        "initial": [
+          "DM-5990"
+        ],
+        "current": [
+          "DM-5990",
+          "DM-5996"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NM",
+          "WA"
+        ],
+        "current": [
+          "NM",
+          "OR",
+          "WA"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-12",
+        "current": "2026-12-09"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-03"
+    },
+    {
+      "notice_id": "RN-005",
+      "product": "Orange Juice 64 oz",
+      "brand": "Sunrise Orchards",
+      "category": "food-safety-recall",
+      "hazard": "under-pasteurised bottles",
+      "hazard_keywords": [
+        "pasteuris",
+        "pasteuriz"
+      ],
+      "published": "2026-09-11",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1750,
+        "current": 5460
+      },
+      "lot_codes": {
+        "initial": [
+          "SO-4424"
+        ],
+        "current": [
+          "SO-4424",
+          "SO-4450"
+        ]
+      },
+      "states": {
+        "initial": [
+          "OR",
+          "TX"
+        ],
+        "current": [
+          "OR",
+          "TX",
+          "UT"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-21",
+        "current": "2026-12-21"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-13"
+    },
+    {
+      "notice_id": "RN-006",
+      "product": "Tuna Chunks in Water",
+      "brand": "BlueTide Cannery",
+      "category": "quality-withdrawal",
+      "hazard": "a can lining defect that can cause leaks",
+      "hazard_keywords": [
+        "lining",
+        "leak"
+      ],
+      "published": "2026-09-10",
+      "action": "stop using it and return it to the store for a refund",
+      "action_check": [
+        [
+          "return",
+          "refund",
+          "stop using",
+          "do not use",
+          "don't use"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1530,
+        "current": 1530
+      },
+      "lot_codes": {
+        "initial": [
+          "BC-1555"
+        ],
+        "current": [
+          "BC-1555"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NJ",
+          "NY"
+        ],
+        "current": [
+          "NJ",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-25",
+        "current": "2026-11-25"
+      },
+      "status": {
+        "initial": "active",
+        "current": "active"
+      },
+      "updated_on": null
+    },
+    {
+      "notice_id": "RN-007",
+      "product": "Crunchy Granola Bars",
+      "brand": "Trail & Oat",
+      "category": "allergen-alert",
+      "hazard": "undeclared milk",
+      "hazard_keywords": [
+        "milk"
+      ],
+      "published": "2026-09-06",
+      "action": "do not eat it if you are allergic; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 4040,
+        "current": 16420
+      },
+      "lot_codes": {
+        "initial": [
+          "TO-3695"
+        ],
+        "current": [
+          "TO-3695",
+          "TO-3714",
+          "TO-3703"
+        ]
+      },
+      "states": {
+        "initial": [
+          "TX",
+          "WA"
+        ],
+        "current": [
+          "NY",
+          "TX",
+          "WA"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-28",
+        "current": "2026-12-27"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-03"
+    },
+    {
+      "notice_id": "RN-008",
+      "product": "Roasted Garlic Hummus",
+      "brand": "Olive Branch",
+      "category": "food-safety-recall",
+      "hazard": "possible Salmonella contamination",
+      "hazard_keywords": [
+        "salmonella"
+      ],
+      "published": "2026-09-07",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1970,
+        "current": 8060
+      },
+      "lot_codes": {
+        "initial": [
+          "OB-1994"
+        ],
+        "current": [
+          "OB-1994",
+          "OB-2026"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NJ",
+          "NM"
+        ],
+        "current": [
+          "NJ",
+          "NM",
+          "UT"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-26",
+        "current": "2026-12-13"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-14"
+    },
+    {
+      "notice_id": "RN-009",
+      "product": "Whole Wheat Tortillas",
+      "brand": "Casa Dorada",
+      "category": "allergen-alert",
+      "hazard": "undeclared sesame",
+      "hazard_keywords": [
+        "sesame"
+      ],
+      "published": "2026-09-10",
+      "action": "do not eat it if you are allergic; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 2910,
+        "current": 2910
+      },
+      "lot_codes": {
+        "initial": [
+          "CD-7354"
+        ],
+        "current": [
+          "CD-7354"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NM",
+          "NV"
+        ],
+        "current": [
+          "NM",
+          "NV"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-25",
+        "current": "2026-11-25"
+      },
+      "status": {
+        "initial": "active",
+        "current": "active"
+      },
+      "updated_on": null
+    },
+    {
+      "notice_id": "RN-010",
+      "product": "Vanilla Ice Cream Pint",
+      "brand": "Frosty Hollow",
+      "category": "food-safety-recall",
+      "hazard": "possible Listeria contamination",
+      "hazard_keywords": [
+        "listeria"
+      ],
+      "published": "2026-09-18",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 3400,
+        "current": 13860
+      },
+      "lot_codes": {
+        "initial": [
+          "FH-6483"
+        ],
+        "current": [
+          "FH-6483",
+          "FH-6508",
+          "FH-6510"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NV",
+          "NY"
+        ],
+        "current": [
+          "CA",
+          "NV",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-26",
+        "current": "2026-12-12"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-09"
+    },
+    {
+      "notice_id": "RN-011",
+      "product": "Sliced Turkey Breast",
+      "brand": "Prairie Table",
+      "category": "food-safety-recall",
+      "hazard": "possible foreign plastic pieces",
+      "hazard_keywords": [
+        "plastic"
+      ],
+      "published": "2026-09-19",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1570,
+        "current": 4940
+      },
+      "lot_codes": {
+        "initial": [
+          "PT-2661"
+        ],
+        "current": [
+          "PT-2661",
+          "PT-2679"
+        ]
+      },
+      "states": {
+        "initial": [
+          "ID",
+          "NY"
+        ],
+        "current": [
+          "ID",
+          "NV",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-20",
+        "current": "2026-12-19"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-02"
+    },
+    {
+      "notice_id": "RN-012",
+      "product": "Strawberry Yogurt Cups",
+      "brand": "Meadowlark Dairy",
+      "category": "quality-withdrawal",
+      "hazard": "mold found in some sealed cups",
+      "hazard_keywords": [
+        "mold"
+      ],
+      "published": "2026-09-21",
+      "action": "stop using it and return it to the store for a refund",
+      "action_check": [
+        [
+          "return",
+          "refund",
+          "stop using",
+          "do not use",
+          "don't use"
+        ]
+      ],
+      "units_affected": {
+        "initial": 930,
+        "current": 930
+      },
+      "lot_codes": {
+        "initial": [
+          "MD-6760"
+        ],
+        "current": [
+          "MD-6760"
+        ]
+      },
+      "states": {
+        "initial": [
+          "ID",
+          "NY"
+        ],
+        "current": [
+          "ID",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-15",
+        "current": "2026-11-15"
+      },
+      "status": {
+        "initial": "active",
+        "current": "active"
+      },
+      "updated_on": null
+    },
+    {
+      "notice_id": "RN-013",
+      "product": "Almond Milk 32 oz",
+      "brand": "Silver Creek Naturals",
+      "category": "allergen-alert",
+      "hazard": "undeclared soy",
+      "hazard_keywords": [
+        "soy"
+      ],
+      "published": "2026-09-07",
+      "action": "do not eat it if you are allergic; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 4740,
+        "current": 14380
+      },
+      "lot_codes": {
+        "initial": [
+          "SC-2130"
+        ],
+        "current": [
+          "SC-2130",
+          "SC-2151",
+          "SC-2131"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NY",
+          "WA"
+        ],
+        "current": [
+          "AZ",
+          "NY",
+          "WA"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-19",
+        "current": "2026-12-09"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-14"
+    },
+    {
+      "notice_id": "RN-014",
+      "product": "Bagged Salad Kit",
+      "brand": "Green Basket",
+      "category": "food-safety-recall",
+      "hazard": "possible E. coli contamination",
+      "hazard_keywords": [
+        "e. coli",
+        "e.coli"
+      ],
+      "published": "2026-09-21",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1460,
+        "current": 4680
+      },
+      "lot_codes": {
+        "initial": [
+          "GB-4725"
+        ],
+        "current": [
+          "GB-4725",
+          "GB-4742"
+        ]
+      },
+      "states": {
+        "initial": [
+          "UT",
+          "WA"
+        ],
+        "current": [
+          "NM",
+          "UT",
+          "WA"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-12",
+        "current": "2026-12-19"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-13"
+    },
+    {
+      "notice_id": "RN-015",
+      "product": "Canned Tomato Soup",
+      "brand": "Redwood Pantry",
+      "category": "quality-withdrawal",
+      "hazard": "a seam defect in the cans",
+      "hazard_keywords": [
+        "seam"
+      ],
+      "published": "2026-09-07",
+      "action": "stop using it and return it to the store for a refund",
+      "action_check": [
+        [
+          "return",
+          "refund",
+          "stop using",
+          "do not use",
+          "don't use"
+        ]
+      ],
+      "units_affected": {
+        "initial": 3140,
+        "current": 3140
+      },
+      "lot_codes": {
+        "initial": [
+          "RP-5974"
+        ],
+        "current": [
+          "RP-5974"
+        ]
+      },
+      "states": {
+        "initial": [
+          "NM",
+          "NY"
+        ],
+        "current": [
+          "NM",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-21",
+        "current": "2026-11-21"
+      },
+      "status": {
+        "initial": "active",
+        "current": "active"
+      },
+      "updated_on": null
+    },
+    {
+      "notice_id": "RN-016",
+      "product": "Chocolate Chip Cookies",
+      "brand": "Sweet Hearth",
+      "category": "allergen-alert",
+      "hazard": "undeclared egg",
+      "hazard_keywords": [
+        "egg"
+      ],
+      "published": "2026-09-13",
+      "action": "do not eat it if you are allergic; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1430,
+        "current": 3080
+      },
+      "lot_codes": {
+        "initial": [
+          "SH-5033"
+        ],
+        "current": [
+          "SH-5033",
+          "SH-5070"
+        ]
+      },
+      "states": {
+        "initial": [
+          "ID",
+          "WA"
+        ],
+        "current": [
+          "ID",
+          "NY",
+          "WA"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-10",
+        "current": "2026-12-21"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-03"
+    },
+    {
+      "notice_id": "RN-017",
+      "product": "Fresh Salmon Fillets",
+      "brand": "Cold Harbor Seafood",
+      "category": "food-safety-recall",
+      "hazard": "possible Listeria contamination",
+      "hazard_keywords": [
+        "listeria"
+      ],
+      "published": "2026-09-16",
+      "action": "do not eat it; return it to the store for a refund or throw it away",
+      "action_check": [
+        [
+          "do not eat",
+          "don't eat",
+          "not eat",
+          "do not use",
+          "don't use",
+          "avoid eating"
+        ],
+        [
+          "return",
+          "discard",
+          "throw",
+          "dispose"
+        ]
+      ],
+      "units_affected": {
+        "initial": 2680,
+        "current": 8050
+      },
+      "lot_codes": {
+        "initial": [
+          "CH-3750"
+        ],
+        "current": [
+          "CH-3750",
+          "CH-3785",
+          "CH-3778"
+        ]
+      },
+      "states": {
+        "initial": [
+          "CA",
+          "NY"
+        ],
+        "current": [
+          "CA",
+          "NY",
+          "OR"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-17",
+        "current": "2026-12-14"
+      },
+      "status": {
+        "initial": "active",
+        "current": "expanded"
+      },
+      "updated_on": "2026-10-07"
+    },
+    {
+      "notice_id": "RN-018",
+      "product": "Pasta Sauce 24 oz",
+      "brand": "Villa Rosso",
+      "category": "quality-withdrawal",
+      "hazard": "glass fragments in some jars",
+      "hazard_keywords": [
+        "glass"
+      ],
+      "published": "2026-09-22",
+      "action": "stop using it and return it to the store for a refund",
+      "action_check": [
+        [
+          "return",
+          "refund",
+          "stop using",
+          "do not use",
+          "don't use"
+        ]
+      ],
+      "units_affected": {
+        "initial": 1350,
+        "current": 1350
+      },
+      "lot_codes": {
+        "initial": [
+          "VR-5692"
+        ],
+        "current": [
+          "VR-5692"
+        ]
+      },
+      "states": {
+        "initial": [
+          "CA",
+          "NY"
+        ],
+        "current": [
+          "CA",
+          "NY"
+        ]
+      },
+      "refund_deadline": {
+        "initial": "2026-11-13",
+        "current": "2026-11-13"
+      },
+      "status": {
+        "initial": "active",
+        "current": "active"
+      },
+      "updated_on": null
+    }
+  ]
+}
