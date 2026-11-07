@@ -19,3 +19,4 @@ bcrypt
 email-validator
 pymongo
 PyJWT
+redis

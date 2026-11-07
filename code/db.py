@@ -124,6 +124,8 @@ class RecallRecord(Base):
     record_code = Column(String(40), unique=True, nullable=False, index=True)
     units_affected = Column(Integer, nullable=False, default=0, server_default="0")
     source_id = Column(Integer, ForeignKey("recall_source.id"), nullable=True)
+    # HW9 Part 1: persisted copy of the Redis view counter (synced every 10th access; scripts/migrate_hw09.py adds it).
+    view_count = Column(Integer, nullable=False, default=0, server_default="0")
     created_at = Column(DateTime, server_default=func.now(), nullable=False)
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now(), nullable=False)
 

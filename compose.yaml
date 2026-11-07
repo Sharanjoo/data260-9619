@@ -141,6 +141,23 @@ services:
       kafka-init:
         condition: service_completed_successfully
 
+  # ---------------------------------------------------------------- HW9: Redis (view counter + semantic cache)
+  redis:
+    image: redis/redis-stack-server:7.4.0-v3   # Redis with the RediSearch module (vector index); plain redis has none
+    container_name: data260-hw9-redis-s9619
+    restart: unless-stopped
+    ports:
+      - "46379:6379"  # scripts on the laptop use localhost:46379; 6379 is left free for other projects
+    volumes:
+      - redis_data_s9619:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
 volumes:
   mysql_data_s9619:
   mongo_data_s9619:
+  redis_data_s9619:
