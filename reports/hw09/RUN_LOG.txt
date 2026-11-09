@@ -1,0 +1,1085 @@
+HW9 RUN_LOG - Sharan Lourduraj, SID4 9619, DOMAIN_ID 3 (Grocery Recall Notice)
+======================================================================
+
+[2026-11-07T09:07:54Z] Sharan Lourduraj | START command: python scripts/hw9_part2_run.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part2_run threshold=0.85
+cleared 1 old cache entries (only keys under s9619:cache:)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights:  63%|██████▎   | 65/103 [00:00<00:00, 640.35it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 904.40it/s]
+
+--- query 1/14 (new; meant to miss) ---
+Q: How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?
+09:08:58.697 [CACHE] MISS similarity=0.0000 threshold=0.85 (cache empty)
+09:08:58.749 [CACHE] running the agent pipeline correlation_id=ee6edfea-fe3e-46a3-ba5f-35818c0e271b depends_on=REC-018083
+09:08:58.775 [CLIENT] sent question topic=s9619_inbox partition=0 offset=101 correlation_id=ee6edfea-fe3e-46a3-ba5f-35818c0e271b message={"correlation_id":"ee6edfea-fe3e-46a3-ba5f-35818c0e271b","question":"How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?\n\nFacts from the recall database for REC-018083: product Gluten-Free Cookie Dough (Lot 03077); brand Evergreen Kitchen; units affected 6842; reported by State Agriculture Department #062 (Southwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018083"}
+09:11:11.020 [CLIENT] final message received topic=s9619_final partition=0 offset=16 correlation_id=ee6edfea-fe3e-46a3-ba5f-35818c0e271b
+09:11:11.033 [CACHE] stored answer for 'How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?' depends_on=REC-018083 data_version=a8232c52058e
+is_cached=False  similarity=0.0000  latency=132418.9 ms  status=approved
+A: The recall REC-018083 affected 6,842 units of Gluten-Free Cookie Dough (Lot 03077) from Evergreen Kitchen. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+--- query 2/14 (exact duplicate of 1; meant to hit) ---
+Q: How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?
+09:11:11.184 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?'
+is_cached=True  similarity=1.0000  latency=148.7 ms  status=cached
+A: The recall REC-018083 affected 6,842 units of Gluten-Free Cookie Dough (Lot 03077) from Evergreen Kitchen. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+--- query 3/14 (new; meant to miss) ---
+Q: Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?
+09:11:11.255 [CACHE] MISS similarity=0.4432 threshold=0.85 nearest='How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?'
+09:11:11.324 [CACHE] running the agent pipeline correlation_id=045ef11d-c64f-4ce0-8140-b1deb1e7582c depends_on=REC-017389
+09:11:11.331 [CLIENT] sent question topic=s9619_inbox partition=0 offset=102 correlation_id=045ef11d-c64f-4ce0-8140-b1deb1e7582c message={"correlation_id":"045ef11d-c64f-4ce0-8140-b1deb1e7582c","question":"Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?\n\nFacts from the recall database for REC-017389: product Whole Grain Chicken Breast (Lot 02383); brand Sunrise Valley Farms; units affected 13807; reported by USDA FSIS Field Office #137 (South Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017389"}
+09:12:56.698 [CLIENT] final message received topic=s9619_final partition=0 offset=17 correlation_id=045ef11d-c64f-4ce0-8140-b1deb1e7582c
+09:12:56.722 [CACHE] stored answer for 'Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?' depends_on=REC-017389 data_version=0ced41ac0094
+is_cached=False  similarity=0.4432  latency=105536.7 ms  status=approved
+A: The USDA FSIS Field Office #137 (South Atlantic) reported recall REC-017389. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- query 4/14 (paraphrase of 1; meant to hit) ---
+Q: What is the total number of units covered by the Evergreen Kitchen Gluten-Free Cookie Dough (Lot 03077) recall, record REC-018083?
+09:12:57.056 [CACHE] HIT similarity=0.8611 threshold=0.85 matched='How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?'
+is_cached=True  similarity=0.8611  latency=331.8 ms  status=cached
+A: The recall REC-018083 affected 6,842 units of Gluten-Free Cookie Dough (Lot 03077) from Evergreen Kitchen. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+--- query 5/14 (new; meant to miss) ---
+Q: What should I do with a recalled product I already bought?
+09:12:57.129 [CACHE] MISS similarity=0.4446 threshold=0.85 nearest='Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?'
+09:12:57.129 [CACHE] running the agent pipeline correlation_id=1b57c2e4-12fd-45a1-9fa2-ba134f7df05d depends_on=none
+09:12:57.134 [CLIENT] sent question topic=s9619_inbox partition=0 offset=103 correlation_id=1b57c2e4-12fd-45a1-9fa2-ba134f7df05d message={"correlation_id":"1b57c2e4-12fd-45a1-9fa2-ba134f7df05d","question":"What should I do with a recalled product I already bought?"}
+09:14:05.068 [CLIENT] final message received topic=s9619_final partition=0 offset=18 correlation_id=1b57c2e4-12fd-45a1-9fa2-ba134f7df05d
+09:14:05.073 [CACHE] stored answer for 'What should I do with a recalled product I already bought?' depends_on=none data_version=none
+is_cached=False  similarity=0.4446  latency=68013.7 ms  status=approved
+A: Stop using the recalled product right away. Check the recall notice for instructions on returning or disposing of it. Contact the company if you need further guidance. Follow the provided steps to safely handle the product. Do not consume or use it anymore.
+
+--- query 6/14 (exact duplicate of 3; meant to hit) ---
+Q: Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?
+09:14:05.179 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?'
+is_cached=True  similarity=1.0000  latency=104.6 ms  status=cached
+A: The USDA FSIS Field Office #137 (South Atlantic) reported recall REC-017389. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- query 7/14 (new; meant to miss) ---
+Q: How many units were affected by recall REC-019116 (Gluten-Free Sprouts (Lot 04110), Golden Fields Farms)?
+09:14:05.270 [CACHE] MISS similarity=0.8057 threshold=0.85 nearest='How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?'
+09:14:05.311 [CACHE] running the agent pipeline correlation_id=41abf9e8-7f04-4391-aa56-7952eebdbefc depends_on=REC-019116
+09:14:05.318 [CLIENT] sent question topic=s9619_inbox partition=0 offset=104 correlation_id=41abf9e8-7f04-4391-aa56-7952eebdbefc message={"correlation_id":"41abf9e8-7f04-4391-aa56-7952eebdbefc","question":"How many units were affected by recall REC-019116 (Gluten-Free Sprouts (Lot 04110), Golden Fields Farms)?\n\nFacts from the recall database for REC-019116: product Gluten-Free Sprouts (Lot 04110); brand Golden Fields Farms; units affected 17265; reported by State Health Department #029 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-019116"}
+09:15:45.213 [CLIENT] final message received topic=s9619_final partition=0 offset=19 correlation_id=41abf9e8-7f04-4391-aa56-7952eebdbefc
+09:15:45.220 [CACHE] stored answer for 'How many units were affected by recall REC-019116 (Gluten-Free Sprouts (Lot 04110), Golden Fields Farms)?' depends_on=REC-019116 data_version=36493597ef45
+is_cached=False  similarity=0.8057  latency=100039.6 ms  status=approved
+A: The recall REC-019116 affected 17,265 units of Gluten-Free Sprouts (Lot 04110) from Golden Fields Farms. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- query 8/14 (paraphrase of 3; meant to hit) ---
+Q: Who reported the Sunrise Valley Farms Whole Grain Chicken Breast (Lot 02383) recall REC-017389?
+09:15:45.402 [CACHE] HIT similarity=0.9580 threshold=0.85 matched='Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?'
+is_cached=True  similarity=0.9580  latency=178.9 ms  status=cached
+A: The USDA FSIS Field Office #137 (South Atlantic) reported recall REC-017389. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- query 9/14 (paraphrase of 5; meant to hit) ---
+Q: I already bought a recalled item. What do I do with it?
+09:15:45.457 [CACHE] HIT similarity=0.9406 threshold=0.85 matched='What should I do with a recalled product I already bought?'
+is_cached=True  similarity=0.9406  latency=54.4 ms  status=cached
+A: Stop using the recalled product right away. Check the recall notice for instructions on returning or disposing of it. Contact the company if you need further guidance. Follow the provided steps to safely handle the product. Do not consume or use it anymore.
+
+--- query 10/14 (completely new; meant to miss) ---
+Q: Where can I read the official recall notices?
+09:15:45.512 [CACHE] MISS similarity=0.5152 threshold=0.85 nearest='Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?'
+09:15:45.512 [CACHE] running the agent pipeline correlation_id=48833f4e-ae8f-4b74-90d3-7c1c6dd1ed98 depends_on=none
+09:15:45.521 [CLIENT] sent question topic=s9619_inbox partition=0 offset=105 correlation_id=48833f4e-ae8f-4b74-90d3-7c1c6dd1ed98 message={"correlation_id":"48833f4e-ae8f-4b74-90d3-7c1c6dd1ed98","question":"Where can I read the official recall notices?"}
+09:17:08.254 [CLIENT] final message received topic=s9619_final partition=0 offset=20 correlation_id=48833f4e-ae8f-4b74-90d3-7c1c6dd1ed98
+09:17:08.258 [CACHE] stored answer for 'Where can I read the official recall notices?' depends_on=none data_version=none
+is_cached=False  similarity=0.5152  latency=82798.2 ms  status=approved
+A: To read official recall notices, visit the FDA website for general recalls. For meat and poultry, check the USDA website. Detailed information on recalls can also be found on the Food Safety and Inspection Service (FSIS) page. Always verify the source for accurate and up-to-date information.
+
+--- query 11/14 (new; meant to miss) ---
+Q: How many units were affected by recall REC-015886 (Reduced Sodium Tortillas (Lot 00880), Amber Grove Kitchen)?
+09:17:08.364 [CACHE] MISS similarity=0.7796 threshold=0.85 nearest='How many units were affected by recall REC-018083 (Gluten-Free Cookie Dough (Lot 03077), Evergreen Kitchen)?'
+09:17:08.420 [CACHE] running the agent pipeline correlation_id=1ea48009-bd0b-418c-89b0-ac7807763701 depends_on=REC-015886
+09:17:08.429 [CLIENT] sent question topic=s9619_inbox partition=0 offset=106 correlation_id=1ea48009-bd0b-418c-89b0-ac7807763701 message={"correlation_id":"1ea48009-bd0b-418c-89b0-ac7807763701","question":"How many units were affected by recall REC-015886 (Reduced Sodium Tortillas (Lot 00880), Amber Grove Kitchen)?\n\nFacts from the recall database for REC-015886: product Reduced Sodium Tortillas (Lot 00880); brand Amber Grove Kitchen; units affected 31284; reported by Local Public Health Unit #009 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015886"}
+09:18:37.994 [CLIENT] final message received topic=s9619_final partition=0 offset=21 correlation_id=1ea48009-bd0b-418c-89b0-ac7807763701
+09:18:38.002 [CACHE] stored answer for 'How many units were affected by recall REC-015886 (Reduced Sodium Tortillas (Lot 00880), Amber Grove Kitchen)?' depends_on=REC-015886 data_version=0873d20a1663
+is_cached=False  similarity=0.7796  latency=89742.2 ms  status=approved
+A: The recall affected 31,284 units. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- query 12/14 (exact duplicate of 7; meant to hit) ---
+Q: How many units were affected by recall REC-019116 (Gluten-Free Sprouts (Lot 04110), Golden Fields Farms)?
+09:18:38.170 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-019116 (Gluten-Free Sprouts (Lot 04110), Golden Fields Farms)?'
+is_cached=True  similarity=1.0000  latency=165.8 ms  status=cached
+A: The recall REC-019116 affected 17,265 units of Gluten-Free Sprouts (Lot 04110) from Golden Fields Farms. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- query 13/14 (paraphrase of 11; meant to hit) ---
+Q: For recall REC-015886 of Reduced Sodium Tortillas (Lot 00880) by Amber Grove Kitchen, how many units were involved?
+09:18:38.261 [CACHE] HIT similarity=0.8989 threshold=0.85 matched='How many units were affected by recall REC-015886 (Reduced Sodium Tortillas (Lot 00880), Amber Grove Kitchen)?'
+is_cached=True  similarity=0.8989  latency=89.2 ms  status=cached
+A: The recall affected 31,284 units. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- query 14/14 (new; meant to miss) ---
+Q: Which agency reported recall REC-015346 for Organic Deli Meat (Lot 00340) from Coastal Harbor Foods?
+09:18:38.540 [CACHE] MISS similarity=0.7536 threshold=0.85 nearest='Which agency reported recall REC-017389 for Whole Grain Chicken Breast (Lot 02383) from Sunrise Valley Farms?'
+09:18:38.574 [CACHE] running the agent pipeline correlation_id=9492f543-3008-4dbe-8d83-f8bb5c279093 depends_on=REC-015346
+09:18:38.582 [CLIENT] sent question topic=s9619_inbox partition=0 offset=107 correlation_id=9492f543-3008-4dbe-8d83-f8bb5c279093 message={"correlation_id":"9492f543-3008-4dbe-8d83-f8bb5c279093","question":"Which agency reported recall REC-015346 for Organic Deli Meat (Lot 00340) from Coastal Harbor Foods?\n\nFacts from the recall database for REC-015346: product Organic Deli Meat (Lot 00340); brand Coastal Harbor Foods; units affected 4866; reported by State Agriculture Department #062 (Southwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015346"}
+09:20:32.968 [CLIENT] final message received topic=s9619_final partition=0 offset=22 correlation_id=9492f543-3008-4dbe-8d83-f8bb5c279093
+09:20:32.976 [CACHE] stored answer for 'Which agency reported recall REC-015346 for Organic Deli Meat (Lot 00340) from Coastal Harbor Foods?' depends_on=REC-015346 data_version=ba32997b2e49
+is_cached=False  similarity=0.7536  latency=114712.6 ms  status=approved
+A: The State Agriculture Department #062 (Southwest) reported recall REC-015346. Do not eat or use the recalled Organic Deli Meat (Lot 00340) and follow the official recall notice for safety.
+
+=== Part 2 summary ===
+queries: 14   served from cache: 7   hit rate: 50.0%
+mean latency, cached: 153.34 ms   not cached: 99037.42 ms
+queries that behaved as intended: 14/14
+[2026-11-07T09:20:35Z] END exit_code=0
+
+[2026-11-07T09:21:13Z] Sharan Lourduraj | START command: python scripts/hw9_part4_train.py --fresh
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:8b | 16 training questions | lessons so far: 0
+T01 first=PASS | How many units of Northfield Farms Frozen Mixed Berries are affected b | 50.2s
+T02 first=PASS | Which lot codes does the Northfield Farms Frozen Mixed Berries recall  | 13.44s
+T03 first=PASS | By what date can I get a refund for GreenAcre Foods Chunky Peanut Butt | 29.81s
+T04 first=PASS | In which states was GreenAcre Foods Chunky Peanut Butter sold? | 11.2s
+T05 first=PASS | Is the Harvest Valley Baby Spinach 10 oz recall still active, expanded | 22.87s
+T06 first=PASS | What should I do with Harvest Valley Baby Spinach 10 oz that I already | 18.48s
+T07 first=PASS | How many units of Dairy Meadow Sharp Cheddar Slices are affected, and  | 32.5s
+T08 first=PASS | Which lot codes does the Dairy Meadow Sharp Cheddar Slices recall cove | 14.9s
+T09 first=PASS | How many units of Sunrise Orchards Orange Juice 64 oz are affected by  | 29.72s
+T10 first=PASS | Why was Sunrise Orchards Orange Juice 64 oz recalled? | 14.26s
+T11 first=PASS | Is the BlueTide Cannery Tuna Chunks in Water recall still active, expa | 23.42s
+T12 first=PASS | What should I do with BlueTide Cannery Tuna Chunks in Water that I alr | 15.35s
+T13 first=PASS | Will Northfield Farms be fined over the Frozen Mixed Berries recall? | 12.63s
+T14 first=PASS | Who is the CEO of Harvest Valley? | 14.72s
+T15 first=PASS | Is there a recall on Organic Bananas from Sunny Groves? | 14.93s
+T16 first=PASS | Which lot codes does the Golden Field Mills Oat Cereal recall cover? | 16.09s
+{
+  "n": 16,
+  "first_pass": 16,
+  "final_pass": 16,
+  "first_pass_rate": 1.0,
+  "final_pass_rate": 1.0,
+  "mean_attempts": 1.0,
+  "mean_seconds": 20.9,
+  "retried": 0,
+  "rescued": 0
+}
+lessons created: []
+occurrences: {}
+[2026-11-07T09:26:49Z] END exit_code=0
+
+[2026-11-07T09:31:46Z] Sharan Lourduraj | START command: python scripts/hw9_part4_train.py --fresh
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | 16 training questions | lessons so far: 0
+T01 first=PASS | How many units of Northfield Farms Frozen Mixed Berries are affected b | 20.93s
+T02 first=PASS | Which lot codes does the Northfield Farms Frozen Mixed Berries recall  | 5.76s
+T03 first=PASS | By what date can I get a refund for GreenAcre Foods Chunky Peanut Butt | 8.34s
+T04 first=PASS | In which states was GreenAcre Foods Chunky Peanut Butter sold? | 5.53s
+T05 first=PASS | Is the Harvest Valley Baby Spinach 10 oz recall still active, expanded | 10.37s
+  failure pattern 'missing_value' seen 1 time(s)
+T06 first=FAIL(missing_value) -> retry FAIL | What should I do with Harvest Valley Baby Spinach 10 oz that I already | 6.33s
+T07 first=PASS | How many units of Dairy Meadow Sharp Cheddar Slices are affected, and  | 9.81s
+T08 first=PASS | Which lot codes does the Dairy Meadow Sharp Cheddar Slices recall cove | 5.99s
+T09 first=PASS | How many units of Sunrise Orchards Orange Juice 64 oz are affected by  | 12.12s
+T10 first=PASS | Why was Sunrise Orchards Orange Juice 64 oz recalled? | 8.03s
+T11 first=PASS | Is the BlueTide Cannery Tuna Chunks in Water recall still active, expa | 7.9s
+T12 first=PASS | What should I do with BlueTide Cannery Tuna Chunks in Water that I alr | 6.42s
+  failure pattern 'fabricated_answer' seen 1 time(s)
+T13 first=FAIL(fabricated_answer) -> retry PASS | Will Northfield Farms be fined over the Frozen Mixed Berries recall? | 6.85s
+  failure pattern 'fabricated_answer' seen 2 time(s)
+  -> NEW LESSON L001 for 'fabricated_answer'
+T14 first=FAIL(fabricated_answer) -> retry FAIL | Who is the CEO of Harvest Valley? | 4.03s
+T15 first=PASS | Is there a recall on Organic Bananas from Sunny Groves? | 6.35s
+  failure pattern 'fabricated_answer' seen 3 time(s)
+T16 first=FAIL(fabricated_answer) -> retry FAIL | Which lot codes does the Golden Field Mills Oat Cereal recall cover? | 3.72s
+{
+  "n": 16,
+  "first_pass": 12,
+  "final_pass": 13,
+  "first_pass_rate": 0.75,
+  "final_pass_rate": 0.812,
+  "mean_attempts": 1.25,
+  "mean_seconds": 9.6,
+  "retried": 4,
+  "rescued": 1
+}
+lessons created: [('L001', 'fabricated_answer')]
+occurrences: {'missing_value': 1, 'fabricated_answer': 3}
+[2026-11-07T09:34:20Z] END exit_code=0
+
+[2026-11-07T09:35:38Z] Sharan Lourduraj | START command: python scripts/hw9_part4_train.py --fresh
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | 16 training questions | lessons so far: 0
+T01 first=PASS | How many units of Northfield Farms Frozen Mixed Berries are affected b | 10.86s
+T02 first=PASS | Which lot codes does the Northfield Farms Frozen Mixed Berries recall  | 6.07s
+T03 first=PASS | By what date can I get a refund for GreenAcre Foods Chunky Peanut Butt | 7.86s
+T04 first=PASS | In which states was GreenAcre Foods Chunky Peanut Butter sold? | 7.77s
+T05 first=PASS | Is the Harvest Valley Baby Spinach 10 oz recall still active, expanded | 6.14s
+  failure pattern 'missing_value' seen 1 time(s)
+T06 first=FAIL(missing_value) -> retry FAIL | What should I do with Harvest Valley Baby Spinach 10 oz that I already | 4.98s
+T07 first=PASS | How many units of Dairy Meadow Sharp Cheddar Slices are affected, and  | 6.38s
+T08 first=PASS | Which lot codes does the Dairy Meadow Sharp Cheddar Slices recall cove | 6.72s
+T09 first=PASS | How many units of Sunrise Orchards Orange Juice 64 oz are affected by  | 9.74s
+T10 first=PASS | Why was Sunrise Orchards Orange Juice 64 oz recalled? | 8.38s
+T11 first=PASS | Is the BlueTide Cannery Tuna Chunks in Water recall still active, expa | 5.7s
+T12 first=PASS | What should I do with BlueTide Cannery Tuna Chunks in Water that I alr | 5.42s
+  failure pattern 'fabricated_answer' seen 1 time(s)
+T13 first=FAIL(fabricated_answer) -> retry PASS | Will Northfield Farms be fined over the Frozen Mixed Berries recall? | 8.19s
+T14 first=PASS | Who is the CEO of Harvest Valley? | 4.18s
+T15 first=PASS | Is there a recall on Organic Bananas from Sunny Groves? | 4.0s
+T16 first=PASS | Which lot codes does the Golden Field Mills Oat Cereal recall cover? | 3.44s
+{
+  "n": 16,
+  "first_pass": 14,
+  "final_pass": 15,
+  "first_pass_rate": 0.875,
+  "final_pass_rate": 0.938,
+  "mean_attempts": 1.12,
+  "mean_seconds": 7.6,
+  "retried": 2,
+  "rescued": 1
+}
+lessons created: []
+occurrences: {'missing_value': 1, 'fabricated_answer': 1}
+[2026-11-07T09:37:40Z] END exit_code=0
+
+[2026-11-07T09:39:22Z] Sharan Lourduraj | START command: python scripts/hw9_part4_train.py --fresh
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | 40 training questions | lessons so far: 0
+T01 first=PASS | How many units of Northfield Farms Frozen Mixed Berries are affected b | 12.73s
+T02 first=PASS | Which lot codes does the Northfield Farms Frozen Mixed Berries recall  | 7.27s
+T03 first=PASS | By what date can I get a refund for GreenAcre Foods Chunky Peanut Butt | 9.84s
+T04 first=PASS | In which states was GreenAcre Foods Chunky Peanut Butter sold? | 9.11s
+T05 first=PASS | Is the Harvest Valley Baby Spinach 10 oz recall still active, expanded | 8.02s
+  failure pattern 'missing_value' seen 1 time(s)
+T06 first=FAIL(missing_value) -> retry FAIL | What should I do with Harvest Valley Baby Spinach 10 oz that I already | 6.44s
+T07 first=PASS | How many units of Dairy Meadow Sharp Cheddar Slices are affected, and  | 8.47s
+T08 first=PASS | Which lot codes does the Dairy Meadow Sharp Cheddar Slices recall cove | 8.47s
+T09 first=PASS | How many units of Sunrise Orchards Orange Juice 64 oz are affected by  | 10.95s
+T10 first=PASS | Why was Sunrise Orchards Orange Juice 64 oz recalled? | 10.46s
+T11 first=PASS | Is the BlueTide Cannery Tuna Chunks in Water recall still active, expa | 6.04s
+T12 first=PASS | What should I do with BlueTide Cannery Tuna Chunks in Water that I alr | 6.67s
+  failure pattern 'fabricated_answer' seen 1 time(s)
+T13 first=FAIL(fabricated_answer) -> retry PASS | Will Northfield Farms be fined over the Frozen Mixed Berries recall? | 7.59s
+T14 first=PASS | Who is the CEO of Harvest Valley? | 4.29s
+T15 first=PASS | Is there a recall on Organic Bananas from Sunny Groves? | 4.34s
+T16 first=PASS | Which lot codes does the Golden Field Mills Oat Cereal recall cover? | 3.69s
+  failure pattern 'stale_value' seen 1 time(s)
+T17 first=FAIL(stale_value) -> retry PASS | In which states was Northfield Farms Frozen Mixed Berries sold? | 5.42s
+  failure pattern 'stale_value' seen 2 time(s)
+  -> NEW LESSON L001 for 'stale_value'
+T18 first=FAIL(stale_value) -> retry PASS | By what date can I get a refund for Northfield Farms Frozen Mixed Berr | 8.15s
+T19 first=PASS | Is the Northfield Farms Frozen Mixed Berries recall still active, expa | 10.82s
+  failure pattern 'missing_value' seen 2 time(s)
+  -> NEW LESSON L002 for 'missing_value'
+T20 first=FAIL(missing_value) -> retry PASS | What should I do with Northfield Farms Frozen Mixed Berries that I alr | 8.55s
+T21 first=PASS | How many units of GreenAcre Foods Chunky Peanut Butter are affected by | 8.59s
+T22 first=PASS | Which lot codes does the GreenAcre Foods Chunky Peanut Butter recall c | 6.34s
+T23 first=PASS | Is the GreenAcre Foods Chunky Peanut Butter recall still active, expan | 10.41s
+T24 first=PASS | What should I do with GreenAcre Foods Chunky Peanut Butter that I alre | 6.97s
+T25 first=PASS | How many units of Harvest Valley Baby Spinach 10 oz are affected by th | 8.37s
+T26 first=PASS | Which lot codes does the Harvest Valley Baby Spinach 10 oz recall cove | 4.0s
+T27 first=PASS | By what date can I get a refund for Harvest Valley Baby Spinach 10 oz? | 5.1s
+T28 first=PASS | In which states was Dairy Meadow Sharp Cheddar Slices sold? | 8.93s
+T29 first=PASS | Is the Dairy Meadow Sharp Cheddar Slices recall still active, expanded | 9.25s
+T30 first=PASS | What should I do with Dairy Meadow Sharp Cheddar Slices that I already | 8.76s
+T31 first=PASS | In which states was Sunrise Orchards Orange Juice 64 oz sold? | 8.02s
+T32 first=PASS | What should I do with Sunrise Orchards Orange Juice 64 oz that I alrea | 5.02s
+T33 first=PASS | How many units of BlueTide Cannery Tuna Chunks in Water are affected b | 8.26s
+T34 first=PASS | In which states was BlueTide Cannery Tuna Chunks in Water sold? | 5.01s
+T35 first=PASS | How much does GreenAcre Foods Chunky Peanut Butter cost? | 6.32s
+T36 first=PASS | Who is the CEO of Dairy Meadow? | 4.74s
+T37 first=PASS | Will Sunrise Orchards be fined over the Orange Juice 64 oz recall? | 12.0s
+  failure pattern 'fabricated_answer' seen 2 time(s)
+  -> NEW LESSON L003 for 'fabricated_answer'
+T38 first=FAIL(fabricated_answer) -> retry PASS | How much does BlueTide Cannery Tuna Chunks in Water cost? | 7.84s
+T39 first=PASS | Is there a recall on Peanut Butter Cups from Candy Lane? | 5.95s
+T40 first=PASS | Which lot codes does the Blue Meadow Greek Yogurt recall cover? | 4.59s
+{
+  "n": 40,
+  "first_pass": 34,
+  "final_pass": 39,
+  "first_pass_rate": 0.85,
+  "final_pass_rate": 0.975,
+  "mean_attempts": 1.15,
+  "mean_seconds": 9.0,
+  "retried": 6,
+  "rescued": 5
+}
+lessons created: [('L001', 'stale_value'), ('L002', 'missing_value'), ('L003', 'fabricated_answer')]
+occurrences: {'missing_value': 2, 'fabricated_answer': 2, 'stale_value': 2}
+[2026-11-07T09:45:23Z] END exit_code=0
+
+[2026-11-07T09:47:17Z] Sharan Lourduraj | START command: python scripts/hw9_part4_validate.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | 14 validation questions | 3 candidate lessons
+C0: lessons none -> first-attempt pass 11/14
+C1_L001: lessons ['L001'] -> first-attempt pass 12/14
+  L001 stale_value: fixed ['V08', 'V12'] broken ['V06'] -> reject
+C1_L002: lessons ['L002'] -> first-attempt pass 10/14
+  L002 missing_value: fixed ['V12'] broken ['V04', 'V06'] -> reject
+C1_L003: lessons ['L003'] -> first-attempt pass 13/14
+  L003 fabricated_answer: fixed ['V02', 'V08', 'V12'] broken ['V06'] -> reject
+accepted lessons: none -> C:\Users\shara\data260-9619\data\hw09\lessons.json
+[2026-11-07T09:54:12Z] END exit_code=0
+
+[2026-11-07T09:56:19Z] Sharan Lourduraj | START command: python scripts/hw9_part4_validate.py --rule net
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | 14 validation questions | 3 candidate lessons
+C0: lessons none -> first-attempt pass 11/14
+C1_L001: lessons ['L001'] -> first-attempt pass 12/14
+  L001 stale_value: fixed ['V08', 'V12'] broken ['V06'] -> accept
+C1_L002: lessons ['L002'] -> first-attempt pass 10/14
+  L002 missing_value: fixed ['V12'] broken ['V04', 'V06'] -> reject
+C1_L003: lessons ['L003'] -> first-attempt pass 13/14
+  L003 fabricated_answer: fixed ['V02', 'V08', 'V12'] broken ['V06'] -> accept
+C2_L001_L003: lessons ['L001', 'L003'] -> first-attempt pass 13/14
+accepted lessons: ['L001', 'L003'] -> C:\Users\shara\data260-9619\data\hw09\lessons.json
+[2026-11-07T09:57:59Z] END exit_code=0
+
+[2026-11-07T09:58:23Z] Sharan Lourduraj | START command: python scripts/hw9_part4_variants.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | 20 test questions | accepted lessons: [('L001', 'stale_value'), ('L003', 'fabricated_answer')]
+--- V1: baseline (no lessons, no retry)
+X01 first=PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 13.56s
+X02 first=PASS | Which lot codes does the Silver Creek Naturals Almond Milk 32 oz recal | 5.44s
+X03 first=FAIL(stale_value) | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 8.88s
+X04 first=PASS | By what date can I get a refund for Green Basket Bagged Salad Kit? | 11.53s
+X05 first=PASS | In which states was Green Basket Bagged Salad Kit sold? | 4.81s
+X06 first=PASS | Which lot codes does the Green Basket Bagged Salad Kit recall cover, a | 6.25s
+X07 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 6.49s
+X08 first=PASS | What should I do with Redwood Pantry Canned Tomato Soup that I already | 7.03s
+X09 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 6.41s
+X10 first=PASS | How many units of Sweet Hearth Chocolate Chip Cookies are affected by  | 9.81s
+X11 first=PASS | By what date can I get a refund for Sweet Hearth Chocolate Chip Cookie | 8.56s
+X12 first=FAIL(incomplete_multi) | What should I do with Sweet Hearth Chocolate Chip Cookies that I alrea | 7.68s
+X13 first=PASS | Which lot codes does the Cold Harbor Seafood Fresh Salmon Fillets reca | 9.74s
+X14 first=PASS | Is the Cold Harbor Seafood Fresh Salmon Fillets recall still active, e | 10.27s
+X15 first=PASS | How many units of Cold Harbor Seafood Fresh Salmon Fillets are affecte | 8.7s
+X16 first=PASS | Why was Villa Rosso Pasta Sauce 24 oz recalled? | 8.46s
+X17 first=PASS | In which states was Villa Rosso Pasta Sauce 24 oz sold? | 4.82s
+X18 first=PASS | By what date can I get a refund for Villa Rosso Pasta Sauce 24 oz, and | 6.26s
+X19 first=FAIL(fabricated_answer) | Will Green Basket be fined over the Bagged Salad Kit recall? | 9.0s
+X20 first=PASS | Which lot codes does the Kettle & Spoon Chicken Noodle Soup recall cov | 4.02s
+V1: {"n": 20, "first_pass": 17, "final_pass": 17, "first_pass_rate": 0.85, "final_pass_rate": 0.85, "mean_attempts": 1.0, "mean_seconds": 7.9, "retried": 0, "rescued": 0, "name": "baseline (no lessons, no retry)", "failed_final": ["X03", "X12", "X19"]}
+--- V2: retry only
+X01 first=PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 8.79s
+X02 first=PASS | Which lot codes does the Silver Creek Naturals Almond Milk 32 oz recal | 4.58s
+X03 first=FAIL(stale_value) -> retry PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 7.51s
+X04 first=FAIL(stale_value) -> retry PASS | By what date can I get a refund for Green Basket Bagged Salad Kit? | 7.86s
+X05 first=PASS | In which states was Green Basket Bagged Salad Kit sold? | 4.45s
+X06 first=PASS | Which lot codes does the Green Basket Bagged Salad Kit recall cover, a | 5.52s
+X07 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 6.8s
+X08 first=PASS | What should I do with Redwood Pantry Canned Tomato Soup that I already | 7.51s
+X09 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 5.97s
+X10 first=PASS | How many units of Sweet Hearth Chocolate Chip Cookies are affected by  | 7.08s
+X11 first=PASS | By what date can I get a refund for Sweet Hearth Chocolate Chip Cookie | 8.99s
+X12 first=FAIL(incomplete_multi) -> retry FAIL | What should I do with Sweet Hearth Chocolate Chip Cookies that I alrea | 6.44s
+X13 first=PASS | Which lot codes does the Cold Harbor Seafood Fresh Salmon Fillets reca | 5.52s
+X14 first=PASS | Is the Cold Harbor Seafood Fresh Salmon Fillets recall still active, e | 10.93s
+X15 first=PASS | How many units of Cold Harbor Seafood Fresh Salmon Fillets are affecte | 7.97s
+X16 first=PASS | Why was Villa Rosso Pasta Sauce 24 oz recalled? | 9.19s
+X17 first=PASS | In which states was Villa Rosso Pasta Sauce 24 oz sold? | 5.2s
+X18 first=PASS | By what date can I get a refund for Villa Rosso Pasta Sauce 24 oz, and | 5.55s
+X19 first=FAIL(fabricated_answer) -> retry PASS | Will Green Basket be fined over the Bagged Salad Kit recall? | 9.16s
+X20 first=PASS | Which lot codes does the Kettle & Spoon Chicken Noodle Soup recall cov | 3.45s
+V2: {"n": 20, "first_pass": 16, "final_pass": 19, "first_pass_rate": 0.8, "final_pass_rate": 0.95, "mean_attempts": 1.2, "mean_seconds": 8.8, "retried": 4, "rescued": 3, "name": "retry only", "failed_final": ["X12"]}
+--- V3: lessons only
+X01 first=PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 9.66s
+X02 first=PASS | Which lot codes does the Silver Creek Naturals Almond Milk 32 oz recal | 6.11s
+X03 first=PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 7.16s
+X04 first=PASS | By what date can I get a refund for Green Basket Bagged Salad Kit? | 8.26s
+X05 first=PASS | In which states was Green Basket Bagged Salad Kit sold? | 4.83s
+X06 first=PASS | Which lot codes does the Green Basket Bagged Salad Kit recall cover, a | 5.73s
+X07 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 10.78s
+X08 first=PASS | What should I do with Redwood Pantry Canned Tomato Soup that I already | 5.27s
+X09 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 5.66s
+X10 first=PASS | How many units of Sweet Hearth Chocolate Chip Cookies are affected by  | 7.21s
+X11 first=PASS | By what date can I get a refund for Sweet Hearth Chocolate Chip Cookie | 5.8s
+X12 first=FAIL(incomplete_multi) | What should I do with Sweet Hearth Chocolate Chip Cookies that I alrea | 5.05s
+X13 first=PASS | Which lot codes does the Cold Harbor Seafood Fresh Salmon Fillets reca | 9.99s
+X14 first=PASS | Is the Cold Harbor Seafood Fresh Salmon Fillets recall still active, e | 7.33s
+X15 first=PASS | How many units of Cold Harbor Seafood Fresh Salmon Fillets are affecte | 7.51s
+X16 first=PASS | Why was Villa Rosso Pasta Sauce 24 oz recalled? | 10.73s
+X17 first=PASS | In which states was Villa Rosso Pasta Sauce 24 oz sold? | 4.09s
+X18 first=PASS | By what date can I get a refund for Villa Rosso Pasta Sauce 24 oz, and | 4.98s
+X19 first=PASS | Will Green Basket be fined over the Bagged Salad Kit recall? | 6.53s
+X20 first=PASS | Which lot codes does the Kettle & Spoon Chicken Noodle Soup recall cov | 3.92s
+V3: {"n": 20, "first_pass": 19, "final_pass": 19, "first_pass_rate": 0.95, "final_pass_rate": 0.95, "mean_attempts": 1.0, "mean_seconds": 6.8, "retried": 0, "rescued": 0, "name": "lessons only", "failed_final": ["X12"]}
+--- V4: lessons + retry
+X01 first=PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 9.93s
+X02 first=PASS | Which lot codes does the Silver Creek Naturals Almond Milk 32 oz recal | 6.69s
+X03 first=PASS | How many units of Silver Creek Naturals Almond Milk 32 oz are affected | 6.58s
+X04 first=PASS | By what date can I get a refund for Green Basket Bagged Salad Kit? | 5.33s
+X05 first=PASS | In which states was Green Basket Bagged Salad Kit sold? | 5.07s
+X06 first=PASS | Which lot codes does the Green Basket Bagged Salad Kit recall cover, a | 6.41s
+X07 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 8.52s
+X08 first=PASS | What should I do with Redwood Pantry Canned Tomato Soup that I already | 5.84s
+X09 first=PASS | Is the Redwood Pantry Canned Tomato Soup recall still active, expanded | 5.19s
+X10 first=PASS | How many units of Sweet Hearth Chocolate Chip Cookies are affected by  | 4.31s
+X11 first=PASS | By what date can I get a refund for Sweet Hearth Chocolate Chip Cookie | 5.25s
+X12 first=FAIL(incomplete_multi) -> retry PASS | What should I do with Sweet Hearth Chocolate Chip Cookies that I alrea | 7.03s
+X13 first=PASS | Which lot codes does the Cold Harbor Seafood Fresh Salmon Fillets reca | 5.17s
+X14 first=PASS | Is the Cold Harbor Seafood Fresh Salmon Fillets recall still active, e | 6.07s
+X15 first=PASS | How many units of Cold Harbor Seafood Fresh Salmon Fillets are affecte | 7.8s
+X16 first=PASS | Why was Villa Rosso Pasta Sauce 24 oz recalled? | 7.02s
+X17 first=PASS | In which states was Villa Rosso Pasta Sauce 24 oz sold? | 5.11s
+X18 first=PASS | By what date can I get a refund for Villa Rosso Pasta Sauce 24 oz, and | 5.92s
+X19 first=PASS | Will Green Basket be fined over the Bagged Salad Kit recall? | 5.83s
+X20 first=PASS | Which lot codes does the Kettle & Spoon Chicken Noodle Soup recall cov | 4.44s
+V4: {"n": 20, "first_pass": 19, "final_pass": 20, "first_pass_rate": 0.95, "final_pass_rate": 1.0, "mean_attempts": 1.05, "mean_seconds": 6.7, "retried": 1, "rescued": 1, "name": "lessons + retry", "failed_final": []}
+variant   first-attempt   final  mean attempts  s/question
+V1                17/20   17/20            1.0         7.9
+V2                16/20   19/20            1.2         8.8
+V3                19/20   19/20            1.0         6.8
+V4                19/20   20/20           1.05         6.7
+[2026-11-07T10:08:27Z] END exit_code=0
+
+[2026-11-07T10:10:32Z] Sharan Lourduraj | START command: python scripts/hw9_part4_demo.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9
+model qwen3:1.7b | accepted lessons: [('L001', 'stale_value'), ('L003', 'fabricated_answer')]
+
+=== 1. Controlled bad first answer (original, pre-update unit count)
+current value in the reference dataset: 6,260; original: 3,070
+
+-- without the retry loop (what the user would have received)
+Q: How many units of Northfield Farms Frozen Mixed Berries are affected by the recall?
+  attempt 1 (forced): FAIL stale_value  [0.0s]
+    answer: Northfield Farms Frozen Mixed Berries: 3,070 units are affected by the recall (published 2026-09-10).
+    evaluator feedback: Your answer gives an outdated value for: number of affected units. The notice was updated after it was first published. Use the values from the most recent UPDATE in the notice.
+  final: FAIL after 1 attempt(s)
+
+-- with the retry loop
+Q: How many units of Northfield Farms Frozen Mixed Berries are affected by the recall?
+  attempt 1 (forced): FAIL stale_value  [0.0s]
+    answer: Northfield Farms Frozen Mixed Berries: 3,070 units are affected by the recall (published 2026-09-10).
+    evaluator feedback: Your answer gives an outdated value for: number of affected units. The notice was updated after it was first published. Use the values from the most recent UPDATE in the notice.
+  attempt 2: PASS  [12.67s]
+    answer: Northfield Farms Frozen Mixed Berries: 6,260 units are affected by the recall (updated 2026-10-09).
+  final: PASS after 2 attempt(s)
+
+=== 2. Normal question, full system
+Q: How many units of Trail & Oat Crunchy Granola Bars are affected by the recall?
+  attempt 1: PASS  [4.81s]
+    answer: The recall affects 16,420 units of Trail & Oat Crunchy Granola Bars.
+  final: PASS after 1 attempt(s)
+
+=== 3. Question outside the notices
+Q: Who is the CEO of Casa Dorada?
+  attempt 1: PASS  [3.95s]
+    answer: You do not have that information.
+  final: PASS after 1 attempt(s)
+
+[2026-11-07T10:10:55Z] END exit_code=0
+
+[2026-11-07T10:13:46Z] Sharan Lourduraj | START command: python scripts/hw9_part3_agent_pass.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part3_agent_pass
+50 distinct questions, 0 already approved, 50 to run
+
+--- 1/50 B01 ---
+Q: How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?
+10:13:51.802 [CACHE] running the agent pipeline correlation_id=e5074f1d-2be1-434a-8767-8beac6b1c6d8 depends_on=REC-015545
+10:13:51.860 [CLIENT] sent question topic=s9619_inbox partition=0 offset=108 correlation_id=e5074f1d-2be1-434a-8767-8beac6b1c6d8 message={"correlation_id":"e5074f1d-2be1-434a-8767-8beac6b1c6d8","question":"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?\n\nFacts from the recall database for REC-015545: product Farmstead Shell Eggs (Lot 00539); brand Blue Ridge Kitchen; units affected 31863; reported by Regional Poison Control Center #162 (Midwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015545"}
+10:16:20.888 [CLIENT] final message received topic=s9619_final partition=0 offset=23 correlation_id=e5074f1d-2be1-434a-8767-8beac6b1c6d8
+status=approved  agent 149.1 s  answer_has_fact=True  (elapsed 2.5 min, about 122 min left)
+A: The recall REC-015545 affected 31,863 units of Farmstead Shell Eggs (Lot 00539) by Blue Ridge Kitchen. Do not eat or use the recalled product; follow the official recall notice for safe handling and disposal.
+
+--- 2/50 B02 ---
+Q: Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?
+10:16:20.945 [CACHE] running the agent pipeline correlation_id=cd13e72e-eec6-49c6-b3ec-520dfcad2b80 depends_on=REC-017792
+10:16:20.955 [CLIENT] sent question topic=s9619_inbox partition=0 offset=109 correlation_id=cd13e72e-eec6-49c6-b3ec-520dfcad2b80 message={"correlation_id":"cd13e72e-eec6-49c6-b3ec-520dfcad2b80","question":"Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?\n\nFacts from the recall database for REC-017792: product Reduced Sodium Cantaloupe (Lot 02786); brand Oakhollow Market; units affected 9407; reported by Regional Poison Control Center #166 (Mountain West). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017792"}
+10:18:27.531 [CLIENT] final message received topic=s9619_final partition=0 offset=24 correlation_id=cd13e72e-eec6-49c6-b3ec-520dfcad2b80
+status=approved  agent 126.6 s  answer_has_fact=True  (elapsed 4.6 min, about 110 min left)
+A: The Regional Poison Control Center #166 (Mountain West) reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market. Do not eat or use the recalled product; follow the official recall notice for safe disposal.
+
+--- 3/50 B03 ---
+Q: How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?
+10:18:27.562 [CACHE] running the agent pipeline correlation_id=714af86e-57b9-4f47-8e42-1e2e25d55c3f depends_on=REC-018041
+10:18:27.567 [CLIENT] sent question topic=s9619_inbox partition=0 offset=110 correlation_id=714af86e-57b9-4f47-8e42-1e2e25d55c3f message={"correlation_id":"714af86e-57b9-4f47-8e42-1e2e25d55c3f","question":"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?\n\nFacts from the recall database for REC-018041: product Premium Bottled Juice (Lot 03035); brand Blue Ridge Pantry; units affected 24753; reported by FDA District Office #155 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018041"}
+10:20:19.270 [CLIENT] final message received topic=s9619_final partition=0 offset=25 correlation_id=714af86e-57b9-4f47-8e42-1e2e25d55c3f
+status=approved  agent 111.7 s  answer_has_fact=True  (elapsed 6.5 min, about 101 min left)
+A: The recall REC-018041 affected 24,753 units of Premium Bottled Juice (Lot 03035) by Blue Ridge Pantry. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+--- 4/50 B04 ---
+Q: Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?
+10:20:19.455 [CACHE] running the agent pipeline correlation_id=f6a3291a-c4d5-4b43-8950-ca4a1c20f004 depends_on=REC-015220
+10:20:19.485 [CLIENT] sent question topic=s9619_inbox partition=0 offset=111 correlation_id=f6a3291a-c4d5-4b43-8950-ca4a1c20f004 message={"correlation_id":"f6a3291a-c4d5-4b43-8950-ca4a1c20f004","question":"Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?\n\nFacts from the recall database for REC-015220: product Value Brand Bottled Juice (Lot 00214); brand Red Barn Pantry; units affected 38021; reported by Regional Poison Control Center #136 (Gulf Coast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015220"}
+10:22:18.166 [CLIENT] final message received topic=s9619_final partition=0 offset=26 correlation_id=f6a3291a-c4d5-4b43-8950-ca4a1c20f004
+status=approved  agent 118.7 s  answer_has_fact=True  (elapsed 8.4 min, about 97 min left)
+A: The Regional Poison Control Center #136 (Gulf Coast) reported recall REC-015220. Do not eat or use the recalled Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry. Follow the official recall notice for further instructions and safety guidance.
+
+--- 5/50 B05 ---
+Q: How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?
+10:22:18.196 [CACHE] running the agent pipeline correlation_id=c269f0c0-6cba-456c-bd33-29fef479108b depends_on=REC-018625
+10:22:18.208 [CLIENT] sent question topic=s9619_inbox partition=0 offset=112 correlation_id=c269f0c0-6cba-456c-bd33-29fef479108b message={"correlation_id":"c269f0c0-6cba-456c-bd33-29fef479108b","question":"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?\n\nFacts from the recall database for REC-018625: product Frozen Yogurt (Lot 03619); brand Harvest Moon Provisions; units affected 17354; reported by County Health Inspector #173 (Northern California). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018625"}
+10:24:04.468 [CLIENT] final message received topic=s9619_final partition=0 offset=27 correlation_id=c269f0c0-6cba-456c-bd33-29fef479108b
+status=approved  agent 106.3 s  answer_has_fact=True  (elapsed 10.2 min, about 92 min left)
+A: The recall REC-018625 affected 17,354 units of Frozen Yogurt (Lot 03619) from Harvest Moon Provisions. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 6/50 B06 ---
+Q: Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?
+10:24:04.532 [CACHE] running the agent pipeline correlation_id=6ba58862-95b2-433b-b869-c36c616fc92e depends_on=REC-016603
+10:24:04.536 [CLIENT] sent question topic=s9619_inbox partition=0 offset=113 correlation_id=6ba58862-95b2-433b-b869-c36c616fc92e message={"correlation_id":"6ba58862-95b2-433b-b869-c36c616fc92e","question":"Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?\n\nFacts from the recall database for REC-016603: product Plant-Based Mixed Berries (Lot 01597); brand Northfield Farms; units affected 32650; reported by Consumer Product Safety Bureau #197 (Texas Triangle). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016603"}
+10:25:54.264 [CLIENT] final message received topic=s9619_final partition=0 offset=28 correlation_id=6ba58862-95b2-433b-b869-c36c616fc92e
+status=approved  agent 109.7 s  answer_has_fact=True  (elapsed 12.0 min, about 88 min left)
+A: The Consumer Product Safety Bureau #197 (Texas Triangle) reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 7/50 B07 ---
+Q: How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?
+10:25:54.312 [CACHE] running the agent pipeline correlation_id=81d9d933-bb49-474f-84c1-13a6f4b13e80 depends_on=REC-017158
+10:25:54.318 [CLIENT] sent question topic=s9619_inbox partition=0 offset=114 correlation_id=81d9d933-bb49-474f-84c1-13a6f4b13e80 message={"correlation_id":"81d9d933-bb49-474f-84c1-13a6f4b13e80","question":"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?\n\nFacts from the recall database for REC-017158: product Reduced Sodium Trail Mix (Lot 02152); brand Sunrise Valley Co.; units affected 45168; reported by County Health Inspector #073 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017158"}
+10:27:36.681 [CLIENT] final message received topic=s9619_final partition=0 offset=29 correlation_id=81d9d933-bb49-474f-84c1-13a6f4b13e80
+status=approved  agent 102.4 s  answer_has_fact=True  (elapsed 13.8 min, about 84 min left)
+A: The recall affected 45,168 units of Reduced Sodium Trail Mix (Lot 02152) from Sunrise Valley Co. Do not eat or use this product; follow the official recall notice for further instructions.
+
+--- 8/50 B08 ---
+Q: Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?
+10:27:36.712 [CACHE] running the agent pipeline correlation_id=2658557f-9622-479f-81bc-42bd4bb762c5 depends_on=REC-017706
+10:27:36.728 [CLIENT] sent question topic=s9619_inbox partition=0 offset=115 correlation_id=2658557f-9622-479f-81bc-42bd4bb762c5 message={"correlation_id":"2658557f-9622-479f-81bc-42bd4bb762c5","question":"Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?\n\nFacts from the recall database for REC-017706: product Premium Mixed Berries (Lot 02700); brand Silver Creek Market; units affected 22074; reported by State Health Department #018 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017706"}
+10:29:25.918 [CLIENT] final message received topic=s9619_final partition=0 offset=30 correlation_id=2658557f-9622-479f-81bc-42bd4bb762c5
+status=approved  agent 109.2 s  answer_has_fact=True  (elapsed 15.6 min, about 82 min left)
+A: The Mid-Atlantic State Health Department #018 reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 9/50 B09 ---
+Q: How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?
+10:29:25.952 [CACHE] running the agent pipeline correlation_id=23c7da24-ac57-415e-a1ef-e23a2a724f1c depends_on=REC-015224
+10:29:25.959 [CLIENT] sent question topic=s9619_inbox partition=0 offset=116 correlation_id=23c7da24-ac57-415e-a1ef-e23a2a724f1c message={"correlation_id":"23c7da24-ac57-415e-a1ef-e23a2a724f1c","question":"How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?\n\nFacts from the recall database for REC-015224: product Original Peanut Butter (Lot 00218); brand Ironwood Naturals; units affected 39784; reported by State Health Department #003 (New England). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015224"}
+10:31:11.407 [CLIENT] final message received topic=s9619_final partition=0 offset=31 correlation_id=23c7da24-ac57-415e-a1ef-e23a2a724f1c
+status=approved  agent 105.5 s  answer_has_fact=True  (elapsed 17.3 min, about 79 min left)
+A: The recall affected 39,784 units of Original Peanut Butter (Lot 00218) by Ironwood Naturals. Do not eat or use this product; follow the official recall notice for safe handling and return instructions.
+
+--- 10/50 B10 ---
+Q: Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?
+10:31:11.472 [CACHE] running the agent pipeline correlation_id=09552ddc-fe69-4f2e-ad2c-4a06d2f18aa3 depends_on=REC-019153
+10:31:11.476 [CLIENT] sent question topic=s9619_inbox partition=0 offset=117 correlation_id=09552ddc-fe69-4f2e-ad2c-4a06d2f18aa3 message={"correlation_id":"09552ddc-fe69-4f2e-ad2c-4a06d2f18aa3","question":"Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?\n\nFacts from the recall database for REC-019153: product Artisan Shell Eggs (Lot 04147); brand Red Barn Co.; units affected 45660; reported by Consumer Product Safety Bureau #190 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-019153"}
+10:33:05.183 [CLIENT] final message received topic=s9619_final partition=0 offset=32 correlation_id=09552ddc-fe69-4f2e-ad2c-4a06d2f18aa3
+status=approved  agent 113.7 s  answer_has_fact=True  (elapsed 19.2 min, about 77 min left)
+A: The Consumer Product Safety Bureau #190 (Mid-Atlantic) reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 11/50 B11 ---
+Q: How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?
+10:33:05.220 [CACHE] running the agent pipeline correlation_id=934a5562-281c-42eb-8da7-6dc92cd0f963 depends_on=REC-018874
+10:33:05.227 [CLIENT] sent question topic=s9619_inbox partition=0 offset=118 correlation_id=934a5562-281c-42eb-8da7-6dc92cd0f963 message={"correlation_id":"934a5562-281c-42eb-8da7-6dc92cd0f963","question":"How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?\n\nFacts from the recall database for REC-018874: product Reduced Sodium Bagged Spinach (Lot 03868); brand Prairie Gold Naturals; units affected 8569; reported by FDA District Office #017 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018874"}
+10:34:43.567 [CLIENT] final message received topic=s9619_final partition=0 offset=33 correlation_id=934a5562-281c-42eb-8da7-6dc92cd0f963
+status=approved  agent 98.3 s  answer_has_fact=True  (elapsed 20.9 min, about 74 min left)
+A: The recall affected 8,569 units. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 12/50 B12 ---
+Q: Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?
+10:34:43.603 [CACHE] running the agent pipeline correlation_id=33785c90-ba88-477d-bc53-8fd747e966ee depends_on=REC-016568
+10:34:43.609 [CLIENT] sent question topic=s9619_inbox partition=0 offset=119 correlation_id=33785c90-ba88-477d-bc53-8fd747e966ee message={"correlation_id":"33785c90-ba88-477d-bc53-8fd747e966ee","question":"Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?\n\nFacts from the recall database for REC-016568: product Premium Salmon Fillets (Lot 01562); brand Clearwater Farms; units affected 5968; reported by FDA District Office #155 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016568"}
+10:36:26.481 [CLIENT] final message received topic=s9619_final partition=0 offset=34 correlation_id=33785c90-ba88-477d-bc53-8fd747e966ee
+status=approved  agent 102.9 s  answer_has_fact=True  (elapsed 22.6 min, about 72 min left)
+A: The FDA District Office #155 (Pacific Northwest) reported recall REC-016568. Do not eat or use the recalled Premium Salmon Fillets (Lot 01562) and follow the official recall notice for safety.
+
+--- 13/50 B13 ---
+Q: How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?
+10:36:26.562 [CACHE] running the agent pipeline correlation_id=c593a67e-6b3e-4130-bff2-1c3130b9b0f1 depends_on=REC-015945
+10:36:26.567 [CLIENT] sent question topic=s9619_inbox partition=0 offset=120 correlation_id=c593a67e-6b3e-4130-bff2-1c3130b9b0f1 message={"correlation_id":"c593a67e-6b3e-4130-bff2-1c3130b9b0f1","question":"How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?\n\nFacts from the recall database for REC-015945: product Premium Peanut Butter (Lot 00939); brand Sunrise Valley Naturals; units affected 18167; reported by County Health Inspector #107 (Southwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015945"}
+10:38:14.559 [CLIENT] final message received topic=s9619_final partition=0 offset=35 correlation_id=c593a67e-6b3e-4130-bff2-1c3130b9b0f1
+status=approved  agent 108.0 s  answer_has_fact=True  (elapsed 24.4 min, about 69 min left)
+A: The recall REC-015945 affected 18,167 units of Premium Peanut Butter (Lot 00939) from Sunrise Valley Naturals. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+--- 14/50 B14 ---
+Q: Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?
+10:38:14.606 [CACHE] running the agent pipeline correlation_id=0cd8435a-4123-486f-9e2e-eef0ce8b73cd depends_on=REC-015978
+10:38:14.617 [CLIENT] sent question topic=s9619_inbox partition=0 offset=121 correlation_id=0cd8435a-4123-486f-9e2e-eef0ce8b73cd message={"correlation_id":"0cd8435a-4123-486f-9e2e-eef0ce8b73cd","question":"Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?\n\nFacts from the recall database for REC-015978: product Reduced Sodium Cookie Dough (Lot 00972); brand Coastal Harbor Co.; units affected 13475; reported by Regional Poison Control Center #082 (Mountain West). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015978"}
+10:40:13.339 [CLIENT] final message received topic=s9619_final partition=0 offset=36 correlation_id=0cd8435a-4123-486f-9e2e-eef0ce8b73cd
+status=approved  agent 118.7 s  answer_has_fact=True  (elapsed 26.4 min, about 68 min left)
+A: The Regional Poison Control Center #082 (Mountain West) reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co. Do not eat or use the recalled product; follow the official recall notice for safe disposal.
+
+--- 15/50 B15 ---
+Q: How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?
+10:40:13.395 [CACHE] running the agent pipeline correlation_id=d26d1afa-64e1-443b-b7da-5acf610baff3 depends_on=REC-017004
+10:40:13.403 [CLIENT] sent question topic=s9619_inbox partition=0 offset=122 correlation_id=d26d1afa-64e1-443b-b7da-5acf610baff3 message={"correlation_id":"d26d1afa-64e1-443b-b7da-5acf610baff3","question":"How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?\n\nFacts from the recall database for REC-017004: product Family Size Ground Beef (Lot 01998); brand Willow Bend Farms; units affected 44160; reported by CDC Regional Lab #028 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017004"}
+10:42:06.398 [CLIENT] final message received topic=s9619_final partition=0 offset=37 correlation_id=d26d1afa-64e1-443b-b7da-5acf610baff3
+status=approved  agent 113.0 s  answer_has_fact=True  (elapsed 28.2 min, about 66 min left)
+A: The recall REC-017004 affected 44,160 units of Family Size Ground Beef (Lot 01998) from Willow Bend Farms. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 16/50 B16 ---
+Q: Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?
+10:42:06.459 [CACHE] running the agent pipeline correlation_id=cd60ce5b-2582-45f5-929e-a669ece5b4bc depends_on=REC-018145
+10:42:06.467 [CLIENT] sent question topic=s9619_inbox partition=0 offset=123 correlation_id=cd60ce5b-2582-45f5-929e-a669ece5b4bc message={"correlation_id":"cd60ce5b-2582-45f5-929e-a669ece5b4bc","question":"Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?\n\nFacts from the recall database for REC-018145: product Plant-Based Ground Beef (Lot 03139); brand Silver Creek Kitchen; units affected 17933; reported by CDC Regional Lab #070 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018145"}
+10:43:51.569 [CLIENT] final message received topic=s9619_final partition=0 offset=38 correlation_id=cd60ce5b-2582-45f5-929e-a669ece5b4bc
+status=approved  agent 105.1 s  answer_has_fact=True  (elapsed 30.0 min, about 64 min left)
+A: The CDC Regional Lab #070 (Southeast) reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 17/50 B17 ---
+Q: How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?
+10:43:51.601 [CACHE] running the agent pipeline correlation_id=3e9d3f22-95fc-4973-bcc8-72b12e1da05f depends_on=REC-016017
+10:43:51.607 [CLIENT] sent question topic=s9619_inbox partition=0 offset=124 correlation_id=3e9d3f22-95fc-4973-bcc8-72b12e1da05f message={"correlation_id":"3e9d3f22-95fc-4973-bcc8-72b12e1da05f","question":"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?\n\nFacts from the recall database for REC-016017: product Whole Grain Soft Cheese (Lot 01011); brand Silver Creek Pantry; units affected 23850; reported by Consumer Product Safety Bureau #008 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016017"}
+10:45:31.842 [CLIENT] final message received topic=s9619_final partition=0 offset=39 correlation_id=3e9d3f22-95fc-4973-bcc8-72b12e1da05f
+status=approved  agent 100.2 s  answer_has_fact=True  (elapsed 31.7 min, about 61 min left)
+A: The recall affected 23,850 units of Whole Grain Soft Cheese (Lot 01011) from Silver Creek Pantry. Do not eat or use the recalled product; follow the official recall notice for safe disposal.
+
+--- 18/50 B18 ---
+Q: Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?
+10:45:31.872 [CACHE] running the agent pipeline correlation_id=ddf7535b-8663-4c81-95d9-4d4a2088bc4e depends_on=REC-015344
+10:45:31.877 [CLIENT] sent question topic=s9619_inbox partition=0 offset=125 correlation_id=ddf7535b-8663-4c81-95d9-4d4a2088bc4e message={"correlation_id":"ddf7535b-8663-4c81-95d9-4d4a2088bc4e","question":"Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?\n\nFacts from the recall database for REC-015344: product Reduced Sodium Peanut Butter (Lot 00338); brand Evergreen Kitchen; units affected 22539; reported by Consumer Product Safety Bureau #117 (Pacific Southwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015344"}
+10:47:15.331 [CLIENT] final message received topic=s9619_final partition=0 offset=40 correlation_id=ddf7535b-8663-4c81-95d9-4d4a2088bc4e
+status=approved  agent 103.5 s  answer_has_fact=True  (elapsed 33.4 min, about 59 min left)
+A: The Consumer Product Safety Bureau #117 (Pacific Southwest) reported recall REC-015344. Do not eat or use the recalled product; follow the official recall notice for safe disposal or return instructions.
+
+--- 19/50 B19 ---
+Q: How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?
+10:47:15.488 [CACHE] running the agent pipeline correlation_id=2acc3ccc-3f48-497e-958f-38125828f814 depends_on=REC-019034
+10:47:15.496 [CLIENT] sent question topic=s9619_inbox partition=0 offset=126 correlation_id=2acc3ccc-3f48-497e-958f-38125828f814 message={"correlation_id":"2acc3ccc-3f48-497e-958f-38125828f814","question":"How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?\n\nFacts from the recall database for REC-019034: product Whole Grain Hummus (Lot 04028); brand Red Barn Pantry; units affected 23510; reported by Local Public Health Unit #080 (Mountain West). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-019034"}
+10:48:56.733 [CLIENT] final message received topic=s9619_final partition=0 offset=41 correlation_id=2acc3ccc-3f48-497e-958f-38125828f814
+status=approved  agent 101.2 s  answer_has_fact=True  (elapsed 35.1 min, about 57 min left)
+A: The recall affected 23,510 units of Whole Grain Hummus (Lot 04028) from Red Barn Pantry. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 20/50 B20 ---
+Q: Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?
+10:48:56.758 [CACHE] running the agent pipeline correlation_id=6b4c2f77-695e-4c04-8b0c-2c868211c50d depends_on=REC-015679
+10:48:56.765 [CLIENT] sent question topic=s9619_inbox partition=0 offset=127 correlation_id=6b4c2f77-695e-4c04-8b0c-2c868211c50d message={"correlation_id":"6b4c2f77-695e-4c04-8b0c-2c868211c50d","question":"Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?\n\nFacts from the recall database for REC-015679: product Farmstead Salmon Fillets (Lot 00673); brand Harvest Moon Farms; units affected 42043; reported by County Health Inspector #095 (Texas Triangle). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015679"}
+10:50:36.284 [CLIENT] final message received topic=s9619_final partition=0 offset=42 correlation_id=6b4c2f77-695e-4c04-8b0c-2c868211c50d
+status=approved  agent 99.5 s  answer_has_fact=True  (elapsed 36.7 min, about 55 min left)
+A: The recall for Farmstead Salmon Fillets (Lot 00673) was reported by County Health Inspector #095 (Texas Triangle). Shoppers should not eat or use the recalled product and should follow the official recall notice for further instructions.
+
+--- 21/50 C11 ---
+Q: What is the total number of units covered by the Prairie Gold Naturals Reduced Sodium Bagged Spinach (Lot 03868) recall, record REC-018874?
+10:50:36.314 [CACHE] running the agent pipeline correlation_id=ff9ea8e0-6a1c-4e4f-a098-43fcbc81e420 depends_on=REC-018874
+10:50:36.322 [CLIENT] sent question topic=s9619_inbox partition=0 offset=128 correlation_id=ff9ea8e0-6a1c-4e4f-a098-43fcbc81e420 message={"correlation_id":"ff9ea8e0-6a1c-4e4f-a098-43fcbc81e420","question":"What is the total number of units covered by the Prairie Gold Naturals Reduced Sodium Bagged Spinach (Lot 03868) recall, record REC-018874?\n\nFacts from the recall database for REC-018874: product Reduced Sodium Bagged Spinach (Lot 03868); brand Prairie Gold Naturals; units affected 8569; reported by FDA District Office #017 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018874"}
+10:52:30.308 [CLIENT] final message received topic=s9619_final partition=0 offset=43 correlation_id=ff9ea8e0-6a1c-4e4f-a098-43fcbc81e420
+status=approved  agent 114.0 s  answer_has_fact=True  (elapsed 38.6 min, about 53 min left)
+A: The total number of units covered by the recall for Prairie Gold Naturals Reduced Sodium Bagged Spinach (Lot 03868) is 8,569. Do not eat or use this product; follow the official recall notice for safety.
+
+--- 22/50 C12 ---
+Q: Which organisation filed recall REC-016568 covering Premium Salmon Fillets (Lot 01562) from Clearwater Farms?
+10:52:30.399 [CACHE] running the agent pipeline correlation_id=7cefe9fd-7451-4c55-b3d3-4bb53a893e23 depends_on=REC-016568
+10:52:30.417 [CLIENT] sent question topic=s9619_inbox partition=0 offset=129 correlation_id=7cefe9fd-7451-4c55-b3d3-4bb53a893e23 message={"correlation_id":"7cefe9fd-7451-4c55-b3d3-4bb53a893e23","question":"Which organisation filed recall REC-016568 covering Premium Salmon Fillets (Lot 01562) from Clearwater Farms?\n\nFacts from the recall database for REC-016568: product Premium Salmon Fillets (Lot 01562); brand Clearwater Farms; units affected 5968; reported by FDA District Office #155 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016568"}
+10:54:20.507 [CLIENT] final message received topic=s9619_final partition=0 offset=44 correlation_id=7cefe9fd-7451-4c55-b3d3-4bb53a893e23
+status=approved  agent 110.1 s  answer_has_fact=True  (elapsed 40.5 min, about 52 min left)
+A: The FDA District Office #155 (Pacific Northwest) filed recall REC-016568. Do not eat or use the recalled Premium Salmon Fillets (Lot 01562) from Clearwater Farms. Follow the official recall notice for further instructions.
+
+--- 23/50 C13 ---
+Q: Can you tell me the unit count for the REC-015945 recall of Sunrise Valley Naturals Premium Peanut Butter (Lot 00939)?
+10:54:20.521 [CACHE] running the agent pipeline correlation_id=0bb75ab1-2b0b-4a5f-b5d7-b95a50a48082 depends_on=REC-015945
+10:54:20.528 [CLIENT] sent question topic=s9619_inbox partition=0 offset=130 correlation_id=0bb75ab1-2b0b-4a5f-b5d7-b95a50a48082 message={"correlation_id":"0bb75ab1-2b0b-4a5f-b5d7-b95a50a48082","question":"Can you tell me the unit count for the REC-015945 recall of Sunrise Valley Naturals Premium Peanut Butter (Lot 00939)?\n\nFacts from the recall database for REC-015945: product Premium Peanut Butter (Lot 00939); brand Sunrise Valley Naturals; units affected 18167; reported by County Health Inspector #107 (Southwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015945"}
+10:56:13.240 [CLIENT] final message received topic=s9619_final partition=0 offset=45 correlation_id=0bb75ab1-2b0b-4a5f-b5d7-b95a50a48082
+status=approved  agent 112.7 s  answer_has_fact=True  (elapsed 42.4 min, about 50 min left)
+A: The recall for Sunrise Valley Naturals Premium Peanut Butter (Lot 00939) affects 18,167 units. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+--- 24/50 C14 ---
+Q: Which reporting agency is behind recall REC-015978 (Reduced Sodium Cookie Dough (Lot 00972), Coastal Harbor Co.)?
+10:56:13.358 [CACHE] running the agent pipeline correlation_id=f244dc6a-561e-45f5-b556-26dbdaf6e0df depends_on=REC-015978
+10:56:13.373 [CLIENT] sent question topic=s9619_inbox partition=0 offset=131 correlation_id=f244dc6a-561e-45f5-b556-26dbdaf6e0df message={"correlation_id":"f244dc6a-561e-45f5-b556-26dbdaf6e0df","question":"Which reporting agency is behind recall REC-015978 (Reduced Sodium Cookie Dough (Lot 00972), Coastal Harbor Co.)?\n\nFacts from the recall database for REC-015978: product Reduced Sodium Cookie Dough (Lot 00972); brand Coastal Harbor Co.; units affected 13475; reported by Regional Poison Control Center #082 (Mountain West). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015978"}
+10:58:00.625 [CLIENT] final message received topic=s9619_final partition=0 offset=46 correlation_id=f244dc6a-561e-45f5-b556-26dbdaf6e0df
+status=approved  agent 107.3 s  answer_has_fact=True  (elapsed 44.1 min, about 48 min left)
+A: The recall REC-015978 was reported by the Regional Poison Control Center #082 (Mountain West). Do not eat or use the recalled Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co. Follow the official recall notice for further instructions.
+
+--- 25/50 C15 ---
+Q: REC-017004: how many units of Family Size Ground Beef (Lot 01998) (Willow Bend Farms) were recalled?
+10:58:00.688 [CACHE] running the agent pipeline correlation_id=bb1e6eaf-5909-494e-a1ac-bc1ae3e91e16 depends_on=REC-017004
+10:58:00.695 [CLIENT] sent question topic=s9619_inbox partition=0 offset=132 correlation_id=bb1e6eaf-5909-494e-a1ac-bc1ae3e91e16 message={"correlation_id":"bb1e6eaf-5909-494e-a1ac-bc1ae3e91e16","question":"REC-017004: how many units of Family Size Ground Beef (Lot 01998) (Willow Bend Farms) were recalled?\n\nFacts from the recall database for REC-017004: product Family Size Ground Beef (Lot 01998); brand Willow Bend Farms; units affected 44160; reported by CDC Regional Lab #028 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017004"}
+10:59:47.080 [CLIENT] final message received topic=s9619_final partition=0 offset=47 correlation_id=bb1e6eaf-5909-494e-a1ac-bc1ae3e91e16
+status=approved  agent 106.4 s  answer_has_fact=True  (elapsed 45.9 min, about 46 min left)
+A: The recall of Family Size Ground Beef (Lot 01998) from Willow Bend Farms affected 44,160 units. Do not eat or use this product; follow the official recall notice for further instructions.
+
+--- 26/50 C16 ---
+Q: Who reported the Silver Creek Kitchen Plant-Based Ground Beef (Lot 03139) recall REC-018145?
+10:59:47.122 [CACHE] running the agent pipeline correlation_id=3e32d4ec-c445-40f5-83e4-2ff54c5bfbaa depends_on=REC-018145
+10:59:47.132 [CLIENT] sent question topic=s9619_inbox partition=0 offset=133 correlation_id=3e32d4ec-c445-40f5-83e4-2ff54c5bfbaa message={"correlation_id":"3e32d4ec-c445-40f5-83e4-2ff54c5bfbaa","question":"Who reported the Silver Creek Kitchen Plant-Based Ground Beef (Lot 03139) recall REC-018145?\n\nFacts from the recall database for REC-018145: product Plant-Based Ground Beef (Lot 03139); brand Silver Creek Kitchen; units affected 17933; reported by CDC Regional Lab #070 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018145"}
+11:01:22.525 [CLIENT] final message received topic=s9619_final partition=0 offset=48 correlation_id=3e32d4ec-c445-40f5-83e4-2ff54c5bfbaa
+status=approved  agent 95.4 s  answer_has_fact=True  (elapsed 47.5 min, about 44 min left)
+A: The recall was reported by CDC Regional Lab #070 (Southeast). Shoppers should not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 27/50 C17 ---
+Q: For recall REC-016017 of Whole Grain Soft Cheese (Lot 01011) by Silver Creek Pantry, how many units were involved?
+11:01:22.559 [CACHE] running the agent pipeline correlation_id=c444d451-6cb7-4359-b353-02498e0bfabe depends_on=REC-016017
+11:01:22.564 [CLIENT] sent question topic=s9619_inbox partition=0 offset=134 correlation_id=c444d451-6cb7-4359-b353-02498e0bfabe message={"correlation_id":"c444d451-6cb7-4359-b353-02498e0bfabe","question":"For recall REC-016017 of Whole Grain Soft Cheese (Lot 01011) by Silver Creek Pantry, how many units were involved?\n\nFacts from the recall database for REC-016017: product Whole Grain Soft Cheese (Lot 01011); brand Silver Creek Pantry; units affected 23850; reported by Consumer Product Safety Bureau #008 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016017"}
+11:03:11.741 [CLIENT] final message received topic=s9619_final partition=0 offset=49 correlation_id=c444d451-6cb7-4359-b353-02498e0bfabe
+status=approved  agent 109.2 s  answer_has_fact=True  (elapsed 49.3 min, about 42 min left)
+A: The recall REC-016017 involves 23,850 units of Whole Grain Soft Cheese (Lot 01011) by Silver Creek Pantry. Do not eat or use the recalled product; follow the official recall notice for safe handling and return instructions.
+
+--- 28/50 C18 ---
+Q: Recall REC-015344 for Evergreen Kitchen Reduced Sodium Peanut Butter (Lot 00338): which agency was the source of the report?
+11:03:11.824 [CACHE] running the agent pipeline correlation_id=87b17ea5-ce27-49f2-9f23-33658e719ed4 depends_on=REC-015344
+11:03:11.834 [CLIENT] sent question topic=s9619_inbox partition=0 offset=135 correlation_id=87b17ea5-ce27-49f2-9f23-33658e719ed4 message={"correlation_id":"87b17ea5-ce27-49f2-9f23-33658e719ed4","question":"Recall REC-015344 for Evergreen Kitchen Reduced Sodium Peanut Butter (Lot 00338): which agency was the source of the report?\n\nFacts from the recall database for REC-015344: product Reduced Sodium Peanut Butter (Lot 00338); brand Evergreen Kitchen; units affected 22539; reported by Consumer Product Safety Bureau #117 (Pacific Southwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015344"}
+11:04:58.033 [CLIENT] final message received topic=s9619_final partition=0 offset=50 correlation_id=87b17ea5-ce27-49f2-9f23-33658e719ed4
+status=approved  agent 106.2 s  answer_has_fact=True  (elapsed 51.1 min, about 40 min left)
+A: The report for Recall REC-015344 came from the Consumer Product Safety Bureau #117 (Pacific Southwest). Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 29/50 C19 ---
+Q: How big was the Whole Grain Hummus (Lot 04028) recall from Red Barn Pantry (REC-019034) in units?
+11:04:58.066 [CACHE] running the agent pipeline correlation_id=0c3a9299-9e95-4166-a9e1-b4cbe5cb5f76 depends_on=REC-019034
+11:04:58.078 [CLIENT] sent question topic=s9619_inbox partition=0 offset=136 correlation_id=0c3a9299-9e95-4166-a9e1-b4cbe5cb5f76 message={"correlation_id":"0c3a9299-9e95-4166-a9e1-b4cbe5cb5f76","question":"How big was the Whole Grain Hummus (Lot 04028) recall from Red Barn Pantry (REC-019034) in units?\n\nFacts from the recall database for REC-019034: product Whole Grain Hummus (Lot 04028); brand Red Barn Pantry; units affected 23510; reported by Local Public Health Unit #080 (Mountain West). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-019034"}
+11:07:03.881 [CLIENT] final message received topic=s9619_final partition=0 offset=51 correlation_id=0c3a9299-9e95-4166-a9e1-b4cbe5cb5f76
+status=approved  agent 125.8 s  answer_has_fact=True  (elapsed 53.2 min, about 39 min left)
+A: The Whole Grain Hummus (Lot 04028) recall from Red Barn Pantry (REC-019034) affected 23,510 units. Do not eat or use the recalled product; follow the official recall notice for safe handling and return instructions.
+
+--- 30/50 C20 ---
+Q: Name the agency that reported the REC-015679 recall of Farmstead Salmon Fillets (Lot 00673) by Harvest Moon Farms.
+11:07:03.928 [CACHE] running the agent pipeline correlation_id=bc296f81-9474-4d32-835c-ff60bb5835af depends_on=REC-015679
+11:07:03.940 [CLIENT] sent question topic=s9619_inbox partition=0 offset=137 correlation_id=bc296f81-9474-4d32-835c-ff60bb5835af message={"correlation_id":"bc296f81-9474-4d32-835c-ff60bb5835af","question":"Name the agency that reported the REC-015679 recall of Farmstead Salmon Fillets (Lot 00673) by Harvest Moon Farms.\n\nFacts from the recall database for REC-015679: product Farmstead Salmon Fillets (Lot 00673); brand Harvest Moon Farms; units affected 42043; reported by County Health Inspector #095 (Texas Triangle). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015679"}
+11:09:00.402 [CLIENT] final message received topic=s9619_final partition=0 offset=52 correlation_id=bc296f81-9474-4d32-835c-ff60bb5835af
+status=approved  agent 116.5 s  answer_has_fact=True  (elapsed 55.1 min, about 37 min left)
+A: The recall was reported by County Health Inspector #095 (Texas Triangle). Do not eat or use the recalled Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms and follow the official recall notice for safety.
+
+--- 31/50 C21 ---
+Q: How many units were affected by recall REC-019735 (Farmstead Shell Eggs (Lot 04729), Silver Creek Naturals)?
+11:09:00.468 [CACHE] running the agent pipeline correlation_id=3896f8af-7f13-40e5-a645-7b216cba56b4 depends_on=REC-019735
+11:09:00.472 [CLIENT] sent question topic=s9619_inbox partition=0 offset=138 correlation_id=3896f8af-7f13-40e5-a645-7b216cba56b4 message={"correlation_id":"3896f8af-7f13-40e5-a645-7b216cba56b4","question":"How many units were affected by recall REC-019735 (Farmstead Shell Eggs (Lot 04729), Silver Creek Naturals)?\n\nFacts from the recall database for REC-019735: product Farmstead Shell Eggs (Lot 04729); brand Silver Creek Naturals; units affected 43025; reported by Local Public Health Unit #064 (Midwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-019735"}
+11:10:53.245 [CLIENT] final message received topic=s9619_final partition=0 offset=53 correlation_id=3896f8af-7f13-40e5-a645-7b216cba56b4
+status=approved  agent 112.8 s  answer_has_fact=True  (elapsed 57.0 min, about 35 min left)
+A: The recall REC-019735 affected 43,025 units of Farmstead Shell Eggs (Lot 04729) from Silver Creek Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 32/50 C22 ---
+Q: Which agency reported recall REC-017711 for Reduced Sodium Cantaloupe (Lot 02705) from GreenAcre Foods?
+11:10:53.263 [CACHE] running the agent pipeline correlation_id=315c0df4-9e57-4989-be4c-c843e0829598 depends_on=REC-017711
+11:10:53.268 [CLIENT] sent question topic=s9619_inbox partition=0 offset=139 correlation_id=315c0df4-9e57-4989-be4c-c843e0829598 message={"correlation_id":"315c0df4-9e57-4989-be4c-c843e0829598","question":"Which agency reported recall REC-017711 for Reduced Sodium Cantaloupe (Lot 02705) from GreenAcre Foods?\n\nFacts from the recall database for REC-017711: product Reduced Sodium Cantaloupe (Lot 02705); brand GreenAcre Foods; units affected 2058; reported by CDC Regional Lab #109 (Texas Triangle). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017711"}
+11:12:47.388 [CLIENT] final message received topic=s9619_final partition=0 offset=54 correlation_id=315c0df4-9e57-4989-be4c-c843e0829598
+status=approved  agent 114.1 s  answer_has_fact=True  (elapsed 58.9 min, about 33 min left)
+A: The recall REC-017711 for Reduced Sodium Cantaloupe (Lot 02705) from GreenAcre Foods was reported by CDC Regional Lab #109 (Texas Triangle). Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 33/50 C23 ---
+Q: How many units were affected by recall REC-015092 (Premium Bottled Juice (Lot 00086), Blue Ridge Naturals)?
+11:12:47.435 [CACHE] running the agent pipeline correlation_id=b337d632-cf40-46e9-841f-0a4c873fe88f depends_on=REC-015092
+11:12:47.440 [CLIENT] sent question topic=s9619_inbox partition=0 offset=140 correlation_id=b337d632-cf40-46e9-841f-0a4c873fe88f message={"correlation_id":"b337d632-cf40-46e9-841f-0a4c873fe88f","question":"How many units were affected by recall REC-015092 (Premium Bottled Juice (Lot 00086), Blue Ridge Naturals)?\n\nFacts from the recall database for REC-015092: product Premium Bottled Juice (Lot 00086); brand Blue Ridge Naturals; units affected 35574; reported by FDA District Office #172 (Midwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015092"}
+11:14:36.801 [CLIENT] final message received topic=s9619_final partition=0 offset=55 correlation_id=b337d632-cf40-46e9-841f-0a4c873fe88f
+status=approved  agent 109.4 s  answer_has_fact=True  (elapsed 60.8 min, about 31 min left)
+A: The recall REC-015092 affected 35,574 units of Premium Bottled Juice (Lot 00086) by Blue Ridge Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 34/50 C24 ---
+Q: Which agency reported recall REC-017563 for Value Brand Bottled Juice (Lot 02557) from Clearwater Foods?
+11:14:36.831 [CACHE] running the agent pipeline correlation_id=f6ce40b2-e312-4bdd-a6b2-6e85c293bd2e depends_on=REC-017563
+11:14:36.836 [CLIENT] sent question topic=s9619_inbox partition=0 offset=141 correlation_id=f6ce40b2-e312-4bdd-a6b2-6e85c293bd2e message={"correlation_id":"f6ce40b2-e312-4bdd-a6b2-6e85c293bd2e","question":"Which agency reported recall REC-017563 for Value Brand Bottled Juice (Lot 02557) from Clearwater Foods?\n\nFacts from the recall database for REC-017563: product Value Brand Bottled Juice (Lot 02557); brand Clearwater Foods; units affected 37607; reported by State Agriculture Department #094 (Tri-State Area). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017563"}
+11:16:31.048 [CLIENT] final message received topic=s9619_final partition=0 offset=56 correlation_id=f6ce40b2-e312-4bdd-a6b2-6e85c293bd2e
+status=approved  agent 114.2 s  answer_has_fact=True  (elapsed 62.7 min, about 29 min left)
+A: The State Agriculture Department #094 (Tri-State Area) reported recall REC-017563 for Value Brand Bottled Juice (Lot 02557) from Clearwater Foods. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 35/50 C25 ---
+Q: How many units were affected by recall REC-018607 (Frozen Yogurt (Lot 03601), GreenAcre Provisions)?
+11:16:31.074 [CACHE] running the agent pipeline correlation_id=69b94147-b2c9-46f4-bc08-ddf7d944ab56 depends_on=REC-018607
+11:16:31.080 [CLIENT] sent question topic=s9619_inbox partition=0 offset=142 correlation_id=69b94147-b2c9-46f4-bc08-ddf7d944ab56 message={"correlation_id":"69b94147-b2c9-46f4-bc08-ddf7d944ab56","question":"How many units were affected by recall REC-018607 (Frozen Yogurt (Lot 03601), GreenAcre Provisions)?\n\nFacts from the recall database for REC-018607: product Frozen Yogurt (Lot 03601); brand GreenAcre Provisions; units affected 47426; reported by CDC Regional Lab #167 (Southeast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-018607"}
+11:18:20.695 [CLIENT] final message received topic=s9619_final partition=0 offset=57 correlation_id=69b94147-b2c9-46f4-bc08-ddf7d944ab56
+status=approved  agent 109.6 s  answer_has_fact=True  (elapsed 64.5 min, about 28 min left)
+A: The recall REC-018607 affected 47,426 units of Frozen Yogurt (Lot 03601) from GreenAcre Provisions. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 36/50 C26 ---
+Q: How many units were affected by recall REC-016603 (Plant-Based Mixed Berries (Lot 01597), Northfield Farms)?
+11:18:20.771 [CACHE] running the agent pipeline correlation_id=7e364347-aad3-4e42-b394-58e12c3814fd depends_on=REC-016603
+11:18:20.789 [CLIENT] sent question topic=s9619_inbox partition=0 offset=143 correlation_id=7e364347-aad3-4e42-b394-58e12c3814fd message={"correlation_id":"7e364347-aad3-4e42-b394-58e12c3814fd","question":"How many units were affected by recall REC-016603 (Plant-Based Mixed Berries (Lot 01597), Northfield Farms)?\n\nFacts from the recall database for REC-016603: product Plant-Based Mixed Berries (Lot 01597); brand Northfield Farms; units affected 32650; reported by Consumer Product Safety Bureau #197 (Texas Triangle). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016603"}
+11:20:07.418 [CLIENT] final message received topic=s9619_final partition=0 offset=58 correlation_id=7e364347-aad3-4e42-b394-58e12c3814fd
+status=approved  agent 106.6 s  answer_has_fact=True  (elapsed 66.3 min, about 26 min left)
+A: The recall REC-016603 affected 32,650 units of Plant-Based Mixed Berries (Lot 01597) from Northfield Farms. Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 37/50 C27 ---
+Q: Which agency reported recall REC-017158 for Reduced Sodium Trail Mix (Lot 02152) from Sunrise Valley Co.?
+11:20:07.476 [CACHE] running the agent pipeline correlation_id=09efeba4-e6ca-44e9-8ee5-278b202756d6 depends_on=REC-017158
+11:20:07.480 [CLIENT] sent question topic=s9619_inbox partition=0 offset=144 correlation_id=09efeba4-e6ca-44e9-8ee5-278b202756d6 message={"correlation_id":"09efeba4-e6ca-44e9-8ee5-278b202756d6","question":"Which agency reported recall REC-017158 for Reduced Sodium Trail Mix (Lot 02152) from Sunrise Valley Co.?\n\nFacts from the recall database for REC-017158: product Reduced Sodium Trail Mix (Lot 02152); brand Sunrise Valley Co.; units affected 45168; reported by County Health Inspector #073 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017158"}
+11:21:49.610 [CLIENT] final message received topic=s9619_final partition=0 offset=59 correlation_id=09efeba4-e6ca-44e9-8ee5-278b202756d6
+status=approved  agent 102.1 s  answer_has_fact=True  (elapsed 68.0 min, about 24 min left)
+A: The recall REC-017158 for Reduced Sodium Trail Mix (Lot 02152) from Sunrise Valley Co. was reported by County Health Inspector #073 (Mid-Atlantic). Do not eat or use the recalled product; follow the official recall notice for further instructions.
+
+--- 38/50 C28 ---
+Q: How many units were affected by recall REC-017706 (Premium Mixed Berries (Lot 02700), Silver Creek Market)?
+11:21:49.676 [CACHE] running the agent pipeline correlation_id=6a3b90c6-2313-4bc9-939f-afc57e17c1e9 depends_on=REC-017706
+11:21:49.685 [CLIENT] sent question topic=s9619_inbox partition=0 offset=145 correlation_id=6a3b90c6-2313-4bc9-939f-afc57e17c1e9 message={"correlation_id":"6a3b90c6-2313-4bc9-939f-afc57e17c1e9","question":"How many units were affected by recall REC-017706 (Premium Mixed Berries (Lot 02700), Silver Creek Market)?\n\nFacts from the recall database for REC-017706: product Premium Mixed Berries (Lot 02700); brand Silver Creek Market; units affected 22074; reported by State Health Department #018 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-017706"}
+11:23:37.837 [CLIENT] final message received topic=s9619_final partition=0 offset=60 correlation_id=6a3b90c6-2313-4bc9-939f-afc57e17c1e9
+status=approved  agent 108.2 s  answer_has_fact=True  (elapsed 69.8 min, about 22 min left)
+A: The recall REC-017706 affected 22,074 units of Premium Mixed Berries (Lot 02700) from Silver Creek Market. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+--- 39/50 C29 ---
+Q: Which agency reported recall REC-015224 for Original Peanut Butter (Lot 00218) from Ironwood Naturals?
+11:23:37.947 [CACHE] running the agent pipeline correlation_id=a2b829ca-bb28-495e-8985-be6f04a7ee6a depends_on=REC-015224
+11:23:37.963 [CLIENT] sent question topic=s9619_inbox partition=0 offset=146 correlation_id=a2b829ca-bb28-495e-8985-be6f04a7ee6a message={"correlation_id":"a2b829ca-bb28-495e-8985-be6f04a7ee6a","question":"Which agency reported recall REC-015224 for Original Peanut Butter (Lot 00218) from Ironwood Naturals?\n\nFacts from the recall database for REC-015224: product Original Peanut Butter (Lot 00218); brand Ironwood Naturals; units affected 39784; reported by State Health Department #003 (New England). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-015224"}
+11:25:29.068 [CLIENT] final message received topic=s9619_final partition=0 offset=61 correlation_id=a2b829ca-bb28-495e-8985-be6f04a7ee6a
+status=approved  agent 111.1 s  answer_has_fact=True  (elapsed 71.6 min, about 20 min left)
+A: The State Health Department #003 (New England) reported recall REC-015224 for Original Peanut Butter (Lot 00218) from Ironwood Naturals. Shoppers should not eat or use the recalled product and should follow the official recall notice for further instructions.
+
+--- 40/50 C30 ---
+Q: How many units were affected by recall REC-019153 (Artisan Shell Eggs (Lot 04147), Red Barn Co.)?
+11:25:29.166 [CACHE] running the agent pipeline correlation_id=48f616f0-70f0-4ac2-9a0a-d8ce5f3185f9 depends_on=REC-019153
+11:25:29.176 [CLIENT] sent question topic=s9619_inbox partition=0 offset=147 correlation_id=48f616f0-70f0-4ac2-9a0a-d8ce5f3185f9 message={"correlation_id":"48f616f0-70f0-4ac2-9a0a-d8ce5f3185f9","question":"How many units were affected by recall REC-019153 (Artisan Shell Eggs (Lot 04147), Red Barn Co.)?\n\nFacts from the recall database for REC-019153: product Artisan Shell Eggs (Lot 04147); brand Red Barn Co.; units affected 45660; reported by Consumer Product Safety Bureau #190 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-019153"}
+11:27:20.557 [CLIENT] final message received topic=s9619_final partition=0 offset=62 correlation_id=48f616f0-70f0-4ac2-9a0a-d8ce5f3185f9
+status=approved  agent 111.4 s  answer_has_fact=True  (elapsed 73.5 min, about 18 min left)
+A: The recall REC-019153 affected 45,660 units of Artisan Shell Eggs (Lot 04147) from Red Barn Co. Do not eat or use the recalled product; follow the official recall notice for safe disposal or return instructions.
+
+--- 41/50 C31 ---
+Q: How do I find out whether my store sells a recalled product?
+11:27:20.560 [CACHE] running the agent pipeline correlation_id=2a8ebc75-0ae9-40ae-b238-a47dcdd3291e depends_on=none
+11:27:20.575 [CLIENT] sent question topic=s9619_inbox partition=0 offset=148 correlation_id=2a8ebc75-0ae9-40ae-b238-a47dcdd3291e message={"correlation_id":"2a8ebc75-0ae9-40ae-b238-a47dcdd3291e","question":"How do I find out whether my store sells a recalled product?"}
+11:28:47.577 [CLIENT] final message received topic=s9619_final partition=0 offset=63 correlation_id=2a8ebc75-0ae9-40ae-b238-a47dcdd3291e
+status=approved  agent 87.0 s  answer_has_fact=None  (elapsed 74.9 min, about 16 min left)
+A: To check if your store sells a recalled product, visit the store's website or call them for product listings. Look for recall notices in-store or on their social media. You can also search the FDA or USDA websites for recalled items by brand or product name. Always check packaging for recall numbers if unsure.
+
+--- 42/50 C32 ---
+Q: What is the difference between a food safety recall and an allergen alert?
+11:28:47.579 [CACHE] running the agent pipeline correlation_id=547f92fb-2582-4117-80ed-64ff164d5c1c depends_on=none
+11:28:47.584 [CLIENT] sent question topic=s9619_inbox partition=0 offset=149 correlation_id=547f92fb-2582-4117-80ed-64ff164d5c1c message={"correlation_id":"547f92fb-2582-4117-80ed-64ff164d5c1c","question":"What is the difference between a food safety recall and an allergen alert?"}
+11:30:05.178 [CLIENT] final message received topic=s9619_final partition=0 offset=64 correlation_id=547f92fb-2582-4117-80ed-64ff164d5c1c
+status=approved  agent 77.6 s  answer_has_fact=None  (elapsed 76.2 min, about 15 min left)
+A: A food safety recall involves products that may cause illness or injury due to contamination. An allergen alert is for products with undeclared allergens that could trigger allergic reactions. Both pose health risks, so consumers should check for either if they have the product.
+
+--- 43/50 C33 ---
+Q: How long does a grocery recall usually stay on the shelves?
+11:30:05.180 [CACHE] running the agent pipeline correlation_id=b065da71-8d7d-4227-9390-0271f58bf2e6 depends_on=none
+11:30:05.193 [CLIENT] sent question topic=s9619_inbox partition=0 offset=150 correlation_id=b065da71-8d7d-4227-9390-0271f58bf2e6 message={"correlation_id":"b065da71-8d7d-4227-9390-0271f58bf2e6","question":"How long does a grocery recall usually stay on the shelves?"}
+11:31:13.728 [CLIENT] final message received topic=s9619_final partition=0 offset=65 correlation_id=b065da71-8d7d-4227-9390-0271f58bf2e6
+status=approved  agent 68.5 s  answer_has_fact=None  (elapsed 77.4 min, about 13 min left)
+A: A grocery recall typically stays on shelves until the store removes it, often within days. Check the recall notice for a removal date. Contact the store's customer service for confirmation. Monitor local news or official announcements for updates on the recall.
+
+--- 44/50 C34 ---
+Q: Can I get a refund for a recalled item without a receipt?
+11:31:13.730 [CACHE] running the agent pipeline correlation_id=e044764a-e8eb-43dc-81c0-d716181d5d46 depends_on=none
+11:31:13.739 [CLIENT] sent question topic=s9619_inbox partition=0 offset=151 correlation_id=e044764a-e8eb-43dc-81c0-d716181d5d46 message={"correlation_id":"e044764a-e8eb-43dc-81c0-d716181d5d46","question":"Can I get a refund for a recalled item without a receipt?"}
+11:32:15.185 [CLIENT] final message received topic=s9619_final partition=0 offset=66 correlation_id=e044764a-e8eb-43dc-81c0-d716181d5d46
+status=approved  agent 61.5 s  answer_has_fact=None  (elapsed 78.4 min, about 11 min left)
+A: Check the recall notice for refund instructions. Contact the store's customer service, explain the situation, and provide product details. Request a refund without a receipt. Stores often offer refunds based on the product description and recall information.
+
+--- 45/50 C35 ---
+Q: What symptoms should I watch for after eating a recalled product?
+11:32:15.187 [CACHE] running the agent pipeline correlation_id=bcec9a9d-efa8-4a18-bb8b-947dcc71d66b depends_on=none
+11:32:15.192 [CLIENT] sent question topic=s9619_inbox partition=0 offset=152 correlation_id=bcec9a9d-efa8-4a18-bb8b-947dcc71d66b message={"correlation_id":"bcec9a9d-efa8-4a18-bb8b-947dcc71d66b","question":"What symptoms should I watch for after eating a recalled product?"}
+11:33:16.195 [CLIENT] final message received topic=s9619_final partition=0 offset=67 correlation_id=bcec9a9d-efa8-4a18-bb8b-947dcc71d66b
+status=approved  agent 61.0 s  answer_has_fact=None  (elapsed 79.4 min, about 9 min left)
+A: Check the recall notice for specific symptoms linked to the product. Monitor for nausea, vomiting, or diarrhea. Contact a healthcare provider if symptoms persist or worsen. Stay alert and seek medical help if needed.
+
+--- 46/50 C36 ---
+Q: How should I store a recalled item until I return it?
+11:33:16.197 [CACHE] running the agent pipeline correlation_id=61db050f-b61d-4569-a98d-74d0b28440b8 depends_on=none
+11:33:16.212 [CLIENT] sent question topic=s9619_inbox partition=0 offset=153 correlation_id=61db050f-b61d-4569-a98d-74d0b28440b8 message={"correlation_id":"61db050f-b61d-4569-a98d-74d0b28440b8","question":"How should I store a recalled item until I return it?"}
+11:34:16.848 [CLIENT] final message received topic=s9619_final partition=0 offset=68 correlation_id=61db050f-b61d-4569-a98d-74d0b28440b8
+status=approved  agent 60.6 s  answer_has_fact=None  (elapsed 80.4 min, about 7 min left)
+A: Keep the recalled item in its original packaging. Store it in a cool, dry place, away from food and children. Do not consume, use, or throw it away until you return it to the store or manufacturer.
+
+--- 47/50 C37 ---
+Q: Who decides when a grocery product has to be recalled?
+11:34:16.850 [CACHE] running the agent pipeline correlation_id=1209bbdd-0954-4020-95b6-edb07692d244 depends_on=none
+11:34:16.855 [CLIENT] sent question topic=s9619_inbox partition=0 offset=154 correlation_id=1209bbdd-0954-4020-95b6-edb07692d244 message={"correlation_id":"1209bbdd-0954-4020-95b6-edb07692d244","question":"Who decides when a grocery product has to be recalled?"}
+11:35:15.147 [CLIENT] final message received topic=s9619_final partition=0 offset=69 correlation_id=1209bbdd-0954-4020-95b6-edb07692d244
+status=approved  agent 58.3 s  answer_has_fact=None  (elapsed 81.4 min, about 5 min left)
+A: The manufacturer or distributor identifies a defect or safety issue. They then notify the FDA or relevant regulatory agency. The agency decides on the recall and informs the public. Shoppers should check official recall notices for safety.
+
+--- 48/50 C38 ---
+Q: What does a quality withdrawal mean for shoppers?
+11:35:15.150 [CACHE] running the agent pipeline correlation_id=c53c5a9c-8adb-43ce-9621-3570deb655c8 depends_on=none
+11:35:15.158 [CLIENT] sent question topic=s9619_inbox partition=0 offset=155 correlation_id=c53c5a9c-8adb-43ce-9621-3570deb655c8 message={"correlation_id":"c53c5a9c-8adb-43ce-9621-3570deb655c8","question":"What does a quality withdrawal mean for shoppers?"}
+11:36:22.082 [CLIENT] final message received topic=s9619_final partition=0 offset=70 correlation_id=c53c5a9c-8adb-43ce-9621-3570deb655c8
+status=approved  agent 66.9 s  answer_has_fact=None  (elapsed 82.5 min, about 3 min left)
+A: A quality withdrawal means the product is unsafe and should not be consumed. Check the lot number and expiration date to confirm if your item is affected. Return it to the store or contact the manufacturer for a refund or replacement. Stay informed by checking official recall notices and follow safety guidelines.
+
+--- 49/50 C39 ---
+Q: How do stores tell customers about a supply shortage?
+11:36:22.084 [CACHE] running the agent pipeline correlation_id=8f24ced1-6172-4683-a7aa-115df1c8599d depends_on=none
+11:36:22.089 [CLIENT] sent question topic=s9619_inbox partition=0 offset=156 correlation_id=8f24ced1-6172-4683-a7aa-115df1c8599d message={"correlation_id":"8f24ced1-6172-4683-a7aa-115df1c8599d","question":"How do stores tell customers about a supply shortage?"}
+11:37:25.063 [CLIENT] final message received topic=s9619_final partition=0 offset=71 correlation_id=8f24ced1-6172-4683-a7aa-115df1c8599d
+status=approved  agent 63.0 s  answer_has_fact=None  (elapsed 83.6 min, about 2 min left)
+A: Stores inform customers about supply shortages using in-store signs, emails, texts, and website or social media updates. These methods help keep shoppers aware of available products and any changes in stock. Customers are encouraged to check these channels for the latest information.
+
+--- 50/50 C40 ---
+Q: Is it safe to donate recalled food to a food bank?
+11:37:25.071 [CACHE] running the agent pipeline correlation_id=9ccac6dd-fe93-465b-918b-8056add3aed8 depends_on=none
+11:37:25.076 [CLIENT] sent question topic=s9619_inbox partition=0 offset=157 correlation_id=9ccac6dd-fe93-465b-918b-8056add3aed8 message={"correlation_id":"9ccac6dd-fe93-465b-918b-8056add3aed8","question":"Is it safe to donate recalled food to a food bank?"}
+11:38:33.674 [CLIENT] final message received topic=s9619_final partition=0 offset=72 correlation_id=9ccac6dd-fe93-465b-918b-8056add3aed8
+status=approved  agent 68.6 s  answer_has_fact=None  (elapsed 84.7 min, about 0 min left)
+A: It is not safe to donate recalled food to a food bank without confirmation. First, check the recall notice for details. Then, contact the food bank to confirm if they accept and can safely use the item. Only donate if they confirm it is safe and appropriate.
+
+approved so far: 50/50   not approved yet: 0
+[2026-11-07T11:38:34Z] END exit_code=0
+
+[2026-11-07T19:22:47Z] Sharan Lourduraj | START command: python scripts/hw9_part3_sweep.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part3_sweep
+cleared 7 old cache entries
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights:  54%|█████▍    | 56/103 [00:00<00:00, 458.24it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 568.68it/s]
+cache holds 20 entries (the 20 cached questions)
+
+similarity of the nearest cached question, by group (min / mean / max):
+  exact_duplicate  1.0000 / 1.0000 / 1.0000
+  paraphrase       0.7936 / 0.9186 / 0.9719
+  lookalike        0.8416 / 0.8971 / 0.9582
+  unrelated        0.2251 / 0.4975 / 0.6524
+
+threshold  hit rate  false-hit false hits false miss  mean latency ms
+     0.75     75.0%      50.0%         10          0          16925.8
+     0.80     72.5%      50.0%         10          1          20103.2
+     0.85     70.0%      45.0%          9          1          22772.0
+     0.90     55.0%      25.0%          5          3          39280.6
+     0.95     40.0%       5.0%          1          5          55867.5
+[2026-11-07T19:25:16Z] END exit_code=0
+
+[2026-11-07T20:16:19Z] Sharan Lourduraj | START command: python scripts/hw9_part3_stale.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part3_stale
+record REC-016586: Value Brand Bagged Spinach (Lot 01580) / Sunrise Valley Naturals
+question: How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights:  66%|██████▌   | 68/103 [00:00<00:00, 678.21it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 760.34it/s]
+20:17:21.448 [CACHE] MISS similarity=0.0000 threshold=0.85 (cache empty)
+20:17:21.485 [CACHE] running the agent pipeline correlation_id=5f10458a-02f6-451e-8531-8086dd63c3dd depends_on=REC-016586
+20:17:21.520 [CLIENT] sent question topic=s9619_inbox partition=0 offset=158 correlation_id=5f10458a-02f6-451e-8531-8086dd63c3dd message={"correlation_id":"5f10458a-02f6-451e-8531-8086dd63c3dd","question":"How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?\n\nFacts from the recall database for REC-016586: product Value Brand Bagged Spinach (Lot 01580); brand Sunrise Valley Naturals; units affected 5445; reported by Consumer Product Safety Bureau #115 (Inland Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016586"}
+20:19:46.955 [CLIENT] final message received topic=s9619_final partition=0 offset=73 correlation_id=5f10458a-02f6-451e-8531-8086dd63c3dd
+20:19:46.967 [CACHE] stored answer for 'How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?' depends_on=REC-016586 data_version=4f9b5782631d
+
+[1 first ask - database holds 5445] is_cached=False similarity=0.0 latency=145573.8 ms stale_entry_removed=False
+     answer: The recall REC-016586 affected 5,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+     answer states the OLD value (5445): True   the NEW value (8445): False
+
+>>> UPDATE recall_record SET units_affected = 8445 WHERE record_code = 'REC-016586'  (was 5445)
+20:19:47.162 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+
+[3 same question, NO version check] is_cached=True similarity=1.0 latency=59.4 ms stale_entry_removed=False
+     answer: The recall REC-016586 affected 5,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+     answer states the OLD value (5445): True   the NEW value (8445): False
+20:19:47.295 [CACHE] STALE entry removed: REC-016586 changed since it was cached (stored version 4f9b5782631d, now 90b469d3d4c2); similarity=1.0000
+20:19:47.295 [CACHE] MISS similarity=1.0000 threshold=0.85 nearest='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:19:47.309 [CACHE] running the agent pipeline correlation_id=2633ae36-c520-4cf6-82b4-4c57adf20eb0 depends_on=REC-016586
+20:19:47.315 [CLIENT] sent question topic=s9619_inbox partition=0 offset=159 correlation_id=2633ae36-c520-4cf6-82b4-4c57adf20eb0 message={"correlation_id":"2633ae36-c520-4cf6-82b4-4c57adf20eb0","question":"How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?\n\nFacts from the recall database for REC-016586: product Value Brand Bagged Spinach (Lot 01580); brand Sunrise Valley Naturals; units affected 8445; reported by Consumer Product Safety Bureau #115 (Inland Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.","entity_key":"REC-016586"}
+20:21:14.400 [CLIENT] final message received topic=s9619_final partition=0 offset=74 correlation_id=2633ae36-c520-4cf6-82b4-4c57adf20eb0
+20:21:14.411 [CACHE] stored answer for 'How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?' depends_on=REC-016586 data_version=90b469d3d4c2
+
+[4 same question, WITH version check] is_cached=False similarity=1.0 latency=87253.7 ms stale_entry_removed=True
+     answer: The recall REC-016586 affected 8,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+     answer states the OLD value (5445): False   the NEW value (8445): True
+20:21:14.699 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+
+[5 again, WITH version check] is_cached=True similarity=1.0 latency=287.8 ms stale_entry_removed=False
+     answer: The recall REC-016586 affected 8,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+     answer states the OLD value (5445): False   the NEW value (8445): True
+20:21:14.772 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:14.887 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:14.952 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.111 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.224 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.327 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.389 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.513 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.616 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.747 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.838 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:15.957 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.021 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.088 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.130 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.194 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.237 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.296 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.343 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+20:21:16.402 [CACHE] HIT similarity=1.0000 threshold=0.85 matched='How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?'
+
+[6] 10 hits each: mean 70.36 ms without the check, 99.87 ms with it
+
+>>> restored units_affected = 5445
+
+=== summary ===
+[PASS] stale hit returned the old value
+[PASS] version check removed the stale entry and re-ran the agents
+[PASS] refreshed answer states the new value
+[PASS] afterwards a normal hit with the new value
+[2026-11-07T20:21:18Z] END exit_code=0
+
+[2026-11-07T20:24:54Z] Sharan Lourduraj | START command: python scripts/hw9_part1_counter.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part1_counter
+record 15007: Value Brand Leafy Greens (Lot 00001) / Farmer's Market (REC-015007)   redis key: s9619:views:recall_record:15007
+
+=== Testing Counter ===
+
+Access #1: Total = 1
+Access #2: Total = 2
+Access #3: Total = 3
+Access #4: Total = 4
+Access #5: Total = 5
+Access #6: Total = 6
+Access #7: Total = 7
+Access #8: Total = 8
+Access #9: Total = 9
+Access #10: Total = 10
+✓ Synced views to database
+Access #11: Total = 11
+Access #12: Total = 12
+Access #13: Total = 13
+Access #14: Total = 14
+Access #15: Total = 15
+Access #16: Total = 16
+Access #17: Total = 17
+Access #18: Total = 18
+Access #19: Total = 19
+Access #20: Total = 20
+✓ Synced views to database
+Access #21: Total = 21
+Access #22: Total = 22
+Access #23: Total = 23
+Access #24: Total = 24
+Access #25: Total = 25
+
+Redis s9619:views:recall_record:15007 = 25
+MySQL recall_record.view_count = 20   (not yet synced: 5)
+[2026-11-07T20:24:59Z] END exit_code=0
+
+[2026-11-07T20:25:00Z] Sharan Lourduraj | START command: python scripts/hw9_part3_cost.py
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part3_cost
+mean agent latency over 50 approved questions: 101.6 s
+c_miss  = 101.6 s x $1.00/h / 3600 = $0.0282
+c_false = $5.00   (ratio c_false / c_miss = 177)
+
+threshold  not served  false hits  miss cost  false-hit cost     total
+     0.75          10          10 $    0.28 $        50.00 $  50.28
+     0.80          11          10 $    0.31 $        50.00 $  50.31
+     0.85          12           9 $    0.34 $        45.00 $  45.34
+     0.90          18           5 $    0.51 $        25.00 $  25.51
+     0.95          24           1 $    0.68 $         5.00 $   5.68
+
+lowest total cost: threshold 0.95  ($5.68)
+
+sensitivity: which threshold is cheapest if c_false changes (c_miss fixed)
+  c_false $ 0.05: cheapest threshold 0.95   totals 0.75=$0.78  0.80=$0.81  0.85=$0.79  0.90=$0.76  0.95=$0.73
+  c_false $ 0.50: cheapest threshold 0.95   totals 0.75=$5.28  0.80=$5.31  0.85=$4.84  0.90=$3.01  0.95=$1.18
+  c_false $ 5.00: cheapest threshold 0.95   totals 0.75=$50.28  0.80=$50.31  0.85=$45.34  0.90=$25.51  0.95=$5.68
+  c_false $50.00: cheapest threshold 0.95   totals 0.75=$500.28  0.80=$500.31  0.85=$450.34  0.90=$250.51  0.95=$50.68
+[2026-11-07T20:25:00Z] END exit_code=0
+
+[2026-11-07T20:25:00Z] Sharan Lourduraj | START command: python scripts/hw9_part3_falsehit.py --threshold 0.95
+Sharan Lourduraj | SID4 9619 | DATA 260 HW9 | hw9_part3_falsehit
+false hits at threshold 0.95: 1; showing the one with the highest similarity
+
+case C23 (lookalike, labeled 'miss')   similarity = 0.9582
+
+cached query:   How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?
+incoming query: How many units were affected by recall REC-015092 (Premium Bottled Juice (Lot 00086), Blue Ridge Naturals)?
+
+cached answer (what the cache returned):
+  The recall REC-018041 affected 24,753 units of Premium Bottled Juice (Lot 03035) by Blue Ridge Pantry. Do not eat or use this product; follow the official recall notice for safe handling and disposal.
+
+correct answer (the agents' answer to the incoming query):
+  The recall REC-015092 affected 35,574 units of Premium Bottled Juice (Lot 00086) by Blue Ridge Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.
+
+database fact that makes it correct: {'aspect': 'units', 'record_code': 'REC-015092', 'value': 35574}
+
+words shared: 13 of 16 / 16; the words that differ:
+  cached: 'REC-018041'                                  incoming: 'REC-015092'
+  cached: '03035),'                                     incoming: '00086),'
+  cached: 'Pantry)?'                                    incoming: 'Naturals)?'
+[2026-11-07T20:25:01Z] END exit_code=0
+
+[2026-11-09T06:45:15Z] Sharan Lourduraj | START command: python scripts/verify_hw09.py
+[PASS] redis_answers_ping -- 127.0.0.1:46379
+[PASS] redis_vector_index_exists -- s9619_cache_idx, 0 documents
+[PASS] part1_counter_suite_passes_on_real_redis -- 13 passed, 0 failed
+[PASS] part2_cache_smoke_passes_on_real_redis -- PASS: identical ~1.0 and ordering identical > reworded > different topic
+[PASS] suite_test_hw9_cache -- 26 passed, 0 failed
+[PASS] suite_test_hw9_sweep -- 22 passed, 0 failed
+[PASS] suite_test_hw9_part4 -- 58/58 checks passed
+[PASS] part2_at_least_10_queries_all_behaved_as_intended -- 14/14 behaved as intended
+[PASS] part2_hit_rate_and_latencies_recorded -- hit rate 50.0%, cached 153.34 ms, not cached 99037.42 ms
+[PASS] part3_cases_committed_before_the_sweep_and_unchanged -- cache_cases.yaml commit c76bf0e, working copy clean=True
+[PASS] part3_sweep_covers_five_thresholds_on_40_cases -- 0.75 0.80 0.85 0.90 0.95
+[PASS] part3_hit_rate_and_false_hits_fall_as_the_threshold_rises -- hit rate [0.75, 0.725, 0.7, 0.55, 0.4]; false hits [10, 10, 9, 5, 1]
+[PASS] part3_one_false_hit_shown_in_full -- C23 similarity 0.958161 at threshold 0.95
+[PASS] part3_cost_model_recomputes_and_picks_the_cheapest_threshold -- c_miss $0.0282, c_false $5.0, cheapest 0.95
+[PASS] part3_stale_answer_served_then_invalidated_then_fresh -- old 5445 -> new 8445; version check adds 29.5 ms per hit
+[PASS] part4_training_data_has_questions_only -- 40 questions
+[PASS] part4_validation_data_has_questions_only -- 14 questions
+[PASS] part4_test_data_has_questions_only -- 20 questions
+[PASS] part4_lessons_json_has_the_required_fields -- 2 lessons: L001=stale_value, L003=fabricated_answer
+[PASS] part4_gate_accepted_lessons_match_lessons_json -- rule=net, accepted ['L001', 'L003']
+[PASS] part4_four_variants_on_20_test_questions -- V1 17/20 -> 17/20; V2 16/20 -> 19/20; V3 19/20 -> 19/20; V4 19/20 -> 20/20
+[PASS] part4_lessons_plus_retry_is_not_worse_than_baseline -- V4 20/20 vs V1 17/20
+[PASS] part4_never_more_than_two_attempts -- max attempts 2
+[PASS] part4_controlled_bad_first_answer_is_caught_and_fixed_on_retry -- forced stale answer fails without retry, passes on attempt 2
+[PASS] required_deliverable_files_present -- RUN_LOG.txt, METRICS.md, AI_USE.md, raw/
+[PASS] verification_did_not_modify_application_code -- sha256 of code/ and src/ before == after: a27144f157c4
+
+26/26 checks passed.
+Wrote C:\Users\shara\data260-9619\reports\hw09\verification.json
+[2026-11-09T06:48:30Z] END exit_code=0

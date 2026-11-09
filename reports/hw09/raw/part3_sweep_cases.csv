@@ -1,0 +1,201 @@
+threshold,id,group,expected,similarity,nearest_query,embed_ms,search_ms,latency_ms,served,correct_hit,false_hit,false_miss,served_answer_has_right_fact
+0.75,C01,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",53.63,26.42,80.05,True,True,False,False,True
+0.75,C02,exact_duplicate,hit,1.0,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,40.14,3.25,43.38,True,True,False,False,True
+0.75,C03,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",42.61,3.12,45.72,True,True,False,False,True
+0.75,C04,exact_duplicate,hit,1.0,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,31.38,3.56,34.94,True,True,False,False,True
+0.75,C05,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",53.48,7.39,60.87,True,True,False,False,True
+0.75,C06,exact_duplicate,hit,1.0,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,83.82,5.1,88.93,True,True,False,False,True
+0.75,C07,exact_duplicate,hit,1.0,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",73.5,4.06,77.56,True,True,False,False,True
+0.75,C08,exact_duplicate,hit,1.0,Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?,67.58,7.43,75.02,True,True,False,False,True
+0.75,C09,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?",77.51,3.5,81.01,True,True,False,False,True
+0.75,C10,exact_duplicate,hit,1.0,Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?,95.82,6.78,102.6,True,True,False,False,True
+0.75,C11,paraphrase,hit,0.865924,"How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?",79.75,7.24,86.98,True,True,False,False,True
+0.75,C12,paraphrase,hit,0.96297,Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?,73.92,12.25,86.17,True,True,False,False,True
+0.75,C13,paraphrase,hit,0.857352,"How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?",112.64,4.68,117.33,True,True,False,False,True
+0.75,C14,paraphrase,hit,0.971853,Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?,77.38,3.71,81.09,True,True,False,False,True
+0.75,C15,paraphrase,hit,0.93145,"How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?",175.8,6.9,182.7,True,True,False,False,True
+0.75,C16,paraphrase,hit,0.959477,Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?,196.85,15.07,211.92,True,True,False,False,True
+0.75,C17,paraphrase,hit,0.915167,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",92.48,7.62,100.1,True,True,False,False,True
+0.75,C18,paraphrase,hit,0.970307,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,106.04,4.13,110.18,True,True,False,False,True
+0.75,C19,paraphrase,hit,0.793605,"How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?",120.46,11.9,132.36,True,True,False,False,True
+0.75,C20,paraphrase,hit,0.9582,Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?,117.76,10.34,128.1,True,True,False,False,True
+0.75,C21,lookalike,miss,0.94903,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",86.0,5.29,91.29,True,False,True,False,False
+0.75,C22,lookalike,miss,0.869526,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,85.92,34.52,120.44,True,False,True,False,False
+0.75,C23,lookalike,miss,0.958161,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",149.23,23.27,172.49,True,False,True,False,False
+0.75,C24,lookalike,miss,0.916638,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,94.79,28.7,123.49,True,False,True,False,False
+0.75,C25,lookalike,miss,0.933445,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",120.7,18.77,139.47,True,False,True,False,False
+0.75,C26,lookalike,miss,0.851346,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,89.34,19.28,108.62,True,False,True,False,False
+0.75,C27,lookalike,miss,0.856783,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",98.59,20.56,119.15,True,False,True,False,False
+0.75,C28,lookalike,miss,0.841579,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",191.36,21.72,213.08,True,False,True,False,False
+0.75,C29,lookalike,miss,0.860457,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,85.41,7.85,93.26,True,False,True,False,False
+0.75,C30,lookalike,miss,0.934328,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",64.62,8.99,73.61,True,False,True,False,False
+0.75,C31,unrelated,miss,0.652437,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,51.94,15.99,87085.86,False,False,False,False,
+0.75,C32,unrelated,miss,0.516443,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",54.66,5.63,77660.56,False,False,False,False,
+0.75,C33,unrelated,miss,0.544141,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",46.84,3.18,68597.65,False,False,False,False,
+0.75,C34,unrelated,miss,0.540046,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,45.25,3.18,61504.66,False,False,False,False,
+0.75,C35,unrelated,miss,0.489565,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",49.49,22.79,61080.9,False,False,False,False,
+0.75,C36,unrelated,miss,0.501646,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,87.43,16.3,60753.63,False,False,False,False,
+0.75,C37,unrelated,miss,0.608953,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,59.21,12.84,58369.31,False,False,False,False,
+0.75,C38,unrelated,miss,0.225069,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",104.03,7.0,67042.73,False,False,False,False,
+0.75,C39,unrelated,miss,0.315303,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",91.73,3.36,63074.63,False,False,False,False,
+0.75,C40,unrelated,miss,0.581079,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,68.55,7.07,68678.47,False,False,False,False,
+0.8,C01,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",117.86,9.88,127.74,True,True,False,False,True
+0.8,C02,exact_duplicate,hit,1.0,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,162.43,10.64,173.07,True,True,False,False,True
+0.8,C03,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",150.38,22.6,172.98,True,True,False,False,True
+0.8,C04,exact_duplicate,hit,1.0,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,109.31,4.33,113.64,True,True,False,False,True
+0.8,C05,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",107.44,19.09,126.53,True,True,False,False,True
+0.8,C06,exact_duplicate,hit,1.0,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,77.57,3.12,80.69,True,True,False,False,True
+0.8,C07,exact_duplicate,hit,1.0,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",81.16,18.75,99.91,True,True,False,False,True
+0.8,C08,exact_duplicate,hit,1.0,Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?,74.96,42.08,117.03,True,True,False,False,True
+0.8,C09,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?",120.69,8.89,129.58,True,True,False,False,True
+0.8,C10,exact_duplicate,hit,1.0,Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?,122.42,24.11,146.53,True,True,False,False,True
+0.8,C11,paraphrase,hit,0.865924,"How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?",159.27,23.79,183.07,True,True,False,False,True
+0.8,C12,paraphrase,hit,0.96297,Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?,120.23,17.34,137.56,True,True,False,False,True
+0.8,C13,paraphrase,hit,0.857352,"How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?",87.22,21.6,108.81,True,True,False,False,True
+0.8,C14,paraphrase,hit,0.971853,Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?,90.39,16.71,107.1,True,True,False,False,True
+0.8,C15,paraphrase,hit,0.93145,"How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?",129.35,6.24,135.59,True,True,False,False,True
+0.8,C16,paraphrase,hit,0.959477,Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?,103.29,7.46,110.75,True,True,False,False,True
+0.8,C17,paraphrase,hit,0.915167,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",82.86,12.67,95.53,True,True,False,False,True
+0.8,C18,paraphrase,hit,0.970307,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,81.61,22.93,104.53,True,True,False,False,True
+0.8,C19,paraphrase,hit,0.793605,"How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?",87.94,31.7,125935.04,False,False,False,True,
+0.8,C20,paraphrase,hit,0.9582,Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?,688.44,32.4,720.83,True,True,False,False,True
+0.8,C21,lookalike,miss,0.94903,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",105.55,33.93,139.48,True,False,True,False,False
+0.8,C22,lookalike,miss,0.869526,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,91.35,25.13,116.48,True,False,True,False,False
+0.8,C23,lookalike,miss,0.958161,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",69.42,12.5,81.92,True,False,True,False,False
+0.8,C24,lookalike,miss,0.916638,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,83.69,24.52,108.21,True,False,True,False,False
+0.8,C25,lookalike,miss,0.933445,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",177.08,13.5,190.58,True,False,True,False,False
+0.8,C26,lookalike,miss,0.851346,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,94.65,10.08,104.73,True,False,True,False,False
+0.8,C27,lookalike,miss,0.856783,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",169.77,4.78,174.55,True,False,True,False,False
+0.8,C28,lookalike,miss,0.841579,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",99.69,9.32,109.01,True,False,True,False,False
+0.8,C29,lookalike,miss,0.860457,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,98.52,16.4,114.91,True,False,True,False,False
+0.8,C30,lookalike,miss,0.934328,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",116.73,13.35,130.08,True,False,True,False,False
+0.8,C31,unrelated,miss,0.652437,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,110.15,16.55,87144.63,False,False,False,False,
+0.8,C32,unrelated,miss,0.516443,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",105.94,13.9,77720.11,False,False,False,False,
+0.8,C33,unrelated,miss,0.544141,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",66.38,3.27,68617.27,False,False,False,False,
+0.8,C34,unrelated,miss,0.540046,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,94.77,11.04,61562.04,False,False,False,False,
+0.8,C35,unrelated,miss,0.489565,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",52.97,3.56,61065.15,False,False,False,False,
+0.8,C36,unrelated,miss,0.501646,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,69.11,13.47,60732.48,False,False,False,False,
+0.8,C37,unrelated,miss,0.608953,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,84.58,5.82,58387.66,False,False,False,False,
+0.8,C38,unrelated,miss,0.225069,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",52.9,4.31,66988.91,False,False,False,False,
+0.8,C39,unrelated,miss,0.315303,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",52.92,7.18,63039.64,False,False,False,False,
+0.8,C40,unrelated,miss,0.581079,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,65.03,7.7,68675.58,False,False,False,False,
+0.85,C01,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",67.75,11.8,79.55,True,True,False,False,True
+0.85,C02,exact_duplicate,hit,1.0,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,47.49,4.78,52.27,True,True,False,False,True
+0.85,C03,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",60.66,3.29,63.96,True,True,False,False,True
+0.85,C04,exact_duplicate,hit,1.0,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,74.46,11.27,85.74,True,True,False,False,True
+0.85,C05,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",81.11,4.88,85.99,True,True,False,False,True
+0.85,C06,exact_duplicate,hit,1.0,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,77.73,13.54,91.27,True,True,False,False,True
+0.85,C07,exact_duplicate,hit,1.0,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",94.26,4.39,98.66,True,True,False,False,True
+0.85,C08,exact_duplicate,hit,1.0,Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?,68.13,14.13,82.26,True,True,False,False,True
+0.85,C09,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?",90.72,11.36,102.09,True,True,False,False,True
+0.85,C10,exact_duplicate,hit,1.0,Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?,100.43,3.56,103.99,True,True,False,False,True
+0.85,C11,paraphrase,hit,0.865924,"How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?",141.21,5.0,146.21,True,True,False,False,True
+0.85,C12,paraphrase,hit,0.96297,Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?,139.8,8.95,148.75,True,True,False,False,True
+0.85,C13,paraphrase,hit,0.857352,"How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?",115.03,11.02,126.05,True,True,False,False,True
+0.85,C14,paraphrase,hit,0.971853,Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?,67.13,3.85,70.99,True,True,False,False,True
+0.85,C15,paraphrase,hit,0.93145,"How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?",69.31,3.52,72.83,True,True,False,False,True
+0.85,C16,paraphrase,hit,0.959477,Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?,82.9,7.0,89.9,True,True,False,False,True
+0.85,C17,paraphrase,hit,0.915167,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",95.82,12.32,108.14,True,True,False,False,True
+0.85,C18,paraphrase,hit,0.970307,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,136.16,8.22,144.39,True,True,False,False,True
+0.85,C19,paraphrase,hit,0.793605,"How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?",92.38,7.31,125915.09,False,False,False,True,
+0.85,C20,paraphrase,hit,0.9582,Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?,122.21,16.75,138.96,True,True,False,False,True
+0.85,C21,lookalike,miss,0.94903,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",81.92,6.15,88.07,True,False,True,False,False
+0.85,C22,lookalike,miss,0.869526,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,63.44,8.62,72.06,True,False,True,False,False
+0.85,C23,lookalike,miss,0.958161,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",75.07,5.05,80.12,True,False,True,False,False
+0.85,C24,lookalike,miss,0.916638,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,83.29,5.73,89.01,True,False,True,False,False
+0.85,C25,lookalike,miss,0.933445,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",100.48,6.73,107.21,True,False,True,False,False
+0.85,C26,lookalike,miss,0.851346,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,100.44,5.49,105.94,True,False,True,False,False
+0.85,C27,lookalike,miss,0.856783,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",110.92,10.28,121.19,True,False,True,False,False
+0.85,C28,lookalike,miss,0.841579,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",82.46,3.33,108247.46,False,False,False,False,
+0.85,C29,lookalike,miss,0.860457,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,75.52,21.04,96.56,True,False,True,False,False
+0.85,C30,lookalike,miss,0.934328,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",99.73,5.87,105.59,True,False,True,False,False
+0.85,C31,unrelated,miss,0.652437,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,84.09,26.04,87128.06,False,False,False,False,
+0.85,C32,unrelated,miss,0.516443,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",86.97,3.04,77690.28,False,False,False,False,
+0.85,C33,unrelated,miss,0.544141,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",92.31,11.25,68651.18,False,False,False,False,
+0.85,C34,unrelated,miss,0.540046,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,91.05,16.2,61563.48,False,False,False,False,
+0.85,C35,unrelated,miss,0.489565,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",101.61,13.66,61123.89,False,False,False,False,
+0.85,C36,unrelated,miss,0.501646,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,99.18,17.02,60766.12,False,False,False,False,
+0.85,C37,unrelated,miss,0.608953,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,68.18,9.67,58375.1,False,False,False,False,
+0.85,C38,unrelated,miss,0.225069,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",43.21,2.75,66977.66,False,False,False,False,
+0.85,C39,unrelated,miss,0.315303,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",46.04,3.36,63028.94,False,False,False,False,
+0.85,C40,unrelated,miss,0.581079,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,47.95,3.04,68653.84,False,False,False,False,
+0.9,C01,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",73.11,6.3,79.41,True,True,False,False,True
+0.9,C02,exact_duplicate,hit,1.0,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,62.46,14.1,76.55,True,True,False,False,True
+0.9,C03,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",70.73,4.38,75.11,True,True,False,False,True
+0.9,C04,exact_duplicate,hit,1.0,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,65.12,4.37,69.49,True,True,False,False,True
+0.9,C05,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",67.36,10.28,77.63,True,True,False,False,True
+0.9,C06,exact_duplicate,hit,1.0,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,82.98,21.64,104.62,True,True,False,False,True
+0.9,C07,exact_duplicate,hit,1.0,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",64.21,24.32,88.53,True,True,False,False,True
+0.9,C08,exact_duplicate,hit,1.0,Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?,76.77,10.04,86.81,True,True,False,False,True
+0.9,C09,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?",59.44,10.44,69.88,True,True,False,False,True
+0.9,C10,exact_duplicate,hit,1.0,Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?,93.36,3.2,96.56,True,True,False,False,True
+0.9,C11,paraphrase,hit,0.865924,"How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?",107.09,4.95,114106.48,False,False,False,True,
+0.9,C12,paraphrase,hit,0.96297,Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?,62.79,8.72,71.51,True,True,False,False,True
+0.9,C13,paraphrase,hit,0.857352,"How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?",81.02,2.82,112801.42,False,False,False,True,
+0.9,C14,paraphrase,hit,0.971853,Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?,68.54,10.09,78.63,True,True,False,False,True
+0.9,C15,paraphrase,hit,0.93145,"How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?",89.89,4.0,93.89,True,True,False,False,True
+0.9,C16,paraphrase,hit,0.959477,Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?,65.73,7.31,73.04,True,True,False,False,True
+0.9,C17,paraphrase,hit,0.915167,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",65.75,5.23,70.98,True,True,False,False,True
+0.9,C18,paraphrase,hit,0.970307,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,93.47,3.3,96.77,True,True,False,False,True
+0.9,C19,paraphrase,hit,0.793605,"How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?",73.6,9.39,125898.39,False,False,False,True,
+0.9,C20,paraphrase,hit,0.9582,Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?,185.89,36.22,222.1,True,True,False,False,True
+0.9,C21,lookalike,miss,0.94903,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",181.43,7.22,188.66,True,False,True,False,False
+0.9,C22,lookalike,miss,0.869526,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,109.53,3.16,114237.98,False,False,False,False,
+0.9,C23,lookalike,miss,0.958161,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",78.78,6.33,85.11,True,False,True,False,False
+0.9,C24,lookalike,miss,0.916638,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,85.57,8.39,93.95,True,False,True,False,False
+0.9,C25,lookalike,miss,0.933445,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",89.08,4.18,93.26,True,False,True,False,False
+0.9,C26,lookalike,miss,0.851346,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,89.87,4.13,106740.88,False,False,False,False,
+0.9,C27,lookalike,miss,0.856783,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",66.01,6.86,102207.56,False,False,False,False,
+0.9,C28,lookalike,miss,0.841579,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",74.44,6.21,108242.32,False,False,False,False,
+0.9,C29,lookalike,miss,0.860457,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,52.16,6.83,111180.34,False,False,False,False,
+0.9,C30,lookalike,miss,0.934328,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",106.27,3.62,109.89,True,False,True,False,False
+0.9,C31,unrelated,miss,0.652437,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,61.21,6.2,87085.34,False,False,False,False,
+0.9,C32,unrelated,miss,0.516443,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",54.4,3.8,77658.46,False,False,False,False,
+0.9,C33,unrelated,miss,0.544141,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",44.57,4.06,68596.24,False,False,False,False,
+0.9,C34,unrelated,miss,0.540046,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,65.98,7.79,61530.0,False,False,False,False,
+0.9,C35,unrelated,miss,0.489565,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",63.04,3.49,61075.14,False,False,False,False,
+0.9,C36,unrelated,miss,0.501646,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,64.77,5.83,60720.51,False,False,False,False,
+0.9,C37,unrelated,miss,0.608953,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,50.77,3.59,58351.62,False,False,False,False,
+0.9,C38,unrelated,miss,0.225069,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",52.88,3.97,66988.54,False,False,False,False,
+0.9,C39,unrelated,miss,0.315303,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",47.78,6.27,63033.59,False,False,False,False,
+0.9,C40,unrelated,miss,0.581079,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,60.23,3.13,68666.2,False,False,False,False,
+0.95,C01,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",51.49,5.95,57.44,True,True,False,False,True
+0.95,C02,exact_duplicate,hit,1.0,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,59.77,6.22,65.99,True,True,False,False,True
+0.95,C03,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",55.39,4.58,59.97,True,True,False,False,True
+0.95,C04,exact_duplicate,hit,1.0,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,57.8,3.17,60.97,True,True,False,False,True
+0.95,C05,exact_duplicate,hit,1.0,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",70.2,3.88,74.08,True,True,False,False,True
+0.95,C06,exact_duplicate,hit,1.0,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,46.91,11.45,58.36,True,True,False,False,True
+0.95,C07,exact_duplicate,hit,1.0,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",55.73,6.35,62.08,True,True,False,False,True
+0.95,C08,exact_duplicate,hit,1.0,Which agency reported recall REC-017706 for Premium Mixed Berries (Lot 02700) from Silver Creek Market?,66.16,3.81,69.97,True,True,False,False,True
+0.95,C09,exact_duplicate,hit,1.0,"How many units were affected by recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals)?",50.86,4.82,55.68,True,True,False,False,True
+0.95,C10,exact_duplicate,hit,1.0,Which agency reported recall REC-019153 for Artisan Shell Eggs (Lot 04147) from Red Barn Co.?,79.7,4.88,84.58,True,True,False,False,True
+0.95,C11,paraphrase,hit,0.865924,"How many units were affected by recall REC-018874 (Reduced Sodium Bagged Spinach (Lot 03868), Prairie Gold Naturals)?",97.97,3.83,114096.24,False,False,False,True,
+0.95,C12,paraphrase,hit,0.96297,Which agency reported recall REC-016568 for Premium Salmon Fillets (Lot 01562) from Clearwater Farms?,81.36,4.91,86.27,True,True,False,False,True
+0.95,C13,paraphrase,hit,0.857352,"How many units were affected by recall REC-015945 (Premium Peanut Butter (Lot 00939), Sunrise Valley Naturals)?",77.4,11.9,112806.88,False,False,False,True,
+0.95,C14,paraphrase,hit,0.971853,Which agency reported recall REC-015978 for Reduced Sodium Cookie Dough (Lot 00972) from Coastal Harbor Co.?,112.77,8.95,121.72,True,True,False,False,True
+0.95,C15,paraphrase,hit,0.93145,"How many units were affected by recall REC-017004 (Family Size Ground Beef (Lot 01998), Willow Bend Farms)?",82.34,7.56,106482.06,False,False,False,True,
+0.95,C16,paraphrase,hit,0.959477,Which agency reported recall REC-018145 for Plant-Based Ground Beef (Lot 03139) from Silver Creek Kitchen?,137.91,14.0,151.92,True,True,False,False,True
+0.95,C17,paraphrase,hit,0.915167,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",91.55,3.74,109278.23,False,False,False,True,
+0.95,C18,paraphrase,hit,0.970307,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,71.65,7.42,79.08,True,True,False,False,True
+0.95,C19,paraphrase,hit,0.793605,"How many units were affected by recall REC-019034 (Whole Grain Hummus (Lot 04028), Red Barn Pantry)?",77.74,16.68,125909.82,False,False,False,True,
+0.95,C20,paraphrase,hit,0.9582,Which agency reported recall REC-015679 for Farmstead Salmon Fillets (Lot 00673) from Harvest Moon Farms?,95.36,7.21,102.58,True,True,False,False,True
+0.95,C21,lookalike,miss,0.94903,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",73.8,23.57,112874.82,False,False,False,False,
+0.95,C22,lookalike,miss,0.869526,Which agency reported recall REC-017792 for Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market?,76.99,8.16,114210.43,False,False,False,False,
+0.95,C23,lookalike,miss,0.958161,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",55.24,6.76,62.0,True,False,True,False,False
+0.95,C24,lookalike,miss,0.916638,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,115.87,9.52,114342.43,False,False,False,False,
+0.95,C25,lookalike,miss,0.933445,"How many units were affected by recall REC-018625 (Frozen Yogurt (Lot 03619), Harvest Moon Provisions)?",61.01,5.76,109687.86,False,False,False,False,
+0.95,C26,lookalike,miss,0.851346,Which agency reported recall REC-016603 for Plant-Based Mixed Berries (Lot 01597) from Northfield Farms?,52.18,4.68,106703.74,False,False,False,False,
+0.95,C27,lookalike,miss,0.856783,"How many units were affected by recall REC-017158 (Reduced Sodium Trail Mix (Lot 02152), Sunrise Valley Co.)?",62.91,11.4,102209.0,False,False,False,False,
+0.95,C28,lookalike,miss,0.841579,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",54.86,10.15,108226.68,False,False,False,False,
+0.95,C29,lookalike,miss,0.860457,Which agency reported recall REC-015344 for Reduced Sodium Peanut Butter (Lot 00338) from Evergreen Kitchen?,72.24,4.65,111198.24,False,False,False,False,
+0.95,C30,lookalike,miss,0.934328,"How many units were affected by recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen)?",64.75,5.59,111461.85,False,False,False,False,
+0.95,C31,unrelated,miss,0.652437,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,70.61,3.76,87092.3,False,False,False,False,
+0.95,C32,unrelated,miss,0.516443,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",63.14,3.71,77667.11,False,False,False,False,
+0.95,C33,unrelated,miss,0.544141,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",76.13,15.35,68639.1,False,False,False,False,
+0.95,C34,unrelated,miss,0.540046,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,84.0,4.85,61545.08,False,False,False,False,
+0.95,C35,unrelated,miss,0.489565,"How many units were affected by recall REC-016017 (Whole Grain Soft Cheese (Lot 01011), Silver Creek Pantry)?",102.63,7.55,61118.8,False,False,False,False,
+0.95,C36,unrelated,miss,0.501646,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,89.26,8.28,60747.45,False,False,False,False,
+0.95,C37,unrelated,miss,0.608953,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,52.54,5.6,58355.4,False,False,False,False,
+0.95,C38,unrelated,miss,0.225069,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",77.32,4.03,67013.05,False,False,False,False,
+0.95,C39,unrelated,miss,0.315303,"How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",82.42,5.81,63067.77,False,False,False,False,
+0.95,C40,unrelated,miss,0.581079,Which agency reported recall REC-015220 for Value Brand Bottled Juice (Lot 00214) from Red Barn Pantry?,93.84,17.77,68714.47,False,False,False,False,

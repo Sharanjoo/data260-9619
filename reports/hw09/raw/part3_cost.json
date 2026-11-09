@@ -1,0 +1,153 @@
+{
+  "mean_agent_latency_s": 101.59,
+  "rate_per_hour": 1.0,
+  "c_miss": 0.0282,
+  "c_false": 5.0,
+  "costs": {
+    "0.75": {
+      "not_served": 10,
+      "false_hits": 10,
+      "miss_cost": 0.282,
+      "false_hit_cost": 50.0,
+      "total_cost": 50.282
+    },
+    "0.8": {
+      "not_served": 11,
+      "false_hits": 10,
+      "miss_cost": 0.3102,
+      "false_hit_cost": 50.0,
+      "total_cost": 50.3102
+    },
+    "0.85": {
+      "not_served": 12,
+      "false_hits": 9,
+      "miss_cost": 0.3384,
+      "false_hit_cost": 45.0,
+      "total_cost": 45.3384
+    },
+    "0.9": {
+      "not_served": 18,
+      "false_hits": 5,
+      "miss_cost": 0.5076,
+      "false_hit_cost": 25.0,
+      "total_cost": 25.5076
+    },
+    "0.95": {
+      "not_served": 24,
+      "false_hits": 1,
+      "miss_cost": 0.6768,
+      "false_hit_cost": 5.0,
+      "total_cost": 5.6768
+    }
+  },
+  "chosen_by_lowest_total": "0.95",
+  "sensitivity": {
+    "0.05": {
+      "best": "0.95",
+      "totals": {
+        "0.75": 0.782,
+        "0.8": 0.8102,
+        "0.85": 0.7884,
+        "0.9": 0.7576,
+        "0.95": 0.7268
+      }
+    },
+    "0.5": {
+      "best": "0.95",
+      "totals": {
+        "0.75": 5.282,
+        "0.8": 5.3102,
+        "0.85": 4.8384,
+        "0.9": 3.0076,
+        "0.95": 1.1768
+      }
+    },
+    "5.0": {
+      "best": "0.95",
+      "totals": {
+        "0.75": 50.282,
+        "0.8": 50.3102,
+        "0.85": 45.3384,
+        "0.9": 25.5076,
+        "0.95": 5.6768
+      }
+    },
+    "50.0": {
+      "best": "0.95",
+      "totals": {
+        "0.75": 500.282,
+        "0.8": 500.3102,
+        "0.85": 450.3384,
+        "0.9": 250.5076,
+        "0.95": 50.6768
+      }
+    }
+  },
+  "sweep": {
+    "0.75": {
+      "cases": 40,
+      "served": 30,
+      "hit_rate": 0.75,
+      "correct_hits": 20,
+      "false_hits": 10,
+      "false_hit_rate": 0.5,
+      "false_misses": 0,
+      "wrong_answers_served": 10,
+      "mean_latency_ms": 16925.8,
+      "not_served": 10,
+      "total_cost": 50.1
+    },
+    "0.8": {
+      "cases": 40,
+      "served": 29,
+      "hit_rate": 0.725,
+      "correct_hits": 19,
+      "false_hits": 10,
+      "false_hit_rate": 0.5,
+      "false_misses": 1,
+      "wrong_answers_served": 10,
+      "mean_latency_ms": 20103.2,
+      "not_served": 11,
+      "total_cost": 50.11
+    },
+    "0.85": {
+      "cases": 40,
+      "served": 28,
+      "hit_rate": 0.7,
+      "correct_hits": 19,
+      "false_hits": 9,
+      "false_hit_rate": 0.45,
+      "false_misses": 1,
+      "wrong_answers_served": 9,
+      "mean_latency_ms": 22772.0,
+      "not_served": 12,
+      "total_cost": 45.12
+    },
+    "0.9": {
+      "cases": 40,
+      "served": 22,
+      "hit_rate": 0.55,
+      "correct_hits": 17,
+      "false_hits": 5,
+      "false_hit_rate": 0.25,
+      "false_misses": 3,
+      "wrong_answers_served": 5,
+      "mean_latency_ms": 39280.6,
+      "not_served": 18,
+      "total_cost": 25.18
+    },
+    "0.95": {
+      "cases": 40,
+      "served": 16,
+      "hit_rate": 0.4,
+      "correct_hits": 15,
+      "false_hits": 1,
+      "false_hit_rate": 0.05,
+      "false_misses": 5,
+      "wrong_answers_served": 1,
+      "mean_latency_ms": 55867.5,
+      "not_served": 24,
+      "total_cost": 5.24
+    }
+  }
+}

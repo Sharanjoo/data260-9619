@@ -1,0 +1,74 @@
+{
+  "record": "REC-016586",
+  "query": "How many units were affected by recall REC-016586 (Value Brand Bagged Spinach (Lot 01580), Sunrise Valley Naturals)?",
+  "old_units": 5445,
+  "new_units": 8445,
+  "1_first_ask": {
+    "is_cached": false,
+    "similarity": 0.0,
+    "latency_ms": 145573.84,
+    "stale_entry_removed": false,
+    "answer": "The recall REC-016586 affected 5,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.",
+    "has_old_value": true,
+    "has_new_value": false,
+    "timings": {
+      "embed_ms": 39.76,
+      "search_ms": 4.61,
+      "agent_ms": 145480.81,
+      "store_ms": 11.3
+    }
+  },
+  "3_stale_hit": {
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 59.38,
+    "stale_entry_removed": false,
+    "answer": "The recall REC-016586 affected 5,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.",
+    "has_old_value": true,
+    "has_new_value": false,
+    "timings": {
+      "embed_ms": 55.61,
+      "search_ms": 3.44
+    }
+  },
+  "4_with_check": {
+    "is_cached": false,
+    "similarity": 1.0,
+    "latency_ms": 87253.68,
+    "stale_entry_removed": true,
+    "answer": "The recall REC-016586 affected 8,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.",
+    "has_old_value": false,
+    "has_new_value": true,
+    "timings": {
+      "embed_ms": 106.2,
+      "search_ms": 6.15,
+      "version_check_ms": 13.99,
+      "agent_ms": 87097.57,
+      "store_ms": 11.43
+    }
+  },
+  "5_after_refresh": {
+    "is_cached": true,
+    "similarity": 1.0,
+    "latency_ms": 287.79,
+    "stale_entry_removed": false,
+    "answer": "The recall REC-016586 affected 8,445 units of Value Brand Bagged Spinach (Lot 01580) from Sunrise Valley Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.",
+    "has_old_value": false,
+    "has_new_value": true,
+    "timings": {
+      "embed_ms": 166.83,
+      "search_ms": 8.63,
+      "version_check_ms": 112.13
+    }
+  },
+  "6_cost_of_check": {
+    "mean_ms_without_check": 70.36,
+    "mean_ms_with_check": 99.87
+  },
+  "checks": {
+    "stale hit returned the old value": true,
+    "version check removed the stale entry and re-ran the agents": true,
+    "refreshed answer states the new value": true,
+    "afterwards a normal hit with the new value": true
+  }
+}

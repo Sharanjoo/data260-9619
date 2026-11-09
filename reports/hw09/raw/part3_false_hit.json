@@ -1,0 +1,30 @@
+{
+  "threshold": 0.95,
+  "case": "C23",
+  "group": "lookalike",
+  "similarity": 0.958161,
+  "cached_query": "How many units were affected by recall REC-018041 (Premium Bottled Juice (Lot 03035), Blue Ridge Pantry)?",
+  "incoming_query": "How many units were affected by recall REC-015092 (Premium Bottled Juice (Lot 00086), Blue Ridge Naturals)?",
+  "cached_answer": "The recall REC-018041 affected 24,753 units of Premium Bottled Juice (Lot 03035) by Blue Ridge Pantry. Do not eat or use this product; follow the official recall notice for safe handling and disposal.",
+  "correct_answer": "The recall REC-015092 affected 35,574 units of Premium Bottled Juice (Lot 00086) by Blue Ridge Naturals. Do not eat or use the recalled product. Follow the official recall notice for further instructions.",
+  "fact": {
+    "aspect": "units",
+    "record_code": "REC-015092",
+    "value": 35574
+  },
+  "differing_words": [
+    [
+      "REC-018041",
+      "REC-015092"
+    ],
+    [
+      "03035),",
+      "00086),"
+    ],
+    [
+      "Pantry)?",
+      "Naturals)?"
+    ]
+  ],
+  "false_hits_at_threshold": 1
+}
