@@ -20,6 +20,7 @@ from typing import Any, Awaitable, Callable, Dict, List, Optional
 from kafka_api.config import BOOTSTRAP_SERVERS
 from kafka_api.logutil import log
 from kafka_agents.settings import BANNER, DEAD_LETTER_TOPIC, Flags
+from tracing.spans import emit as trace_emit, now_ms
 
 Handler = Callable[[Dict[str, Any]], Awaitable[List[Dict[str, Any]]]]
 
@@ -97,7 +98,18 @@ async def process_message(stage: Stage, msg: Any, consumer: Any, producer: Any, 
                 return
             if attempt == 1:
                 log_fn(stage.label, f"processing correlation_id={cid}")
-            outs = await stage.handler(payload)
+            handler_start = now_ms()
+            sent_ms = getattr(msg, "timestamp", 0) or 0
+            if attempt == 1 and sent_ms > 1e12:  # HW10: time the message waited in Kafka before this stage began
+                trace_emit(cid, f"queue_wait_{msg.topic.split('_', 1)[-1]}", float(sent_ms), handler_start,
+                           topic=msg.topic, partition=msg.partition, offset=msg.offset, consumer=stage.label)
+            try:
+                outs = await stage.handler(payload)
+            except Exception as handler_exc:  # noqa: BLE001 - HW10: record the failing attempt, then re-raise
+                trace_emit(cid, stage.name.lower(), handler_start, now_ms(), "error",
+                           f"{type(handler_exc).__name__}: {handler_exc}", attempt=attempt, instance=stage.label)
+                raise
+            trace_emit(cid, stage.name.lower(), handler_start, now_ms(), attempt=attempt, instance=stage.label)
             break
         except asyncio.CancelledError:
             raise
@@ -113,7 +125,10 @@ async def process_message(stage: Stage, msg: Any, consumer: Any, producer: Any, 
     if outs is None:  # gave up: park the message on the dead-letter topic and move on
         dead = {"stage": stage.name, "correlation_id": cid, "attempts": attempt, "error": error,
                 "source": {"topic": msg.topic, "partition": msg.partition, "offset": msg.offset}, "original": raw}
+        dl_start = now_ms()
         meta = await producer.send_and_wait(DEAD_LETTER_TOPIC, dump(dead).encode("utf-8"))
+        trace_emit(cid, "dead_letter", dl_start, now_ms(), "error", f"gave up after {attempt} attempts: {error}",
+                   failed_stage=stage.name.lower(), attempts=attempt, topic=DEAD_LETTER_TOPIC)  # HW10: where the request ended
         log_fn(stage.label, f"gave up after {attempt} attempts: moved to {meta.topic} partition={meta.partition} "
                             f"offset={meta.offset} correlation_id={cid}")
         await consumer.commit()
