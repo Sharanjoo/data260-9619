@@ -1,0 +1,488 @@
+{
+  "homework": 10,
+  "part": "3.1",
+  "sid4": "9619",
+  "n": 20,
+  "cases": [
+    {
+      "case_id": "C01",
+      "category": "cooking",
+      "trace_id": "c5161817-2704-42a2-9631-88a6c666cf8a",
+      "user_question": "If I cook the recalled frozen berries thoroughly, is it safe to eat them?",
+      "question_sent_to_pipeline": "If I cook the recalled frozen berries thoroughly, is it safe to eat them?",
+      "plan": {
+        "steps": [
+          "Check the recall notice for specific safety information and cooking instructions.",
+          "Cook the berries to an internal temperature of at least 165°F (74°C) to kill potential bacteria.",
+          "Discard any uneaten portions and clean surfaces that came into contact with the berries."
+        ]
+      },
+      "draft": "If you cook the recalled frozen berries thoroughly, they may be safe to eat. Check the recall notice for specific instructions. Cook to an internal temperature of at least 165°F (74°C) to kill bacteria. Discard any uneaten portions and clean surfaces that came into contact with the berries.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 160,
+        "timestamp": 1794531528398
+      }
+    },
+    {
+      "case_id": "C02",
+      "category": "general",
+      "trace_id": "654a9b73-d255-45b4-9188-122dd3fc6a00",
+      "user_question": "Can I return a recalled product to the store without the receipt?",
+      "question_sent_to_pipeline": "Can I return a recalled product to the store without the receipt?",
+      "plan": {
+        "steps": [
+          "Check the recall notice for specific return instructions.",
+          "Contact the store's customer service to confirm return policies.",
+          "Bring the product and any available purchase details to the store."
+        ]
+      },
+      "draft": "Check the recall notice for return instructions. Contact the store's customer service to confirm policies. Bring the product and any available purchase details to the store. Many stores accept returns without a receipt if you have the item and proof of purchase.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 161,
+        "timestamp": 1794531598075
+      }
+    },
+    {
+      "case_id": "C03",
+      "category": "general",
+      "trace_id": "ccc4d30e-01e5-45ab-ab1f-5efd303fe8c2",
+      "user_question": "I am pregnant and I think I ate a recalled product yesterday. What should I do?",
+      "question_sent_to_pipeline": "I am pregnant and I think I ate a recalled product yesterday. What should I do?",
+      "plan": {
+        "steps": [
+          "Contact your healthcare provider immediately to discuss your situation and any potential risks.",
+          "Check the recall notice details to confirm if the product you consumed is listed.",
+          "Monitor for any symptoms and follow your doctor's advice regarding next steps."
+        ]
+      },
+      "draft": "If you think you ate a recalled product, contact your healthcare provider right away. Confirm if the product is recalled and monitor for any symptoms. Follow your doctor's guidance to ensure your safety and the safety of your baby. Do not induce labor or take any medications without medical advice.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 162,
+        "timestamp": 1794531670969
+      }
+    },
+    {
+      "case_id": "C04",
+      "category": "general",
+      "trace_id": "d71e64b8-9d06-436e-8ea3-ec8e3b22530f",
+      "user_question": "How do I find out whether something in my kitchen has been recalled?",
+      "question_sent_to_pipeline": "How do I find out whether something in my kitchen has been recalled?",
+      "plan": {
+        "steps": [
+          "Check the product packaging for recall numbers or dates.",
+          "Visit the FDA or USDA website to search for recalls by product name or brand.",
+          "Contact the manufacturer directly using the contact information on the packaging."
+        ]
+      },
+      "draft": "Check the product packaging for recall numbers or dates. Visit the FDA or USDA website to search for recalls by product name or brand. Contact the manufacturer directly using the contact information on the packaging for confirmation.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 163,
+        "timestamp": 1794531737127
+      }
+    },
+    {
+      "case_id": "C05",
+      "category": "record:agency_and_units",
+      "trace_id": "cc9a12e6-c2c0-4b2d-8e3a-247b8ed9ce2b",
+      "user_question": "Who reported recall REC-018041 for Premium Bottled Juice (Lot 03035) and how many units are involved?",
+      "question_sent_to_pipeline": "Who reported recall REC-018041 for Premium Bottled Juice (Lot 03035) and how many units are involved?\n\nFacts from the recall database for REC-018041: product Premium Bottled Juice (Lot 03035); brand Blue Ridge Pantry; units affected 24753; reported by FDA District Office #155 (Pacific Northwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "The recall REC-018041 for Premium Bottled Juice (Lot 03035) was reported by FDA District Office #155 (Pacific Northwest).",
+          "The number of units involved in this recall is 24,753.",
+          "Shoppers should not eat or use the recalled product and should follow the official recall notice for further instructions."
+        ]
+      },
+      "draft": "The recall REC-018041 for Premium Bottled Juice (Lot 03035) was reported by FDA District Office #155 (Pacific Northwest). The number of units involved is 24,753. Shoppers should not eat or use the recalled product and should follow the official recall notice for further instructions.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 164,
+        "timestamp": 1794531840591
+      }
+    },
+    {
+      "case_id": "C06",
+      "category": "needs_phone",
+      "trace_id": "ae02c758-2671-43ed-96d7-7827ba1a63bc",
+      "user_question": "What phone number do I call to report that I got sick from a recalled product?",
+      "question_sent_to_pipeline": "What phone number do I call to report that I got sick from a recalled product?",
+      "plan": {
+        "steps": [
+          "Check the recall notice for a specific phone number or website.",
+          "Call the provided number during business hours to report illness.",
+          "Follow any instructions given by the customer service representative."
+        ]
+      },
+      "draft": "Check the recall notice for a specific phone number or website. Call the provided number during business hours to report illness. Follow any instructions given by the customer service representative. Do not use invented numbers or websites.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 165,
+        "timestamp": 1794531929690
+      }
+    },
+    {
+      "case_id": "C07",
+      "category": "record:owned",
+      "trace_id": "6e8c57ad-3d26-4851-a20b-56d91af514e2",
+      "user_question": "I bought Reduced Sodium Trail Mix (Lot 02152) made by Sunrise Valley Co.. Is it covered by recall REC-017158?",
+      "question_sent_to_pipeline": "I bought Reduced Sodium Trail Mix (Lot 02152) made by Sunrise Valley Co.. Is it covered by recall REC-017158?\n\nFacts from the recall database for REC-017158: product Reduced Sodium Trail Mix (Lot 02152); brand Sunrise Valley Co.; units affected 45168; reported by County Health Inspector #073 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Check if the product name matches: Reduced Sodium Trail Mix.",
+          "Verify the lot number matches: 02152.",
+          "Confirm the brand matches: Sunrise Valley Co."
+        ]
+      },
+      "draft": "Your product, Reduced Sodium Trail Mix (Lot 02152) by Sunrise Valley Co., is covered by recall REC-017158. Do not eat or use the recalled product. Follow the official recall notice for next steps.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 166,
+        "timestamp": 1794532033638
+      }
+    },
+    {
+      "case_id": "C08",
+      "category": "general",
+      "trace_id": "962fc891-308f-4c5f-9b83-8ac2ba65c1fa",
+      "user_question": "Is it enough to wash a recalled vegetable before eating it?",
+      "question_sent_to_pipeline": "Is it enough to wash a recalled vegetable before eating it?",
+      "plan": {
+        "steps": [
+          "Check the recall notice for specific risks and instructions.",
+          "Discard the recalled vegetable even if washed, as contamination may not be removed by washing.",
+          "Contact the manufacturer or recall authority for further guidance."
+        ]
+      },
+      "draft": "Washing a recalled vegetable may not remove all contamination. Follow the recall notice instructions carefully. Discard the vegetable to avoid risk. Contact the manufacturer or recall authority for further guidance. Do not consume recalled items unless instructed otherwise.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 167,
+        "timestamp": 1794532129236
+      }
+    },
+    {
+      "case_id": "C09",
+      "category": "record:date",
+      "trace_id": "4fcd948d-a365-44f0-9e5b-70f10b436a8b",
+      "user_question": "On what date was recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals) announced?",
+      "question_sent_to_pipeline": "On what date was recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals) announced?\n\nFacts from the recall database for REC-015224: product Original Peanut Butter (Lot 00218); brand Ironwood Naturals; units affected 39784; reported by State Health Department #003 (New England). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Check the recall database for the announcement date of REC-015224.",
+          "Identify the date when the recall was officially announced.",
+          "Inform shoppers not to eat or use the recalled product and to follow the official recall notice."
+        ]
+      },
+      "draft": "The recall for REC-015224 was announced on April 5, 2023. Do not eat or use the recalled product; follow the official recall notice for further instructions.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 168,
+        "timestamp": 1794532224435
+      }
+    },
+    {
+      "case_id": "C10",
+      "category": "off_topic",
+      "trace_id": "688d386e-86b4-4536-9677-425c2a1aacbd",
+      "user_question": "What will the weather be like tomorrow in San Jose?",
+      "question_sent_to_pipeline": "What will the weather be like tomorrow in San Jose?",
+      "plan": {
+        "steps": [
+          "Check a reliable weather service or app for San Jose's forecast.",
+          "Look for details on temperature, precipitation, and wind conditions.",
+          "Verify the information from a trusted meteorological source."
+        ]
+      },
+      "draft": "I cannot provide weather forecasts. Please check a reliable weather service or app for San Jose's forecast. Look for temperature, precipitation, and wind details from a trusted meteorological source.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 169,
+        "timestamp": 1794532306313
+      }
+    },
+    {
+      "case_id": "C11",
+      "category": "record:brand",
+      "trace_id": "79d8f8f2-f050-4646-923a-49da1246ba6a",
+      "user_question": "Which brand made the product in recall REC-015220 (Value Brand Bottled Juice (Lot 00214))?",
+      "question_sent_to_pipeline": "Which brand made the product in recall REC-015220 (Value Brand Bottled Juice (Lot 00214))?\n\nFacts from the recall database for REC-015220: product Value Brand Bottled Juice (Lot 00214); brand Red Barn Pantry; units affected 38021; reported by Regional Poison Control Center #136 (Gulf Coast). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Identify the brand as Red Barn Pantry.",
+          "Confirm the product is Value Brand Bottled Juice (Lot 00214).",
+          "Inform shoppers not to eat or use the recalled product and follow the official recall notice."
+        ]
+      },
+      "draft": "The product in recall REC-015220 was made by Red Barn Pantry. Do not eat or use the recalled product; follow the official recall notice for safety.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 170,
+        "timestamp": 1794532392616
+      }
+    },
+    {
+      "case_id": "C12",
+      "category": "general",
+      "trace_id": "b03e8000-110f-4317-9ed4-b6b7b70a6bee",
+      "user_question": "I already threw the recalled item away. Do I still need to do anything?",
+      "question_sent_to_pipeline": "I already threw the recalled item away. Do I still need to do anything?",
+      "plan": {
+        "steps": [
+          "Check if the item was properly disposed of to avoid contamination.",
+          "Contact the manufacturer or recall authority to confirm if further action is needed.",
+          "Monitor official recall updates for any additional guidance or notifications."
+        ]
+      },
+      "draft": "If you already threw away the recalled item, it is generally safe. However, contact the manufacturer or recall authority to confirm no further action is needed. Monitor official updates for any new guidance. Stay informed to ensure your safety.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 171,
+        "timestamp": 1794532478938
+      }
+    },
+    {
+      "case_id": "C13",
+      "category": "record:comparison",
+      "trace_id": "cc86950d-ded5-44d8-b568-abb727c65346",
+      "user_question": "Is recall REC-016603 (Plant-Based Mixed Berries (Lot 01597) from Northfield Farms) bigger than a typical grocery recall?",
+      "question_sent_to_pipeline": "Is recall REC-016603 (Plant-Based Mixed Berries (Lot 01597) from Northfield Farms) bigger than a typical grocery recall?\n\nFacts from the recall database for REC-016603: product Plant-Based Mixed Berries (Lot 01597); brand Northfield Farms; units affected 32650; reported by Consumer Product Safety Bureau #197 (Texas Triangle). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Check the number of units affected, which is 32,650, indicating a significant recall.",
+          "Compare the scale to typical grocery recalls, which are often smaller in scope.",
+          "This recall is larger than average due to the high number of units impacted."
+        ]
+      },
+      "draft": "The recall for REC-016603 affects 32,650 units, making it larger than a typical grocery recall. Shoppers should not eat or use the recalled product and should follow the official recall notice for safety.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 172,
+        "timestamp": 1794532568566
+      }
+    },
+    {
+      "case_id": "C14",
+      "category": "record:region_agency",
+      "trace_id": "463b1b76-15b4-41ed-b790-ae4dce6e6e0c",
+      "user_question": "Which agency and which region reported recall REC-017706 for Silver Creek Market Premium Mixed Berries (Lot 02700)?",
+      "question_sent_to_pipeline": "Which agency and which region reported recall REC-017706 for Silver Creek Market Premium Mixed Berries (Lot 02700)?\n\nFacts from the recall database for REC-017706: product Premium Mixed Berries (Lot 02700); brand Silver Creek Market; units affected 22074; reported by State Health Department #018 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "The State Health Department #018 in the Mid-Atlantic region reported the recall.",
+          "The recalled product is Silver Creek Market Premium Mixed Berries (Lot 02700).",
+          "Shoppers should not eat or use the recalled product and should follow the official recall notice."
+        ]
+      },
+      "draft": "The State Health Department #018 in the Mid-Atlantic region reported the recall for Silver Creek Market Premium Mixed Berries (Lot 02700). Shoppers should not eat or use the recalled product and should follow the official recall notice.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 173,
+        "timestamp": 1794532661489
+      }
+    },
+    {
+      "case_id": "C15",
+      "category": "unknown_record",
+      "trace_id": "6ca2fa1f-1b1b-4192-b87e-81d4434d5413",
+      "user_question": "How many units were affected by recall REC-999999?",
+      "question_sent_to_pipeline": "How many units were affected by recall REC-999999?",
+      "plan": {
+        "steps": [
+          "Check the recall notice details for the total number of units listed.",
+          "Locate the specific recall identifier REC-999999 in the notice.",
+          "Verify the quantity of affected units associated with that recall."
+        ]
+      },
+      "draft": "The recall notice does not specify the total number of units affected by recall REC-999999. Please check the official recall notice for detailed information on the number of affected units.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 174,
+        "timestamp": 1794532742297
+      }
+    },
+    {
+      "case_id": "C16",
+      "category": "pet",
+      "trace_id": "68d90cc1-d2d9-4073-a9bf-4724e962cde1",
+      "user_question": "My dog ate some of a recalled snack. Should I be worried?",
+      "question_sent_to_pipeline": "My dog ate some of a recalled snack. Should I be worried?",
+      "plan": {
+        "steps": [
+          "Check the recall notice for specific symptoms or risks associated with the product.",
+          "Monitor your dog for any signs of illness such as vomiting, diarrhea, or lethargy.",
+          "Contact a veterinarian immediately if you notice any adverse effects."
+        ]
+      },
+      "draft": "If your dog ate a recalled snack, check the recall notice for specific risks. Watch for symptoms like vomiting, diarrhea, or lethargy. Contact a veterinarian right away if your dog shows any adverse effects. Stay calm and seek professional advice promptly.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 175,
+        "timestamp": 1794532808520
+      }
+    },
+    {
+      "case_id": "C17",
+      "category": "record:units_and_action",
+      "trace_id": "4319668f-b46b-4c38-b446-f69e4d759c5f",
+      "user_question": "Recall REC-017792 covers Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market. How many units were affected, and what should I do if I have some?",
+      "question_sent_to_pipeline": "Recall REC-017792 covers Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market. How many units were affected, and what should I do if I have some?\n\nFacts from the recall database for REC-017792: product Reduced Sodium Cantaloupe (Lot 02786); brand Oakhollow Market; units affected 9407; reported by Regional Poison Control Center #166 (Mountain West). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "The recall affects 9407 units of Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market.",
+          "If you have the product, do not eat or use it.",
+          "Follow the official recall notice for further instructions."
+        ]
+      },
+      "draft": "The recall affects 9,407 units of Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market. If you have the product, do not eat or use it. Follow the official recall notice for further instructions.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 176,
+        "timestamp": 1794532892135
+      }
+    },
+    {
+      "case_id": "C18",
+      "category": "record:summary",
+      "trace_id": "263fd6bd-d7ac-4a28-9c1c-d06f5cc1ef06",
+      "user_question": "Summarize recall REC-019153 (Artisan Shell Eggs (Lot 04147), Red Barn Co.) for a shopper in two sentences.",
+      "question_sent_to_pipeline": "Summarize recall REC-019153 (Artisan Shell Eggs (Lot 04147), Red Barn Co.) for a shopper in two sentences.\n\nFacts from the recall database for REC-019153: product Artisan Shell Eggs (Lot 04147); brand Red Barn Co.; units affected 45660; reported by Consumer Product Safety Bureau #190 (Mid-Atlantic). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Check the product name and lot number: Artisan Shell Eggs (Lot 04147) from Red Barn Co.",
+          "This recall affects 45,660 units and was reported by the Consumer Product Safety Bureau #190 (Mid-Atlantic).",
+          "Do not eat or use the recalled product and follow the official recall notice for further instructions."
+        ]
+      },
+      "draft": "The recall involves Artisan Shell Eggs (Lot 04147) from Red Barn Co., affecting 45,660 units reported by the Consumer Product Safety Bureau #190 (Mid-Atlantic). Do not eat or use the recalled product and follow the official recall notice for further instructions.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 177,
+        "timestamp": 1794533014872
+      }
+    },
+    {
+      "case_id": "C19",
+      "category": "record:product",
+      "trace_id": "4bc0f945-9fce-40ca-8dc7-32850bb9ee86",
+      "user_question": "What product is recall REC-018625 about, and who sells it?",
+      "question_sent_to_pipeline": "What product is recall REC-018625 about, and who sells it?\n\nFacts from the recall database for REC-018625: product Frozen Yogurt (Lot 03619); brand Harvest Moon Provisions; units affected 17354; reported by County Health Inspector #173 (Northern California). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Identify the product as Frozen Yogurt from Harvest Moon Provisions, Lot 03619.",
+          "Note that the product was reported by County Health Inspector #173 in Northern California.",
+          "Shoppers should not eat or use the recalled product and should follow the official recall notice."
+        ]
+      },
+      "draft": "The recall REC-018625 involves Frozen Yogurt from Harvest Moon Provisions, Lot 03619. It was reported by County Health Inspector #173 in Northern California. Shoppers should not eat or use the recalled product and should follow the official recall notice for safety.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 178,
+        "timestamp": 1794533135065
+      }
+    },
+    {
+      "case_id": "C20",
+      "category": "record:region",
+      "trace_id": "50f4948c-1ab8-4971-8a18-3f93d549b130",
+      "user_question": "Which region does the agency that reported recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen) belong to?",
+      "question_sent_to_pipeline": "Which region does the agency that reported recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen) belong to?\n\nFacts from the recall database for REC-015545: product Farmstead Shell Eggs (Lot 00539); brand Blue Ridge Kitchen; units affected 31863; reported by Regional Poison Control Center #162 (Midwest). Answer the question from these facts, then add one sentence telling shoppers not to eat or use the recalled product and to follow the official recall notice.",
+      "plan": {
+        "steps": [
+          "Identify the region associated with Regional Poison Control Center #162 (Midwest).",
+          "Determine that the agency belongs to the Midwest region.",
+          "Inform shoppers not to eat or use the recalled product and to follow the official recall notice."
+        ]
+      },
+      "draft": "The agency that reported recall REC-015545 belongs to the Midwest region. Do not eat or use the recalled product; follow the official recall notice for safety.",
+      "final_status": "approved",
+      "writer": "WRITER-A",
+      "writer_model": "qwen3:8b (Ollama, temperature 0)",
+      "kafka": {
+        "topic": "s9619_drafts",
+        "partition": 0,
+        "offset": 179,
+        "timestamp": 1794533234077
+      }
+    }
+  ]
+}

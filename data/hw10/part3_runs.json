@@ -1,0 +1,122 @@
+{
+  "C01": {
+    "trace_id": "c5161817-2704-42a2-9631-88a6c666cf8a",
+    "status": "approved",
+    "latency_ms": 114909.04,
+    "finished_at": "2026-11-13T00:59:15.456+00:00"
+  },
+  "C02": {
+    "trace_id": "654a9b73-d255-45b4-9188-122dd3fc6a00",
+    "status": "approved",
+    "latency_ms": 65782.66,
+    "finished_at": "2026-11-13T01:00:21.233+00:00"
+  },
+  "C03": {
+    "trace_id": "ccc4d30e-01e5-45ab-ab1f-5efd303fe8c2",
+    "status": "approved",
+    "latency_ms": 73598.29,
+    "finished_at": "2026-11-13T01:01:34.826+00:00"
+  },
+  "C04": {
+    "trace_id": "d71e64b8-9d06-436e-8ea3-ec8e3b22530f",
+    "status": "approved",
+    "latency_ms": 61541.86,
+    "finished_at": "2026-11-13T01:02:36.364+00:00"
+  },
+  "C05": {
+    "trace_id": "cc9a12e6-c2c0-4b2d-8e3a-247b8ed9ce2b",
+    "status": "approved",
+    "latency_ms": 122026.12,
+    "finished_at": "2026-11-13T01:04:38.382+00:00"
+  },
+  "C06": {
+    "trace_id": "ae02c758-2671-43ed-96d7-7827ba1a63bc",
+    "status": "approved",
+    "latency_ms": 79675.17,
+    "finished_at": "2026-11-13T01:05:58.055+00:00"
+  },
+  "C07": {
+    "trace_id": "6e8c57ad-3d26-4851-a20b-56d91af514e2",
+    "status": "approved",
+    "latency_ms": 115054.12,
+    "finished_at": "2026-11-13T01:07:53.102+00:00"
+  },
+  "C08": {
+    "trace_id": "962fc891-308f-4c5f-9b83-8ac2ba65c1fa",
+    "status": "approved",
+    "latency_ms": 82059.5,
+    "finished_at": "2026-11-13T01:09:15.163+00:00"
+  },
+  "C09": {
+    "trace_id": "4fcd948d-a365-44f0-9e5b-70f10b436a8b",
+    "status": "approved",
+    "latency_ms": 106907.17,
+    "finished_at": "2026-11-13T01:11:02.070+00:00"
+  },
+  "C10": {
+    "trace_id": "688d386e-86b4-4536-9677-425c2a1aacbd",
+    "status": "approved",
+    "latency_ms": 62744.08,
+    "finished_at": "2026-11-13T01:12:04.812+00:00"
+  },
+  "C11": {
+    "trace_id": "79d8f8f2-f050-4646-923a-49da1246ba6a",
+    "status": "approved",
+    "latency_ms": 105523.33,
+    "finished_at": "2026-11-13T01:13:50.327+00:00"
+  },
+  "C12": {
+    "trace_id": "b03e8000-110f-4317-9ed4-b6b7b70a6bee",
+    "status": "approved",
+    "latency_ms": 67668.78,
+    "finished_at": "2026-11-13T01:14:58.012+00:00"
+  },
+  "C13": {
+    "trace_id": "cc86950d-ded5-44d8-b568-abb727c65346",
+    "status": "approved",
+    "latency_ms": 98514.03,
+    "finished_at": "2026-11-13T01:16:36.521+00:00"
+  },
+  "C14": {
+    "trace_id": "463b1b76-15b4-41ed-b790-ae4dce6e6e0c",
+    "status": "approved",
+    "latency_ms": 99744.31,
+    "finished_at": "2026-11-13T01:18:16.260+00:00"
+  },
+  "C15": {
+    "trace_id": "6ca2fa1f-1b1b-4192-b87e-81d4434d5413",
+    "status": "approved",
+    "latency_ms": 66448.11,
+    "finished_at": "2026-11-13T01:19:22.716+00:00"
+  },
+  "C16": {
+    "trace_id": "68d90cc1-d2d9-4073-a9bf-4724e962cde1",
+    "status": "approved",
+    "latency_ms": 68058.95,
+    "finished_at": "2026-11-13T01:20:30.774+00:00"
+  },
+  "C17": {
+    "trace_id": "4319668f-b46b-4c38-b446-f69e4d759c5f",
+    "status": "approved",
+    "latency_ms": 96053.93,
+    "finished_at": "2026-11-13T01:22:06.825+00:00"
+  },
+  "C18": {
+    "trace_id": "263fd6bd-d7ac-4a28-9c1c-d06f5cc1ef06",
+    "status": "approved",
+    "latency_ms": 130915.89,
+    "finished_at": "2026-11-13T01:24:17.735+00:00"
+  },
+  "C19": {
+    "trace_id": "4bc0f945-9fce-40ca-8dc7-32850bb9ee86",
+    "status": "approved",
+    "latency_ms": 115286.42,
+    "finished_at": "2026-11-13T01:26:13.018+00:00"
+  },
+  "C20": {
+    "trace_id": "50f4948c-1ab8-4971-8a18-3f93d549b130",
+    "status": "approved",
+    "latency_ms": 84255.11,
+    "finished_at": "2026-11-13T01:27:37.271+00:00"
+  }
+}

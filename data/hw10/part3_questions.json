@@ -1,0 +1,122 @@
+[
+  {
+    "category": "cooking",
+    "record_code": null,
+    "text": "If I cook the recalled frozen berries thoroughly, is it safe to eat them?",
+    "case_id": "C01"
+  },
+  {
+    "category": "general",
+    "record_code": null,
+    "text": "Can I return a recalled product to the store without the receipt?",
+    "case_id": "C02"
+  },
+  {
+    "category": "general",
+    "record_code": null,
+    "text": "I am pregnant and I think I ate a recalled product yesterday. What should I do?",
+    "case_id": "C03"
+  },
+  {
+    "category": "general",
+    "record_code": null,
+    "text": "How do I find out whether something in my kitchen has been recalled?",
+    "case_id": "C04"
+  },
+  {
+    "category": "record:agency_and_units",
+    "record_code": "REC-018041",
+    "text": "Who reported recall REC-018041 for Premium Bottled Juice (Lot 03035) and how many units are involved?",
+    "case_id": "C05"
+  },
+  {
+    "category": "needs_phone",
+    "record_code": null,
+    "text": "What phone number do I call to report that I got sick from a recalled product?",
+    "case_id": "C06"
+  },
+  {
+    "category": "record:owned",
+    "record_code": "REC-017158",
+    "text": "I bought Reduced Sodium Trail Mix (Lot 02152) made by Sunrise Valley Co.. Is it covered by recall REC-017158?",
+    "case_id": "C07"
+  },
+  {
+    "category": "general",
+    "record_code": null,
+    "text": "Is it enough to wash a recalled vegetable before eating it?",
+    "case_id": "C08"
+  },
+  {
+    "category": "record:date",
+    "record_code": "REC-015224",
+    "text": "On what date was recall REC-015224 (Original Peanut Butter (Lot 00218), Ironwood Naturals) announced?",
+    "case_id": "C09"
+  },
+  {
+    "category": "off_topic",
+    "record_code": null,
+    "text": "What will the weather be like tomorrow in San Jose?",
+    "case_id": "C10"
+  },
+  {
+    "category": "record:brand",
+    "record_code": "REC-015220",
+    "text": "Which brand made the product in recall REC-015220 (Value Brand Bottled Juice (Lot 00214))?",
+    "case_id": "C11"
+  },
+  {
+    "category": "general",
+    "record_code": null,
+    "text": "I already threw the recalled item away. Do I still need to do anything?",
+    "case_id": "C12"
+  },
+  {
+    "category": "record:comparison",
+    "record_code": "REC-016603",
+    "text": "Is recall REC-016603 (Plant-Based Mixed Berries (Lot 01597) from Northfield Farms) bigger than a typical grocery recall?",
+    "case_id": "C13"
+  },
+  {
+    "category": "record:region_agency",
+    "record_code": "REC-017706",
+    "text": "Which agency and which region reported recall REC-017706 for Silver Creek Market Premium Mixed Berries (Lot 02700)?",
+    "case_id": "C14"
+  },
+  {
+    "category": "unknown_record",
+    "record_code": null,
+    "text": "How many units were affected by recall REC-999999?",
+    "case_id": "C15"
+  },
+  {
+    "category": "pet",
+    "record_code": null,
+    "text": "My dog ate some of a recalled snack. Should I be worried?",
+    "case_id": "C16"
+  },
+  {
+    "category": "record:units_and_action",
+    "record_code": "REC-017792",
+    "text": "Recall REC-017792 covers Reduced Sodium Cantaloupe (Lot 02786) from Oakhollow Market. How many units were affected, and what should I do if I have some?",
+    "case_id": "C17"
+  },
+  {
+    "category": "record:summary",
+    "record_code": "REC-019153",
+    "text": "Summarize recall REC-019153 (Artisan Shell Eggs (Lot 04147), Red Barn Co.) for a shopper in two sentences.",
+    "case_id": "C18"
+  },
+  {
+    "category": "record:product",
+    "record_code": "REC-018625",
+    "text": "What product is recall REC-018625 about, and who sells it?",
+    "case_id": "C19"
+  },
+  {
+    "category": "record:region",
+    "record_code": "REC-015545",
+    "text": "Which region does the agency that reported recall REC-015545 (Farmstead Shell Eggs (Lot 00539), Blue Ridge Kitchen) belong to?",
+    "case_id": "C20"
+  }
+]
