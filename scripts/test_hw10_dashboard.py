@@ -117,6 +117,8 @@ _vl = data.validation_interpretation(_va, _rows)
 check("evaluation: Part 3 reading names weak agreement, the missed failing draft and the not-a-gate verdict",
       "weak" in _vl[0] and any("C1" in x for x in _vl) and "not reliable enough to gate" in _vl[-1])
 _vh = data.validation_interpretation({**_va, "agreement_run1": {**_va["agreement_run1"], "spearman": 0.9}}, [{"case_id": "C2", "human_label": "5", "judge_run1": "5"}])
+_vp = data.validation_interpretation({"agreement_run1": {"spearman": 0.5, "mean_abs_diff": 1.0, "within_1": 0.8, "mean_signed_diff_judge_minus_human": -0.5}}, [])
+check("evaluation: Part 3 reading does not crash when a validation file lacks optional figures", "moderate" in _vp[0] and "exact match" not in _vp[0])
 check("evaluation: Part 3 reading is not hard-coded (strong agreement and no missed draft gives a different verdict)", "strong" in _vh[0] and "screening signal" in _vh[-1])
 
 try:

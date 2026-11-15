@@ -206,8 +206,9 @@ def validation_interpretation(v: dict, rows: List[dict]) -> List[str]:
         return ["No validation numbers yet."]
     rho = a["spearman"]
     band = "weak" if abs(rho) < 0.4 else "moderate" if abs(rho) < 0.7 else "strong"
+    exact = f"exact match {a['exact_match']:.0%}, " if a.get("exact_match") is not None else ""
     lines = [f"Agreement with the human labels is {band}: Spearman {rho:.2f}, mean absolute difference {a['mean_abs_diff']:.2f} points, "
-             f"exact match {a['exact_match']:.0%}, within one point {a['within_1']:.0%}. The bias ({a['mean_signed_diff_judge_minus_human']:+.2f}) "
+             f"{exact}within one point {a['within_1']:.0%}. The bias ({a['mean_signed_diff_judge_minus_human']:+.2f}) "
              "is an average of errors in both directions, so it hides how large the individual differences are."]
     hum, jud = a.get("human_distribution"), a.get("judge_distribution")
     if hum and jud:
