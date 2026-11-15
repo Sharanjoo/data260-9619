@@ -1,0 +1,213 @@
+{
+  "homework_number": 10,
+  "sid4": "9619",
+  "commit_hash": "557578912b8dcef6604f71ddbdd47a13b5b097ed",
+  "model_configuration": "Pipeline: HW8 Planner, Writer, Reviewer with qwen3:8b via Ollama behind the HW9 Redis semantic cache (threshold 0.95). Judge: DeepEval GEval on a local Ollama qwen3:8b, temperature 0, thinking off, fixed evaluation steps, 1-5 rubric. Tracing: trace_id = the HW8 correlation_id, one JSON span per stage in reports/hw10/raw/spans.jsonl",
+  "seed": 9619,
+  "verify_seed": 269619,
+  "port_base": 8619,
+  "generated_at": "2026-11-15T08:25:25.831723+00:00",
+  "info": {
+    "judge_validation": {
+      "spearman": 0.2850946580577715,
+      "mean_abs_diff": 1.05,
+      "bias": -0.15,
+      "fraction_changed": 0.0,
+      "mean_abs_change": 0.0,
+      "max_abs_change": 0
+    },
+    "example_trace_ids": {
+      "cache_hit": "d401ec8b-c9b1-4e3d-b299-78272f09add7",
+      "cache_miss": "e3307445-1bca-437b-a8b3-1edf0ec7533a",
+      "failed": "08452391-e416-49b0-a8b0-bed7a3ba710b"
+    },
+    "dominant_stage": "Writer",
+    "report_pdf_present": false,
+    "suites_skipped": false
+  },
+  "checks_passed": 36,
+  "checks_total": 36,
+  "all_passed": true,
+  "checks": [
+    {
+      "check": "suite_test_agents_hw08",
+      "passed": true,
+      "detail": "40 checks passed, 0 failed"
+    },
+    {
+      "check": "suite_test_hw9_cache",
+      "passed": true,
+      "detail": "26 passed, 0 failed"
+    },
+    {
+      "check": "suite_test_hw10_tracing",
+      "passed": true,
+      "detail": "28 passed, 0 failed"
+    },
+    {
+      "check": "suite_test_hw10_evaluator",
+      "passed": true,
+      "detail": "22 passed, 0 failed"
+    },
+    {
+      "check": "suite_test_hw10_latency",
+      "passed": true,
+      "detail": "10 passed, 0 failed"
+    },
+    {
+      "check": "suite_test_hw10_judge_validate",
+      "passed": true,
+      "detail": "19 passed, 0 failed"
+    },
+    {
+      "check": "suite_test_hw10_dashboard",
+      "passed": true,
+      "detail": "29 passed, 0 failed"
+    },
+    {
+      "check": "part1_dashboard_files_present",
+      "passed": true,
+      "detail": "dashboard/{app.py, data.py, loaders.py, view_summary.py, view_evaluation.py, view_trace.py}"
+    },
+    {
+      "check": "part1_uses_streamlit_caching",
+      "passed": true,
+      "detail": "st.cache_data and st.cache_resource used"
+    },
+    {
+      "check": "part1_summary_states_window_and_source",
+      "passed": true,
+      "detail": "every summary metric caption carries Window and Source"
+    },
+    {
+      "check": "part1_three_pages_registered",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "part2_at_least_one_end_to_end_request_evaluated",
+      "passed": true,
+      "detail": "51 evaluated requests with status ok"
+    },
+    {
+      "check": "part2_plan_draft_final_joined_by_correlation_id",
+      "passed": true,
+      "detail": "51 of 51 results have a bundle with plan, draft and final"
+    },
+    {
+      "check": "part2_original_message_content_and_metadata_kept",
+      "passed": true,
+      "detail": "trace f4f5b265-de7c-4ffe-a1f1-8c5353b7b0eb"
+    },
+    {
+      "check": "part2_all_scores_on_the_1_to_5_scale_with_reasons",
+      "passed": true,
+      "detail": "plan/writer/final = [3, 3, 3]"
+    },
+    {
+      "check": "part2_final_vs_draft_has_both_scores_difference_and_interpretation",
+      "passed": true,
+      "detail": "draft 3, final 3, difference 0"
+    },
+    {
+      "check": "part2_writer_score_carries_trace_id_and_final_the_answer",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "part2_evaluator_span_written_for_the_same_trace_id",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "check": "part3_20_cases_and_20_whole_number_labels",
+      "passed": true,
+      "detail": "20 cases, 20 labels"
+    },
+    {
+      "check": "part3_cases_and_labels_committed_before_the_first_judge_score_and_unchanged",
+      "passed": true,
+      "detail": "commit 6861adac at 2026-11-12T18:32:22-08:00; first judge score 2026-11-13T05:43:38+00:00; working copy clean=True"
+    },
+    {
+      "check": "part3_judge_run_three_times_on_all_20_drafts",
+      "passed": true,
+      "detail": "scored cases per run: {1: 20, 2: 20, 3: 20}"
+    },
+    {
+      "check": "part3_statistics_recomputed_from_the_raw_rows",
+      "passed": true,
+      "detail": "Spearman 0.2850946580577715, mean abs diff 1.05, changed 0/20, mean/max change 0.00/0"
+    },
+    {
+      "check": "part4_every_span_has_trace_id_stage_start_end_status_error",
+      "passed": true,
+      "detail": "975 spans"
+    },
+    {
+      "check": "part4_cache_hit_trace_has_a_hit_lookup_and_no_agent_stages",
+      "passed": true,
+      "detail": "d401ec8b-c9b1-4e3d-b299-78272f09add7"
+    },
+    {
+      "check": "part4_cache_miss_trace_covers_lookup_queues_planner_writer_reviewer",
+      "passed": true,
+      "detail": "e3307445-1bca-437b-a8b3-1edf0ec7533a"
+    },
+    {
+      "check": "part4_failed_trace_names_the_failing_stage_and_error",
+      "passed": true,
+      "detail": "08452391-e416-49b0-a8b0-bed7a3ba710b: stage writer, error ModelClientError: Ollama returned HTTP 404: {\"error\":\"model 'no-such-model' not "
+    },
+    {
+      "check": "part4_one_trace_id_is_the_kafka_correlation_id_everywhere",
+      "passed": true,
+      "detail": "f4f5b265-de7c-4ffe-a1f1-8c5353b7b0eb: plan, draft and final messages carry the same id as the spans"
+    },
+    {
+      "check": "part4_50_confirmed_cache_misses",
+      "passed": true,
+      "detail": "50 confirmed misses"
+    },
+    {
+      "check": "part4_every_confirmed_miss_was_not_served_from_the_cache",
+      "passed": true,
+      "detail": "similarity < 0.95, is_cached false, cache_lookup span hit=false, status approved for all 50"
+    },
+    {
+      "check": "part4_latency_rows_are_exactly_the_confirmed_misses",
+      "passed": true,
+      "detail": "50 per-request rows"
+    },
+    {
+      "check": "part4_latency_table_recomputed_from_the_per_request_rows",
+      "passed": true,
+      "detail": "8 rows match"
+    },
+    {
+      "check": "part4_table_has_p50_p95_for_every_required_stage_and_evaluation",
+      "passed": true,
+      "detail": "Cache lookup 0.1/0.2s; Planner 28.7/42.8s; Writer 33.9/43.9s; Reviewer 30.2/35.8s; Queue wait (total) 0.0/0.1s; Other (facts, Kafka send, cache store) 0.0/0.2s; Evaluation (judge, outside the request path) 103.5/133.7s; End-to-end (cache miss) 93.2/117.8s"
+    },
+    {
+      "check": "part4_stage_shares_add_up_to_100_percent_of_the_miss_end_to_end",
+      "passed": true,
+      "detail": "100.00%"
+    },
+    {
+      "check": "part4_cache_hit_latency_reported_separately_and_lower",
+      "passed": true,
+      "detail": "hit mean 74 ms vs miss mean 91.0 s"
+    },
+    {
+      "check": "required_deliverable_files_present",
+      "passed": true,
+      "detail": "RUN_LOG.txt, METRICS.md, AI_USE.md, raw/"
+    },
+    {
+      "check": "verification_did_not_modify_application_code",
+      "passed": true,
+      "detail": "sha256 of code/, src/ and dashboard/ before == after: 105a153aec58"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+stage,n,p50_ms,p95_ms,mean_ms,share_of_mean_e2e_pct,share_p50_pct
+Cache lookup,50,86.4,175.8,95.5,0.1,0.1
+Planner,50,28744.2,42814.6,29334.9,32.2,30.8
+Writer,50,33869.0,43920.4,33540.3,36.9,36.3
+Reviewer,50,30168.5,35782.3,27907.4,30.7,32.4
+Queue wait (total),50,37.4,71.4,42.6,0.0,0.0
+"Other (facts, Kafka send, cache store)",50,48.8,168.5,66.6,0.1,0.1
+"Evaluation (judge, outside the request path)",50,103450.1,133741.8,105021.2,115.4,111.0
+End-to-end (cache miss),50,93223.2,117799.6,90987.4,100.0,100.0

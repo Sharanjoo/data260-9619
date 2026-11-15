@@ -1,0 +1,85 @@
+{
+  "misses": [
+    {
+      "stage": "Cache lookup",
+      "n": 50,
+      "p50_ms": 86.36500000000001,
+      "p95_ms": 175.78434999999993,
+      "mean_ms": 95.52164,
+      "share_mean_pct": 0.10498338459290983,
+      "share_p50_pct": 0.09264320288357265
+    },
+    {
+      "stage": "Planner",
+      "n": 50,
+      "p50_ms": 28744.1855,
+      "p95_ms": 42814.5832,
+      "mean_ms": 29334.87528,
+      "share_mean_pct": 32.24059483804176,
+      "share_p50_pct": 30.833710519302347
+    },
+    {
+      "stage": "Writer",
+      "n": 50,
+      "p50_ms": 33868.976500000004,
+      "p95_ms": 43920.38075,
+      "mean_ms": 33540.26514,
+      "share_mean_pct": 36.86254292263813,
+      "share_p50_pct": 36.331042220210215
+    },
+    {
+      "stage": "Reviewer",
+      "n": 50,
+      "p50_ms": 30168.491,
+      "p95_ms": 35782.346249999995,
+      "mean_ms": 27907.448900000003,
+      "share_mean_pct": 30.671777001270897,
+      "share_p50_pct": 32.36155424540307
+    },
+    {
+      "stage": "Queue wait (total)",
+      "n": 50,
+      "p50_ms": 37.434,
+      "p95_ms": 71.41714999999996,
+      "mean_ms": 42.63516,
+      "share_mean_pct": 0.04685831817230362,
+      "share_p50_pct": 0.04015522094301695
+    },
+    {
+      "stage": "Other (facts, Kafka send, cache store)",
+      "n": 50,
+      "p50_ms": 48.78050000000076,
+      "p95_ms": 168.46935000000155,
+      "mean_ms": 66.64238000000012,
+      "share_mean_pct": 0.0732435352840137,
+      "share_p50_pct": 0.05232654151869607
+    },
+    {
+      "stage": "Evaluation (judge, outside the request path)",
+      "n": 50,
+      "p50_ms": 103450.0865,
+      "p95_ms": 133741.81279999999,
+      "mean_ms": 105021.20165999999,
+      "share_mean_pct": 115.42391027081736,
+      "share_p50_pct": 110.97026980770731
+    },
+    {
+      "stage": "End-to-end (cache miss)",
+      "n": 50,
+      "p50_ms": 93223.245,
+      "p95_ms": 117799.59739999997,
+      "mean_ms": 90987.3885,
+      "share_mean_pct": 100.0,
+      "share_p50_pct": 100.0
+    }
+  ],
+  "hits": {
+    "n": 10,
+    "p50_ms": 74.8065,
+    "p95_ms": 106.69750000000002,
+    "mean_ms": 73.9126
+  },
+  "n_requests": 50,
+  "incomplete_traces": [],
+  "dominant": "Writer"
+}
