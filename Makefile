@@ -1,4 +1,4 @@
-.PHONY: serve verify verify-hw05 verify-hw06 verify-hw07 verify-hw08 verify-hw09 agents client experiment docker-up docker-down
+.PHONY: serve verify verify-hw05 verify-hw06 verify-hw07 verify-hw08 verify-hw09 verify-hw10 agents client experiment docker-up docker-down
 
 serve:
 	python3 code/main.py
@@ -42,3 +42,6 @@ verify-hw08:
 
 verify-hw09:
 	python3 scripts/verify_hw09.py
+
+verify-hw10:
+	python3 scripts/verify_hw10.py

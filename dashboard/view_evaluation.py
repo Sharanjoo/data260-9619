@@ -61,6 +61,9 @@ def render() -> None:
         r[1].metric("Mean absolute change", _fmt(rep["mean_abs_change_between_runs"]))
         r[2].metric("Max absolute change", rep["max_abs_change_between_runs"])
     rows = loaders.per_case()
+    st.subheader("What the validation suggests about the judge")
+    for line in data.validation_interpretation(v, rows):
+        st.markdown(f"- {line}")
     if rows:
         st.subheader("Raw per-case data (human label vs judge runs)")
         st.dataframe(pd.DataFrame(rows), hide_index=True, width="stretch")

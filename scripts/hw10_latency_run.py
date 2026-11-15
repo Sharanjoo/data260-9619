@@ -58,6 +58,48 @@ GENERAL = [
     "Will I get my money back if I throw a recalled product away without returning it?",
 ]
 
+# Spares appended AFTER the fixed shuffle (so the order of the first 77 questions never changes). Added when the first 14 requests showed
+# that two differently worded questions about the SAME recall record score >= 0.95 against each other (0.977, 0.987, 0.992) and are
+# served from the cache, so the record questions alone cannot reach 50 confirmed misses.
+EXTRA_GENERAL = [
+    "A store employee told me the recall only applies to one size. How can I check that myself?",
+    "Is it safe to keep a recalled item in the freezer until I decide what to do with it?",
+    "What is the difference between a recall and a market withdrawal for groceries?",
+    "My roommate bought a recalled item and will not listen to me. What can I do?",
+    "Can I be reimbursed for medical costs if I got sick from a recalled food?",
+    "Should I worry about other products stored next to a recalled product in my pantry?",
+    "How do I dispose of a recalled can of food without hurting garbage collectors or animals?",
+    "Does cooking at a high temperature make recalled meat safe again?",
+    "Where can I find out which batch number is printed on my package?",
+    "How long do grocery recalls usually stay active before they are closed?",
+    "My baby's formula might be affected by a recall. What should I do tonight?",
+    "Can a grocery store sell a recalled product if the label has been replaced?",
+    "I bought a recalled item online from a third-party seller. Who is responsible for the refund?",
+    "What if I cannot remember where I bought a recalled product?",
+    "Is it a good idea to take a photo of a recalled product before returning it?",
+    "How do allergen recalls differ from contamination recalls?",
+    "Do I need to wash dishes and cutlery that touched a recalled food?",
+    "Can I give a recalled product to a neighbour who says they will cook it well?",
+    "What are common signs of food poisoning that I should tell a doctor about?",
+    "How can a small shop owner sign up for recall alerts?",
+    "Why do some recalled products stay on shelves for days after the announcement?",
+    "Are recalled pet treats covered by the same rules as human food?",
+    "Should I contact my health department if several people in my family felt sick?",
+    "What should I do with the packaging of a recalled product after I return it?",
+    "If I used a recalled ingredient in a cake and shared it, who should I warn?",
+    "Can I rely on a recall announcement posted on social media?",
+    "Is bottled juice that was recalled safe to use for cleaning?",
+    "How are recalled products tracked back to a farm or a factory?",
+    "What does the term lot code mean on a grocery package?",
+    "I live in a rural area with no nearby store. How can I return a recalled item?",
+    "Could a recalled snack bar still be fine if the bag was never opened?",
+    "Are children more at risk than adults from recalled produce?",
+    "Do I have to keep my receipt for a recalled product to get a refund?",
+    "How quickly should I act after I hear that something in my fridge was recalled?",
+    "Will a recall notice tell me which stores received the product?",
+    "Is there a recall registry that I can search by brand name?",
+]
+
 
 def build_pool() -> list:
     groups = json.loads(PICKED.read_text(encoding="utf-8"))["groups"]
@@ -70,6 +112,7 @@ def build_pool() -> list:
                                                                     brand=r["brand_name"])} for r, t in chosen]
     items += [{"kind": "general", "text": q} for q in GENERAL]
     rng.shuffle(items)
+    items += [{"kind": "general", "text": q} for q in EXTRA_GENERAL]  # spares, after the fixed shuffle
     for i, it in enumerate(items, 1):
         it["n"] = i
     return items

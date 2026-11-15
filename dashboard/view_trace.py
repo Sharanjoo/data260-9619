@@ -44,7 +44,10 @@ def render() -> None:
     if j["path"] == "CACHE HIT":
         st.success(f"CACHE HIT path: answered from Redis, the agents did not run. Total {j['total_ms']:.0f} ms.")
     elif j["path"] == "CACHE MISS":
-        st.info(f"CACHE MISS path: cache_lookup missed, then the Planner, Writer and Reviewer ran. Total {j['total_ms'] / 1000:.1f} s.")
+        if j["request_status"] and j["request_status"] != "ok":
+            st.info(f"CACHE MISS path: cache_lookup missed and the agents were started, but the request did not finish. Total {j['total_ms'] / 1000:.1f} s.")
+        else:
+            st.info(f"CACHE MISS path: cache_lookup missed, then the Planner, Writer and Reviewer ran. Total {j['total_ms'] / 1000:.1f} s.")
     else:
         st.info(f"{j['path']}. Total {j['total_ms'] / 1000:.1f} s.")
     if j["request_status"] and j["request_status"] != "ok":

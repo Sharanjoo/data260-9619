@@ -199,5 +199,41 @@ def interpretation(results: List[dict]) -> List[str]:
     return lines
 
 
+def validation_interpretation(v: dict, rows: List[dict]) -> List[str]:
+    """Plain-language reading of the Part 3 numbers, computed from the saved validation files (nothing is hard-coded)."""
+    a = v.get("agreement_run1") or {}
+    if not a:
+        return ["No validation numbers yet."]
+    rho = a["spearman"]
+    band = "weak" if abs(rho) < 0.4 else "moderate" if abs(rho) < 0.7 else "strong"
+    lines = [f"Agreement with the human labels is {band}: Spearman {rho:.2f}, mean absolute difference {a['mean_abs_diff']:.2f} points, "
+             f"exact match {a['exact_match']:.0%}, within one point {a['within_1']:.0%}. The bias ({a['mean_signed_diff_judge_minus_human']:+.2f}) "
+             "is an average of errors in both directions, so it hides how large the individual differences are."]
+    hum, jud = a.get("human_distribution"), a.get("judge_distribution")
+    if hum and jud:
+        used = sum(1 for k in "12345" if jud.get(k, 0))
+        lines.append("Score spread (1/2/3/4/5): human " + "/".join(str(hum.get(k, 0)) for k in "12345") + ", judge "
+                     + "/".join(str(jud.get(k, 0)) for k in "12345") + f". The judge uses {used} of the 5 score values, so it separates good from poor drafts less than the human does.")
+    bad = [r for r in rows if r.get("human_label", "").isdigit() and int(r["human_label"]) <= 2]
+    missed = [r["case_id"] for r in bad if r.get("judge_run1", "").isdigit() and int(r["judge_run1"]) >= 3]
+    if bad:
+        lines.append(f"Drafts the human rated 2 or lower: {len(bad)}. The judge scored {len(missed)} of them 3 or higher"
+                     + (f" ({', '.join(missed)})." if missed else "."))
+    rep = v.get("repeatability")
+    if rep:
+        if rep["cases_changed"] == 0:
+            lines.append(f"Repeatability: no score changed in {rep['n_cases']} cases over {len(rep['runs'])} runs. That shows the judge is stable "
+                         "(temperature 0), not that it is right.")
+        else:
+            lines.append(f"Repeatability: {rep['cases_changed']} of {rep['n_cases']} cases changed score between runs (mean change "
+                         f"{rep['mean_abs_change_between_runs']:.2f}, max {rep['max_abs_change_between_runs']}), so single runs are noisy.")
+    if abs(rho) < 0.7 or missed:
+        lines.append("Verdict: not reliable enough to gate a deployment. It is usable as a rough trend signal or to send low scores to a person, "
+                     "and gating would need more labeled cases, more than one labeler and a different judge model.")
+    else:
+        lines.append("Verdict: agreement is high enough to use as a screening signal; confirm with more labeled cases before using it as a gate.")
+    return lines
+
+
 def validation_summary() -> Optional[dict]:
     return read_json(VALIDATION)

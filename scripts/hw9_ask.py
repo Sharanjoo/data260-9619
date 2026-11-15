@@ -45,7 +45,7 @@ async def main() -> int:
         res = await ingress.answer(args.query, use_cache=not args.no_cache, check_version=args.check_version)
     finally:
         await agent.stop()
-    keys = ("is_cached", "similarity", "threshold", "latency_ms", "timings", "status", "depends_on", "matched_query",
+    keys = ("trace_id", "is_cached", "similarity", "threshold", "latency_ms", "timings", "status", "depends_on", "matched_query",
             "stale_entry_removed", "answer")
     print(json.dumps({k: res.get(k) for k in keys}, indent=2, ensure_ascii=False))
     return 0

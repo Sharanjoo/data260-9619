@@ -20,6 +20,7 @@ from kafka_api.config import BOOTSTRAP_SERVERS  # noqa: E402
 from kafka_api.logutil import log  # noqa: E402
 from kafka_agents.runtime import dump  # noqa: E402
 from kafka_agents.settings import BANNER, FINAL_TOPIC, INBOX_TOPIC  # noqa: E402
+from tracing.spans import emit as trace_emit, now_ms  # noqa: E402
 
 DEFAULT_QUESTION = ("I bought Frozen Mixed Berries from Northfield Farms that were recalled for possible "
                     "Hepatitis A contamination. What should I do with the bag I already have?")
@@ -36,6 +37,10 @@ async def wait_for_final(consumer: Any, cid: str, after_ts: int, timeout: float)
             except ValueError:
                 continue
             if isinstance(data, dict) and data.get("correlation_id") == cid:
+                sent_ms = getattr(msg, "timestamp", 0) or 0
+                if sent_ms > 1e12:  # HW10: how long the final message sat on the topic before the client read it
+                    trace_emit(cid, "queue_wait_final", float(sent_ms), now_ms(), topic=msg.topic,
+                               partition=msg.partition, offset=msg.offset, consumer="client")
                 log("CLIENT", f"final message received topic={msg.topic} partition={msg.partition} "
                               f"offset={msg.offset} correlation_id={cid}")
                 return data

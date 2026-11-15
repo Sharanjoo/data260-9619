@@ -109,6 +109,15 @@ check("evaluation: bad log lines are skipped, one result", len(res) == 1)
 check("evaluation: scores by stage", [r["mean_score"] for r in data.stage_scores(res)] == [3, 4, 4])
 check("evaluation: interpretation mentions the Reviewer passing drafts through", any("word for word" in x for x in data.interpretation(res)))
 check("evaluation: empty results give a hint, not an error", "No evaluation results" in data.interpretation([])[0])
+_va = {"agreement_run1": {"spearman": 0.2, "mean_abs_diff": 1.0, "exact_match": 0.25, "within_1": 0.8, "mean_signed_diff_judge_minus_human": -0.1,
+                          "human_distribution": {"1": 1, "5": 1}, "judge_distribution": {"4": 2}}, "repeatability": {"runs": [1, 2], "n_cases": 2, "cases_changed": 0,
+                          "mean_abs_change_between_runs": 0.0, "max_abs_change_between_runs": 0}}
+_rows = [{"case_id": "C1", "human_label": "1", "judge_run1": "4"}, {"case_id": "C2", "human_label": "5", "judge_run1": "4"}]
+_vl = data.validation_interpretation(_va, _rows)
+check("evaluation: Part 3 reading names weak agreement, the missed failing draft and the not-a-gate verdict",
+      "weak" in _vl[0] and any("C1" in x for x in _vl) and "not reliable enough to gate" in _vl[-1])
+_vh = data.validation_interpretation({**_va, "agreement_run1": {**_va["agreement_run1"], "spearman": 0.9}}, [{"case_id": "C2", "human_label": "5", "judge_run1": "5"}])
+check("evaluation: Part 3 reading is not hard-coded (strong agreement and no missed draft gives a different verdict)", "strong" in _vh[0] and "screening signal" in _vh[-1])
 
 try:
     from streamlit.testing.v1 import AppTest

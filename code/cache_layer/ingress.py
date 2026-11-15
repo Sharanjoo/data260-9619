@@ -20,6 +20,7 @@ from kafka_api.logutil import log
 
 from cache_layer.config import DEFAULT_THRESHOLD, NO_DEPENDENCY
 from cache_layer.facts import facts_text, find_record_code, fingerprint
+from tracing.spans import emit as trace_emit, now_ms
 
 
 def _now() -> str:
@@ -42,7 +43,10 @@ class SemanticIngress:
         thr = self.threshold if threshold is None else threshold
         t_start, started = time.perf_counter(), _now()
         timings: Dict[str, float] = {}
+        cid = str(uuid.uuid4())  # HW10: the trace_id. It is the HW8 correlation_id, created first so hits and misses both have one
+        start_ms = now_ms()
         result: Dict[str, Any] = {"query": query, "threshold": thr, "started_at": started, "tag": tag,
+                                  "correlation_id": cid, "trace_id": cid, "_start_ms": start_ms,
                                   "is_cached": False, "similarity": None, "matched_query": None,
                                   "stale_entry_removed": False}
         vec = None
@@ -55,6 +59,9 @@ class SemanticIngress:
             timings["search_ms"] = _ms(t)
             result["similarity"] = sim
             result["matched_query"] = entry["query"] if entry else None
+            lookup_end = now_ms()
+            trace_emit(cid, "cache_lookup", start_ms, lookup_end, hit=bool(entry is not None and sim >= thr),
+                       similarity=sim, threshold=thr, embed_ms=timings["embed_ms"], search_ms=timings["search_ms"])
             if entry is not None and sim >= thr:
                 stale = False
                 if check_version and entry["depends_on"] != NO_DEPENDENCY:
@@ -80,12 +87,15 @@ class SemanticIngress:
         question = f"{query}\n\n{facts_text(facts)}" if facts else query
         version = fingerprint(facts) if facts else NO_DEPENDENCY
         depends_on = code if facts else NO_DEPENDENCY
-        cid = str(uuid.uuid4())
         t = time.perf_counter()
         log("CACHE", f"running the agent pipeline correlation_id={cid} depends_on={depends_on}")
+        agent_start = now_ms()
         final = await self.agent.run(question, cid, entity_key=code)
         timings["agent_ms"] = _ms(t)
-        result.update(correlation_id=cid, depends_on=depends_on, data_version=version)
+        trace_emit(cid, "agent_pipeline", agent_start, now_ms(), "timeout" if final is None else "ok",
+                   "no final message before the agent timeout" if final is None else None,
+                   final_status=(final or {}).get("status"))
+        result.update(depends_on=depends_on, data_version=version)
         if final is None:
             result.update(answer=None, status="timeout")
             log("CACHE", f"agent pipeline gave no answer for correlation_id={cid}")
@@ -104,6 +114,12 @@ class SemanticIngress:
         result["timings"] = timings
         result["latency_ms"] = _ms(t_start)
         result["finished_at"] = _now()
+        start_ms = result.pop("_start_ms")
+        ok = result.get("status") in ("cached", "approved")
+        trace_emit(result["trace_id"], "request", start_ms, now_ms(), "ok" if ok else "error",
+                   None if ok else f"request ended with status={result.get('status')}",
+                   is_cached=result.get("is_cached"), answer_status=result.get("status"), tag=result.get("tag"),
+                   similarity=result.get("similarity"), latency_ms=result["latency_ms"])
         if self.metrics_path:
             self.metrics_path.parent.mkdir(parents=True, exist_ok=True)
             with self.metrics_path.open("a", encoding="utf-8") as fh:
