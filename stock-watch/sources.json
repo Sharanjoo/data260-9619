@@ -1,0 +1,116 @@
+{
+  "topic": "Material changes for a grocery and food-producer watchlist: large daily price moves and new SEC 8-K filings",
+  "user_agent": "DATA260-stock-watch/1.0 sharan.lourduraj@sjsu.edu",
+  "note": "Approved-source allowlist. watch.py refuses any URL whose host is not listed here. SEC asks automated clients to send a User-Agent with a contact email: put yours in user_agent above. Watchlist: Kroger (KR), Tyson Foods (TSN), Conagra Brands (CAG), General Mills (GIS), Hormel Foods (HRL). CIKs checked on SEC EDGAR company search.",
+  "sources": [
+    {
+      "id": "prices_live_staples",
+      "type": "stooq",
+      "modes": [
+        "live"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "kr.us",
+        "gis.us",
+        "cag.us",
+        "hrl.us"
+      ],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_live_tyson",
+      "type": "stooq",
+      "modes": [
+        "live"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "tsn.us"
+      ],
+      "threshold_pct": 3.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_live",
+      "type": "edgar",
+      "modes": [
+        "live"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "form": "8-K",
+      "per_company": 5,
+      "ciks": {
+        "KR": "0000056873",
+        "TSN": "0000100493",
+        "CAG": "0000023217",
+        "GIS": "0000040704",
+        "HRL": "0000048465"
+      }
+    },
+    {
+      "id": "prices_demo",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "nbrx.us",
+        "cbds.us",
+        "lksp.us"
+      ],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "edgar_demo",
+      "type": "edgar",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar",
+      "fixture": "edgar_8k.xml",
+      "ciks": {}
+    },
+    {
+      "id": "newswire_demo",
+      "type": "rss",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://example-newswire.example/markets/feed.xml",
+      "fixture": "newswire.xml"
+    },
+    {
+      "id": "prices_hw_staples",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "okgv.us",
+        "mplf.us",
+        "sdln.us"
+      ],
+      "threshold_pct": 2.0,
+      "lookback_days": 3
+    },
+    {
+      "id": "prices_hw_volatile",
+      "type": "stooq",
+      "modes": [
+        "fixtures"
+      ],
+      "url": "https://stooq.com/q/d/l/",
+      "tickers": [
+        "rdwd.us",
+        "tlrn.us"
+      ],
+      "threshold_pct": 3.0,
+      "lookback_days": 3
+    }
+  ]
+}

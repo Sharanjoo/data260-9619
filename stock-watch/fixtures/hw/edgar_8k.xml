@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- HW11 FIXTURE for DATA 260. Maple Fork Foods (MPLF), Redwood Poultry (RDWD), Tallrun Beef (TLRN), Oakgrove Markets (OKGV) and Sandline Grocers (SDLN) are fictional companies; these filings do not exist. -->
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>EDGAR 8-K filings (HW11 fixture)</title>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000101</id>
+    <updated>2026-11-20T16:30:00-05:00</updated>
+    <title>MPLF: 8-K - Current report</title>
+    <summary>(Fictional fixture.) Maple Fork Foods Inc. Item 2.02 Results of Operations and Financial Condition; Item 9.01 Financial Statements and Exhibits. Third-quarter net sales of $1.84B, up 3.1% year over year; full-year outlook unchanged.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000101/0009999911-26-000101-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000102</id>
+    <updated>2026-11-20T09:10:00-05:00</updated>
+    <title>RDWD: 8-K - Current report (recall notice)</title>
+    <summary>(Fictional fixture.) Redwood Poultry Corp. Item 8.01 Other Events: the company is voluntarily recalling about 40,000 pounds of frozen chicken strips after a supplier reported possible plastic fragments. The USDA classification is pending. No illnesses have been reported. The company does not expect a material effect on results.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000102/0009999912-26-000102-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999913-26-000103</id>
+    <updated>2026-11-20T08:05:00-05:00</updated>
+    <title>TLRN: 8-K - Current report</title>
+    <summary>(Fictional fixture.) Tallrun Beef Co. Item 1.01 Entry into a Material Definitive Agreement: a five-year supply agreement with a national grocery chain, expected to represent about 12% of annual revenue.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999913/000999991326000103/0009999913-26-000103-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999911-26-000104</id>
+    <updated>2026-11-20T17:45:00-05:00</updated>
+    <title>MPLF: 8-K/A - Current report, amendment</title>
+    <summary>(Fictional fixture.) Maple Fork Foods Inc. Amendment No. 1 to the Form 8-K filed earlier today, filed solely to correct the date shown on Exhibit 99.1. No other changes.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999911/000999991126000104/0009999911-26-000104-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999912-26-000106</id>
+    <updated>2026-11-20T12:20:00-05:00</updated>
+    <title>RDWD: 8-K - Current report (asset purchase)</title>
+    <summary>(Fictional fixture.) Redwood Poultry Corp. Item 2.01 Completion of Acquisition or Disposition of Assets: the company completed the purchase of two processing plants for $310 million in cash.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999912/000999991226000106/0009999912-26-000106-index.htm" rel="alternate"/>
+  </entry>
+  <entry>
+    <id>urn:tag:sec.gov,2008:accession-number=0009999914-26-000105</id>
+    <updated>2026-11-20T15:00:00-05:00</updated>
+    <title>OKGV: 8-K - Current report</title>
+    <summary>(Fictional fixture.) Oakgrove Markets Inc. Item 5.02 Departure of Directors or Certain Officers: the Chief Executive Officer has resigned effective immediately and the board has named an interim CEO.</summary>
+    <link href="https://www.sec.gov/Archives/edgar/data/9999914/000999991426000105/0009999914-26-000105-index.htm" rel="alternate"/>
+  </entry>
+</feed>
