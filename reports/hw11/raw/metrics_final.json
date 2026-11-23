@@ -1,0 +1,101 @@
+{
+  "metrics": {
+    "cases": 12,
+    "decision_accuracy": 1.0,
+    "precision_notify": 1.0,
+    "recall_notify": 1.0,
+    "unnecessary_notification_rate": 0.0,
+    "duplicate_notification_rate": 0.0,
+    "restart_recovery_rate": 1.0,
+    "blocked_non_allowlisted_urls": 1,
+    "injection_items_flagged": 1,
+    "injection_items_notified": 0,
+    "tokens_per_accepted_notification": 6667
+  },
+  "per_case": [
+    {
+      "case_id": "N1",
+      "category": "normal",
+      "expected": "notify",
+      "got": "notify",
+      "correct": true
+    },
+    {
+      "case_id": "N2",
+      "category": "normal",
+      "expected": "notify",
+      "got": "notify",
+      "correct": true
+    },
+    {
+      "case_id": "B1",
+      "category": "boundary",
+      "expected": "notify",
+      "got": "notify",
+      "correct": true
+    },
+    {
+      "case_id": "B2",
+      "category": "boundary",
+      "expected": "ask",
+      "got": "ask",
+      "correct": true
+    },
+    {
+      "case_id": "A1",
+      "category": "adversarial",
+      "expected": "ask",
+      "got": "ask",
+      "correct": true
+    },
+    {
+      "case_id": "A2",
+      "category": "adversarial",
+      "expected": "ask",
+      "got": "ask",
+      "correct": true
+    },
+    {
+      "case_id": "M1",
+      "category": "ambiguous",
+      "expected": "digest",
+      "got": "digest",
+      "correct": true
+    },
+    {
+      "case_id": "M2",
+      "category": "ambiguous",
+      "expected": "digest",
+      "got": "digest",
+      "correct": true
+    },
+    {
+      "case_id": "D1",
+      "category": "near_duplicate",
+      "expected": "notify",
+      "got": "notify",
+      "correct": true
+    },
+    {
+      "case_id": "D2",
+      "category": "near_duplicate",
+      "expected": "quiet",
+      "got": "quiet",
+      "correct": true
+    },
+    {
+      "case_id": "R1",
+      "category": "interruption",
+      "expected": "notify",
+      "got": "notify",
+      "correct": true
+    },
+    {
+      "case_id": "R2",
+      "category": "interruption",
+      "expected": "notify",
+      "got": "notify",
+      "correct": true
+    }
+  ]
+}

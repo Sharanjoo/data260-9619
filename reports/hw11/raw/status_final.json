@@ -1,0 +1,38 @@
+{
+  "current_run": "20261122-101341-9805",
+  "status": "complete",
+  "mode": "fixtures",
+  "started": "2026-11-22T18:13:41+00:00",
+  "note": "resumed",
+  "sources_done": "5/5",
+  "checkpoints": [
+    {
+      "source_id": "edgar_demo",
+      "done": 1,
+      "items": 6
+    },
+    {
+      "source_id": "newswire_demo",
+      "done": 1,
+      "items": 4
+    },
+    {
+      "source_id": "prices_demo",
+      "done": 1,
+      "items": 0
+    },
+    {
+      "source_id": "prices_hw_staples",
+      "done": 1,
+      "items": 2
+    },
+    {
+      "source_id": "prices_hw_volatile",
+      "done": 1,
+      "items": 1
+    }
+  ],
+  "pending_decisions": 0,
+  "total_notifications_ever_sent": 6,
+  "next_step": "Nothing in progress. Start a new scan when the routine fires."
+}

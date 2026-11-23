@@ -1,0 +1,19 @@
+# HW11 AI Use
+
+Sharan Lourduraj, SID4 9619
+
+## 1. What did you use AI for, and what did you do yourself?
+
+I used Claude for the fixture files and the 12 golden labels, writing the verification script, and drafting the report text. Muse itself was the agent under test: it scored and decided the items and wrote the alerts. I did the work on my side: I created the Muse account, installed the kit on Muse, checked the five company CIK numbers on SEC EDGAR, put my own email in the sources.json user agent, sent every message to Muse, took every screenshot, ran all git commands, and read the outputs back to Claude. I committed the labels, fixtures, policy and sources (5c9cea5) before any agent run and did not change them afterwards.
+
+## 2. Describe one thing the AI got wrong, or one thing you verified.
+
+Muse's chat text was wrong once. After the injection test I asked for the metrics again and Muse showed `blocked_non_allowlisted_urls: 0`, identical to its first output, although the fetch guard had already blocked the injected link. Claude noticed the contradiction, reproduced the behavior locally (one blocked fetch makes the metrics command read 1), and had me run a command that printed the blocked row straight from the database together with the metrics. That printed the row at 4:17:22 PM and a count of 1. The numbers in this report come from that raw output, not from Muse's earlier text. Two smaller mistakes: Claude assumed the scan would read the price files first, but the status showed the EDGAR source was scanned first (which still gave a mid-source crash that the resume had to finish); and my first commit of the starter kit did nothing because the kit had never been unpacked into the repository, and the second attempt was stopped by the repository's lint hook, so I skipped only that one hook for that one commit and left watch.py unchanged.
+
+## 3. How did you verify AI output?
+
+`scripts/verify_hw11.py` re-derives the evidence from the raw files: it checks that the labels were committed before the first run and are unchanged, that all 12 effect IDs equal sha256(key)[:12] of their keys, that every item has one score and one decision, that each notify has exactly one SendToUser and nothing else does, that the decisions match the frozen labels, and that precision, recall, unnecessary rate, duplicate rate and restart recovery recomputed from the trace equal what `watch.py metrics` printed (19 of 19 checks). I asked Muse to prove restart recovery from the database, not from the old chat: after it answered from the earlier conversation, I made it run `watch.py status` and read the result. I tested the allowlist by running `watch.py fetch` on the injected link and read the BLOCKED output, and I checked the trace of the CEO-resignation alert and of the duplicate-filing alert step by step. The token figure is an estimate and the report says so.
+
+## 4. What changed because of the AI, and what are the limits?
+
+Claude made the setup, labels and checks much faster, and its suggestions shaped the policy (separate price bands for the staples group and for Tyson, the earnings-day rule and the food-safety rule). The conclusions in the report come from the run: 12 of 12 decisions matched the labels, one filing plus a news item that quotes it made one alert, a crashed run resumed and finished, and the injected note and its link caused no action. Limits: the 12 cases are fictional and follow a policy that Claude helped me write, so a perfect score tests whether Muse follows the policy, not whether the policy is right; one run on one day; the Oakgrove injection was stopped by Muse's judgment, not by the script's keyword guard; the live price and EDGAR feeds returned nothing or an error in my live run and I did not fix them, so live behavior is untested; the token count is an estimate and Settings > Usage shows only a percentage. AI wrote the report text; I read it against the raw files before submitting.
